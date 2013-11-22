@@ -1,0 +1,279 @@
+\chapter{Квантовая динамика частицы}
+
+\section{Уравнение непрерывности для плотности вероятности. Плотность тока вероятностей. Коэффициенты прохождения и отражения}
+
+$U(\vr)$ --- стационарное потенциальное поле
+
+$$\left. \widehat{H}=\frac{\widehat{\vp^2}}{2m}+U(\vr) \right|_{\widehat{\vp}=-i\hbar\vec{\nabla}} =-\frac{\hbar^2}{2m}\Delta+U(\vr)$$
+
+См. \eqref{eq:1_3_1} и \eqref{eq:1_3_2}:
+
+$$i\hbar\frac{\partial}{\partial{t}}\Psi(\vr,t)=\widehat{H}\Psi(\vr,t)$$
+--- временное (нестационарное) уравнение Шрёдингера, 4-й постулат квантовой механики
+
+$$i\hbar\Psi^*\pd{}{t}\Psi=\Psi^*\widehat{H}\Psi$$
+
+$$-i\hbar\Psi\pd{}{t}\Psi^*=\Psi(\widehat{H}\Psi)^*$$
+
+Складывая, получим:
+
+\begin{equation}
+\label{eq:5_1_1}
+i\hbar\left(\Psi^*\pd{\Psi}{t}+\Psi\pd{\Psi^*}{t}\right)=\Psi^*(\widehat{H}\Psi)-\Psi(\widehat{H}\Psi)^*
+\end{equation}
+
+Преобразуем левую часть \eqref{eq:5_1_1} с помощью выражений \eqref{eq:1_4_1} и \eqref{eq:1_4_2}:
+
+$$\left.\pd{}{t}\Psi^*(\vr,t)\Psi(\vr,t)\right|_{\rho(\vr,t)=|\Psi(\vr,t)|^2} =\pd{\rho}{t}$$
+
+
+Правая часть \eqref{eq:5_1_1}: 
+
+$$\left. -\frac{\hbar^2}{2m}(\psi^*\Delta\psi-\psi\Delta\psi^*)\right|_{\Delta=\vec{\nabla}\cdot\vec{\nabla}} =-\frac{\hbar^2}{2m}\vec{\nabla}(\psi^*\vec{\nabla}\psi-\psi\vec{\nabla}\psi^*) = i\hbar\frac{\hbar}{2m}\vec{\nabla}(\psi^*\vec{\nabla}\psi-\psi\vec{\nabla}\psi^*)$$
+
+Отсюда \eqref{eq:5_1_1} переходит в:
+
+$$\boxed{\pd{\rho}{t}+\Div\vec{j}=0}$$ --- \textbf{уравнение непрерывности для плотности вероятности}
+
+где $\boxed{\vec{j}=-\frac{i\hbar}{2m}(\psi^*\vec{\nabla}\psi-\psi\vec{\nabla}\psi^*)}$ --- \textbf{плотность потока (тока) вероятности}.
+
+$$\left.-\pd{}{t}\int\limits_v\rho(\vr,t)\,dv = \int\limits_v\Div\vec{j}\,dv \right|_{\text{т. Гаусса}} = \oint\limits_S\vec{j}\,d\vec{S}$$
+
+Размерность плотности потока вероятности: $[\vec{j}]=\left[ \frac{1}{\text{с}\cdot\text{см}^2} \right]$
+
+\begin{excr}
+Доказать, что $\vec{j}=\frac{p}{m}$
+\end{excr}
+
+Коэффициент прохождения: 
+\begin{equation}
+\label{eq:5_1_2}
+\boxed{T(E)=\frac{\abs{\vec{j}_{\text{прош}}}}{\abs{\vec{j}_{\text{пад}}}}}
+\end{equation}
+
+Коэффициент отражения: 
+\begin{equation}
+\label{eq:5_1_3}
+\boxed{R(E)=\frac{\abs{\vec{j}_{\text{отр}}}}{\abs{\vec{j}_{\text{пад}}}}}
+\end{equation}
+
+В одномерном случае $\Psi(\vr,t) \rightarrow \Psi(x,t)$, $U(\vr) \rightarrow U(x)$
+
+\begin{equation}
+\label{eq:5_1_4}
+j_x=-\frac{i\hbar}{2m}\brc{\psi^*\pd{\psi}{t}-\psi\pd{\psi^*}{t}}=\frac{1}{m}\Re\left[\psi^*(\widehat{p}_x\psi)\right]
+\end{equation}
+
+\section{Оператор изменения во времени физической величины. Интегралы движения. Коммутаторы. Скобки Пуассона}
+
+В общем случае $\widehat{F}=\widehat{F}(t)$
+
+$$\avg{F}\equiv\bfkh{\psi(t)}{\widehat{F}(t)}{\psi(t)}$$
+
+\begin{equation}
+\label{eq:5_2_1}
+\boxed{i\hbar\pd{}{t}\ket{\psi(t)}=\widehat{H}\ket{\psi(t)}}
+\end{equation}
+
+Пользуясь формулой \eqref{eq:5_2_1}, а также тем, что $\widehat{H}^+=\widehat{H}$, получим:
+\begin{equation}
+\begin{gathered}
+\label{eq:5_2_2}
+\frac{d}{dt} \avg{F} =\bfkh{\pd{\psi}{t}}{\widehat{F}}{\psi} + \bfkh{\psi}{\pd{\widehat{F}}{t}}{\psi} + \bfkh{\psi}{\widehat{F}}{\pd{\psi}{t}} = \\
+= \frac{i}{\hbar}\bfkh{\psi}{\widehat{H}\widehat{F}}{\psi}+\bfkh{\psi}{\pd{\widehat{F}}{t}}{\psi}-\frac{i}{\hbar}\bfkh{\psi}{\widehat{F}\widehat{H}}{\psi} = \bfkh{\psi}{\pd{\widehat{F}}{t}+\frac{i}{\hbar}[\widehat{H},\widehat{F}]}{\psi}
+\end{gathered}
+\end{equation}
+
+$$
+\left[
+\begin{gathered}
+\avg{F} = \sum_n F_n P_n ~\rightarrow~ \frac{d}{dt}\avg{F}=\sum_n \frac{dF_n}{dt}P_n \equiv \avgh{\frac{dF}{dt}}\\
+\avg{F} = \int F\,dP ~\rightarrow~ \frac{d}{dt}\avg{F}=\int \frac{dF_n}{dt}\,dP \equiv \avgh{\frac{dF}{dt}}\\
+\end{gathered}
+\right.
+$$
+
+Следовательно:
+\begin{equation}
+\label{eq:5_2_3}
+\frac{d}{dt} \avg{F} \equiv \avgh{\frac{dF}{dt}}
+\end{equation}
+
+Из \eqref{eq:2_2_1}:
+\begin{equation}
+\label{eq:5_2_4}
+\avgh{\frac{dF}{dt}} = \avgh{\frac{d \widehat{F}}{dt}}_{\psi} = \bfkh{\psi}{\frac{d \widehat{F}}{dt}}{\psi}
+\end{equation}
+
+Сравнивая \eqref{eq:5_2_3} и \eqref{eq:5_2_4} с \eqref{eq:5_2_2}:
+\begin{equation}
+\label{eq:5_2_5}
+\boxed{\frac{d}{dt} \avg{F} = \bfkh{\psi}{\frac{d \widehat{F}}{dt}}{\psi}}
+\end{equation}
+
+где
+\begin{equation}
+\label{eq:5_2_6}
+\boxed{\frac{d\widehat{F}}{dt} = \pd{\widehat{F}}{t} + \frac{i}{\hbar} [\widehat{H}, \widehat{F}]}
+\end{equation}
+--- оператор изменения физической величины во времени (уравнение движения оператора $\widehat{F}$)
+
+Таким образом:
+$$
+\left.
+\begin{gathered}
+\pd{\widehat{F}}{t}=0 \\
+[\widehat{H}, \widehat{F}]=0
+\end{gathered}
+\right\} \avg{F}=const
+$$
+
+\begin{defn}
+Величина, сохранаяющая свое значение во времени, называется интегралом движения.
+\end{defn}
+
+Примеры интегралов движения:
+\begin{enumerate}
+\item $\widehat{F} = \widehat{H}$ --- гамильтониан замкнутой системы. $\pd{\widehat{H}}{t}=0$, т.е. полная энергия сохраняется.
+\item $\widehat{F} = \widehat{\vp} = - i \hbar \vec{\nabla}$.  Если $\displaystyle\widehat{H} = \frac{\widehat{\vp}^2}{2m}$ (свободное движение), то $\vp$ --- интеграл движения.
+\end{enumerate}
+
+Частица в потенциальном поле:
+\begin{equation}
+\label{eq:5_2_7}
+[\widehat{H}, \widehat{\vp}] = [\frac{\widehat{\vp}^2}{2m}, \widehat{\vp}] + [\vec{U}(r), \vp] = i \hbar \vec{\nabla} U(\vr) \ne 0
+\end{equation}
+то есть $\vp$ не сохраняется.
+
+Обобщённые координаты:
+$$
+\vec{q} = (q_1, ..., q_n),~~~~ \vp = (p_1, ..., p_n), ~~~~ F(\vec{q}, \vp, t)
+$$
+
+$$
+\D{F}{t} = \pd{F}{t} + \sum_{i=1}^{s}\brc{\pd{F}{q_i} \dot{q_i} + \pd{F}{p_i} \dot{p_i} }
+$$
+
+См \S 40 т.1 Л.Л.: уравнения Гамильтона
+
+$$
+\dot{q_i} = \pd{H}{p_i} ~~~~ \dot{p_i} = -\pd{H}{q_i}
+$$
+
+\begin{equation}
+\label{eq:5_2_8}
+\D{F}{t}= \pd{F}{t} + \underbrace{ \sum_{i=1}^{s} \brc{ \pd{H}{p_i} \pd{F}{q_i} - \pd{H}{q_i} \pd{F}{p_i} } }_{\brcr{H, F}} = \pd{F}{t} + \brcr{H, F}
+\end{equation}
+
+$\brcr{H, F}$ -- скобка Пуассона для $H$ и $F$
+
+\textbf{Принцип соответствия} (между классической и квантовой механикой):
+
+$$
+\abs{\Delta F} = \abs{F - \avg{F}} \ll \abs{\avg{F}}
+$$
+
+\eqref{eq:5_2_8} $\sim$ \eqref{eq:5_2_5}, \eqref{eq:5_2_6}:
+
+$$
+\begin{gathered}
+F ~~\leftrightarrow~~ \avg{F} \\
+\pd{F}{t} ~~\leftrightarrow~~ \bfkh{\psi}{\pd{\op{F}}{t}}{\psi} \\
+\brcr{H, F} ~~\leftrightarrow~~ \frac{i}{\hbar} \bfkh{\psi}{ \brs{\op{H}, \op{F}} }{\psi}
+\end{gathered}
+$$
+
+Выражение $i \brs{\op{H}, \op{F}}$ иногда называют \textbf{квантовой скобкой Пуассона}
+
+При $\hbar \to 0$:
+$$
+i \brs{\op{H}, \op{F}} \to \hbar \brcr{H, F}
+$$
+
+
+\section{Производная по времени операторов координаты и импульсов частицы в потенциальном поле. Теоремы Эренфеста}
+
+Из \eqref{eq:5_2_6}:
+$$
+\op{\vec{v}} \equiv \D{\op{\vr}}{t} = \frac{i}{\hbar} \brs{\op{H}, \op{\vr}} = \frac{i}{\hbar} \brs{\op{T}, \op{\vr}} + \frac{i}{\hbar} \brs{U(\op{\vr}), \op{\vr}}
+$$
+
+$$
+U(\op{\vr}) \equiv \sum_{n=0}^{\infty} \frac{U^{n}(0)}{n!}\op{\vr}^n ~~~ \to ~~~ U(\op{\vr}) = 0
+$$
+
+$$
+\brs{\op{T}, \op{\vr}} = \brs{\frac{\op{\vp}^2}{2m}, \op{\vr}} = -i \hbar \frac{\op{\vp}}{m}
+$$
+
+Оператор скорости в квантовой механике:
+\begin{equation}
+\label{eq:5_3_1}
+\op{\vec{v}} = \frac{\op{\vp}}{m}
+\end{equation}
+
+\begin{equation}
+\label{eq:5_3_2}
+\op{\vec{F}} \equiv \left. \D{\op{\vp}}{t} \right|_{\text{\eqref{eq:5_2_6}}} = \left. \frac{i}{\hbar} \brs{\op{H}, \op{\vp}} \right|_{\text{\eqref{eq:5_2_7}}} = - \vec{\nabla} U(\vr)
+\end{equation}
+
+Из \eqref{eq:5_2_5}:
+
+\begin{equation}
+\label{eq:5_3_3}
+\boxed {
+	\left. \D{}{t}\avg{\op{\vr}} \right|_{\text{\eqref{eq:5_3_1}}} = \frac{\avg{\vp}}{m}
+}
+\end{equation}
+
+\begin{equation}
+\label{eq:5_3_4}
+\boxed {
+	\left. \D{}{t}\avg{\op{\vp}} \right|_{\text{\eqref{eq:5_3_2}}} = - \avg{\vec{\nabla} U(\op{\vr})}
+}
+\end{equation}
+
+Из \eqref{eq:5_3_3}, \eqref{eq:5_3_4} получается квантово-механический аналог уравнения Ньютона:
+\begin{equation}
+\label{eq:5_3_5}
+m \D{^2}{t^2} \avg{\op{\vr}} = \avg{\op{\vec{F}}}
+\end{equation}
+
+Уравнения \eqref{eq:5_3_3} - \eqref{eq:5_3_5} -- \textbf{теоремы Эренфеста} (принцип соответствия между квантовой и классической механикой). Уравнения классической механики -- предельный случай квантовых уравнений.
+
+Из \eqref{eq:5_3_5}:
+\begin{equation}
+\label{eq:5_3_6}
+\avg{\op{\vec{F}}(\vr)} \neq \vec{F}(\avg{\op{\vr}})
+\end{equation}
+
+
+\begin{equation}
+\label{eq:5_3_7}
+\avg{\op{\vec{F}}(\vr)} = 
+	\avgh{ \op{F}(\avg{\vr}) + \brc{\op{\vr} - \avg{\op{\vr}}} \nabla \vec{F}(\avg{\op{\vr}}) + 
+	\frac{1}{2} (\op{r}_\alpha - \avg{\op{r}_\alpha})(\op{r}_\beta - \avg{\op{r}_\beta}) \cdot \pd{^2 \vec{F}(\avg{\op{\vr}})}{r_\alpha \partial r_\beta} + ... }
+\end{equation}
+
+\begin{equation}
+\label{eq:5_3_8}
+\avg{\op{\vec{F}}(\vr)} \approx \vec{F}(\avg{\op{\vr}}) + \frac{1}{2} \avgh{(\op{r}_\alpha - \avg{\op{r}_\alpha})(\op{r}_\beta - \avg{\op{r}_\beta})} \times \pd{^2 \vec{F}(\avg{\op{\vr}})}{r_\alpha \partial r_\beta}
+\end{equation}
+
+\noindent
+Если $\vec{F} \equiv 0$ -- свободное движение\\
+Если $\vec{F} = \const$ -- движение в однорожном поле\\
+$\vec{F} = - m\omega^2 \vr$ -- движение в поле упругой силы
+
+Тогда:
+\begin{equation}
+\label{eq:5_3_9}
+\left. \avgh{\op{\vec{F}}(\vr)} \right|_{\eqref{eq:5_3_5}} = m \D{^2}{t^2} \avg{\op{\vr}} = \vec{F}(\avg{\op{\vr}})
+\end{equation}
+
+Пусть $\Delta r$ -- размер области локализации частицы, а $L$ -- размер области существенного изменения силы. Тогда условие <<классичности>> движения состоит в том, что:
+\begin{equation}
+\label{eq:5_3_10}
+\Delta r \ll L
+\end{equation}
+(т.е. $\abs{\psi}^2$ существенно отличен от нуля)

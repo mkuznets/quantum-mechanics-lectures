@@ -1,0 +1,194 @@
+\chapter{Операторы физических величин}
+
+\section{Условие нормировки волн де Бройля}
+
+\begin{equation}
+\label{eq:2_1_1}
+\Psi_{\vp}(\vr,t) = A e^{\frac{i}{\hbar}(\vp\vr-Et)}
+\end{equation}
+
+Применим условие нормировки \eqref{eq:1_4_3}:
+
+$$\int \Psi^*_{\vsp}(\vr,t) \Psi_{\vp}(\vr,t) dv = |A|^2 e^{\frac{i}{\hbar}(E' - E)t} \int e^{\frac{i}{\hbar}(\vp - \vsp)\vr} \, dv$$
+
+Основные свойства $\delta$-функции:
+\begin{enumerate}
+\item $ \delta {\vr} = \delta (x) \cdot \delta (y) \cdot \delta (z) $
+\item $ \delta (\alpha x) = \frac{1}{|\alpha|} \delta (x), \; (a \ne 0) $
+\item $~ f(x) \delta (x - a) = f(a) \delta(x-a)$
+\end{enumerate}
+
+Применяя эти свойства, получим:
+
+$$\int e^{\frac{i}{\hbar}(\vp - \vsp)\vr} \, dv \equiv (2 \pi )^3 \delta \left( \frac{\vp - \vsp}{\hbar} \right) = (2 \pi \hbar)^3 \delta (\vp - \vsp)$$
+
+$$\int \Psi^*_{\vsp}(\vr,t) \Psi_{\vp}(\vr,t) dv = |A|^2 e^{\frac{i}{\hbar}(E' - E)t} (2 \pi \hbar)^3 \delta (\vp - \vsp) = |A|^2 (2 \pi \hbar)^3 \delta (\vp - \vsp)$$
+
+Отсюда: $$A = \frac{1}{(2 \pi \hbar)^{3/2}}$$
+
+Из \eqref{eq:2_1_1} получим выражение для волны де Бройля с учётом нормировки:
+\begin{equation}
+\label{eq:2_1_2}
+\boxed{\Psi_{\vp}(\vr,t) = \frac{1}{(2 \pi \hbar)^{3/2}} e^{\frac{i}{\hbar} (\vp \vr - Et)}}
+\end{equation}
+
+Условие нормировки волны де Бройля на $\delta$-функцию:
+\begin{equation}
+\label{eq:2_1_3}
+\boxed{\int\Psi^*_{\vsp}(\vr,t) \, \Psi_{\vp}(\vr,t) \, dv = \delta (\vp - \vsp)}
+\end{equation}
+
+Волновой пакет:
+\begin{equation}
+\label{eq:2_1_4}
+\Psi(\vr,t) = \int d^3p \; c(\vp) \, \Psi_{\vp}(\vr,t)
+\end{equation}
+где $c(\vp)$ --- весовая функция
+
+$$\left. \int\Psi^*_{\vsp}(\vr,t) \, \Psi(\vr,t) \, dv \right|_{(2.1.4)} = \left. \int d^3p \, c(p) \int \, \Psi^*_{\vsp}(\vr,t) \, \Psi_{\vp}(\vr,t) dv  \right|_{(2.1.3)} = \int d^3p \, c(\vp) \cdot \delta (\vp - \vsp) = c(\vsp)$$
+
+Таким образом:
+\begin{equation}
+\label{eq:2_1_5}
+c(\vp) = \int\Psi^*_{\vp}(\vr,t) \, \Psi(\vr,t) \, dv
+\end{equation}
+
+\begin{equation}
+\label{eq:2_1_6}
+\int \abs{ \Psi(\vr,t) }^2 \, dv = \int \abs{c(\vp)}^2 \, d^3 p
+\end{equation}
+
+\begin{excr}
+Доказать равенство \eqref{eq:2_1_6}
+\end{excr}
+
+\begin{equation}
+\label{eq:2_1_7}
+\int \abs{c(\vp)}^2 \, d^3 p = 1
+\end{equation}
+Здесь подыинтегральное выражение равно вероятности обнаружить импульс частицы в интервале $(\vp,\vp+d\vp)$
+
+$c(\vp)$ --- амплитуда вероятности (синоним \underbar{волновой функции в импульсном пространстве}).
+
+\section{Среднее значение координаты и импульса. Операторы координаты и импульса.}
+
+$\avg{F} \rightarrow \op{F}$ --- оператор, действующий в пространстве состояний $\Psi(\vr,t)$
+
+\begin{defn}
+Оператор физической величины:
+\begin{equation}
+\label{eq:2_2_1}
+\op{F} = \avg{\op{F}}_\Psi \equiv \int \Psi^*(\vr,t) \op{F} \Psi(\vr,t) dv
+\end{equation}
+где $\avg{\op{F}}_\Psi$ понимается в смысле квантово-механического среднего.
+\end{defn}
+
+\begin{equation}
+\label{eq:2_2_2}
+\begin{gathered}
+\avg{F(\vr)} = \int F(\vr) \, dp = 
+\left. \int F(\vr) \rho(\vr,t) \, dv  \right|_{\text{\eqref{eq:1_4_1} и \eqref{eq:1_4_2}}} = \\
+= \int F(\vr) \abs{\Psi(\vr,t)}^2 \, dv = \int \Psi^* F(\vr) \Psi \, dv
+\end{gathered}
+\end{equation}
+
+\begin{equation}
+\label{eq:2_2_3}
+\avg{F(\vp)} = \int F(\vp) \abs{c(\vp)}^2 \, d^3 p = \int c^*(\vp) F(\vp) c(\vp) d^3 p 
+\end{equation}
+
+$F(\vr) = \vr$ --- координатный радиус-вектор
+
+$$
+\left. \avg{\vr} \right|_{\text{\eqref{eq:2_2_2}}} = 
+\left. \int \Psi^*(\vr, t) \, \vr \, \Psi(\vr,t) \, dv \right|_{\text{\eqref{eq:2_2_1}}} = \avgh{\op{\vr}}_\Psi \equiv
+\int \Psi^*(\vr,t) \avg{\op{\vr}} \Psi(\vr,t) \, dv
+$$
+
+Следовательно:
+\begin{equation}
+\label{eq:2_2_4}
+\op{\vr} = \vr
+\end{equation}
+
+В координатном пространстве (в координатном представлении) оператор координаты совпадает со своим значением координаты частицы.
+
+\begin{equation}
+\label{eq:2_2_5}
+\op{F}(\vr) = F(\vr) = U(\vr) ~~ \Rightarrow ~~ \op{U}(r) = U(r)
+\end{equation}
+
+\begin{equation}
+\label{eq:2_2_6}
+\left. \avg{\vp} \right|_{\text{\eqref{eq:2_2_3}}} = 
+\left. \int d^3 p \, \abs{c(\vp)}^2 \vp \right|_{\text{\eqref{eq:2_2_1}}} = 
+\int dv \, \Psi^*(\vr,t) \op{\vp} \Psi(\vr,t)
+\end{equation}
+
+$$
+\avg{\vp} = \left. \int d^3 p \, c^*(\vp) \, \vp \, c(\vp) \right|_{\text{\eqref{eq:2_1_5}}} =
+\int d^3 p \, c^*(\vp) \brc{ \int dv \, \vp \Psi_{\vp}^*(\vr,t) \Psi(\vr,t) }
+$$
+
+Из \eqref{eq:2_1_2}:
+$$
+\vp \Psi_{\vp}^*(\vr,t) = i\hbar \nabla \Psi_{\vp}^*(\vr,t)
+$$
+
+$$
+\avg{\vp} = \int d^3 p \, c^*(\vp) \brc{i\hbar \int dv \, \Psi(\vr,t) \nabla \Psi_{\vp}^*(\vr,t)}
+$$
+
+$$
+\int dv \, \Psi(\vr,t) \nabla \Psi_{\vp}^*(\vr,t) = 
+\int dv \, \nabla \brc{\Psi(\vr,t) \Psi_{\vp}^*(\vr,t)} - \int dv \, \Psi_{\vp}^*(\vr,t) \nabla \Psi(\vr,t)
+$$
+
+$$
+\begin{gathered}
+\avg{\vp} = \int d^3 p \, c^*(\vp) \brc{\int dv \, \Psi_{\vp}^*(\vr,t) (-i\hbar\nabla) \Psi(\vr,t)} = 
+\int dv \underbrace{ \int d^3 p  \, c^*(\vp) \Psi_{\vp}^*(\vr,t) }_{\Psi^*(\vr,t) \text{ из \eqref{eq:2_1_4}}} (-i\hbar\nabla) \Psi(\vr,t) = \\
+= \int dv \, \Psi^*(\vr,t) (-i\hbar\nabla) \Psi(\vr,t)
+\end{gathered}
+$$
+
+Сравнивая полученное выражение с правой частью \eqref{eq:2_2_6}:
+\begin{equation}
+\label{eq:2_2_7}
+\boxed{ \op{\vp} = -i\hbar\nabla }
+\end{equation}
+
+\section{Постановка задачи на собственные функции и собственные значения операторов}
+
+\begin{equation}
+\label{eq:2_3_1}
+\op{\vp} \Psi_\vp(\vr,t) = \vp \Psi_\vp(\vr,t)
+\end{equation}
+
+Пусть $\vec{q}\equiv(q_1,...,q_n)$ означает вектор конфигурационного пространства.
+
+Задача на собственые значения $f$ и отвечающие им собственные функции оператора $\op{F}$ 
+\begin{equation}
+\label{eq:2_3_2}
+\Psi_f(\vec{q}):~~ \op{F}\Psi_f(\vec{q}) = f \Psi_f(\vec{q})
+\end{equation}
+
+\begin{defn}
+$\{f\}$ называется \underbar{спектром} оператора $\op{F}$.
+\end{defn}
+
+\underbar{Дискретный спектр}:
+$$
+\begin{gathered}
+\{f\} = f_1,f_2,...,f_n,... \\
+\psi_{f_n}(\vec{q}) \equiv \psi_n(\vec{q})
+\end{gathered}
+$$
+
+Задача на собственные пары в дискретном спектре:
+\begin{equation}
+\label{eq:2_3_3}
+\op{F} \psi_n(\vec{q}) = f_n \psi_n(\vec{q})
+\end{equation}
+
+\underbar{Непрерывный спектр}: $p \in (-\infty, +\infty)$

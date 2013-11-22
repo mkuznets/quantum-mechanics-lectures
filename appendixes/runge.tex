@@ -1,0 +1,184 @@
+\appendix
+
+\chapter{Доказательство сохранения векторного оператора Рунге-Ленца}
+
+\renewcommand{\thesection}{}
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+
+%\pagestyle{fancy}
+
+\hfill \begin{minipage}[h]{0.45\textwidth}
+\textit{
+Говорит как-то Лифшиц Ландау:\\ 
+--- Что делать? Я целую тетрадь выкладок потерял в трамвае!\\
+--- Да ничего страшного, напишем как всегда: <<откуда очевидно...>>}
+\begin{flushright}
+Народный юмор
+\end{flushright}
+\end{minipage}
+
+\noindent
+Максим Кузнецов (maks.kuznetsov@gmail.com) \\
+Группа 916 ФРТК МФТИ, 19 мая 2012 г.
+
+\section*{Введение}
+
+В квантовой механике оператор интеграла движения коммутирует с независящим явно от времени гамильтонианом. В кулоновском поле имеет место сохранение векторного оператора Рунге-Ленца $\op{\vec{A}}$, т.е. $[\op{H},\op{\vec{A}}] = 0$. \\
+Учебные пособия, в частности <<Квантовая механика>> Ландау и Лифшица, приводят данный факт без доказательства, с указанием, что это <<легко проверяется>> \footnote{Ландау Л.Д., Лифшиц Е.М. Квантовая механика (нерелятивистская теория). — Физматлит, 2002. — 808 с. — («Теоретическая физика», том III), \textsection 36, пункт <<Природа кулонова вырождения>>}, чему и посвящена данная работа.
+
+
+\setcounter{section}{1}
+\section*{Постановка задачи}
+
+\begin{equation}
+\label{eq:1}
+\op{H}=\left. \frac{\op{\vp}^2}{2}-\frac{Z}{r} \right|_{Z=1} \equiv \frac{1}{2} \brc{\op{\vp}^2 - \frac{2}{r}}
+\end{equation}
+
+\begin{equation}
+\label{eq:2}
+\op{\vec{A}} = \frac{\op{\vr}}{r} + \frac{1}{2} \brc{\op{\vec{l}} \times \op{\vp}} - \frac{1}{2} \brc{ \op{\vp} \times \op{\vec{l}}}
+\end{equation}
+$$
+\begin{array}{lll}
+\op{\vr} = r_i  ~~~& \displaystyle \op{\vp} = -\mathbf{i} \pd{}{r_i}  ~~~&  \vec{l} = \op{\vr} \times \op{\vp}
+\end{array}
+$$
+Доказать, что $[\op{H},\op{\vec{A}}] = 0$
+
+
+\section*{Предварительные вычисления}
+
+Некоторые коммутаторы и произведения, которые будут необходимы при доказательстве главной задачи
+
+\begin{equation}
+\label{eq:eq1}
+\begin{gathered}
+{[\op{A} \op{B}, \op{C}]} = \op{A} [\op{B},\op{C}] + [\op{A},\op{C}]\op{B} \\
+{[\op{A}, \op{B} \op{C}]} = \op{B}[\op{A},\op{C}] + [\op{A},\op{B}]\op{C}
+\end{gathered}
+\end{equation}
+
+\begin{equation}
+\label{eq:eq2}
+\begin{gathered}
+\brs{\frac{1}{r}, \op{\vec{l}}} = \brs{\frac{1}{r}, \op{\vr} \times \op{\vp}} = \epsilon_{ijk} \brs{ \frac{1}{r}, \op{r_j}\op{p_k} } = \\ =
+\left. \epsilon_{ijk} \brc{ \op{r_j} \brs{ \frac{1}{r}, \op{p_k} } - \underbrace{ \brs{ \frac{1}{r}, \op{r_j} } }_{=0} \op{p_k} } \right|_{\text{\eqref{eq:eq5}}} = 
+-\mathbf{i} \epsilon_{ijk} \op{r}_j \frac{\op{r}_k}{r^3} = 0
+\end{gathered}
+\end{equation}
+
+\begin{equation}
+\label{eq:eq3}
+\begin{gathered}
+\brs{\frac{1}{r^3},\op{p}_k} \bullet = \frac{1}{(\sqrt{r_m r^m})^3} \mathbf{i} \pd{\bullet}{r_k}  + \mathbf{i} \pd{}{r_k} \brc{\frac{1}{(\sqrt{r_m r^m})^3} \bullet} = -\mathbf{i} \frac{3 \cdot 2 \op{r}_k}{2 (\sqrt{r_m r^m})^5} \bullet = -\mathbf{i} \frac{3 \op{r}_k}{r^5} \bullet
+\end{gathered}
+\end{equation}
+
+\begin{equation}
+\label{eq:eq4}
+\begin{gathered}
+\brs{\frac{1}{r^3}, \op{\vec{l}}} = \brs{\frac{1}{r^3}, \op{\vr} \times \op{\vp}} = \epsilon_{ijk} \brs{ \frac{1}{r^3}, \op{r_j}\op{p_k} } = 
+\left. \epsilon_{ijk} \brc{ \op{r_j} \brs{ \frac{1}{r^3}, \op{p_k} } - \underbrace { \brs{ \frac{1}{r^3}, \op{r_j} } }_{=0} \op{p_k} } \right|_{\text{\eqref{eq:eq3}}} = \\ = 
+-3 \mathbf{i} \epsilon_{ijk} \op{r}_j \frac{\op{r}_k}{r^5} = 0
+\end{gathered}
+\end{equation}
+
+\begin{equation}
+\label{eq:eq5}
+\begin{gathered}
+\brs{\op{p_i}, \frac{1}{r}} \bullet = \brs{\op{p_i}, \frac{1}{\sqrt{r_m r^m}}} \bullet = \\ = 
+-\mathbf{i} \pd{}{r_i} \brc{\frac{1}{\sqrt{r_m r^m}} \bullet} + \frac{1}{\sqrt{r_m r^m}} \mathbf{i} \pd{\bullet}{r_i} = \mathbf{i} \frac{\op{r}_i}{(\sqrt{r_m r^m})^3} \bullet = \mathbf{i} \frac{\op{r}_i}{r^3} \bullet
+\end{gathered}
+\end{equation}
+
+\begin{equation}
+\label{eq:eq6}
+\brs{\op{p}_i, \frac{\op{r}_j}{r}} = \op{r}_j \brs{\op{p}_i, \frac{1}{r}} + \brs{\op{p}_i, \op{r}_j} \frac{1}{r} = \mathbf{i} \brc{\frac{\op{r}_i\op{r}_j}{r^3}-\frac{\delta_{ij}}{r}}
+\end{equation}
+
+\begin{equation}
+\label{eq:eq7}
+(\op{\vr} \times \op{\vec{l}})_i = \epsilon_{ijk}\epsilon_{abk} \op{r}_j \op{r}_a \op{p}_b = \op{r}_j \op{r}_i \op{p}_k - \op{r}_j \op{r}_j \op{p}_i = \op{r}_i (\op{\vr} \cdot \op{\vp}) - r^2 \op{p}_i
+\end{equation}
+
+\begin{equation}
+\label{eq:eq8}
+\begin{gathered}
+(\op{\vec{l}} \times \op{\vr})_i = \epsilon_{ijk}\epsilon_{jab} \op{r}_a \op{p}_b \op{r}_k = - \epsilon_{ikj}\epsilon_{abj} \op{r}_a \op{p}_b \op{r}_k =
+- (\delta_{ia}\delta_{kb} - \delta_{ib}\delta_{ka}) \op{r}_a \op{p}_b \op{r}_k = \\ = - \op{r}_i \op{p}_k \op{r}_k + \op{r}_k \op{p}_i \op{r}_k =
+- \op{r}_i (\op{\vp} \cdot \op{\vr}) + r^2 \op{p}_i - \mathbf{i} \op{r}_i
+\end{gathered}
+\end{equation}
+
+\section*{Доказательство}
+
+$$
+\begin{gathered}
+{[\op{H},\op{\vec{A}}]} =  \brs{ \brc{\frac{\op{\vp}^2}{2}-\frac{1}{r}} ,~  \brc{\frac{\op{\vr}}{r} + \frac{1}{2} \brc{\op{\vec{l}} \times \op{\vp}} - \frac{1}{2} \brc{ \op{\vp} \times \op{\vec{l}}}} } = \\ =
+\brs{\frac{\op{\vp}^2}{2}, \frac{1}{2} \brc{\op{\vec{l}} \times \op{\vp}}} - 
+\brs{\frac{\op{\vp}^2}{2}, \frac{1}{2} \brc{\op{\vp} \times \op{\vec{l}}}} +
+\brs{-\frac{1}{r}, \frac{\op{\vr}}{r}} +
+\brs{-\frac{1}{r}, \frac{1}{2} \brc{\op{\vec{l}} \times \op{\vp} - \op{\vp} \times \op{\vec{l}}}} +
+\brs{\frac{\op{\vp}^2}{2}, \frac{\op{\vr}}{r}}
+\end{gathered}
+$$
+
+Вычислим каждый их коммутаторов отдельно:
+\begin{equation}
+\label{proof:1}
+\begin{gathered}
+\brs{\frac{\op{\vp}^2}{2}, \frac{1}{2} \brc{\op{\vec{l}} \times \op{\vp}}} =
+-\frac{1}{4} \brs{\brc{\op{\vec{l}} \times \op{\vp}}, \op{\vp}^2} =
+\left. -\frac{1}{4} \epsilon_{ijk} \brs{\op{l}_j \op{p}_k, \op{p}_m^2 } \right|_{\text{\eqref{eq:eq2}}} = \\ =
+ -\frac{1}{4} \epsilon_{ijk} \op{l}_j \brs{ \op{p}_k, \op{p}_m^2 }  - \frac{1}{4} \epsilon_{ijk} \underbrace{ \brs{\op{l}_j , \op{p}_m^2 } }_{=0} \op{p}_k =
+ -\frac{1}{4} \epsilon_{ijk} \op{l}_j \brc{  \op{p}_r \brs{ \op{p}_k, \op{p}_m } - \brs{ \op{p}_k, \op{p}_m } \op{p}_r } = 0
+\end{gathered}
+\end{equation}
+
+\begin{equation}
+\label{proof:2}
+\brs{\frac{\op{\vp}^2}{2}, \frac{1}{2} \brc{\op{\vp} \times \op{\vec{l}}}} = 0 ~~ \text{(доказывается аналогично)}
+\end{equation}
+
+\begin{equation}
+\label{proof:3}
+\brs{-\frac{1}{r}, \frac{\op{r}_i}{r}} = 
+\brs{-\frac{1}{\sqrt{r_k r^k}}, \frac{\op{r}_i}{\sqrt{r_m r^m}}} = 
+- \frac{\op{r}_i}{r_k r^k} + \frac{\op{r}_i}{\sqrt{r_m r^m}} \frac{1}{\sqrt{r_k r^k}} =
+- \frac{\op{r}_i}{r_k r^k} + \frac{\op{r}_i}{r_k r^k} = 0
+\end{equation}
+
+\begin{equation}
+\label{proof:4}
+\begin{gathered}
+-\brs{\frac{1}{r}, \brc{\op{\vec{l}} \times \op{\vp} - \op{\vp} \times \op{\vec{l}}}} = 
+-\epsilon_{ijk} \brs{\frac{1}{r}, \op{l}_i \op{p}_j + \op{p}_j \op{l}_i} = - \epsilon_{ijk} \brs{\frac{1}{r}, \op{l}_i \op{p}_j} - \epsilon_{ijk} \brs{\frac{1}{r}, \op{p}_j \op{l}_i} = \\ = 
+-\epsilon_{ijk} \brc{ \op{l}_i \brs{\frac{1}{r}, \op{p}_j} + \underbrace{ \brs{\frac{1}{r}, \op{l}_i} }_{=0} \op{p}_j} - \epsilon_{ijk} \brc{ \op{p}_j \underbrace{ \brs{\frac{1}{r}, \op{l}_i} }_{=0} +  \brs{\frac{1}{r}, \op{p}_j } \op{l}_i} = \\ =
+\left. - \epsilon_{ijk} \brc{ \op{l}_i \brs{\frac{1}{r}, \op{p}_j} + \brs{\frac{1}{r}, \op{p}_j } \op{l}_i} \right|_{\text{\eqref{eq:eq5}}} = 
+\epsilon_{ijk} \brc{\op{l}_i \frac{\mathbf{i} \op{r}_j}{r^3} + \frac{\mathbf{i} \op{r}_j}{r^3} \op{l}_i } = \\ = 
+\left. \frac{\mathbf{i}}{r^3} \brc{ (\op{\vec{l}} \times \op{\vr}) -(\op{\vr} \times \op{\vec{l}}) } \right|_{\text{\eqref{eq:eq7}, \eqref{eq:eq8}}} = 
+\frac{\mathbf{i}}{r^3} \brc{ 2 r^2 \op{p}_i - \op{r}_i (\op{\vp} \cdot \op{\vr}) - \mathbf{i} \op{r}_i - \op{r}_i (\op{\vr} \cdot \op{\vp}) }
+\end{gathered}
+\end{equation}
+
+\begin{equation}
+\label{proof:5}
+\begin{gathered}
+\brs{\op{\vp}^2, \frac{\op{r}_j}{r}} =\left. \op{p}_i \brs{\op{p}_i, \frac{\op{r}_j}{r}} + \brs{\op{p}_i, \frac{\op{r}_j}{r}} \op{p}_i \right|_{\text{\eqref{eq:eq6}}} = 
+\mathbf{i}\op{p}_i \brc{\frac{\op{r}_i \op{r}_j}{r^3} - \frac{\delta_{ij}}{r}} + \mathbf{i}\brc{\frac{\op{r}_i \op{r}_j}{r^3} - \frac{\delta_{ij}}{r}} \op{p}_i = \\ = 
+\mathbf{i} \brc{ \op{p}_i \frac{\op{r}_i \op{r}_j}{r^3} - \op{p}_j \frac{1}{r} + \frac{\op{r}_i \op{r}_j}{r^3} \op{p}_i - \frac{1}{r} \op{p}_j } = 
+\mathbf{i}\brc{ (\op{\vp} \cdot \op{\vr}) \frac{\op{r}_j}{r^3} + \mathbf{i} \frac{\op{r}_i}{r^3} - \frac{1}{r} \op{p_j} + \frac{\op{r}_j}{r^3} (\op{\vr} \cdot \op{\vp}) - \frac{1}{r} \op{p_j} } = \\ =
+\frac{\mathbf{i}}{r^3} \brc{ - 2 r^2 \op{p}_i + \op{r}_i (\op{\vp} \cdot \op{\vr}) + \mathbf{i} \op{r}_i + \op{r}_i (\op{\vr} \cdot \op{\vp}) }
+\end{gathered}
+\end{equation}
+
+Следовательно:
+$$
+{[\op{H},\op{\vec{A}}]} = 
+\frac{\mathbf{i}}{2 r^3} \brc{ 2 r^2 \op{p}_i - \op{r}_i (\op{\vp} \cdot \op{\vr}) - \mathbf{i} \op{r}_i - \op{r}_i (\op{\vr} \cdot \op{\vp}) } + 
+\frac{\mathbf{i}}{2 r^3} \brc{ - 2 r^2 \op{p}_i + \op{r}_i (\op{\vp} \cdot \op{\vr}) + \mathbf{i} \op{r}_i + \op{r}_i (\op{\vr} \cdot \op{\vp}) } = 0
+\qed
+$$
+
+\input{include/footer}

@@ -1,0 +1,15 @@
+\input{include/header}
+
+\frontmatter
+\maketitle % Заголовок
+\tableofcontents % Оглавление
+\mainmatter
+
+\pagestyle{fancy}
+
+\foreach \n in {8}{\setcounter{chapter}{\n-1}\include{chapters/chapter\n}}
+
+%\input{appendixes/runge}
+
+
+\input{include/footer}

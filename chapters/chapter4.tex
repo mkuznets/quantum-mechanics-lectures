@@ -1,0 +1,151 @@
+\chapter{Совместная измеримость физических величин}
+
+\section{Условия одновременной измеримости физических величин. Коммутаторы}
+
+$$
+\begin{array}{lcl}
+\widehat{F}, \widehat{G}:  & F \rightarrow \widehat{F} \rightarrow \{f_n\}, \; n=0,1,2,\dots\\
+                           & G \rightarrow \widehat{G} \rightarrow \{g_m\}, \; m=0,1,2,\dots
+\end{array}
+$$
+
+$\ket{\phi}$ --- общий собственный вектор операторов $\widehat{F}$ и $\widehat{G}$.
+
+\begin{equation}
+\label{eq:4_1_1}
+\begin{cases}
+\widehat{F} |\phi \rangle = f_n |\phi \rangle\\
+\widehat{G} |\phi \rangle = g_m |\phi \rangle
+\end{cases} 
+\end{equation}
+
+Обозначим $F = f_n$, $G=g_n$, тогда
+
+$$\ket{\phi} \equiv \ket{f_n g_n} \equiv \ket{nm}$$
+
+$\ket{nm}$ --- полная система собственных веторов
+
+Тогда:
+
+\begin{equation}
+\label{eq:4_1_2}
+\forall \ket{\psi} \in \mathcal{H} ~\rightarrow ~ \ket{\psi} = \underbrace{\sum_{n,m}\ket{nm}\bra{nm}}_{=\mathds{1}} \psi \rangle 
+\end{equation}
+
+$$P_{\ket{\psi}}(F = f_n, G = g_m) = \abs{\bk{nm}{\psi}}$$
+
+\begin{defn}
+Физические величины $F$ и $G$ одновременно (совместно) измеримы, если их операторы $\widehat{F}$ и $\widehat{G}$ обладают общей полной системой собственных векторов (собственных функций).
+\end{defn}
+
+\begin{thm}
+
+Для того, чтобы физические велчины $F$ и $G$ были совместно измеримы необходимо и достаточно, чтобы операторы $\widehat{F}$ и $\widehat{G}$ коммутировали, то есть: 
+$$[\widehat{F}, \widehat{G}] \equiv \widehat{F}\widehat{G} - \widehat{G}\widehat{F} = 0$$
+\end{thm}
+
+\begin{proof}
+1) Необходимость. Пусть $F$ и $G$ совместно измеримы, тогда:
+
+$$ \{\ket{nm}\} \in \mathcal{H},~~ \forall \ket{\psi} \in \mathcal{H} ~\rightarrow ~$$
+$$(\widehat{F}\widehat{G} - \widehat{G}\widehat{F}) \ket{\psi} = \sum_{n,m} (\widehat{F}\widehat{G} - \widehat{G}\widehat{F}) \ket{nm}\bk{nm}{\psi} = \sum_{n,m} (f_n g_m - g_m f_n) \ket{nm}\bk{nm}{\psi} = 0$$
+Что и требовалось доказать
+
+2) Достаточность. 
+
+а) Пусть $[\widehat{F}, \widehat{G}] = 0$ и $\widehat{F}$ имеет невырожденный спектр.
+
+\begin{equation}
+\label{eq:4_1_3}
+f_n \rightarrow \ket{n}:~~ \widehat{F} \ket{n} = f_n \ket{n}
+\end{equation}
+
+$$\widehat{G}(\widehat{F} \ket{n}) = \left. \widehat{F}(\widehat{G}\ket{n}) \right|_{(4.1.3)} = f_n (\widehat{G}\ket{n})$$
+
+$\widehat{G} \ket{n}$ --- собственный вектор оператора $\widehat{F}$ с собственным значением $f_n$
+
+Собственные векторы $\widehat{G} \ket{n}$ и $\ket{n}$ соответствуют одному собственному значению, а значит коллинеарны: $\widehat{G} \ket{n} = g_m \ket{n}$
+
+$$\ket{n} \equiv \ket{f_n g_m} \equiv \ket{nm}$$ (полная система)
+
+б) Случай вырожденного спектра $\widehat{F}$ доказан в гл.6
+
+Таким образом, если $[\widehat{F},\widehat{G}]\ne0$, то $\widehat{F}$ и $\widehat{G}$ могут иметь общий собственный вектор. Но из теоремы следует, что из малого числа собственных векторов нельзя построить полную систему.
+\end{proof}
+
+\begin{defn}
+Число $f$, входящее в собственные значения оператора физической величины $\widehat{F}$, называют квантовым числом, характеризующим состояние системы $\ket{\psi_f}\equiv\ket{f}$
+\end{defn}
+
+Набор взаимно коммутирующих операторов $(\widehat{G}_1, \widehat{G}_2...)$ коммутирующих с $\widehat{F}$ даёт полный набор квантовых чисел в случае вырожденного спектра 
+
+$\psi_{f g_1 g_2 ...}(\vec{q})$ или собственные векторы $\ket{f g_1 g_2 ...}$ дают полное описание квантового состояния системы
+
+\begin{defn}
+Набор взаимно коммутирующих операторов, собственные значения (квантовые числа) которых однозначно определяют квантовое состояние системы, называют \underbar{полным набором собственных наблюдаемых}.
+\end{defn}
+
+\section{Соотношение неопределённостей}
+
+Пусть $\widehat{F}$ и $\widehat{G}$ --- операторы физических величин $F$ и $G$, то есть $\widehat{F}^+=\widehat{F}$, $\widehat{G}^+=\widehat{G}$ и $[\widehat{F},\widehat{G}]=i\widehat{K}$.
+
+\begin{thm}
+В произвольном квантовом состоянии выполняется соотношение неопределённостей:
+$$\boxed{\avgh{\brc{\widehat{F}-\avg{\widehat{F}}}^2} \avgh{\brc{\widehat{G}-\avg{\widehat{G}}}^2} \geqslant \frac{\avg{\widehat{K}}^2}{4}}$$
+\end{thm}
+
+\begin{proof}
+1) Если $[\widehat{F},\widehat{G}]=i\widehat{K}$, то $\widehat{K}^+=\widehat{K}$
+\begin{equation}
+\label{eq:4_2_1}
+[\widehat{F},\widehat{G}]^+=-i\widehat{K}^+
+\end{equation}
+
+С другой стороны:
+\begin{equation}
+\label{eq:4_2_2}
+[\widehat{F},\widehat{G}]^+=
+(\widehat{F}\widehat{G}-\widehat{G}\widehat{F})^+=\widehat{G}^+\widehat{F}^+-\widehat{F}^+\widehat{G}^+=
+-[\widehat{F}^+,\widehat{G}^+]=
+-[\widehat{F},\widehat{G}]=
+-i\widehat{K}
+\end{equation}
+
+Сравнивая правые части \eqref{eq:4_2_1} и \eqref{eq:4_2_2}, получаем $\widehat{K}^+=\widehat{K}$\\
+
+2) В состоянии $\ket{\psi}$:~ $\avg{F}=\bfk{\psi}{\widehat{F}}{\psi}$, то есть:
+$$\left.
+\begin{gathered}
+\Delta\widehat{F}=\widehat{F}-\avg{\widehat{F}}\cdot\mathds{1}\\
+\Delta\widehat{G}=\widehat{G}-\avg{\widehat{G}}\cdot\mathds{1}
+\end{gathered}
+\right\}~\text{операторы отклоления от среднего}
+$$
+
+$$[\Delta\widehat{F},\Delta\widehat{G}]=i\widehat{K}$$
+
+3) $\ket{\phi}=(\Delta\widehat{F}-i\gamma\Delta\widehat{G})\ket{\psi}$, где $\gamma$ --- вещественный параметр.
+
+Проведём сопряжение:
+$$\bra{\phi}=\bra{\psi}(\Delta\widehat{F}-i\gamma\Delta\widehat{G})^+=\bra{\psi}(\Delta\widehat{F}+i\gamma\Delta\widehat{G})$$
+
+4) $\bk{\phi}{\phi}=\norm{\ket{\phi}}=\bra{\psi}(\Delta\widehat{F}+i\gamma\Delta\widehat{G})(\Delta\widehat{F}-i\gamma\Delta\widehat{G})\ket{\psi}=\bfk{\psi}{\Delta\widehat{F}^2}{\psi}+\gamma^2\bfk{psi}{\Delta\widehat{G}^2}{\psi}+\gamma\bfk{\psi}{\widehat{K}}{\psi} \geqslant 0$
+
+$$\avg{\widehat{K}}^2-4\avg{\Delta\widehat{F}^2}\avg{\Delta\widehat{G}^2} \leqslant 0$$
+
+Общее соотношение неопределённостей:
+$$\boxed{\avg{\Delta\widehat{F}^2}\avg{\Delta\widehat{G}^2}\geqslant\frac{\avg{\widehat{K}}^2}{4}}$$
+
+Дисперсия: $$\avgh{\Delta\widehat{F}^2}=\avgh{(\widehat{F}-\avg{\widehat{F}})^2}=\avgh{\widehat{F}^2}-\avgh{\widehat{F}}^2$$ 
+\end{proof}
+
+\begin{exmpl} Выведем соотношение неопределённостей для координаты и импульса:
+
+$$\widehat{F}=\widehat{x}=x$$
+$$\widehat{G}=\widehat{p}_x=-i\hbar\frac{\partial}{\partial{x}}$$
+
+$$[\widehat{x},\widehat{p}_x]\psi(x)=x(-i\hbar\frac{\partial}{\partial{x}})\psi(x)-(-i\hbar\frac{\partial}{\partial{x}})x\psi(x)=i\hbar\psi(x)~\to~\widehat{K}=\hbar$$
+
+
+$$\boxed{\avgh{(\Delta\widehat{x})^2}\avgh{(\Delta\widehat{p}_x)^2} \geqslant \frac{\hbar^2}{4}}$$
+\end{exmpl}

@@ -1,0 +1,70 @@
+\chapter{Движение в центрально-симметричном поле}
+
+\section{Центрально-симметричное поле. Гамильтониан частицы в сферических координатах. Разделение переменных в центрально-симметричном поле.}
+
+\begin{defn}
+Если поле центрально-симметрично, то $U(\vr) \equiv U(r)$
+\end{defn}
+
+Произведём переход к координатам $(r, \theta, \phi)$.
+
+Из \eqref{eq:8_4_6}:
+\begin{equation}
+\label{eq:9_1_1}
+\op{H} = \frac{\op{\vp}^2}{2m} + U(r) = - \frac{-\hbar^2}{2m} \brs{\frac{1}{r^2} \pd{}{r} \brc{r^2 \pd{}{r}}} - \frac{\op{\vec{l}}^2}{r^2} + U(r)
+\end{equation}
+
+Интегралы движения (из упр. 5 задания 2 и упр. 6 задания 1):
+$$
+\brs{\op{H}, \op{l}_\alpha} = 0 ~~~~ \brs{\op{H}, \op{\vec{l}}^2} = 0
+$$
+
+Из \eqref{eq:8_4_5}:
+$$
+\brs{\op{\vec{l}}, \op{\vec{l}}_\alpha} = 0
+$$
+
+\begin{equation}
+\label{eq:9_1_2}
+\bk{\vec{r}}{nlm} \equiv \psi_{nlm}(\vr) = R_{nl}(r) \cdot Y_{lm}(\theta, \phi)
+\end{equation}
+где $n$ -- главное, $l$ -- орбитальное, а $m$ -- магнитное квантовые числа.
+
+\section{Уравнение для радиальной функции}
+
+$$
+-\frac{\hbar^2}{2m} \brs{ \frac{1}{r^2} \pd{}{r}\brc{r^2 \pd{}{r}} - \frac{\op{\vec{l}}^2}{r^2}} \psi(r, \theta, \phi) + U(r)\psi(r, \theta, \phi) = E \psi(r, \theta, \phi)
+$$
+
+Будем искать решение в виде:
+$$
+\begin{dcases}
+\left. \psi(r, \theta, \phi) \right|_{\text{\eqref{eq:9_1_2}}} = R_{nl}(r) Y_{lm}(\theta, \phi) \\
+\op{\vec{l}}^2 Y_{lm}(\theta, \phi) = l (l+1) Y_{lm}(\theta, \phi)
+\end{dcases}
+$$
+
+Подставляем их в уравнение:
+$$
+-\frac{\hbar^2}{2m} \brs{ \frac{1}{r^2} \D{}{r} \brc{r^2 \D{}{r} R_{nl}(r) } - \frac{l(l+1)}{r^2} R_{nl}(r) } + U(r) R_{nl}(r) = E R_{nl}(r)
+$$
+
+Уравнение для радиальной волновой функции:
+\begin{equation}
+\label{eq:9_2_1}
+\boxed {
+	\frac{1}{r^2} \pd{}{r} \brc{r^2 \D{}{r} R_{nl}(r)} - \frac{l(l+1)}{r^2} R_{nl}(r) + \frac{2m}{\hbar^2} \brc{E - U(r)} R_{nl}(r) = 0
+}
+\end{equation}
+
+$$
+\int \abs{\psi_{nlm}(\vr)}^2 d\vr = \iiint \abs{R_{nl}(r)}^2 \cdot \abs{Y_{lm}(\theta, \phi)}^2 r^2 dr d\Omega = \int_{0}^{\infty} \abs{R_{nl}(r)}^2 r^2 dr \underbrace{\oint \abs{Y_{lm}(\theta, \phi)}^2 d\Omega}_{=1 \text{ из \eqref{eq:8_5_4}}} = 1
+$$
+
+Отсюда получаем условие нормировки для радиальной части волновой функции:
+\begin{equation}
+\label{eq:9_2_2}
+\boxed {
+	\int_{0}^{\infty} \abs{R_{nl}(r)}^2 r^2 dr = 1
+}
+\end{equation}

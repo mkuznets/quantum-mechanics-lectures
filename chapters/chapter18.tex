@@ -1,0 +1,133 @@
+\chapter{Сложный атом}
+
+\section{Вариационный принцип}
+
+Пусть для системы с гамильтонианом $\op{H}$ задача решана, то есть найдены энергии $E_n$ и волновые функции $\Psi_n$, такие что:
+$$
+\op{H}\Psi_n = E_n \Psi_n,~~ n = 0,1,2...
+$$
+Волновые функции $\Psi_n$ ортонормированы,
+$$
+\bk{\Psi_n}{\Psi_m} = \delta_{nm}
+$$
+и образуют полный базис.\\
+$N \geqslant 2$
+
+Рассмотрим произвольную волновую функцию $\Phi$, нормированную на единицу:
+$$
+\bk{\Phi}{\Phi} = 1
+$$
+её разложение по базису $\Psi_n$ имеет вид:
+$$
+\Phi = \sum_n a_n \Psi_n
+$$
+В силу условий нормировки для коэффициентов $a_n$ имеем:
+$$
+\sum_n \abs{a_n}^2 = 1
+$$
+Оценим среднюю энергию $\avg{E}$ системы в состоянии, описываемой произвольной волновой функцией $\Phi$:
+\begin{equation}
+\label{eq:18_1_1}
+\avg{E} \equiv \bfk{\Phi}{\op{H}}{\Phi} \equiv \mathcal{E}[\Phi] = \sum_n \sum_m \bfk{a_n \Psi_n}{\op{H}}{a_m \Psi_m} = \\ = \sum_n \sum_m a_n^* a_m E_m \delta_{nm} = \sum_n \abs{a_n}^2 E_n
+\end{equation}
+В \eqref{eq:18_1_1} $E_1, E_2, ... \to E_0$,~ $E_n \geqslant E_0$ при $\forall n$
+
+\begin{equation}
+\label{eq:18_1_2}
+\boxed{\mathcal{E}[\Phi] \geqslant E_0 \sum_n \abs{a_n}^2 = E_0}
+\end{equation}
+Средние значения, вычисленные с пробными функциями $\Phi$, являются оценками сверху для точной энергии основного состояния.
+
+Если $\Phi = \Psi_0$, то $\mathcal{E}[\Psi_0] = E_0$. (???)
+
+Другая формулировка:
+\begin{equation}
+\label{eq:18_1_3}
+\mathcal{E}[\Phi] \to \min
+\end{equation}
+
+\underbar{Метод вариационного исчисления}:
+\begin{equation}
+\label{eq:18_1_4}
+\delta \mathcal{E} = 0 ~~~ \forall \delta\Phi:~ \bk{\Phi}{\Phi} = 1
+\end{equation}
+
+\begin{enumerate}
+\item Выбирается пробная функция $\Phi = \Phi(q, \alpha_1, \alpha_2 ... )$, зависящая от полного набора координат $q$ и вариационных параметров $\alpha_i$;
+\item Вычисляется средняя энергия в состоянии, описываемом данной функцией:
+$$
+\bfk{\Phi}{\op{H}}{\Phi} = \mathcal{E}(\alpha_1, \alpha_2 ...)
+$$
+\item Минимизируем $E$ по вариационным параметрам:
+$$
+\pd{\mathcal{E}}{\alpha_1} = 0,~~ \pd{\mathcal{E}}{\alpha_2} = 0, ... 
+$$
+Находим соответствующие $\alpha_i^0$.
+\end{enumerate}
+После этого можно утверждать, что функция $\Phi(q, \alpha_1^0, \alpha_2^0, \alpha_2^0 ...)$ есть наилучшее приближение к $\Psi_0(q)$ в выбранном классе функций. (см. задачи 2 и 3 из
+
+В \eqref{eq:17_2_1} (ШТРИХ!): $\nu = 1s$, $S = 0 \uparrow \downarrow$
+$$
+\Phi_{g.s}^{sym}(\vr_1, \vr_2) = \phi_{1s}(\vr_1)\phi_{1s}(\vec{r_2}) = \frac{1}{\pi} \brc{\frac{z}{a}}^3 e^{-\frac{z(r_1 + r_2)}{a}}
+$$
+--- отсутствуют вариционные параметры.
+
+Эффективный заряд $\tilde{Z} < Z = 2$
+
+$$
+\bfk{\Phi_{g.s}^{S}}{\op{H}}{\Phi_{g.s}^{S}} = \mathcal{E}(\tilde{Z})
+$$
+$$
+\pd{\mathcal{E}}{\tilde{Z}} = 0 ~~\to~~ \tilde{Z} = Z - \frac{5}{16}
+$$
+--- задача 3а из второго задания. В задаче 3б два вариационных параметра: $\alpha$ и $\beta$.
+
+\section{Метод Хартри-Фока. Приближения центрального поля. Электронные конфигурации.}
+$N$ электронов, заряд $-Ze~~ (e<0)$
+\begin{equation}
+\label{eq:18_2_1}
+\op{H} = \sum_{i=1}^{N} \brc{\frac{\op{\vp_i}^2}{2m} - \frac{Ze^2}{r_i}} + \sum_{i<j} \frac{e^2}{\abs{\vr_i - \vr_j}}
+\end{equation}
+
+Эффективное среднее поле --- метод Хартри-Фока (1928-1930).
+
+\begin{enumerate}
+\item \begin{equation}
+\label{eq:18_2_2}
+\mathcal{E}\brs{\{\psi_{\{n_j\}}(\xi_i)\}} = \bfk{\Uppsi^{HF}}{\op{H}}{\Uppsi^{HF}}
+\end{equation}
+
+\item $\Uppsi^{HF}(\xi_1, \xi_2, ... \xi_N) = Slater~determinant$ (см. \eqref{eq:16_2_2})
+
+\item 
+$$
+\mathcal{E}\brs{\{\psi_{\{n_j\}}(\xi_i)\}} = \min~ \forall \delta\psi_{\{n_j\}}(\xi_i)
+$$
+\end{enumerate}
+
+Система из $N$ уравнений $\to$ уравнения Хартри-Фока. Каждое из них описывает движение выделенного $i$-го электрона в некотором эффективном \underbar{среднем поле} $U_{cc}(\vr_i)$, созданным ядром и остальными электронами атома.
+\noindent
+$U_{cc}(\vr_i)$ --- центральное, \underbar{самосогласованное} поле (ССП).\\
+
+Из \eqref{eq:18_2_1}:
+$$
+\op{H} = \underbrace{\sum_{i=1}^{N} \brc{\frac{\op{\vp_i}^2}{2m} + U_{cc}(\vr_i)}}_{\op{H}^{(0)}} + \op{V}
+$$
+где $\op{H}^{(0)}$ --- центральная, а $\op{V}$ --- нецентральная часть гамильтониана:
+$$
+\op{V} = \sum_{i<j} \frac{e^2}{\abs{\vr_i - \vr_j}} + \sum_{i=1}^N \brc{-\frac{Ze^2}{r_i} - U_{cc}(\vr_i)}
+$$
+$$
+U_{cc}(\vr_i) =
+\begin{cases}
+-\frac{Ze^2}{r_i},& r_i \to 0\\
+-\frac{(Z-(N-1))e^2}{r_i},& r_i \to \infty\\
+\end{cases}
+$$
+
+Пусть поле центрально-симметрично: $U_{cc}(\vr_i) = U_{cc}(r_i)$
+
+Энергия зависит от $n$ и $l$ ($E_{nl}$), то есть вырождение по $l$ снимается.
+$$
+
+$$

@@ -1,0 +1,119 @@
+% Жирный вектор
+\newcommand{\vect}[1] { \mathbf{#1} }
+\newcommand{\V}[1] { \mathbf{#1} }
+
+% Полная производная
+\newcommand{\D}[2]{\frac{d{#1}}{d{#2}}}
+
+% Частная производная
+\newcommand{\pd}[2]{\frac{\partial{#1}}{\partial{#2}}}
+
+% Дивергенция
+\def\Div{\mathop{\mathrm{div}}\nolimits}
+
+% Ротор
+\def\rot{\mathop{\mathrm{rot}}\nolimits}
+
+% Градиент
+\def\grad{\mathop{\mathrm{grad}}\nolimits}
+
+% Константа
+\def\const{\mathop{\mathrm{const}}\nolimits}
+
+% Оператор
+\newcommand{\op}[1]{\widehat{#1}}
+
+% Скобки (высокие)
+\newcommand{\brc}[1]{\left ( {#1} \right )}
+
+% Скобки фигурные (высокие)
+\newcommand{\brcr}[1]{\left\{ {#1} \right\}}
+
+% Скобки квадратные (высокие)
+\newcommand{\brs}[1]{\left [ {#1} \right ]}
+
+% Усреднение
+\newcommand{\avg}[1]{\langle{#1}\rangle}
+
+% Усреднение (высокое)
+\newcommand{\avgh}[1]{\left\langle{#1}\right\rangle}
+
+% Бра-вектор
+\newcommand{\bra}[1]{\langle{#1}|}
+
+% Бра-вектор
+\newcommand{\ket}[1]{|{#1}\rangle}
+
+% Скалярное произведение
+\newcommand{\bk}[2]{\langle{#1}|{#2}\rangle}
+
+% Скалярное произведение (высокое)
+\newcommand{\bkh}[2]{\left\langle{#1}|{#2}\right\rangle}
+
+% Проектор
+\newcommand{\proj}[2]{\ket{#1}\bra{#2}}
+
+% Матричный элемент
+\newcommand{\bfk}[3]{\langle{#1}|{#2}|{#3}\rangle}
+
+% Матричный элемент (высокий)
+\newcommand{\bfkh}[3]{\left\langle{#1}\left|{#2}\right|{#3}\right\rangle}
+
+% Действительная и мнимая части
+\def\Re{\mathop{\mathrm{Re}}\nolimits}
+\def\Im{\mathop{\mathrm{Im}}\nolimits}
+
+% Модуль
+\providecommand{\abs}[1]{\left\lvert{#1}\right\rvert}
+
+% Норма
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+\newcommand{\vp}{\vec{p}}
+\newcommand{\vsp}{\vec{p'}}
+\newcommand{\vr}{\vec{r}}
+\newcommand{\vsr}{\vec{r'}}
+
+% Операторы рождения и уничтожения
+\newcommand{\cre}{\op{a}^\dag}
+\newcommand{\ann}{\op{a}}
+
+\renewcommand{\vec}{\mathbf}
+%\renewcommand{\exp}{\ex}
+
+% Привычное написание букв каппа, эпсилон и фи
+\renewcommand{\kappa}{\varkappa }
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+
+% Жирная (векторная) "хи"
+% жирность через bm - грязный хак (mathbf не применяется к греческим, а bm делает латинские буквы курсивными)
+\DeclareRobustCommand{\rchi}{{\bm{\mathpalette\irchi\relax}}}
+\newcommand{\irchi}[2]{\raisebox{\depth}{$#1\chi$}} % inner command, used by \rchi
+
+\makeatletter
+\renewcommand*\env@matrix[1][c]{\hskip -\arraycolsep
+\let\@ifnextchar\new@ifnextchar
+\array{*\c@MaxMatrixCols #1}}
+\makeatother
+
+\def\lambdabar{\protect\@lambdabar}
+\def\@lambdabar{%
+\relax
+\bgroup
+\def\@tempa{\hbox{\raise.73\ht0
+\hbox to0pt{\kern.25\wd0\vrule width.5\wd0
+height.1pt depth.1pt\hss}\box0}}%
+\mathchoice{\setbox0\hbox{$\displaystyle\lambda$}\@tempa}%
+{\setbox0\hbox{$\textstyle\lambda$}\@tempa}%
+{\setbox0\hbox{$\scriptstyle\lambda$}\@tempa}%
+{\setbox0\hbox{$\scriptscriptstyle\lambda$}\@tempa}%
+\egroup
+}
+
+% Функции Эйри
+\def\Ai{\mathop{\mathrm{Ai}}\nolimits}
+\def\Bi{\mathop{\mathrm{Bi}}\nolimits}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}

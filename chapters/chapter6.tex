@@ -1,0 +1,549 @@
+\chapter{Теория представлений}
+
+\section{Матричное представление}
+
+$\op{G} g_n \ket{n}$, где $\ket{n} \equiv \ket{\psi_n},~n \in \mathbb{Z}$
+
+Из \eqref{eq:3_3_11} (условие полноты):
+$$
+\sum_n \ket{n}\bra{n} = \mathds{1}
+$$
+
+Разложим по базису оператора $\op{G}$:
+$$
+\ket{\psi}=\sum_n \ket{n}\bk{n}{\psi}
+$$
+
+В $g$-представлении:
+$$
+\bk{n}{\psi} = \begin{pmatrix}
+\bk{1}{\psi}\\
+\bk{2}{\psi}\\
+...
+\end{pmatrix}
+$$
+\begin{equation}
+\begin{split}
+\label{eq:6_1_1}
+\bk{n}{\op{F}\psi} = \bkh{n}{\op{F}\brc{\sum_{n'} \ket{n'}\bra{n'}} \psi} = \sum_{n'} \bfk{n}{\op{F}}{n'}\bk{n'}{\psi} = \\ = \begin{pmatrix}
+F_{11} & F_{12} & \cdots\\
+F_{21} & F_{22} & \cdots\\
+\cdots & \cdots & \cdots
+\end{pmatrix} \begin{pmatrix}
+\bk{1}{\psi}\\
+\bk{2}{\psi}\\
+...
+\end{pmatrix}
+\end{split}
+\end{equation}
+
+$F_{nn'} = \bfk{n}{\op{F}}{n'}$ --- матричное представление $\op{F}$ в базисе состояний $\{\ket{n}\}$ собственных векторов $\op{G}$ ($\op{G}=\op{H}$, $E$-представление)
+
+Матричное представление эрмитово-сопряжённого оператора:
+$$
+\left .\bfk{n'}{\op{F}^\dag}{n}\right|_{(3.2.6)} = \bfk{n}{\op{F}}{n'}^*
+$$
+т.е. $\brc{F^\dag}_{n'n}=F^*_{nn'}$
+
+Эрмитово сопряжение := транспонирование + комплексное сопряжение.
+
+Если $\op{F}^\dag=\op{F}$, то $F^*_{nn'}$ --- эрмитова матрица
+
+В случае $n'=n$: $F_{nn}=F_{nn}^*$ (т.е. диагональные матричные элементы эрмитовой матрицы вещественны)
+$$
+\bfk{n}{\op{A}\op{B}}{n''} = \sum_{n'} \bfk{n}{\op{A}}{n'} \bfk{n'}{\op{B}}{n''} = \sum_{n'} A_{n'} B_{n'n''} \text{(произведение матриц)}
+$$
+
+Задача на собственные значения и векторы:
+$$
+\op{F}\ket{f}=f\ket{f} \xrightarrow{(6.1.1)} \sum_{n'} F_{nn'} \bk{n'}{f} = f\bk{n}{f}=f\delta_{nn'}\bk{n'}{f}
+$$
+$$
+\sum_{n'}\brc{F_{nn'}-f\delta_{nn'}}\bk{n'}{f}=0
+$$
+
+Корни $f$ характеристического уравнения являются собственными значениями оператора:
+$$
+\det{\norm{F_{nn'}-f\delta_{nn'}}}=0
+$$
+
+В $f$-представлении оператора $\op{F}$:
+$$
+\bfk{f'}{\op{F}}{f}=f\bk{f'}{f}=f\delta_{f'f}
+$$
+т.е. $F$ --- диагональная матрица
+
+\section{Унитарное преобразование векторов-состояний и операторов}
+$$
+\begin{gathered}
+\op{L}\ket{\lambda}=\lambda\ket{\lambda},~ \ket{\lambda}=\ket{\chi_\lambda} \\
+\op{M}\ket{\mu}=\mu\ket{\mu},~ \ket{\mu}=\ket{\phi_\mu}
+\end{gathered}
+$$
+$$
+\ket{\psi}=\sum_\lambda \ket{\lambda}\bk{\lambda}{\psi}=\sum_\mu \ket{\mu}\bk{\mu}{\psi}
+$$
+Обозначим:
+$$
+\begin{gathered}
+\bk{\lambda}{\psi}=\bk{\chi_\lambda}{\psi}=\psi_\lambda \\
+\bk{\mu}{\psi}=\bk{\phi_\mu}{\psi}=\psi'_\mu
+\end{gathered}
+$$
+(волновая функция в $\lambda$ и $\mu$ представлениях)
+
+\begin{equation}
+\label{eq:6_2_1}
+\psi'_\mu=\bk{\mu}{\psi}=\sum_\lambda \underbrace{\bk{\mu}{\lambda}}_{U_{\mu\lambda}}\bk{\lambda}{\psi} = \sum_\lambda U_{\mu\lambda}\psi_\lambda
+\end{equation}
+$$
+\begin{gathered}
+\bra{\mu}=\sum_\lambda \underbrace{\bk{\mu}{\lambda}}_{U_{\mu\lambda}} \bra{\lambda} = \sum_\lambda U_{\mu\lambda}\bra{\lambda} \\
+\ket{\mu}=\sum_\lambda \ket{\lambda} \bk{\lambda}{\mu} = \sum_\lambda U^*_{\mu\lambda}\ket{\lambda} 
+\end{gathered}
+$$
+
+Условия ортонормировки:
+$$
+\begin{gathered}
+\bk{\mu}{\mu'}=\delta_{\mu\mu'}\\
+\bk{\lambda}{\lambda'}=\delta_{\lambda\lambda'}
+\end{gathered}
+$$
+
+$$
+\delta_{\mu\mu'} = 
+\bk{\mu}{\mu'} =
+\sum_\lambda \sum_{\lambda'} \underbrace{\bk{\mu}{\lambda}}_{U_{\mu\lambda}}
+\underbrace{\bk{\lambda}{\lambda'}}_{\delta_{\lambda\lambda'}}
+\underbrace{\bk{\lambda'}{\mu'}}_{\brc{U^\dag}_{\lambda'\mu'}} =
+\sum_\lambda U_{\mu\lambda}\brc{U^\dag}_{\lambda\mu'}
+$$
+
+\begin{defn}
+$\op{U}$ называется \underbar{унитарным}, если $\op{U}^\dag = \op{U}^{-1}$, т.е. $\op{U}^\dag\op{U}=\op{U}^\dag\op{U}=\mathds{1}$
+\end{defn}
+
+Если $\op{U}^\dag\op{U}=\mathds{1}$, то:
+$$
+\sum_{n'}U_{nn'} \brc{U^\dag}_{n'n''}=\delta_{nn''}~ \Rightarrow~ U^\dag=U^{-1} 
+$$
+(т.е. $U$ --- унитарная матрица)
+\begin{equation}
+\label{eq:6_2_2}
+\ket{\psi'}=\op{U}\ket{\psi}
+\end{equation}
+Преобразование вектора-состояния из одного представления в другое является унитарным. \\
+
+Пусть $\op{F}$ --- оператор физической величины в $\lambda$-представлении, а $\op{F'}$ --- в $\mu$-представлении.
+
+$$
+\bk{\mu'}{\lambda'}^*=U^*_{\mu'\lambda'}=\brc{U^\dag}_{\lambda'\mu'}
+$$
+\begin{equation}
+\label{eq:6_2_3}
+F_{\mu\mu'} = 
+\bfk{\mu}{\op{F}}{\mu'} =
+\sum_\lambda \sum_{\lambda'} 
+\underbrace{\bk{\mu}{\lambda}}_{U_{\mu\lambda}}
+\underbrace{\bfk{\lambda}{\op{F}}{\lambda'}}_{F_{\lambda\lambda'}}
+\bk{\lambda'}{\mu'} =
+\sum_\lambda \sum_{\lambda'} U_{\mu\lambda} F_{\lambda\lambda'} \brc{U^\dag}_{\lambda'\mu'}
+\end{equation}
+
+\begin{equation}
+\label{eq:6_2_4}
+\boxed{F'=U F U^\dag}
+\end{equation}
+
+\begin{equation}
+\label{eq:6_2_5}
+\boxed{F=U^\dag F' U}
+\end{equation}
+
+\begin{equation}
+\label{eq:6_2_4_add}
+\boxed{\op{F}=\op{U} \op{F} \op{U}^\dag}
+\tag{\ref{eq:6_2_4}$'$}
+\end{equation}
+
+\begin{equation}
+\label{eq:6_2_5_add}
+\boxed{\op{F}=\op{U}^\dag \op{F'} \op{U}}
+\tag{\ref{eq:6_2_5}$'$}
+\end{equation}
+\\
+
+В классе унитарных преобразований векторов и операторов справедливы следующие утверждения:
+\begin{enumerate}
+\item Скалярное произведение любых двух векторов инвариантно к унитарным преобразованиям:
+$$
+\bk{\psi'_1}{\psi'_2}=\bk{\psi_1}{\psi_2}
+$$
+\item Унитарные преобразования не меняют собственные значения эрмитовых операторов: если $\op{F}\ket{f}=f\ket{f}$, то $\boxed{\op{F'}\ket{f'}=f\ket{f'}}$
+
+\item Унитарные преобразования не нарушают эрмитовости операторов: если $\op{F}^\dag=\op{F}$, то $(\op{F'})^\dag=\op{F'}$
+
+\item Унитарные преобразования сохраняют коммутационные соотношения: если $[\op{F}, \op{G}]=\op{K}$, то $[\op{F'}, \op{G'}]=\op{K'}$
+
+\item $\boxed{\bfk{\psi_1}{\op{F}}{\psi_2}=\bfk{\psi'_1}{\op{F'}}{\psi'_2}}$
+\end{enumerate}
+
+\begin{excr}
+Доказать утверждения 1-5.
+\end{excr}
+
+Физическое содержание теории при унитарных преобразованиях не меняется.
+
+% TODO: сделать полноценные библиографические ссылки
+
+Аналогия в классической механике --- канонические преобразования (см. Л.-Л. т.I Теоретическая механика, \textsection 45) \\
+
+% TODO: ссылку на точное место
+Из предыдущей лекции:
+$[\op{F},\op{G}]=0$, $\op{F}$ --- вырожденный
+
+Соответствующие собственные значения $f_n \rightarrow \{\ket{\psi_n^{(i)}}\} \equiv \ket{n^{(i)}},~i = 1..k$
+$$
+\begin{gathered}
+\left\{\ket{n^{(i)}}\right\} = \left\{\ket{n'^{(i)}}\right\} \\
+\ket{n'^{(i)}}=\sum_j U_{ij} \ket{n^{(j)}} \\
+G'=U G U^\dag
+\end{gathered}
+$$
+
+Подходящим унитарным преобразованием любая эрмитовая матрица приводится к диагональному виду:
+$$
+G'_{ij}=g_i \delta_{ij}~~~\text{или}~~~\op{G}\ket{n'^{(i)}}=g_i\ket{n'^{(i)}}
+$$
+
+$\ket{n'^{(1)}}, \ket{n'^{(2)}}... \ket{n'^{(1k)}}$ --- собственные векторы
+
+% TODO: ШТО???
+Следовательно, величины совместно измеримы. (доказана достаточность теоремы)
+
+\section{Координатное и импульсное представления}
+
+Пусть $\vr \rightarrow \ket{\vr}$ (а значит $\vr \rightarrow \op{\vr}$) \\
+тогда $\vp \rightarrow \ket{\vp}$
+
+Задача на собственные значения:
+\begin{equation}
+\label{eq:6_3_1}
+\op{\vr}\ket{\vsr}=\vsr\ket{\vsr}
+\end{equation}
+
+\begin{equation}
+\label{eq:6_3_2}
+\op{\vp}\ket{\vsp}=\vsp\ket{\vsp}
+\end{equation}
+
+Подействуем справа $\bra{\vec{p''}}$:
+$$
+\bfkh{\vec{p''}}{\op{\vp}}{\vsp}=\vsp\bkh{\vec{p''}}{\vsp}
+$$
+Из \eqref{eq:3_4_3}:
+$$
+\bkh{\vec{p''}}{\vsp}=\delta(\vec{p''}-\vsp)
+$$
+
+Таким образом, <<матрица>> оператора импульса в импульсном ($p$-) представлении:
+\begin{equation}
+\label{eq:6_3_3}
+\boxed{\bfkh{\vec{p''}}{\op{\vp}}{\vsp}=\vsp \delta(\vec{p''}-\vsp)}
+\end{equation}
+
+Аналогично:
+\begin{equation}
+\label{eq:6_3_4}
+\boxed{\bfkh{\vec{r''}}{\op{\vr}}{\vsr}=\vsr \delta(\vec{r''}-\vsr)}
+\end{equation}
+
+Из гл.3 \textsection 3:
+\begin{equation}
+\label{eq:6_3_5}
+\op{p}_{\vr}=\ket{\vr}\bra{\vr}
+\end{equation}
+
+\begin{equation}
+\label{eq:6_3_6}
+\op{p}_{\vr} \ket{\psi} = \ket{\vr}\bkh{\vr}{\psi} = \bkh{\vr}{\psi} \ket{\vr}
+\end{equation}
+
+\begin{equation}
+\label{eq:6_3_7}
+\bkh{\vr}{\psi} \equiv \psi(\vr)
+\end{equation}
+
+Из гл.3 \textsection 4:
+$$
+\forall \ket{\psi} \in \mathcal{H} ~~ \left\{ \ket{\vr} \right\}
+$$
+\begin{equation}
+\label{eq:6_3_8}
+\ket{\psi}=\int \ket{\vr}\bkh{\vr}{\psi} \, d\vr
+\end{equation}
+
+\begin{equation}
+\label{eq:6_3_8_add}
+\ket{\Phi}=\int \ket{\vr}\bkh{\vr}{\Phi} \, d\vp
+\tag{\ref{eq:6_3_8}$'$}
+\end{equation}
+
+\begin{equation}
+\label{eq:6_3_7_add}
+\boxed{\bkh{\vp}{\Phi} \equiv \Phi\brc{\vp}}
+\tag{\ref{eq:6_3_7}$'$}
+\end{equation}
+
+$\abs{\Phi\brc{\vp}}^2 d\vp$ --- вероятность обнаружить частицу с импульсом в интервале $[\vp, \vp+d\vp]$
+
+Пусть $\ket{\psi}\equiv\ket{\vp}$, тогда из равенства \eqref{eq:6_3_6}:
+\begin{equation}
+\label{eq:6_3_6_add}
+\op{P}_{\vr}\ket{\vp}=\bk{\vr}{\vp}\ket{\vr}
+\tag{\ref{eq:6_3_6}$'$}
+\end{equation}
+
+Волна де Бройля:
+\begin{equation}
+\label{eq:6_3_9}
+\boxed{
+	\left. \Psi_{\vp}(\vr,t) \right|_{\text{\eqref{eq:2_1_2}}} = 
+	\left. \frac{1}{(2\pi \hbar)^{(3/2)}} e^{\frac{i}{h} (\vp\vr-Et)}  \right|_{\text{\eqref{eq:6_3_6_add}}} = 
+	\bk{\vr}{\vp} e^\frac{-iEt}{\hbar}
+}
+\end{equation}
+
+\begin{equation}
+\label{eq:6_3_10}
+\psi(\vr) \equiv \bk{\vr}{\psi} = 
+\int \underbrace{  \bk{\vr}{\vp}  }_ {\psi_{\vp}(\vr)}  \underbrace{ \bk{\vp}{\psi} }_{\psi(\vp)} \, d\vp =
+\int \psi_{\vp}(\vr) \psi(\vp) \, d\vp
+\end{equation}
+
+Формула \eqref{eq:6_3_10} --- аналог \eqref{eq:2_1_4}. Также можно записать:
+\begin{equation}
+\label{eq:6_3_11}
+\psi(\vp) \equiv \bk{\vp}{\psi} = 
+\int \underbrace{  \bk{\vp}{\vr}  }_ {\bk{\vr}{\vp}^*} \bk{\vr}{\psi} \, d\vr =
+\int \psi^*_{\vp}(\vr) \psi(\vr) \, d\vr
+\end{equation}
+Формула \eqref{eq:6_3_11} --- аналог \eqref{eq:2_1_5}. 
+
+\begin{equation}
+\label{eq:6_3_12}
+\op{\vr} \ket{\psi} = \ket{\phi}
+\end{equation}
+
+\begin{equation}
+\label{eq:6_3_13}
+\begin{split}
+	\left.\bk{\vr}{\phi} \equiv \phi(\vr)\right|_{\text{\eqref{eq:6_3_12}}} =
+	\bfkh{\vr}{\op{\vr}}{\psi} = 
+	\bfkh{\vr}{\op{\vr} \cdot \mathds{1}_{\vsr}}{\psi} =
+	\bfkh{\vr}{\op{\vr}\int d\vsr}{\vr'} \bk{\vsr}{\psi} = \\ =
+	\left.\int d\vsr \bfkh{\vr}{\op{\vr}}{\vsr} \psi(\vsr) \right|_{\text{\eqref{eq:6_3_4}}} =
+	\int d\vsr \, \vsr \delta(\vr - \vsr) \psi(\vsr) = \vr \psi(\vr) = \phi(\vr)
+\end{split}
+\end{equation}
+$$
+\op{\vr}=\vr
+$$
+
+\begin{excr}
+Следуя схеме \eqref{eq:6_3_13}, показать, что действие произвольной функции от оператора координаты $U(\op{\vr}) \equiv \op{U}(\vr)$ на волновую функцию $\psi(\vr)$ сводится к умножению $\psi(\vr)$ на вещественную функцию $U(\vr)$, т.е. что $U(\op{\vr})=U(\vr)$. \\
+(Аналогия с \textsection 2 гл. 2: \eqref{eq:2_2_4} $\op{\vr}=\vr$  и \eqref{eq:2_2_5} $U(\op{\vr})=U(\vr)$)
+\end{excr}
+
+\begin{equation}
+\label{eq:6_3_14}
+\op{\vp} \ket{\psi} = \ket{\chi}
+\end{equation}
+
+\begin{equation}
+\label{eq:6_3_15}
+\begin{split}
+	\left.\bk{\vp}{\chi} \equiv \chi(\vp)\right|_{\text{\eqref{eq:6_3_14}}} =
+	\bfkh{\vp}{\op{\vp}}{\psi} = 
+	\bfkh{\vp}{\op{\vp} \cdot \mathds{1}_{\vsp}}{\psi} =
+	\bfkh{\vp}{\op{\vp}\int d\vsp}{\vp'} \bk{\vsp}{\psi} = \\ =
+	\left.\int d\vsp \bfkh{\vp}{\op{\vp}}{\vsp} \psi(\vsr) \right|_{\text{\eqref{eq:6_3_3}}} =
+	\int d\vsp \, \vsp \delta(\vp - \vsp) \psi(\vsp) = \vp \psi(\vp) = \chi(\vp)
+\end{split}
+\end{equation}
+$$
+\op{\vp}=\vp
+$$
+
+\begin{excr}
+Следуя схеме \eqref{eq:6_3_15}, показать, что действие произвольной функции от оператора импульса $F(\op{\vp}) \equiv \op{F}(\vp)$ на волновую функцию $\psi(\vp)$ сводится к умножению, т.е. что $F(\op{\vp})=F(\vp)$, где $F(\vp)$ --- вещественная функция.
+\end{excr}
+
+Стационарное уравнение Шрёдингера в координатном ($\vr$-) представлении:
+\begin{equation}
+\label{eq:6_3_16}
+\op{H}\ket{\psi} = \brc{\frac{\op{\vp}^2}{2m} + \op{U}(\vr)}\ket{\psi} = E\ket{\psi}
+\end{equation}
+
+$$
+\bfk{\vp}{\op{H}}{\psi} = \bfk{\vp}{\op{H} \cdot \mathds{1}_{\vsp}}{\psi} =
+\int d\vsp \, \bfk{\vp}{\op{H}}{\vsp} \bk{\vsp}{\psi} =
+\int d\vsp \, \left[ \bfkh{\vp}{\op{T}}{\vsp} + \bfkh{\vr}{\op{U}(\vr)}{\vsp} \right] \psi(\vsp)
+$$
+
+% TODO: сделать нормальные ссылки на упражнения
+\begin{equation}
+\begin{split}
+\label{eq:6_3_17}
+	\left. \int d\vsp \, \bfkh{\vp}{\op{T}}{\vsp} \psi(\vsp) \right|_{\text{упр.2}} =
+	\int d\vsp \, \bfkh{\vp}{ \frac{\vsp^2}{2m} }{\vsp} \psi(\vsp) = \\ =
+	\int d\vsp \, \frac{\vsp^2}{2m} \underbrace{ \bkh{\vp}{\vsp} }_{\delta(\vp - \vsp)} \psi(\vsp) = \frac{\vp^2}{2m} \psi(\vp)
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+\label{eq:6_3_18}
+	\bfkh{\vp}{\op{U}(\vr)}{\vsp} = \bfkh{\vp}{ \mathds{1}_\vr \cdot \op{U(\vr)} \cdot \mathds{1}_\vsr}{\vsp} =
+	\iint d\vr d\vsr \, \underbrace{ \bk{\vp}{\vr} }_{\bk{\vr}{\vp}^*} \underbrace{ \bfkh{\vr}{\op{U}(\vr)}{\vsr} }_{U(\vsr)\delta(\vr - \vsr)} \bkh{\vsr}{\vsp} = \\ =
+	\left. \int d\vr \, \psi^*_{\vp}(\vr) U(\vr) \psi_{\vsp}(\vr) \right|_{\text{\eqref{eq:6_3_9}}} =
+	\boxed{ \frac{1}{(2\pi\hbar)^3} \int d\vr e^{-\frac{i}{\hbar} \brc{\vp - \vsp} \vr } U(\vr) = W(\vp - \vsp) }
+\end{split}
+\end{equation}
+--- фурье-образ функции $U(\vr)$
+
+Объединяя \eqref{eq:6_3_17} и \eqref{eq:6_3_18}, получим стационарное уравнение (интегральное) Шрёдингера в импульсном представлении:
+\begin{equation}
+\label{eq:6_3_17}
+	\boxed{\frac{p^2}{2m} \psi(\vp) + \int W(\vp - \vsp) \psi(\vsp) \, d\vp  = E\psi(\vp)}
+\end{equation}
+
+Из упражнения \No1 2-го задания:
+$$
+\begin{gathered}
+\op{\vr} = i\hbar \pd{}{\vp} \\
+\op{\vp} = -i\hbar \pd{}{\vr}
+\end{gathered}
+$$
+
+\section{Оператор эволюции. Представление Шрёдингера и Гайзенберга. Уравнение Гайзенберга для операторов физических величин}
+
+В квантовой механике роль уравнений движения играют уравнения эволюции во времени.
+
+\begin{equation}
+\label{eq:6_4_1}
+	i\hbar \pd{}{t} \ket{\psi(t)} = \op{H}\ket{\psi(t)}
+\end{equation}
+
+Введём новый оператор:
+\begin{equation}
+\label{eq:6_4_2}
+	\ket{\psi(t)} = \op{U}(t)\ket{\psi(0)}
+\end{equation}
+$$
+\bk{\psi(t)}{\psi(t)} = \bfk{\psi(0)}{\op{U}^\dag(t) \op{U}(t) }{\psi(0)} = \bk{\psi(0)}{\psi(0)}
+$$
+$$
+\op{U}^\dag(t) \op{U}(t) = \mathds{1} ~~~ \text{(см. \textsection 2 гл.6)}
+$$
+
+$\op{U}$ --- оператор эволюции. Из вышеприведённой формулы видно, что он является унитарным.
+
+Поставим \eqref{eq:6_4_2} в \eqref{eq:6_4_1}:
+$$
+\left\{ i\hbar \pd{}{t} \op{U}(t) - \op{H}\op{U}(t) \right\} \ket{\psi(0)} = 0 
+$$
+где $\ket{\psi(0)}$ --- любой ненулевой вектор-состояние.
+
+\begin{equation}
+\label{eq:6_4_3}
+	i\hbar \pd{}{t} \op{U}(t) = \op{H}\op{U}(t)
+\end{equation}
+
+Положим, что $\pd{\op{H}}{t} = 0$, $\op{U}(0)=\mathds{1}$. Тогда:
+\begin{equation}
+\label{eq:6_4_4}
+	\boxed{\op{U}(t)=e^{-\frac{i}{\hbar} \op{H}t}}
+\end{equation}
+--- экспоненциальный оператор (решение \eqref{eq:6_4_3})
+
+\begin{defn}
+\begin{equation}
+\label{eq:6_4_5}
+e^{-\frac{i}{\hbar} \op{H}t} \equiv \sum_{n=0}^{\infty} \frac{1}{n!} \brc{-\frac{i}{\hbar} \op{H}t}^n
+\end{equation}
+\end{defn}
+
+\begin{defn}
+Описание временной эволюции квантовой системы, когда вектор-состояние (или волновая функция) зависит от времени, а операторы не зависят от времени, называется \underbar{представлением Шрёдингера} \footnote{В некоторой литературе вместо термина <<представление>> употребляется термин <<картина>>}
+\end{defn}
+
+Обозначим вектор-состояние в представлении Гайзенберга через $\ket{\psi_H}$, а вектор-состояние в представлении Шрёдингера через $\ket{\psi_S}$
+\begin{equation}
+\label{eq:6_4_6}
+	\left. \ket{\psi_H} \equiv \ket{\psi_S(0)} \right|_\text{\eqref{eq:6_4_2}} \equiv 
+	\left.  \op{U}^\dag(t) \ket{\psi_S(t)} \right|_\text{\eqref{eq:6_4_4}} =
+	e^{\frac{i}{\hbar}\op{H}_St} \ket{\psi_S(t)}
+\end{equation}
+
+\begin{excr}
+Доказать, что если $\op{U}(t)=\exp\brc{-\frac{i}{\hbar}\op{H}t}$, то $\op{U}^\dag(t) = \exp\brc{\frac{i}{\hbar}\op{H}t}$, используя явное определение \eqref{eq:6_4_5}.
+\end{excr}
+
+Согласно \eqref{eq:6_2_2} и \eqref{eq:6_2_4_add}:
+\begin{equation}
+\label{eq:6_4_7}
+\boxed{
+	\op{F_H}(t) = \op{U}^\dag(t) \op{F_S} \op{U}(t) = e^{(i/\hbar) \op{H_S}t} \op{F_S} e^{-(i/\hbar) \op{H_S}t}
+}
+\end{equation}
+
+\begin{excr}
+Доказать:
+$$
+e^{\xi \op{A}} \op{B} e^{-\xi \op{A}} = \op{B} + \xi \brs{\op{A}, \op{B}} + \frac{\xi}{2!} \brs{\op{A}, \brs{\op{A}, \op{B}}} + ...
+$$
+где $\xi = \frac{i}{\hbar} t$, $\op{A} = \op{H_S}$, $\op{B} = \op{F_S}$
+\end{excr}
+
+\begin{equation}
+\label{eq:6_4_8}
+\op{F_H}(t) = \op{F_S} + \frac{i}{\hbar} t \brs{\op{H_S}, \op{F_S}} - \frac{t^2}{2\hbar^2} \brs{\op{H_S}, \brs{\op{H_S}, \op{F_S}}} + ...
+\end{equation}
+
+Если $\brs{\op{H_S}, \op{F_S}} = 0$, т.е. (см \S 2 гл. 5) $\op{F_S}$ является интегралов движения, то
+$$
+\op{F_H}(t) = \op{F_S}
+$$
+т.е. гайзенберговские операторы интегралов движения не зависят от времени и совпадают с соответствующими в представлении Шрёдингера.
+
+Гамильтониан в обоих представлениях совпадает и не зависит от времени:
+$$
+\op{H_H} = \op{H_S} = \op{H}
+$$
+
+Из \eqref{eq:6_4_7}:
+\begin{equation}
+\label{eq:6_4_9}
+\op{F_H}(t) = e^{(i/\hbar)\op{H}t} \op{F_S} e^{-(i/\hbar)\op{H}t}
+\end{equation}
+
+Уравнение движения для гайзенберговского оператора $\op{F_H}(t)$
+\begin{equation}
+\label{eq:6_4_10}
+\boxed{
+	\D{}{t}\op{F_H}(t) = \frac{i}{\hbar} \brs{\op{H}, \op{F_H}}
+}
+\end{equation}
+
+\begin{defn}
+представление, в котором эволюция во времени переновится на операторы, а векторы-состояния от времени не зависят, называется представлением Гайзерберга
+\end{defn}
+
+Из \eqref{eq:5_2_6}:
+$$
+\D{\op{F}}{t} = \pd{\op{F}}{t} + \frac{i}{\hbar} \brs{\op{H}, \op{F}}
+$$
+
+Различные представления \textbf{унитарно-эквивалентны}, т.к. дают эквивалентные результаты, и переход между ними осуществляется с помощью унитарных преобразований. Таким образом, одна и та же задача может решаться проще в одном из представлений.
