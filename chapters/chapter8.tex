@@ -57,6 +57,203 @@ $\op{\vec{J}}$ -- \textbf{оператор углового момента} ($\o
 
 \section{Коммутационные соотношения для оператора углового момента. Система собственных векторов операторов $\op{\vec{j}}^2$ и $\op{\vec{j}_z}$}
 
+Обозначим: $\boxed{\op{\vec{j}} = \frac{\op{\vec{J}}}{\hbar}}$
+
+\begin{defn}
+векторный оператор $\op{\vec{j}} = \brcr{\op{j_x}, \op{j_y}, \op{j_z}}$ называют \textbf{оператором углового момента}, если все его компоненты являются \textbf{наблюдаемыми} (эрмитовыми) и удовлетворяют коммутационным соотношениям:
+\begin{equation}
+\label{eq:8_2_1}
+\boxed {
+	\brs{\op{j_i}, \op{j_k}} = i e_{ikl} \op{j_l}
+}
+\end{equation}
+(где $e_{ikl}$ -- антисимметричный тензор)
+\end{defn}
+
+$$
+\op{\vec{j}}^2 = \op{j_x}^2 + \op{j_y}^2 + \op{j_z}^2
+$$
+
+Совместная измеримость $\op{j}^2$ возможна только с одной компонентой:
+\begin{equation}
+\label{eq:8_2_2}
+\brs{\op{j}^2, \op{j_i}} = 0
+\end{equation}
+
+\begin{excr}
+Доказать \eqref{eq:8_2_2} с помощью \eqref{eq:8_2_1}
+\end{excr}
+
+$\ket{jm}$:
+\begin{equation}
+\label{eq:8_2_3}
+\left\{
+\begin{aligned}
+\op{\vec{j}}^2 \ket{jm} = \lambda(j) \ket{jm} \\
+\op{\vec{j}}_m \ket{jm} = m \ket{jm}
+\end{aligned}
+\right.
+\end{equation}
+
+Условие ортонормировки:
+$$
+\bk{jm}{j'm'} = \delta_{jj'} \delta{mm'}
+$$
+
+$$
+\avg{\op{\vec{j}}^2} = \avg{\op{j_x}^2} + \avg{\op{j_y}^2} + \avg{\op{j_z}^2} \geqslant \avg{\op{j_z}^2}
+$$
+
+То есть:
+$$
+\lambda(j) \geqslant m^2 ~~\rightarrow~~ \left\{
+\begin{aligned}
+m_{min} &\leqslant m \leqslant m_{max}\\
+m_{max} &= - m_{min}
+\end{aligned}
+\right.
+$$
+
+$m_{max} \equiv j$, тогда $m_{min} = -j$
+
+Обозначим:
+\begin{equation}
+\label{eq:8_2_4}
+\left\{
+\begin{aligned}
+\op{j}_{+} &= \op{j}_{x} + i \op{j}_{y} \\
+\op{j}_{-} &= \op{j}_{x} - i \op{j}_{y} = \brc{\op{j}_{+}}^\dag
+\end{aligned}
+\right.
+\end{equation}
+
+\begin{equation}
+\label{eq:8_2_5}
+\brs{\op{j_z}, \op{j}_{\pm}} = \pm \op{j_{\pm}}
+\end{equation}
+
+\begin{excr}
+Доказать \eqref{eq:8_2_5} с использованием \eqref{eq:8_2_4} и \eqref{eq:8_2_1}
+\end{excr}
+
+Из \eqref{eq:8_2_5}:
+$$
+\op{j_z} \brc{\op{j}_{\pm} \ket{jm}} = \brc{\op{j}_{\pm} \op{j_z} \pm \op{j}_{\pm}} \ket{jm} = (m+1) \brc{\op{j}_{\pm} \ket{jm}}
+$$
+
+Будем называть $\op{j}_{+}$ \textbf{оператором повышения}, а $\op{j}_{-}$ -- \textbf{оператором понижения}
+
+\begin{equation}
+\label{eq:8_2_6}
+\left\{
+\begin{aligned}
+\op{j}_{+} \ket{j, m-1} &= \alpha_m \ket{j, m}\\
+\op{j}_{-} \ket{j, m} &= \beta_m \ket{j, m-1}\\
+\end{aligned}
+\right.
+\end{equation}
+
+Заметим, что:
+$$
+\begin{gathered}
+\op{j}_{+} \ket{jj} = 0,~~\text{или}~~ \alpha_{j+1} = 0\\
+\op{j}_{-} \ket{j, -j} = 0,~~\text{или}~~ \beta_{-j} = 0
+\end{gathered}
+$$
+
+Цепочка понижения:
+$$
+\left\downarrow
+\begin{aligned}
+\op{j}_{-} \ket{jj} & \sim \ket{j, j-1}\\
+(\op{j}_{-})^2 \ket{jj} & \sim \ket{j, j-2}\\
+\cdots \\
+(\op{j}_{-})^N \ket{jj} & \sim \ket{j, j-N},~~~N \in \mathbb{N} \cup \brcr{0} \\
+\end{aligned}
+\right.
+$$
+
+$j - N = -j$, т.е. $j = \frac{N}{2}$, следовательно $j$ принимает только целые и полуцелые значения:
+$$
+j = 0, \frac{1}{2}, 1, \frac{3}{2} \cdots
+$$
+
+Если $j$ фиксировано:
+$$
+\underbrace{m = -j, -j + 1, \cdots, j}_{(2j + 1)~\text{значения}}
+$$
+
+\noindent
+$j$ -- квантовое число момента количества движения частицы\\
+$m$ -- матричное квантовое число
+
+Значение $\lambda(j)$ пока неизвестно. При его определении будем считать, что $m_{max} = m_{min} = j$.
+
+$$
+\op{j}_{-} \op{j}_{+} \ket{jj} = 0
+$$
+$$
+\op{j}_{-} \op{j}_{+} = \op{\vec{j}}^2 - \op{j_z}^2 - \op{j_z}
+$$
+\begin{excr}
+доказать предыдущее равенство используя \eqref{eq:8_2_4} и \eqref{eq:8_2_1}
+\end{excr}
+
+$$
+\brc{\op{\vec{j}}^2 - \op{j_z}^2 - \op{j_z}} \ket{jj} = 0 ~~\rightarrow~~ \lambda(j) = j(j+1)
+$$
+
+\begin{equation}
+\label{eq:8_2_7}
+\boxed {
+	\op{\vec{j}}^2 \ket{jm} = j(j+1) \ket{jm}
+}
+\end{equation}
+
+Из \eqref{eq:8_2_6}:
+$$
+\alpha_m = \bfk{jm}{\op{j}_{+}}{j, m-1} = \bk{\op{j}_{-}jm}{j, m-1} = \left. \bfk{j,m-1}{\op{j}_{-}}{jm}^* \right|_{\text{\eqref{eq:8_2_6}}} = \beta_m^*
+$$
+
+Теперь необходимо найти $\beta_{-j+1}, \beta_{-j+2}, \cdots, \beta_{j}$
+
+$$
+\left. \op{j}_{+} \op{j}_{-} \ket{jm} \right|_{\text{\eqref{eq:8_2_6}}} = \beta_m \op{j}_{+} \ket{j, m-1} = \abs{\beta_m}^2 \ket{jm}
+$$
+
+С другой стороны:
+$$
+\op{j}_{+} \op{j}_{-} = \op{j}^2 - \op{j_z}^2 + \op{j_z}
+$$
+
+\begin{excr}
+доказать предыдущее равенство используя \eqref{eq:8_2_4} и \eqref{eq:8_2_1}
+\end{excr}
+
+$$
+\op{j}_{+} \op{j}_{-} \ket{jm} = \left. (\op{j}^2 - \op{j_z}^2 + \op{j_z}) \ket{jm} \right|_{\text{\eqref{eq:8_2_7}, \eqref{eq:8_2_3}}} = \brc{j(j+1) - m^2 + m} \ket{jm}
+$$
+
+Фазу $\ket{jm}$ можно подобрать так, чтобы $\alpha_m = \beta_m  = \abs{\beta_m}$
+
+$$
+\beta_m = \sqrt{j^2 + j - m^2 + m} = \sqrt{(j+m)(j-m+1)} = \alpha_m
+$$
+
+$$
+\begin{gathered}
+\op{j}_{-} \ket{jm} = \sqrt{(j+m)(j-m+1)} \ket{j, m-1} \\
+\op{j}_{+} \ket{jm} = \beta_{m+1} \ket{j, m+1} = \sqrt{(j-m)(j+m+1)} \ket{j, m+1}
+\end{gathered}
+$$
+
+\begin{equation}
+\label{eq:8_2_8}
+\boxed {
+	(\op{j_x} \pm i \op{j_y}) \ket{jm} = \sqrt{(j \mp m)(j \pm m + 1)} \ket{j, m \pm 1}
+}
+\end{equation}
+
 
 \section{Спин частицы. Матрицы Паули.}
 
