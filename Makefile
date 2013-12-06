@@ -1,22 +1,22 @@
+.PHONY: book chapter clean distclean check-env
 MAINSRC = main.tex
-
-.PHONY: book clean distclean
 
 book: $(MAINSRC)
 	pdflatex $(MAINSRC)
 
-runge: $(MAINSRC)
-	pdflatex runge.tex
+chapter: check-env
+	pdflatex "\newcommand{\n}{$(CH)}\input{achapter}"
 
-chapter:
-	pdflatex achapter
-
-clean :
+clean:
 	@rm -f */*.aux */*.bbl */*.blg */*.log */*.dvi \
 	*/*.idx */*.ilg */*.ind */*.toc */*.lot */*.lof */*.out
 	@rm -f *.aux *.bbl *.blg *.synctex *.log *.dvi \
 	*.idx *.ilg *.ind *.toc *.lot *.lof *.out
 	
-distclean:
-	@rm -f *.pdf */*.aux */*.bbl */*.blg */*.log */*.dvi \
-	*/*.idx */*.ilg */*.ind */*.toc */*.lot */*.lof */*.out
+distclean: clean
+	@rm -f *.pdf
+
+check-env:
+ifndef CH
+	$(error You must provide a number of chapter: `make chapter CH=N')
+endif

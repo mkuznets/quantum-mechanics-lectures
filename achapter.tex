@@ -1,7 +1,12 @@
-\input{include/header}
-\pagestyle{fancy}
+\ifdefined\n
+  \input{include/header}
+  \pagestyle{fancy}
 
-\setcounter{chapter}{7}
-\include{chapters/chapter8}
+  \setcounter{chapter}{\n-1}
+  \include{chapters/chapter\n}
 
-\input{include/footer}
+  \input{include/footer}
+
+\else
+  \errmessage{You must provide a number of chapter!}
+\fi
