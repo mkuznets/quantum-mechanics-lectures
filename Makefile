@@ -5,7 +5,7 @@ book: $(MAINSRC)
 	pdflatex $(MAINSRC)
 
 chapter: check-env
-	pdflatex "\newcommand{\n}{$(CH)}\input{achapter}"
+	pdflatex "\newcommand{\n}{$(CH)}\input{chapter}"
 
 clean:
 	@rm -f */*.aux */*.bbl */*.blg */*.log */*.dvi \
