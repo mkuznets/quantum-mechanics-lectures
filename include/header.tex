@@ -30,6 +30,8 @@
 %\usepackage[pdftex]{graphicx}
 \usepackage[pdftex,hyperindex,unicode]{hyperref}
 
+\usepackage[nodayofweek]{datetime}
+\newcommand{\todayiso}{\twodigit\day.\twodigit\month.\the\year}
 
 \hypersetup{
   pdftitle           = {Lectures on quantum machanics},
@@ -119,7 +121,7 @@
 
 \title{Лекции по квантовой механике}
 \author{Суханов Л.П.}
-\date{2012 г.}
+\date{Сборка от \todayiso}
 
 
 \begin{document}
