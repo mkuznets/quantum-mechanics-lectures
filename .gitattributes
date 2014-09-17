@@ -1,0 +1,16 @@
+# Default behaviour: convert line endings to LF (Unix-style) on checkout.
+* text eol=lf
+
+# Explicit declarations of filetypes used in the project.
+*.tex text eol=lf
+*.txt text eol=lf
+*.bib text eol=lf
+*.md text eol=lf
+*.md text eol=lf
+
+# Binary files: should not be modified
+*.png binary
+*.jpg binary
+*.gif binary
+*.pdf binary
+*.eps binary
