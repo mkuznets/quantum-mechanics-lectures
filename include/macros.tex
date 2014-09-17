@@ -39,10 +39,11 @@
 \newcommand{\avgh}[1]{\left\langle{#1}\right\rangle}
 
 % Бра-вектор
-\newcommand{\bra}[1]{\langle{#1}|}
+\newcommand{\bra}[1]{\left\langle{#1}\right|}
 
-% Бра-вектор
-\newcommand{\ket}[1]{|{#1}\rangle}
+% Кет-вектор
+\newcommand{\ket}[1]{\left|{#1}\right\rangle}
+
 
 % Скалярное произведение
 \newcommand{\bk}[2]{\langle{#1}|{#2}\rangle}
@@ -117,3 +118,6 @@ height.1pt depth.1pt\hss}\box0}}%
 
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+% Крупная хи
+\newcommand{\bigchi}{\text{\scalebox{1.5}{$\chi$}}}
