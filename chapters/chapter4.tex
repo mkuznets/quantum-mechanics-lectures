@@ -1,7 +1,8 @@
 \chapter{Совместная измеримость физических величин}
 
-\section{Условия одновременной измеримости физических величин. Коммутаторы}
+\section{Условия одновременной измеримости физических величин. Коммутаторы.}
 
+Пусть $\widehat{F}, \widehat{G}$ -- наблюдаемые и имеют дискретные спектры.
 $$
 \begin{array}{lcl}
 \widehat{F}, \widehat{G}:  & F \rightarrow \widehat{F} \rightarrow \{f_n\}, \; n=0,1,2,\dots\\
@@ -23,7 +24,7 @@ $\ket{\phi}$ --- общий собственный вектор оператор
 
 $$\ket{\phi} \equiv \ket{f_n g_n} \equiv \ket{nm}$$
 
-$\ket{nm}$ --- полная система собственных веторов
+$\{\ket{nm}\}$ --- полная система собственных векторов.
 
 Тогда:
 
@@ -32,14 +33,13 @@ $\ket{nm}$ --- полная система собственных веторов
 \forall \ket{\psi} \in \mathcal{H} ~\rightarrow ~ \ket{\psi} = \underbrace{\sum_{n,m}\ket{nm}\bra{nm}}_{=\mathds{1}} \psi \rangle 
 \end{equation}
 
-$$P_{\ket{\psi}}(F = f_n, G = g_m) = \abs{\bk{nm}{\psi}}$$
+$$P_{\ket{\psi}}(F = f_n, G = g_m) = \abs{\bk{nm}{\psi}}^2$$
 
 \begin{defn}
 Физические величины $F$ и $G$ одновременно (совместно) измеримы, если их операторы $\widehat{F}$ и $\widehat{G}$ обладают общей полной системой собственных векторов (собственных функций).
 \end{defn}
 
-\begin{thm}
-
+\begin{thm}\label{theorema_iv_chapter}
 Для того, чтобы физические велчины $F$ и $G$ были совместно измеримы необходимо и достаточно, чтобы операторы $\widehat{F}$ и $\widehat{G}$ коммутировали, то есть: 
 $$[\widehat{F}, \widehat{G}] \equiv \widehat{F}\widehat{G} - \widehat{G}\widehat{F} = 0$$
 \end{thm}
@@ -74,15 +74,15 @@ $$\ket{n} \equiv \ket{f_n g_m} \equiv \ket{nm}$$ (полная система)
 \end{proof}
 
 \begin{defn}
-Число $f$, входящее в собственные значения оператора физической величины $\widehat{F}$, называют квантовым числом, характеризующим состояние системы $\ket{\psi_f}\equiv\ket{f}$
+Число $f$, входящее в собственные значения оператора физической величины $\widehat{F}$, называют квантовым числом, характеризующим состояние системы $\ket{\psi_f}\equiv\ket{f}$.
 \end{defn}
 
-Набор взаимно коммутирующих операторов $(\widehat{G}_1, \widehat{G}_2...)$ коммутирующих с $\widehat{F}$ даёт полный набор квантовых чисел в случае вырожденного спектра 
+Набор взаимно коммутирующих операторов $(\widehat{G}_1, \widehat{G}_2...)$ коммутирующих с $\widehat{F}$ даёт полный набор квантовых чисел в случае вырожденного спектра.\footnote{Хм...}
 
-$\psi_{f g_1 g_2 ...}(\vec{q})$ или собственные векторы $\ket{f g_1 g_2 ...}$ дают полное описание квантового состояния системы
+$\psi_{f g_1 g_2 ...}(\vec{q})$ или собственные векторы $\ket{f g_1 g_2 ...}$ дают полное описание квантового состояния системы.
 
 \begin{defn}
-Набор взаимно коммутирующих операторов, собственные значения (квантовые числа) которых однозначно определяют квантовое состояние системы, называют \underbar{полным набором собственных наблюдаемых}.
+Набор взаимно коммутирующих операторов, собственные значения (квантовые числа) которых однозначно определяют квантовое состояние системы, называют \underbar{полным набором совместных наблюдаемых}.
 \end{defn}
 
 \section{Соотношение неопределённостей}
@@ -95,7 +95,7 @@ $$\boxed{\avgh{\brc{\widehat{F}-\avg{\widehat{F}}}^2} \avgh{\brc{\widehat{G}-\av
 \end{thm}
 
 \begin{proof}
-1) Если $[\widehat{F},\widehat{G}]=i\widehat{K}$, то $\widehat{K}^+=\widehat{K}$
+1) Если $[\widehat{F},\widehat{G}]=i\widehat{K}$, то $\widehat{K}^+=\widehat{K}$, т.к.
 \begin{equation}
 \label{eq:4_2_1}
 [\widehat{F},\widehat{G}]^+=-i\widehat{K}^+
@@ -111,7 +111,7 @@ $$\boxed{\avgh{\brc{\widehat{F}-\avg{\widehat{F}}}^2} \avgh{\brc{\widehat{G}-\av
 -i\widehat{K}
 \end{equation}
 
-Сравнивая правые части \eqref{eq:4_2_1} и \eqref{eq:4_2_2}, получаем $\widehat{K}^+=\widehat{K}$\\
+Сравнивая правые части \eqref{eq:4_2_1} и \eqref{eq:4_2_2}, получаем $\widehat{K}^+=\widehat{K}$
 
 2) В состоянии $\ket{\psi}$:~ $\avg{F}=\bfk{\psi}{\widehat{F}}{\psi}$, то есть:
 $$\left.
@@ -129,7 +129,7 @@ $$[\Delta\widehat{F},\Delta\widehat{G}]=i\widehat{K}$$
 Проведём сопряжение:
 $$\bra{\phi}=\bra{\psi}(\Delta\widehat{F}-i\gamma\Delta\widehat{G})^+=\bra{\psi}(\Delta\widehat{F}+i\gamma\Delta\widehat{G})$$
 
-4) $\bk{\phi}{\phi}=\norm{\ket{\phi}}=\bra{\psi}(\Delta\widehat{F}+i\gamma\Delta\widehat{G})(\Delta\widehat{F}-i\gamma\Delta\widehat{G})\ket{\psi}=\bfk{\psi}{\Delta\widehat{F}^2}{\psi}+\gamma^2\bfk{psi}{\Delta\widehat{G}^2}{\psi}+\gamma\bfk{\psi}{\widehat{K}}{\psi} \geqslant 0$
+4) $\bk{\phi}{\phi}=\norm{\ket{\phi}}=\bra{\psi}(\Delta\widehat{F}+i\gamma\Delta\widehat{G})(\Delta\widehat{F}-i\gamma\Delta\widehat{G})\ket{\psi}=\bfk{\psi}{\Delta\widehat{F}^2}{\psi}+\gamma^2\bfk{\psi}{\Delta\widehat{G}^2}{\psi}+\gamma\bfk{\psi}{\widehat{K}}{\psi} \geqslant 0$
 
 $$\avg{\widehat{K}}^2-4\avg{\Delta\widehat{F}^2}\avg{\Delta\widehat{G}^2} \leqslant 0$$
 

@@ -1,6 +1,6 @@
 \chapter{Квантовая динамика частицы}
 
-\section{Уравнение непрерывности для плотности вероятности. Плотность тока вероятностей. Коэффициенты прохождения и отражения}
+\section{Уравнение непрерывности для плотности вероятности. Плотность тока вероятностей. Коэффициенты прохождения и отражения.}
 
 $U(\vr)$ --- стационарное потенциальное поле
 
@@ -9,7 +9,7 @@ $$\left. \widehat{H}=\frac{\widehat{\vp^2}}{2m}+U(\vr) \right|_{\widehat{\vp}=-i
 См. \eqref{eq:1_3_1} и \eqref{eq:1_3_2}:
 
 $$i\hbar\frac{\partial}{\partial{t}}\Psi(\vr,t)=\widehat{H}\Psi(\vr,t)$$
---- временное (нестационарное) уравнение Шрёдингера, 4-й постулат квантовой механики
+--- временное (нестационарное) уравнение Шрёдингера, 4-й постулат квантовой механики.
 
 $$i\hbar\Psi^*\pd{}{t}\Psi=\Psi^*\widehat{H}\Psi$$
 
@@ -37,7 +37,7 @@ $$\boxed{\pd{\rho}{t}+\Div\vec{j}=0}$$ --- \textbf{уравнение непре
 
 где $\boxed{\vec{j}=-\frac{i\hbar}{2m}(\psi^*\vec{\nabla}\psi-\psi\vec{\nabla}\psi^*)}$ --- \textbf{плотность потока (тока) вероятности}.
 
-$$\left.-\pd{}{t}\int\limits_v\rho(\vr,t)\,dv = \int\limits_v\Div\vec{j}\,dv \right|_{\text{т. Гаусса}} = \oint\limits_S\vec{j}\,d\vec{S}$$
+$$\left.-\pd{}{t}\int\limits_v\rho(\vr,t)\,dv = \int\limits_v\Div\vec{j}\,dv \right|_{\text{т. Остр.-Гаусса}} = \oint\limits_S\vec{j}\,d\vec{S}$$
 
 Размерность плотности потока вероятности: $[\vec{j}]=\left[ \frac{1}{\text{с}\cdot\text{см}^2} \right]$
 
@@ -116,7 +116,7 @@ $$
 \label{eq:5_2_6}
 \boxed{\frac{d\widehat{F}}{dt} = \pd{\widehat{F}}{t} + \frac{i}{\hbar} [\widehat{H}, \widehat{F}]}
 \end{equation}
---- оператор изменения физической величины во времени (уравнение движения оператора $\widehat{F}$)
+--- оператор изменения физической величины во времени (уравнение движения оператора $\widehat{F}$).
 
 Таким образом:
 $$
@@ -129,7 +129,7 @@ $$
 $$
 
 \begin{defn}
-Величина, сохранаяющая свое значение во времени, называется интегралом движения.
+Величина, сохраняющая свое значение во времени, называется интегралом движения.
 \end{defn}
 
 Примеры интегралов движения:
@@ -165,7 +165,7 @@ $$
 \D{F}{t}= \pd{F}{t} + \underbrace{ \sum_{i=1}^{s} \brc{ \pd{H}{p_i} \pd{F}{q_i} - \pd{H}{q_i} \pd{F}{p_i} } }_{\brcr{H, F}} = \pd{F}{t} + \brcr{H, F}
 \end{equation}
 
-$\brcr{H, F}$ -- скобка Пуассона для $H$ и $F$
+$\brcr{H, F}$ -- скобка Пуассона для $H$ и $F$.
 
 \textbf{Принцип соответствия} (между классической и квантовой механикой):
 
@@ -183,7 +183,7 @@ F ~~\leftrightarrow~~ \avg{F} \\
 \end{gathered}
 $$
 
-Выражение $i \brs{\op{H}, \op{F}}$ иногда называют \textbf{квантовой скобкой Пуассона}
+Выражение $i \brs{\op{H}, \op{F}}$ иногда называют \textbf{квантовой скобкой Пуассона}.
 
 При $\hbar \to 0$:
 $$
@@ -214,7 +214,7 @@ $$
 
 \begin{equation}
 \label{eq:5_3_2}
-\op{\vec{F}} \equiv \left. \D{\op{\vp}}{t} \right|_{\text{\eqref{eq:5_2_6}}} = \left. \frac{i}{\hbar} \brs{\op{H}, \op{\vp}} \right|_{\text{\eqref{eq:5_2_7}}} = - \vec{\nabla} U(\vr)
+\op{\vec{F}} \equiv \left. \D{\op{\vp}}{t} \right|_{\text{\eqref{eq:5_2_6}}} = \left. \frac{i}{\hbar} \brs{\op{H}, \op{\vp}} \right|_{\text{\eqref{eq:5_2_7}}} = - \vec{\nabla} U(\op{\vr})
 \end{equation}
 
 Из \eqref{eq:5_2_5}:
@@ -222,7 +222,7 @@ $$
 \begin{equation}
 \label{eq:5_3_3}
 \boxed {
-	\left. \D{}{t}\avg{\op{\vr}} \right|_{\text{\eqref{eq:5_3_1}}} = \frac{\avg{\vp}}{m}
+	\left. \D{}{t}\avg{\op{\vr}} \right|_{\text{\eqref{eq:5_3_1}}} = \frac{\avg{\op{\vp}}}{m}
 }
 \end{equation}
 
@@ -262,7 +262,7 @@ m \D{^2}{t^2} \avg{\op{\vr}} = \avg{\op{\vec{F}}}
 
 \noindent
 Если $\vec{F} \equiv 0$ -- свободное движение\\
-Если $\vec{F} = \const$ -- движение в однорожном поле\\
+Если $\vec{F} = \const$ -- движение в однородном поле\\
 $\vec{F} = - m\omega^2 \vr$ -- движение в поле упругой силы
 
 Тогда:
