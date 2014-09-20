@@ -2,7 +2,7 @@
 
 \section{Критерий применимости квазиклассического приближения}
 
-$\hbar \to 0$ (<<жаргон>>, т.к. физическую константу нельзя устремить к нулю). Принцип соответствия (\textsection\textsection 2,3 гл. 5)
+$\hbar \to 0$ (<<жаргон>>, т.к. физическую константу нельзя устремить к нулю). Принцип соответствия (\textsection\textsection 2,3 гл. 5).
 
 \subsection{Переход к уравнению Гамильтона-Якоби}
 
@@ -12,7 +12,7 @@ $$
 $$
 \Psi = \mathcal{A} e^{\frac{i}{\hbar}S(\vr,t)}
 $$
-где $S \in \mathbb{C}$ имеет размерность действия
+где $S \in \mathbb{C}$ имеет размерность действия.
 
 $$
 \nabla \Psi(\vr,t) = \brc{\frac{i}{\hbar}\nabla S}\Psi
@@ -20,12 +20,14 @@ $$
 Подставим $\Psi$ и $\nabla \Psi$ в уравнение Шрёдингера:
 $$
 i\hbar\brc{\frac{i}{\hbar}\pd{S}{t}}\Psi = 
-\brcr{ -\frac{\hbar^2}{2m} \brs{ \brc{\frac{i}{\hbar}\nabla\vec{S}}^2 + \frac{i}{\hbar}\nabla^2 S} + U(\vr) }
+\brcr{ -\frac{\hbar^2}{2m} \brs{ \brc{\frac{i}{\hbar}\nabla S}^2 + \frac{i}{\hbar}{\nabla^2} S} + U(\vr) } \Psi
 $$
 \begin{equation}
 \label{eq:11_1_1}
 \boxed{-\pd{S}{t} = \frac{(\nabla S)^2}{2m} + U(\vr) - \frac{i\hbar}{2m} (\nabla^2 S)}
 \end{equation}
+Последний член в этом уравнении называется квантовой поправкой.
+
 Мы получили уравнение Гамильтона-Якоби (см. т.1 Л.-Л., \textsection 47):
 $$
 \begin{gathered}
@@ -52,7 +54,7 @@ $$
 \begin{gathered}
 \frac{\hbar}{p^2} \abs{\frac{dp}{dx}} = 
 \abs{\frac{d}{dx}\brc{\frac{\hbar}{p}}} _{\text{\eqref{eq:1_1_2}}} = \abs{\frac{d\lambdabar}{dx}} \ll 1\\
-\boxed{\Delta \lambdabar \approx \lambdabar \frac{d\lambdabar}{dx} \ll \lambdabar}
+\boxed{\Delta \lambdabar \approx \lambdabar \abs{\frac{d\lambdabar}{dx}} \ll \lambdabar}
 \end{gathered}
 $$
 Существует также формальный \underbar{признак} квазиклассичности (т.е. необходимое, но недостаточное условие) (см. т.III Л.Л., \textsection 46):
@@ -64,19 +66,21 @@ $$
 \frac{p^2(x)}{2m} + U(x) = E ~~\rightarrow~~ p(x)=\sqrt{2m(E-U(x))}
 $$
 $$
-\frac{dp}{dx}=\frac{2m}{2p}\brc{-\frac{dU}{dx}} = \frac{m}{p}F
+\frac{dp}{dx}=\frac{2m}{2p}\brc{-\frac{dU}{dx}} = \frac{m}{p}F,
 $$
 где $F$ --- классическая сила.
 $$
-\frac{\hbar}{p^2} \abs{\frac{dp}{dx}} = \abs{\frac{\hbar m}{p^3} \frac{dU}{dx}} \ll 1
+\boxed{\Delta \lambdabar \ll \lambdabar,~~~\abs{\frac{d\lambdabar}{dx}} \ll 1,~~~\frac{\hbar}{p^2} \abs{\frac{dp}{dx}} \ll 1, ~~~\abs{\frac{\hbar m}{p^3} \frac{dU}{dx}} \ll 1 }
 $$
 --- критерий квазиклассичности, который удобно использовать при решении задач.
 
 Выводы:
 \begin{enumerate}
-\item Квазиклассическое приближение не применимо при малых $p$, а также при $p(x)=0$ (классическая точка поворота)
+\item Квазиклассическое приближение не применимо при малых $p$, а также при $p(x)=0$ (классическая точка поворота).
 \item В квазиклассическом приближении $U(x)$ не должна иметь резких скачков 
 \end{enumerate}
+
+Квазиклассичность = большие импульсы + плавный ход потенциала.
 
 \section{Метод Вентцеля-Крамерса-Бриллюэна (ВКБ)}
 \subsection{Вид волновой функции в квазиклассическом приближении}
@@ -101,7 +105,7 @@ $$
 \caption{Классически разрешённая (I) и запрещённая (II) области} \label{fig:1}
 \end{figure}
 
-Метод ВКБ работает при $E < U(x)$
+Область применимости метода ВКБ шире, чем классической теории: он работает при $E < U(x)$.
 
 Рассмотрим консервативную систему (см. т.1 Л.-Л., \textsection 47):
 $$
@@ -111,6 +115,9 @@ $$
 $$
 (S')^2 - i\hbar S'' = 2m(E-U(x)) \equiv p^2(x)
 $$
+
+Здесь $p^2(x)$ - просто обозначение, которое не подразумевает, что $p^2(x) > 0$.
+
 Разложим $p^2(x)$ до первой степени по $\hbar$:
 $$
 p^2(x) = (S'_0 + S'_1 + ...)^2 - i\hbar(S''_0+S''_1+...) \approx (S'_0)^2 + 2 S'_0 S'_1 - i\hbar S''_0
@@ -138,23 +145,23 @@ $$
 S'_1 = \frac{i\hbar}{2} \frac{S''_0}{S'_0} = \frac{i\hbar}{2} \brc{\frac{\mp p'(x)}{\mp p(x)}} = \frac{i\hbar}{2} \frac{d}{dx}\brs{\ln p(x)}
 $$
 $$
-S_1 = \frac{i\hbar}{2} \ln p(x) = i\hbar \ln \sqrt{p(x)}
+S_1 = \frac{i\hbar}{2} \ln p(x) = \boxed{i\hbar \ln \sqrt{p(x)}}
 $$
 Вид квазиклассической волновой функции в классически разрешённой области:
 $$
-\boxed{\left. \psi(x) \right|_{x<x_0} = \mathcal{A} e^{\frac{i}{h} S(x)} \approx \frac{\mathcal{A}}{\sqrt{p(x)}} \exp \brc{\pm\frac{i}{h}\int_x^{x_0} p(x')dx'} }
+\boxed{\left. \Psi(x) \right|_{x<x_0} = \mathcal{A} e^{\frac{i}{h} S(x)} \approx \frac{\mathcal{A}}{\sqrt{p(x)}} \exp \brc{\pm\frac{i}{h}\int_x^{x_0} p(x')dx'} }
 $$
 
-\item Область II, $E<U(x)$, $p^2(x)<0$
+\item Область II (классически запрещенная), $E<U(x)$, $p^2(x)<0$
 $$
-p^2(x) = 2m(E-U(x)) = 2m(U(x)-E)
+p^2(x) = 2m(E-U(x)) = -2m(U(x)-E)
 $$
 $$
 p(x) = \pm i \sqrt{2m(U(x)-E)} = \pm i \abs{p(x)}
 $$
-Вид квазиклассической волновой функции в классически запрешённой области:
+Вид квазиклассической волновой функции в классически запрещенной области:
 $$
-\boxed{\left. \psi(x) \right|_{x>x_0} = \mathcal{A} e^{\frac{i}{h} S(x)} \approx \frac{\mathcal{A}}{\sqrt{\abs{p(x)}}} \exp \brc{\pm\frac{1}{h}\int_x^{x_0} \abs{p(x')}dx'} }
+\boxed{\left. \psi(x) \right|_{x>x_0} = \mathcal{A} e^{\frac{i}{h} S(x)} \approx \frac{\mathcal{A}}{\sqrt{\abs{p(x)}}} \exp \brc{\pm\frac{1}{h}\int_{x_0}^{x} \abs{p(x')}dx'} }
 $$
 \end{enumerate}
 
@@ -163,7 +170,7 @@ $$
 \begin{enumerate}
 \item При $x<x_0$~ $\psi(x) \sim \cos, \sin$\\
 При $x>x_0$~ $\psi(x) \sim$ затухающей экспоненте
-\item При $p(x_0) = 0$ квазиклассический случай не применим
+\item При $p(x_0) = 0$ квазиклассическое приближение не применимо
 \item $W(x_0) \sim \frac{1}{p(x_0)} \to \infty$
 \end{enumerate}
 
@@ -178,7 +185,7 @@ $$
 \end{excr}
 
 \subsection{Связь между двумя решениями, взятыми по разные стороны от точки поворота}
-Заменим, что в окрестности $x_0$ функцию $U(x)$ линейным участком:
+Заменим в окрестности $x_0$ функцию $U(x)$ ее линейным приближением:
 $$
 \left. U(x) \right|_{\abs{x-x_0} \to 0} \simeq U(x_0) + U'(x_0)(x-x_0)+...
 $$
@@ -210,14 +217,16 @@ $$
 \right.
 $$
 
-\begin{figure}[here]
+\begin{figure}[h]
 \centering
 \includegraphics[scale=0.4]{figs/11_2}
 \caption{графики функций Эйри}
 \label{fig:11_2}
 \end{figure}
 
-$\abs{x-x_0} < L$, где $L$ --- характерный размер.
+Асимптотическая область: Эйри + ВКБ приближения.
+
+Эйри-приближение верно при $\abs{x-x_0} < L$, где $L$ --- характерный размер (длина, на которой существенно меняется потенциал).
 
 ВКБ:
 $$
@@ -249,10 +258,10 @@ $$
 $$
 Эта система совместна только если выполняется условие $\lambdabar/L \ll 1$, то есть:
 $$
-\brc{\frac{\lambdabar}{L}}^{\frac{2}{3}} L \ll \abs{x-x_0} < L ,~~\text{если}~\frac{\lambdabar}{L} \ll 1
+\boxed{\brc{\frac{\lambdabar}{L}}^{\frac{2}{3}} L \ll \abs{x-x_0} < L} ,~~\text{если}~\frac{\lambdabar}{L} \ll 1
 $$
 
-Из \eqref{eq:11_2_1}: $\xi \gg 1$. Приведём асимптотические оценки функций Эйри (см. \textsection b, мат. дополнение т.III Л.-Л.)
+Из \eqref{eq:11_2_1}: $\abs{\xi} \gg 1$. Приведём асимптотические оценки функций Эйри (см. \textsection b, мат. дополнение т.III Л.-Л.)
 $$
 \left\{
 \begin{aligned}
@@ -263,16 +272,16 @@ $$
 ~~~
 \left\{
 \begin{aligned}
-\Ai(-\abs{\xi})_{\abs{\xi} \to \infty} &\simeq \frac{1}{\sqrt{\pi}} \xi^{-\frac{1}{4}} \sin\brs{\frac{2}{3} \abs{\xi}^{\frac{3}{2}} + \frac{\pi}{4}} \\
-\Bi(-\abs{\xi})_{\abs{\xi} \to \infty} &\simeq \frac{1}{\sqrt{\pi}} \xi^{-\frac{1}{4}} \cos\brs{\frac{2}{3} \abs{\xi}^{\frac{3}{2}} + \frac{\pi}{4}}
+\Ai(-\abs{\xi})_{\abs{\xi} \to \infty} &\simeq \frac{1}{\sqrt{\pi}} \abs{\xi}^{-\frac{1}{4}} \sin\brs{\frac{2}{3} \abs{\xi}^{\frac{3}{2}} + \frac{\pi}{4}} \\
+\Bi(-\abs{\xi})_{\abs{\xi} \to \infty} &\simeq \frac{1}{\sqrt{\pi}} \abs{\xi}^{-\frac{1}{4}} \cos\brs{\frac{2}{3} \abs{\xi}^{\frac{3}{2}} + \frac{\pi}{4}}
 \end{aligned}
 \right.
 $$
 
 $$
 \begin{aligned}
-z_{(x \to x_0 - 0)} &= \frac{1}{\hbar} \int_{x}^{x_0} \alpha^{\frac{1}{2}}\hbar(x_0-x')^{\frac{1}{2}} dx' = \alpha^{\frac{1}{2}} (x_0-x')^{\frac{3}{2}} \equiv \frac{2}{3}\alpha^{\frac{1}{2}} \abs{x-x_0}^{\frac{3}{2}} \equiv \frac{2}{3} \abs{\xi}^{\frac{3}{2}} \\
-z_{(x \to x_0 + 0)} &= \frac{1}{\hbar} \int_{x_0}^{x} \alpha^{\frac{1}{2}}\hbar(x'-x_0)^{\frac{1}{2}} dx' = ... = \frac{2}{3} \xi^{\frac{3}{2}}
+z_{(x \to x_0 - 0)} &\to \frac{1}{\hbar} \int_{x}^{x_0} \alpha^{\frac{1}{2}}\hbar(x_0-x')^{\frac{1}{2}} dx' = \frac{2}{3}\alpha^{\frac{1}{2}} (x_0-x')^{\frac{3}{2}} \equiv \frac{2}{3}\alpha^{\frac{1}{2}} \abs{x-x_0}^{\frac{3}{2}} \equiv \frac{2}{3} \abs{\xi}^{\frac{3}{2}} \\
+z_{(x \to x_0 + 0)} &\to \frac{1}{\hbar} \int_{x_0}^{x} \alpha^{\frac{1}{2}}\hbar(x'-x_0)^{\frac{1}{2}} dx' = ... = \frac{2}{3} \xi^{\frac{3}{2}}
 \end{aligned}
 $$
 
@@ -293,7 +302,7 @@ $$
 $$
 \begin{gathered}
 \gamma_1 = \gamma_2 = \frac{\pi}{4}\\
-\frac{A}{a} = \frac{1}{2},~ \frac{B}{b} = 1 ~~\rightarrow~~ A = \frac{a}{2},~ B = b
+\frac{A}{a} = \frac{1}{2},~ \frac{B}{b} = 1 ~~\rightarrow~~ \boxed{A = \frac{a}{2},~ B = b}
 \end{gathered}
 $$
 
@@ -301,7 +310,7 @@ $$
 $$
 \begin{aligned}
 \psi_{I}(x) &\simeq \frac{1}{\sqrt{p(x)}} \brcr{ a \sin\brs{\frac{1}{\hbar} \int_x^{x_0} p(x')dx'+\frac{\pi}{4}} + b \cos\brs{\frac{1}{\hbar} \int_x^{x_0} p(x')dx'+\frac{\pi}{4}} } \\
-\psi_{II}(x) &\simeq \frac{1}{\sqrt{\abs{p(x)}}} \brcr{ \frac{a}{2} \exp\brc{-\frac{1}{\hbar} \int^x_{x_0} p(x')dx'} + b \exp\brc{-\frac{1}{\hbar} \int^x_{x_0} p(x')dx'} }
+\psi_{II}(x) &\simeq \frac{1}{\sqrt{\abs{p(x)}}} \brcr{ \frac{a}{2} \exp\brc{-\frac{1}{\hbar} \int^x_{x_0} \abs{p(x')}dx'} + b \exp\brc{-\frac{1}{\hbar} \int^x_{x_0} \abs{p(x')}dx'} }
 \end{aligned}
 $$
 
@@ -334,7 +343,6 @@ $$
 }
 $$
 Переход не работает, когда $\psi \to \pi n$, а также в обратную сторону.
-\\
 
 \textbf{Правило III:} \\
 Сделаем замену в II: $\phi \to \phi + \frac{\pi}{2}$:
@@ -358,29 +366,32 @@ $$
 }
 $$
 
-[картинка]
-
 Поменяем области местами. Что произойдёт с правилами сответствия? Если грубо, то $x_0$ поменяется местами с $x$ в пределах интегрирования и отношениях типа $\ll$.
 
 
 \section{Условие квантования Бора-Зоммерфильда}
 
-[Картинка]
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{figs/11_4}
+\caption{К выводу условий квантования Бора-Зоммерфельда}
+\label{fig:11_4}
+\end{figure}
 
 Применим правило соответствия I:
 $$
 \begin{gathered}
-\psi(x)_{x<b} = \frac{a_1}{\sqrt{p}} \sin\brs{\frac{1}{\hbar} \int_{x}^{b} p(x')dx' + \frac{\pi}{4} } \equiv \frac{a_1}{\sqrt{p}} \sin{z_1 + \frac{\pi}{4}} \\
-\psi(x)_{x>a} = \frac{a_2}{\sqrt{p}} \sin\brs{\frac{1}{\hbar} \int_{a}^{x} p(x')dx' + \frac{\pi}{4} } \equiv \frac{a_2}{\sqrt{p}} \sin{z_2 + \frac{\pi}{4}}
+\psi(x)_{x<b} = \frac{a_1}{\sqrt{p}} \sin\brs{\frac{1}{\hbar} \int_{x}^{b} p(x')dx' + \frac{\pi}{4} } \equiv \frac{a_1}{\sqrt{p}} \sin({z_1 + \frac{\pi}{4}}) \\
+\psi(x)_{x>a} = \frac{a_2}{\sqrt{p}} \sin\brs{\frac{1}{\hbar} \int_{a}^{x} p(x')dx' + \frac{\pi}{4} } \equiv \frac{a_2}{\sqrt{p}} \sin({z_2 + \frac{\pi}{4}})
 \end{gathered}
 $$
 $$
 z_1+z_2 = \frac{1}{\hbar} \int_{a}^{b} p(x')dx' \equiv \frac{1}{\hbar} \int_{a}^{b} p(x)dx
 $$
-<<Сшивка>>:
+<<Сшивка>> (на интервале $(a, b)$ волновые функции обязаны совпадать):
 $$
 \begin{aligned}
-\frac{a_1}{\sqrt{p}} \sin{z_1+\frac{\pi}{4}} = \frac{a_2}{\sqrt{p}} \sin{z_2+\frac{\pi}{4}} = \frac{a_2}{\sqrt{p}} \sin\brs{\frac{1}{\hbar} \int_{a}^{b} p(x)dx - z_1 + \frac{\pi}{4}} = \\
+\frac{a_1}{\sqrt{p}} \sin({z_1+\frac{\pi}{4}}) = \frac{a_2}{\sqrt{p}} \sin({z_2+\frac{\pi}{4}}) = \frac{a_2}{\sqrt{p}} \sin\brs{\frac{1}{\hbar} \int_{a}^{b} p(x)dx - z_1 + \frac{\pi}{4}} = \\
 = -\frac{a_2}{\sqrt{p}} \sin\brs{z_1 - \frac{1}{\hbar} \int_{a}^{b} p(x)dx - \frac{\pi}{4} }
 \end{aligned}
 $$
@@ -398,17 +409,17 @@ a_1 = (-1)(-1)^{n+1}a_2  ~~\rightarrow~~ a_2 = a_1 (-1)^n
 Отсюда получаем \textbf{условия квантования Бора-Зоммерфильда} (1915-й год):
 \begin{equation}
 \label{eq:11_3_3}
-\boxed{\frac{1}{\hbar} \int_{a}^{b} p(x)dx = \pi\hbar\brc{n+\frac{1}{2}}}
+\boxed{\int_{a}^{b} p(x)dx = \pi\hbar\brc{n+\frac{1}{2}}}
 \end{equation}
 
 \begin{equation}
 \label{eq:11_3_4}
-\boxed{\frac{1}{\hbar} \oint p(x)dx \equiv \frac{1}{\hbar} \int_{a}^{b} p(x)dx = 2\pi\hbar\brc{n+\frac{1}{2}}}
+\boxed{\oint p(x)dx \equiv \int_{a}^{b} p(x)dx = 2\pi\hbar\brc{n+\frac{1}{2}}}
 \end{equation}
 
 Напомним:
 $$
-p(x) = \sqrt{2m(E_n - U(x)}
+p(x) = \sqrt{2m(E_n - U(x))}
 $$
 
 Выводы:
@@ -416,7 +427,7 @@ $$
 \item $\oint p(x)dx $ --- адиабатический инвариант (система сохраняет квантовый уровень при медленном (адиабатическом) изменении параметров системы)
 \item $n:~ n \to E_n$
 $$
-\sin{z+\frac{\pi}{4}}:~~ a \to b:~ \frac{\pi}{4} \to \frac{1}{\hbar} \left. \int_{a}^{b} p(x)dx + \frac{\pi}{4} \right|_{\text{\eqref{eq:11_3_3}}} =
+\sin({z+\frac{\pi}{4}}):~~ a \to b:~ \frac{\pi}{4} \to \frac{1}{\hbar} \left. \int_{a}^{b} p(x)dx + \frac{\pi}{4} \right|_{\text{\eqref{eq:11_3_3}}} =
 \pi n + \frac{3}{4}\pi
 $$
 Следовательно, волновая функция на промежутке от $a$ до $b$ меняет знак $n$ раз, что является частным случаем осцилляционной теоремы (гл. 7 \textsection 3)
@@ -446,9 +457,17 @@ $$
 \boxed{\Delta N = \frac{\Delta p \Delta x}{2\pi\hbar}}
 $$
 
-\section{Вероятность проникновения частицы через барьер в квазиклассическом приближении}
+\begin{sloppypar}
+  \section{Вероятность проникновения частицы через барьер в квазиклассическом приближении}
+\end{sloppypar}
 
-[Картинка]
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{figs/11_5}
+\caption{Проникновение частицы через барьер}
+\label{fig:11_5}
+\end{figure}
+
 
 \begin{enumerate}
 \item Область III:
@@ -460,7 +479,7 @@ $$
 $$
 \begin{aligned}
 j_{x}^{\text{прош}} = \frac{i\hbar}{2m}(\psi\nabla\psi^* - \psi^*\nabla\psi) = \brc{\text{члены}~ \sim \nabla \frac{1}{\sqrt{p(x)}} ~\text{компенсируются}} =\\
-= \frac{i\hbar}{2m} \brcr{\frac{A}{\sqrt{p(x)}} e^{i\brs{z(x)+\frac{\pi}{4}}} \frac{A^*}{\sqrt{p(x)}} e^{-i\brs{z(x)+\frac{\pi}{4}}} \brc{-i\frac{dz}{dx}} - \brc{\text{комплексно-сопряжённое}} } = \\
+= \frac{i\hbar}{2m} \brcr{\frac{A}{\sqrt{p(x)}} e^{i\brs{z(x)+\frac{\pi}{4}}} \frac{A^*}{\sqrt{p(x)}} e^{-i\brs{z(x)+\frac{\pi}{4}}} \brc{-i\frac{dz}{dx}} - \brc{\text{компл-сопр}} } = \\
 = \frac{i\hbar}{2m} \brcr{\frac{-i\abs{A}^2 2}{\hbar}} = \frac{\abs{A}^2}{m} = j_x^{\text{прош}} > 0
 \end{aligned}
 $$
@@ -468,11 +487,36 @@ $$
 
 \item Область II, по правилу соответствия III:
 $$
-\psi(x)_{a<x<b} \simeq \frac{A}{\sqrt{\abs{p}}} \exp\brc{\frac{1}{\hbar} \int_x^{b} \abs{p(x')dx'}} \equiv \frac{A}{\sqrt{\abs{p}}} \underbrace{ \exp\brc{\frac{1}{\hbar} \int_{a}^{b} \abs{p(x')dx'}} }_{e^{\gamma}} \exp\brc{- \frac{1}{\hbar} \int_{a}^{x} \abs{p(x')dx'}}
+\psi(x)_{a<x<b} \simeq \frac{A}{\sqrt{\abs{p}}} \exp\brc{\frac{1}{\hbar} \int_x^{b} \abs{p(x')}dx'} \equiv 
+$$
+$$
+\equiv \frac{A}{\sqrt{\abs{p}}} \underbrace{ \exp\brc{\frac{1}{\hbar} \int_{a}^{b} \abs{p(x')}dx'} }_{e^{\gamma}} \exp\brc{- \frac{1}{\hbar} \int_{a}^{x} \abs{p(x')}dx'}
 $$
 
 \item Область I, правило соответствия I:
 $$
-\psi(x)_{x<a} \simeq \frac{2A}{\sqrt{p}} \sin\brs{\frac{1}{\hbar} \int_{x}^{a} p(x')dx' + \frac{\pi}{4}} e^{\gamma} = \frac
+\psi(x)_{x<a} \simeq \frac{2A}{\sqrt{p}} \sin\brs{\frac{1}{\hbar} \int_{x}^{a} p(x')dx' + \frac{\pi}{4}} e^{\gamma} =
 $$
+$$
+= \frac{2A e^{\gamma}}{\sqrt{p}} \left\{ \underbrace{\exp \brc{\frac{i}{\hbar} \int_{x}^{a} p(x')dx' + \frac{i\pi}{4}}}_{\text{отраженная волна}} - \underbrace{\exp \brc{-\frac{i}{\hbar} \int_{x}^{a} p(x')dx' - \frac{i\pi}{4}}}_{\text{падающая волна}}\right \} 
+$$
+$$
+j_x^{\text{пад}} = \frac{i \hbar}{2m} \brcr{\Psi \nabla \Psi^* - \Psi^* \nabla \Psi} = \frac{i \hbar}{2m} \brcr{\frac{A e^{\gamma}}{i \sqrt{p}} e^{-i(z(x) + \frac{\pi}{4})} \frac{A^* e^{\gamma}}{(-i) \sqrt{p}} e^{i(z(x) + \frac{\pi}{4})} \brc{i \frac{dz}{dx}} - \text{К.С.} } =
+$$
+$$
+= \frac{i \hbar}{2m} \brcr{\frac{-2i \abs{A}^2 e^{2\gamma}}{\hbar}} = \frac{\abs{A}^2 e^{2\gamma}}{m}
+$$
+
+\item Формула Гамова (1928г):
+$$
+\boxed{D \equiv \frac{\abs{j_x^{\text{прош}}}} {\abs{j_x^{\text{пад}}}} = e^{2\gamma} = e^{-\frac{2}{\hbar} \int_a^b \abs{p(x)} dx}} 
+$$
+
+Коэффициент отражения:
+$$
+R \equiv \frac{\abs{j_x^{\text{отр}}}}{\abs{j_x^{\text{пад}}}} = 1 (!)
+$$
+Это свойство имеет место в квазиклассике, т.к. при установлении правил соответствия растущая экспонента компенсирует падающую экспоненту.
+
+$D \ll 1 \to 2\gamma \ll 1$
 \end{enumerate}
