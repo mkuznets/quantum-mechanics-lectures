@@ -15,7 +15,7 @@ $$
 \end{gathered}
 $$
 
-Где введены \textbf{осцилляторные единицы} длины и импульса:
+Здесь были введены \textbf{осцилляторные единицы} длины и импульса:
 $$
 \begin{gathered}
 a_0 = \sqrt{\frac{\hbar}{m\omega}} \\
@@ -44,7 +44,7 @@ $$
 \right. ~~~ \Rightarrow ~~~ \left\{
 \begin{aligned}
 \op{\xi} = \frac{\op{a} + \op{a}^\dag}{\sqrt{2}} \\
-\op{p}_\xi = \frac{\op{a} + \op{a}^\dag}{\sqrt{2}} \\
+\op{p}_\xi = \frac{\op{a} - \op{a}^\dag}{\sqrt{2}} \\
 \end{aligned} \right.
 $$
 
@@ -82,7 +82,7 @@ $$
 
 \begin{equation}
 \label{eq:7_2_3}
-\brs{\ann, \op{h}} = \brs{\ann, \cre\ann} = \underbrace{\brs{\ann, \cre}}_{= 1} \ann + \cre \underbrace{\brs{\ann, \ann}}_{= 0} = - \ann
+\brs{\ann, \op{h}} = \brs{\ann, \cre\ann} = \underbrace{\brs{\ann, \cre}}_{= 1} \ann + \cre \underbrace{\brs{\ann, \ann}}_{= 0} = \ann
 \end{equation}
 
 Домножим \eqref{eq:7_1_3} на $\cre$:
@@ -153,8 +153,8 @@ $\ann$ -- \textbf{оператор уничтожения} кванта коле
 $$
 	\ann \ket{0} = 0
 $$
-где $\ket{0}$ -- собственный вектор, отвечающий собственному значению $\epsilon_0$\\
-\\
+где $\ket{0}$ -- собственный вектор, отвечающий собственному значению $\epsilon_0$.
+
 Из \eqref{eq:7_2_5} и \eqref{eq:7_2_8}: 
 \begin{equation}
 \label{eq:7_2_10}
@@ -169,14 +169,19 @@ $$
 $$
 т.е. такой спектр является эквидистантным
 
-[картинка]
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.6]{figs/7_1}
+  \caption{Спектр гармонического осциллятора}
+  \label{fig:7_1}
+\end{figure}
 
 При $n = 0$:
 $$
 \frac{\hbar \omega}{2} = \frac{m\omega^2}{2} a_0^2  ~~\to~~ a_0 = \sqrt{\frac{\hbar}{m\omega}}
 $$
--- амплитуда нулевых колебаний.\\
-\\
+-- амплитуда нулевых колебаний.
+
 Из \eqref{eq:7_2_6}, \eqref{eq:7_2_9} и \eqref{eq:7_2_10}:
 \begin{equation}
 \label{eq:7_2_5_add}
@@ -243,13 +248,17 @@ $$
 	\psi_n(\xi) = \sqrt{\frac{1}{2^n \cdot n! \cdot \sqrt{\pi}}} H_n(\xi) e^{-\xi^2/2}
 }
 $$
-где $H_n(\xi) = e^{\xi^2/2} \brc{\xi - \D{}{\xi}}^n e^{-\xi^2/2} $\\
-\\
+где $H_n(\xi) = e^{\xi^2/2} \brc{\xi - \D{}{\xi}}^n e^{-\xi^2/2} $
+
 $$
 H_0(\xi) = 1,~~ H_1(\xi) = 2\xi,~~ H_2(\xi) = 4\xi^2 - 2
 $$
-
-[картинка]
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.3]{figs/7_2}
+  \caption{Модуль волновых функций гармонического осциллятора}
+  \label{fig:7_2}
+\end{figure}
 
 \begin{thm}[Осцилляторная теорема квантовой механики]
 Волновая функция $\psi_n(x)$, соответствующая собственным значениям $E_n$, имеет при конечных $x$ ровно $n$ нулей.
