@@ -149,7 +149,7 @@ S_1 = \frac{i\hbar}{2} \ln p(x) = \boxed{i\hbar \ln \sqrt{p(x)}}
 $$
 Вид квазиклассической волновой функции в классически разрешённой области:
 $$
-\boxed{\left. \Psi(x) \right|_{x<x_0} = \mathcal{A} e^{\frac{i}{h} S(x)} \approx \frac{\mathcal{A}}{\sqrt{p(x)}} \exp \brc{\pm\frac{i}{h}\int_x^{x_0} p(x')dx'} }
+\boxed{\left. \Psi(x) \right|_{x<x_0} = \mathcal{A} e^{\frac{i}{h} S(x)} \approx \frac{\mathcal{A}}{\sqrt{p(x)}} \exp \brc{\pm\frac{i}{\hbar}\int_x^{x_0} p(x')dx'} }
 $$
 
 \item Область II (классически запрещенная), $E<U(x)$, $p^2(x)<0$
@@ -161,7 +161,7 @@ p(x) = \pm i \sqrt{2m(U(x)-E)} = \pm i \abs{p(x)}
 $$
 Вид квазиклассической волновой функции в классически запрещенной области:
 $$
-\boxed{\left. \psi(x) \right|_{x>x_0} = \mathcal{A} e^{\frac{i}{h} S(x)} \approx \frac{\mathcal{A}}{\sqrt{\abs{p(x)}}} \exp \brc{\pm\frac{1}{h}\int_{x_0}^{x} \abs{p(x')}dx'} }
+\boxed{\left. \psi(x) \right|_{x>x_0} = \mathcal{A} e^{\frac{i}{h} S(x)} \approx \frac{\mathcal{A}}{\sqrt{\abs{p(x)}}} \exp \brc{\pm\frac{1}{\hbar}\int_{x_0}^{x} \abs{p(x')}dx'} }
 $$
 \end{enumerate}
 
@@ -342,7 +342,7 @@ $$
 	\psi(x)_{(x \gg x_0)} = \frac{c \sin{\phi}}{\sqrt{\abs{p}}} \exp\brc{\frac{1}{\hbar} \int_{x_0}^{x} \abs{p(x')}dx'}
 }
 $$
-Переход не работает, когда $\psi \to \pi n$, а также в обратную сторону.
+Переход не работает, когда $\phi \to \pi n$, а также в обратную сторону.
 
 \textbf{Правило III:} \\
 Сделаем замену в II: $\phi \to \phi + \frac{\pi}{2}$:
