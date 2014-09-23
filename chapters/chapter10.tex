@@ -5,7 +5,7 @@
 $$
 U(r) = -\frac{Ze^2}{r}
 $$
-($z>1$: водородоподобный атом (ион), $z=1$: атом водорода)
+($Z>1$: водородоподобный атом (ион), $Z=1$: атом водорода)
 
 Из упр. 11 2-го задания:
 $$
@@ -97,7 +97,10 @@ $$
 
 Из \eqref{eq:10_1_2} получаем:
 $$
-v'' + 2\brc{\frac{l}{p} - \kappa}v' + \brc{ \frac{l(l-1)}{\rho^2} - \frac{2\kappa l}{\rho} + \kappa^2 } v + \frac{2}{\rho}v' + \frac{2}{\rho} \brc{ \frac{l}{p} - \kappa} v + \brc{- \frac{l(l+1)}{\rho^2} + \frac{2Z}{\rho} - \kappa^2}v = 0
+v'' + 2\brc{\frac{l}{p} - \kappa}v' + \brc{ \frac{l(l-1)}{\rho^2} - \frac{2\kappa l}{\rho} + \kappa^2 } v + \frac{2}{\rho}v' + \frac{2}{\rho} \brc{ \frac{l}{p} - \kappa} v + 
+$$
+$$
++\brc{- \frac{l(l+1)}{\rho^2} + \frac{2Z}{\rho} - \kappa^2}v = 0
 $$
 
 В итоге:
@@ -164,7 +167,7 @@ $$
 \begin{equation}
 \label{eq:10_2_5}
 \boxed{
-	\frac{Z}{l} - l - 1 = n_r = 0, 1, 2, ...
+	\frac{Z}{\kappa} - l - 1 = n_r = 0, 1, 2, ...
 }
 \end{equation}
 
@@ -182,19 +185,19 @@ $$
 \begin{equation}
 \label{eq:10_2_7}
 \begin{gathered}
-\epsilon_n  = \frac{E_n}{E_a} = - \frac{k^2}{2} = \boxed{- \frac{Z^2}{n^2} = \epsilon_n } \\
+\epsilon_n  = \frac{E_n}{E_a} = - \frac{\kappa^2}{2} = \boxed{- \frac{Z^2}{2 n^2} = \epsilon_n } \\
 \boxed{E_n = - \frac{Z^2 me^4}{2\hbar^2} \frac{1}{n^2}}
 \end{gathered}
 \end{equation}
 
 Соответственно \eqref{eq:10_2_1} радиальная волновая функция имеет вид
 $$
-R_{nl}(\rho) = R_{n_r l}(\rho) = C_{nl} e^{-k\rho}\rho^l v_{n_r l}(\rho)
+R_{nl}(\rho) = R_{n_r l}(\rho) = C_{nl} e^{-\kappa \rho}\rho^l v_{n_r l}(\rho)
 $$
 где определяемые рекуррентными соотношениями \eqref{eq:10_2_4} полиномы называют \textbf{обобщёнными (присоединёнными) полиномами Лагерра}
 $$
 \begin{gathered}
-\boxed{v_{n_r l}(\rho) = L_{n_r}^{2l+1} (2 k p) }, \text{~где} \\
+\boxed{v_{n_r l}(\rho) = L_{n_r}^{2l+1} (2 \kappa p) }, \text{~где} \\
 L_{s}^{k}(x) = e^x x^{-s} \D{^k}{x^k}(e^{-x} x^{s+k})
 \end{gathered}
 $$
@@ -211,7 +214,9 @@ $$
 \boxed{\Psi_{100}(\vr)} = \underbrace{R_{10}(r)}_{\frac{2}{\sqrt{a^3}} e^{-r/a}} \underbrace{Y_{00}(\theta, \phi)}_ {\frac{1}{\sqrt{4\pi}}} \boxed{= \frac{1}{\sqrt{\pi a^3}} e^{-r/a}}
 $$
 
+\begin{sloppypar}
 \section{Кратность вырождения уровней. Кулоновское (случайное) вырождение}
+\end{sloppypar}
 
 Из \eqref{eq:10_2_7} видно, что спектр водородоподобного атома является \textbf{вырожденным}. Энергия определяется только \textbf{главным квантовым числом}, а кроме него есть ещё 2 квантовых числа:
 \begin{itemize}
