@@ -1,7 +1,7 @@
-\chapter{Стационарная теория возмущений}
+\chapter{Теория возмущений}
 
 \begin{equation}
-\label{eq:12_1}
+\label{eq:12_0_1}
 \op{H} = \op{H}^{(0)} + \op{V} =  \op{H}^{(0)}+ \lambda \op{U}
 \end{equation}
 
@@ -17,7 +17,365 @@ i \hbar \pd{}{t} \ket{\psi^{(0)}} = \op{H}^{(0)} \ket{\psi^{(0)}} - \text{нес
 $$
 Оба этих уравнения допускают точное решение. Будем считать, что оно нам известно.
 \begin{equation}
-\label{eq:12_2}
+\label{eq:12_0_2}
 \op{H} \ket{\psi_n} = (\op{H}^{(0)} + \lambda \op{U})\ket{\psi_n} = E_n \ket{\psi_n}
+\end{equation}
+
+\section{Стационарная теория возмущений}
+
 \begin{equation}
+\label{eq:12_1_1}
+\op{H}^{(0)} \ket{\psi^{(0)}} = E^{(0)}\ket{\psi^{(0)}} - \text{стационарное УШ}
+\end{equation}
+
+$$
+E_m^{(0)}, \psi_m^{(0)} \to E_m \ket{\psi_m}
+$$
+\begin{equation}
+\label{eq:12_1_2}
+\ket{\psi_n} = \sum_{p=0}^\infty \lambda^p \ket{\phi_n^{(p)}} = \ket{\phi_n^{(0)}} + \lambda \ket{\phi_n^{(1)}} + \lambda^2 \ket{\phi_n^{(2)}} + ... = 
+\end{equation}
+
+\begin{equation}
+\label{eq:12_1_2_add}
+= \ket{\psi_n^{(0)}} + \ket{\psi_n^{(1)}} + \ket{\psi_n^{(2)}} + ...
+\tag{\ref{eq:12_1_2}$'$}
+\end{equation}
+
+\begin{equation}
+\label{eq:12_1_3}
+E_n = \sum_{p=0}^{\infty} \lambda^p \epsilon_n^{(p)} = \epsilon_n^{(0)} + \lambda \epsilon_n^{(1)} + \lambda^2 \epsilon_n^{(2)} + ... = 
+\end{equation}
+
+\begin{equation}
+\label{eq:12_1_3_add}
+= E_n^{(0)} + E_n^{(1)} + E_n^{(2)} + ...
+\tag{\ref{eq:12_1_3}$'$}
+\end{equation}
+При 
+$$
+\lambda \to 0 ~~~E_n \to E_n^{(0)} \equiv \epsilon_n^{(0)}, \ket{\psi_n} \to \ket{\phi_n^{(0)}} \equiv \ket{\psi_n^{(0)}}
+$$
+
+\underline{Ряды ТВ Релея-Шредингера}
+
+Подставим \eqref{eq:12_1_2_add} и \eqref{eq:12_1_3_add} в \eqref{eq:12_0_2}:
+$$
+\brc{\op{H}^{(0)} + \op{V}} \brc{\ket{\psi_n^{(0)}} + \ket{\psi_n^{(1)}} + ...} = \brc{E_n^{(0)} + E_n^{(1)} + ...} \cdot \brc{\ket{\psi_n^{(0)}} + \ket{\psi_n^{(1)}} + ...}
+$$
+
+~~~~~~~~~~~~~~~~~~~~~~~~~Порядок ТЗ~~~~~~~~~~~~~~Уравнение
+\begin{eqnarray}
+\label{eq:12_1_4} 0 &~~~~~~~~~~~& \brc{\op{H}^{(0)} - E_n^{(0)}} \ket{\psi_n^{(0)}} = 0\\
+\label{eq:12_1_5} 1 &~~~~~~~~~~~& \brc{\op{H}^{(0)} - E_n^{(0)}} \ket{\psi_n^{(1)}} = \brc{E_n^{(1)} - \op{V}} \ket{\psi_n^{(0)}} 
+\end{eqnarray}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~...~~~~~~~~~~~~~~~~~~~~...
+\begin{eqnarray}
+ \label{eq:12_1_6} s & \brc{\op{H}^{(0)} - E_n^{(0)}} \ket{\psi_n^{(s)}} = \brc{E_n^{(1)} - \op{V}} \ket{\psi_n^{(s-1)}}  + E_n^{(2)}\ket{\psi_n^{(s-2)}}+...+ E_n^{(s)}\ket{\psi_n^{(0)}}
+\end{eqnarray}
+ 
+\eqref{eq:12_1_1} - спектр \underline{дискретный} и \underline{невырожденный}.
+
+\begin{gather*}
+E_n \to \ket{\psi_n^{(0)}}\\
+\brcr{\ket{\phi_n^{(0)}}}~~~\bk{\psi_m}{\psi_n} = \delta_{mn}\\
+\ket{\psi_n}= \sum_m c_{mn} \ket{\psi_m^{(0)}}, 
+\end{gather*}
+
+где $c_{mn} = c_{mn}^{(0)} + c_{mn}^{(1)} + ...$
+
+\subsection{Первое приближение теории стационарных возмущений}
+
+$$
+\boxed{c_{mn}^{(0)} =\delta_{mn}} \to c_{nn}^{(0)} = 1, c_{mn}^{(0)} = 0, m \neq n
+$$
+
+Умножим \eqref{eq:12_1_5} на $\bra{\psi_n^{(0)}}$:
+\begin{gather*}
+\bfk{\underbrace{\psi_n^{(0)}}_{\text{эрмитов}}}{\op{H}^{(0)} - E_n^{(0)}}{\psi_n^{(1)}} = \bfk{\psi_n^{(0)}}{E_n^{(1)} - \op{V}}{\psi_n^{(0)}}\\
+\bfk{\psi_n^{(0)}}{ \underbrace{E_n^{(0)} -  E_n^{(0)}}_{=0}}{\psi_n^{(0)}}
+\end{gather*}
+
+\begin{equation}
+\label{eq:12_1_7}
+\boxed{E_n^{(1)} = \bfk{\psi_n^{(0)}}{\op{V}}{\psi_n^{(0)}} \equiv \bfk{n}{\op{V}}{n} \equiv V_{nn}}
+\end{equation}
+
+$$
+\ket{\psi_n^{(1)}} = \sum_m c_{mn}^{(1)} \ket{\psi_m^{(0)}} \equiv \underbrace{\sum_m \ket{\psi_m^{(0)}} \bra{\psi_m^{(0)}}}_{=\op{1}} \ket{\psi_n^{(1)}}
+$$
+
+Подставим \eqref{eq:12_1_7} в \eqref{eq:12_1_5}:
+$$
+\sum_m c_{mn}^{(1)} \brc{\op{H}^{(0)} - E_n^{(n)}}\ket{\psi_m^{(0)}} = \brc{E_n^{(1)} - \op{V}}\ket{\psi_m^{(0)}}
+$$
+
+Домножим обе части на $\bra{\psi_k^{(0)}}$:
+$$
+\sum_m c_{mn}^{(1)}\brc{E_k^{(0)} - E_n^{(0)}} \bk{\psi_k^{(0)}}{\psi_m^{(0)}} = E_n^{(1)} \bk{\psi_k^{(0)}}{\psi_n^{(0)}} - V_{kn}
+$$
+
+\begin{equation}
+\label{eq:12_1_8}
+c_{nk}^{(1)} \brc{E_k^{(0)} - E_n^{(0)}} = E_n^{(1)} \delta_{kn} - V_{kn}
+\end{equation}
+
+Из \eqref{eq:12_1_8} при $k \neq n$ получаем:
+\begin{equation}
+\label{eq:12_1_9}
+c_{nk}^{(1)} = \frac{V_{kn}}{E_n^{(0)} - E_k^{(0)}}
+\end{equation}
+
+Найдем $c_{nn}$.
+
+\begin{gather*}
+\ket{\psi_n} = \ket{\psi_n^{(0)}} + \ket{\psi_n^{(1)}}\\
+\bk{\psi_n}{\psi_n} = 1 = \bk{\psi_n^{(0)}}{\psi_n^{(0)}} + \underbrace{\bk{\psi_n^{(0)}}{\psi_n^{(1)}}}_{=0} + \underbrace{\bk{\psi_n^{(1)}}{\psi_n^{(0)}}}_{=0} + \underbrace{\bk{\psi_n^{(1)}}{\psi_n^{(1)}}}_{=0}\\
+\bk{\psi_n^{(0)}}{\psi_n^{(1)}} = \left. 0 = \right|_{\text{\eqref{eq:12_1_7}}} c_{nn}^{(1)} 
+\end{gather*}
+
+\begin{equation}
+\label{eq:12_1_10}
+\boxed{\left. \ket{\psi_n^{(1)}}= \right|_{\text{\eqref{eq:12_1_9}}} \sum_{k \neq n} \frac{V_{kn}}{E_n^{(0)} - E_k^{(0)}} \ket{\psi_k^{(0)}}}
+\end{equation}
+
+\subsection{Энергетическая поправка второго приближения ТСВ}
+
+\begin{gather*}
+\bra{\psi_n^{(0)}} \cdot \eqref{eq:12_1_6} \\
+\underbrace{\bfk{\psi_n^{(0)}}{\op{H}^{(0)} - E_n^{(0)}} {\psi_n^{(s)}}}_{\bfk{\psi_n^{(0)}}{E_n^{(0)} - E_n^{(0)}}{\psi_n^{(s)}}} = E_n^{(1)} \bk{\psi_n^{(0)}}{\psi_n^{(s-1)}} - \bfk{\psi_n^{(0)}}{\op{V}}{\psi_n^{(s-1)}} + E_n^{(2)}\bk{\psi_n^{(0)}}{\psi_n^{(s-2)}}+...+E_n^{(s)}\\
+E_n^{(s)} = \bfk{\psi_n^{(0)}}{\op{V}}{\psi_n^{(s-1)}} - \sum_{t=1}^{s-1} E_n^{(t)} \bk{\psi_n^{(t)}}{\psi_n^{(s-t)}}
+\end{gather*}
+
+Подставим $s=1$ и $s=2$:
+\begin{eqnarray}
+\label{eq:12_1_11}
+s=1:~~~ E_n^{(1)} = \bfk{\psi_n^{(0)}}{\op{V}}{\psi_n^{(0)}} \nonumber \\
+s=2:~~~ E_n^{(2)} = \bfk{\psi_n^{(0)}}{\op{V}}{\psi_n^{(1)}} - E_n^{(1)} \underbrace{\bk{\psi_n^{(0)}}{\psi_n^{(1)}}}_{=c_{nn}^{(1)}=0} 
+\end{eqnarray}
+
+Подставим \eqref{eq:12_1_10} в \eqref{eq:12_1_11}:
+
+\begin{gather*}
+E_n^{(2)} = \sum_{k \neq n} \frac{V_{kn}}{E_n^{(0)} - E_k^{(0)}} \cdot \underbrace{\bfk{\psi_n^{(0)}}{\op{V}}{\psi_k^{(0)}}}_{V_{nk}}\\
+\underbrace{\op{H}}_{\text{эрмитов}} = \underbrace{\op{H}^{(0)}}_{\text{эрмитов}} + \underbrace{\op{V}}_{\text{эрмитов}} \to V_{kn} = V_{nk}^{*}
+\end{gather*}
+
+\begin{equation}
+\label{eq:12_1_12}
+\boxed{E_n^{(1)} = \sum_{k \neq n} \frac{\abs{V_{nk}}^2}{E_n^{(0)} - E_k^{(0)}}}
+\end{equation}
+
+Как наличие одних уровней клияет на энергетическое положение других?
+
+[картинка]
+
+1) $E_k^{(0)} - E_n^{(0)} > 0 \to E_n^{(0)} - E_k^{(0)} < 0$, т.е. $E_n^{(2)} < 0$. Во втором приближении ТВ верхний уровень углубляет нижний.
+
+2) $E_n^{(0)} > E_k^{(0)} \to E_n^{(0)} - E_k^{(0)} > 0$, т.е. $E_n^{(2)} > 0$. Нижний уровень выталкивает верхний.
+
+Во втором приближении ТВ соседние уровни энергии взаимно отталкиваются.
+
+3) $E_n^{(0)} = E_0^{(0)} \to E_n^{(2)} < 0 !$. Основной уровень энергии опускается вниз.
+
+\subsection{Критерий применимость СТВ}
+
+$$
+\ket{\psi_n} = \sum_k c_{nk} \ket{\psi_k^{(0)}},
+$$
+где $c_{nk} = c_{nk}^{(0)} + c_{nk}^{(1)} + ...$.
+
+$\abs{c_{nk}^{(1)}} \ll \abs{c_{nk}^{(0)}} = 1$
+
+Из \eqref{eq:12_1_9} 
+\begin{equation}
+\label{eq:12_1_13}
+\boxed{\abs{V_{kn}} \ll \abs{E_n^{(0)} - E_k^{(0)}}}
+\end{equation}
+- необходимое условие применимости стационарной теории возмущений (невырожденный случай).
+
+\section{Стационарное возмущение вырожденных уровней дискретного спектра. Секулярное уравнение}
+
+$$
+E_n^{(0)} \to \brcr{\ket{\psi_{n \beta}^{(0)}}}, \beta = 1 \div k
+$$
+
+Из \eqref{eq:12_1_4}
+\begin{equation}
+\label{eq:12_2_1}
+\brc{\op{H}^\zr - E_n^\zr} \ket{\psi_{n \beta}^\zr} = 0
+\end{equation}
+
+$$
+\ket{\psi_n^\zr} = \sum_{\beta = 1}^k c_\beta \ket{\psi_{n \beta}^\zr}
+$$
+
+Из \eqref{eq:12_1_5}
+
+$$
+\brc{\op{H}^\zr - E_n^\zr} \ket{\psi_{n} ^\one} = \brc{E_n^\one - \op{V}} \ket{\psi_n^\zr}
+$$
+
+Из соображений удобства опустим индекс $n$. 
+$$
+\ket{\psi^\zr} = \sum_{\beta = 1}^k c_\beta \ket{\psi_{\beta}^\zr}
+$$
+
+Тогда:
+\begin{equation}
+\label{eq:12_2_2}
+\brc{\op{H}^\zr - E^\zr} \ket{\psi ^\one} = \brc{E^\one - \op{V}} \ket{\psi^\zr}
+\end{equation}
+
+$\bra{\psi_{\alpha}^\zr} \cdot$ \eqref{eq:12_2_2}, где $\alpha \in \beta = 1 \div k$:
+$$
+\bfk{\psi_{\alpha}^\zr}{\underbrace{\op{H}^\zr - E^\zr}_{=0 \text{ из эрмитовости}}}{\psi^\one} = \bfk{\psi_{\alpha}^\zr}{E^\one - \op{V}}{\psi^\zr}
+$$
+
+(надо помнить про эрмитовость операторов невозмущенных задач)
+
+Получим
+
+$$
+\sum_{\beta=1}^k c_\beta \bfk{\psi_{\alpha}^\zr}{E^\one - \op{V}}{\psi^\zr} = 0
+$$
+
+или 
+
+\begin{equation}
+\label{eq:12_2_3}
+\sum_{\beta=1}^k \brcr{V_{\alpha \beta} - E^\one \delta_{\alpha \beta}} c_\beta = 0
+\end{equation}  
+
+Система линейных уравнений \eqref{eq:12_2_3} имеет нетривиальные решения относительно $c_\beta$, если 
+\begin{equation}
+\label{eq:12_2_4}
+\boxed{det \norm{V_{\alpha \beta} - E^\one \delta_{\alpha \beta}} = 0}
+\end{equation} 
+- \underline{секулярное (вековое) уравнение}.
+
+Собственные значения эрмитова оператора физической величины действительные (см. пункт в конце \S 2 главы III, \S 1 главы VI).
+
+В результате $k$ кратным уровням энергии соответствуют энергии: 
+$$
+E_n^\zr + E_{n \mu} ^\one, \mu = 1 \div k.
+$$
+Если все корни $E_{n \mu}$ - различны, то возмущение полностью снимает вырождение. Если есть кратные корни, то вырождение снимается частично. (задача 8 1-го задания)
+
+\subsection{Правильные волновые функции нулевого приближения}
+
+$$
+E_{n \mu}^\one \to \eqref{eq:12_2_3} \to c_{\mu \beta}
+$$
+
+$$
+\ket{\tilde{\psi}_{n \mu}^\zr} = \sum_{\beta=1}^k c_{\mu \beta} \ket{\psi_{n \beta}^\zr}, \mu = 1 \div k
+$$
+
+Сделаем $\ket{\tilde{\psi}_{n \mu}^\zr}$ ортонормированными за счет ограничений на $c_{\mu \beta}$:
+$$
+\bk{\psi_{n \nu}^\zr}{\psi_{n \mu}^\zr} = \delta_{\nu \mu}
+$$
+
+Полученные волновые функции называются правильными волновыми функциями нулевого приближения.
+
+\begin{excr}
+Доказать, что в базисе \underline{правильных волновых функций} нулевого приближения вырожденная часть матрицы оператора возмущения $\op{V}$ имеет диагональный вид.
+\end{excr}
+
+\section{Квазивырождение, случай двух близких уровней энергии}
+
+Это случай нарушения критерия \eqref{eq:12_1_13}, т.к. $\Delta E$ мала.
+
+\begin{equation}
+\label{eq:12_3_1}
+\left \{ 
+\begin{matrix}
+\op{H}^\zr \ket{\psi_1^\zr} = E_1^\zr \ket{\psi_1^\zr} \\
+\op{H}^\zr \ket{\psi_2^\zr} = E_2^\zr \ket{\psi_2^\zr}
+\end{matrix}
+\right .
+\end{equation}  
+
+Обозначим $\Delta = E_2^\zr - E_1 ^\zr > 0$.
+
+\begin{equation}
+\label{eq:12_3_2}
+\op{H} \ket{\psi} = \brc{\op{H}^\zr + \op{V}} \ket{\psi} = E \ket{\psi}
+\end{equation}
+
+\begin{equation}
+\label{eq:12_3_3}
+\ket{\psi} = c_1 \ket{\psi_1^\zr} + c_2 \ket{\psi_2^\zr} 
+\end{equation}
+
+Подставим \eqref{eq:12_3_3} в \eqref{eq:12_3_2}:
+\begin{gather*}
+\brc{\op{H}^\zr + \op{V}}\brc{c_1 \ket{\psi_1^\zr} + c_2 \ket{\psi_2^\zr}} = E \brc{c_1 \ket{\psi_1^\zr} + c_2 \ket{\psi_2^\zr}} \\
+  \begin{matrix}
+    \begin{matrix}
+      \bra{\psi_1^\zr}~: \\
+      \bra{\psi_2^\zr}~:
+    \end{matrix} &
+    \begin{pmatrix}
+      E_1^\zr + V_{11} - E & V_{12} \\
+      V_{21} & E_2^\zr + V_{22} - E
+    \end{pmatrix} 
+    \begin{pmatrix}
+      c_1\\
+      c_2
+    \end{pmatrix} 
+     = 0
+  \end{matrix}
+\end{gather*}
+
+\begin{equation}
+\label{eq:12_3_4}
+det \left \| \begin{matrix}
+E_1^\zr + V_{11} - E & V_{12} \\ 
+\underbrace{V_{21}}_{=V_{12}*} & E_2^\zr + V_{22} - E
+\end{matrix}
+\right \| = 0
+\end{equation}
+
+Из \eqref{eq:12_3_4}:
+$$
+E^2 - \brc{E_2^\zr + E_1^\zr + V_{22} + V_{11}}E + \brc{E_1^\zr + V_{11}} \brc{E_2^\zr + V_{22}} - |V_{12}|^2 = 0
+$$
+
+\begin{equation*}
+\begin{split}
+E = &  \frac{E_2^\zr + E_1^\zr + V_{22} + V_{11}}{2} \pm\\
+\pm & \brcr{\frac{1}{4} \brs{ (E_1^\zr + V_{11}) + (E_2^\zr + V_{22}) }^2  - (E_1^\zr + V_{11})(E_2^\zr + V_{22}) + |V_{21}|^2 }^{1/2} = \\
+= & \frac{1}{2}(E_2^\zr + E_1^\zr + V_{22} + V_{11}) \pm \frac{1}{2} \sqrt{(\underbrace{E_2^\zr -E_1^\zr}_{=\Delta} + V_{22} - V_{11})^2 + 4 |V_{12}|^2}
+\end{split}
+\end{equation*}
+
+Если $V_{11} = V_{22} = 0$, то 
+$$
+E=\frac{E_2^\zr + E_1^\zr}{2} \pm \frac{1}{2} \sqrt{\Delta^2 + 4 |V_{12}|^2} \to \Delta E = E_2 - E_1 = \sqrt{\Delta^2 + 4 |V_{12}|^2} > \Delta
+$$
+
+Общий вывод: под действием возмущения близкие уровни энергии ''расталкиваются''.
+
+\begin{figure} [H]
+\centering
+\begin{tikzpicture}[domain=-5:5]
+      \draw [->] (-4,0) node[above] {$E_1^\zr = E_2^\zr$} -- (5,0) node[right] {$\Delta$};
+      \draw [->] (0.7, 0.2) node[right] {\text{ точка квазипересечения}}  -- (0,0);      
+      \draw[->] (0, -4) -- (0,4) node[above] {$E$} ;
+      \draw [domain=-4:4, samples=100] plot (\x, {sqrt(\x * \x + 1)}) node[above] {$E_2^\zr, \ket{\psi_2^\zr}$};
+      \draw [domain=-4:4, samples=100] plot (\x, {-sqrt(\x * \x + 1)}) node[above] {$E_1^\zr, \ket{\psi_1^\zr}$};	
+	\draw[dashed] (-4,-4) -- (4,4) node[below] {$|V_{12}| = 0$};
+	\draw[dashed] (-4,4) -- (4,-4);
+	\draw (2, 1) -- (-0.1, 1) node[above] {$+|V_{12}|$};
+	\draw (2, -1) -- (-0.1, -1) node[above] {$-|V_{12}|$};
+	\draw [<->] (1.9, -1) -- (1.9, 1) node[right] {$2|V_{12}|$}; 
+\end{tikzpicture}
+\caption{ТВ в случае двух близких по энергии уровней} \label{fig:12_1}
+\end{figure}
+
+Вывод два: возмущенные уровни энергии двухуровневой задачи нигде не пересекаются и максимально сближаются в точке квазипересечения (см. рис. 12.1).
+
+
 

@@ -1,0 +1,370 @@
+\chapter{Нестационарная теория возмущений}
+
+\section{Нестационарное возмущение дискретного спектра}
+
+Переходы под влиянием возмущения, действующего в течение конечного времени.
+
+$$
+\op{H} = \op{H}^\zr + \op{V}(t),
+$$
+где $\op{V}(t)$ мал. 
+
+Здесь нет стационарных состояний, поэтому говорить о поправках к собственным значениям \underline{нельзя}.
+
+$$
+\op{V}(t) = \left \{ 
+  \begin{matrix}
+    \op{w}(t), &  0 < t < T \\
+    0, & t \le 0, t \ge T
+  \end{matrix}
+  \right .
+$$
+
+$$
+i \hbar \pd{}{t} \ket{\psi_n^\zr(t)} = \op{H}^\zr \ket{\psi_n^\zr(t)} (\S 4, \text{главы I})
+$$
+
+Общий вид решения временного уравнения Шредингера:
+\begin{gather*}
+\ket{\psi_n^\zr (t)} = e^{-i \frac{E_n^\zr t}{\hbar}} \ket{\psi_n^\zr}, \text{где} \\
+\op{H}^\zr \ket{\psi_n^\zr} = E_n^\zr \ket{\psi_n^\zr} \\
+\hbar \omega_n = E_n^\zr
+\end{gather*}
+
+В соответствии в правилами суперпозиции:
+$$
+\ket{\psi^\zr(t)} = \sum_k c_k \ket{\psi_k^\zr (t)} = \sum_k c_k e^{-i \omega_k t} \ket{\psi_k^\zr}
+$$
+
+\subsection{Метод вариации постоянных}
+
+\begin{equation}
+\label{eq:13_1_1}
+i \hbar \pd{}{t} \ket{\psi(t)} = (\op{H}^\zr + \op{V}(t)) \ket{\psi(t)}
+\end{equation}
+
+\begin{equation}
+\label{eq:13_1_2}
+\ket{\psi(t)} = \sum_k c_k(t) \ket{\psi_k^\zr(t)}
+\end{equation}
+
+Подставим \eqref{eq:13_1_2} в \eqref{eq:13_1_1}:
+
+$$
+i \hbar \sum_k \brc{\dot{c_k} \ket{\psi_k^\zr (t) } + c_k \cancel{\pd{}{t} \ket{\psi_k^\zr (t)}}} = \sum_k c_k \brc{ \cancel{\op{H}^\zr \ket{\psi_k^\zr(t)}} + \op{V} \ket{\psi_k^\zr(t)}}
+$$
+
+\begin{equation}
+\label{eq:13_1_3}
+i \hbar \sum_k \dot{c_k} \ket{\psi_k^\zr (t)} = \sum_k c_k \op{V}(t) \ket{\psi_k^\zr(t)}
+\end{equation}
+
+Спроектируем \eqref{eq:13_1_3} на $\bra{\psi_m^\zr(t)} \cdot$ и учтем, что $\bk{\psi_m^\zr(t)}{\psi_k^\zr(t)} = \delta_{km}$.
+
+\begin{equation}
+\label{eq:13_1_4}
+\boxed{i\hbar \dot{c_m} = \sum_k c_k (t) V_{mk}(t) e^{i \omega_{mk} t}},
+\end{equation}
+где $\omega_{mk} = (E_m^\zr - E_k^\zr) / \hbar$, $V_{mk} = \bfk{\psi_m^\zr}{\op{V}(t)}{\psi_k^\zr}$.
+
+До сих пор у нас были точные соотношения, но для решения \eqref{eq:13_1_4} нужны приближения.
+
+\subsection{Приближения или метод Дирака (1927)}
+
+$$
+c_k(t) = c_k^\zr(t) + c_k^\one(t) + ... 
+$$
+
+Пусть $c_k$ можно представить рядом убывающих функций времени.
+
+При $t = 0, t < 0 ~~~\op{H} \equiv \op{H}^\zr$.
+
+Пусть система находилась в $E = E_m^\zr$.
+$$
+\boxed{c_k(0) = c_k^\zr(0) = c_k^\zr = \delta_{km}},
+$$
+
+т.е. $c_m^\zr = 1$ (до включения возмущения система находилась в этом состоянии).
+
+$$
+c_k^\zr = 0, k \not = m
+$$ 
+
+Из \eqref{eq:13_1_4}:
+$$
+i \hbar \pd{}{t} \brcr{\cancel{c_{nm}^\zr} + c_{nm}^\zr (t) + ...} = \sum_k V_{mk} e^{i \omega_{mk} t} \sim \brcr{\underbrace{c_{nk}^\zr}_{=\delta_{nk}} + \underbrace{\cancel{c_{nk}^\one}}_{\text{ дает второе приближение}} + ...}
+$$
+
+$s=1$ - первое приближение НТВ.
+
+\begin{equation}
+\label{eq:13_1_5}
+\boxed{i \hbar \pd{}{t} c_{nm}^\one = V_{mn}(t) e^{i \omega_{mn} t}}
+\end{equation} 
+
+или
+
+\begin{equation*}
+\boxed{c_{mn}^\one = \frac{1}{i\hbar} \int_0^t dt' V_{mn}(t') e^{i \omega_{mn} t'}} -
+\end{equation*}
+
+Найдена поправочная функция в первом приближении.
+
+$0 < t < T$, где $T$ - длительность возмущения.
+
+\section{Вероятность перехода}
+
+Какой смысл имеет функция $c_{mn}^\one (t)$?
+
+Если вернуться к общему решению возмущенной задачи, то 
+$$
+\ket{\psi(t)} = \sum_m c_{nm}(t) e^{-i \omega_m t} \ket{\psi_m^\zr}
+$$
+
+а) при $t \le 0: ~~~c_{nm} = c_{nm}^\zr = \delta_{nm}$ с $E=E_n^\zr$.
+
+б) при $t > 0: ~~~c_{nm}(t)$ при $m \not = n:~~~c_{nm}^\one(t) \not = 0$.
+
+$$
+\boxed{|c_{nm}^\one (t)|^2 = P_m(t)} -
+$$
+вероятность того, что в результате действия возмущения произошел квантовый переход из начального состояния $n$ в состояние $m$ за время $t$.
+
+Дискретный переход между уровнями энергии:
+
+$$
+P_{nm}(t) =\left |_{\eqref{eq:13_1_5}} \right. \frac{1}{\hbar^2} \left | \int_0^t dt' V_{mn}(t') e^{i \omega_m t'} \right |^2, 0 < t < T
+$$
+
+Если взять промежуток $-\infty < t < \infty$, то 
+$$
+P_{nm} = \frac{1}{\hbar} \left | \int_{-\infty}^\infty dt' V_{mn}(t')e^{i \omega_{mn}t'} \right |^2 = \frac{(2\pi)^2}{\hbar^2} \left | V_{mn}(\omega_{mn})\right|^2 - 
+$$
+
+формула для вероятность перехода, где $V_{mn}(\omega_{mn}) = \frac{1}{2\pi} \int_{-\infty}^\infty dt' V_{mn}(t') e^{i\omega_{mn}t'}$ - компонента Фурье матричного элемента $V_{mn}(t)$ оператора возмущения.
+
+\section{Адиабатические и внезапные возмущения}
+
+[картинка]
+
+\subsection{Адиабатическое изменение возмущения}
+
+Преобразуем \eqref{eq:13_1_5}:
+\begin{eqnarray*}
+\frac{1}{i\hbar} \int_0^T dt' V_{mn}(t')e^{i\omega_{mn}t'} = - \frac{V_{mn}(t')e^{i \omega_{mn}t'}}{\hbar \omega_{mn}}\left|_0^T \right .+ \int_0^T dt' \D{V_{mn(t')}}{t'} \frac{e^{i\omega_{mn}t'}}{\hbar \omega_{mn}}
+\end{eqnarray*}
+
+\begin{equation}
+\label{eq:13_3_1}
+P_{nm}(T) = \frac{1}{(\hbar \omega_{mn})^2} \left| \int_0^T dt' \D{V_{mn}(t')}{t'} e^{i\omega_{mn}t'}\right|^2
+\end{equation}
+
+\begin{defn}
+Матричный элемент оператора возмущения $V_{mn}(t')$ изменяется адиабатически (медленно), если за характерное время перехода в квантовой системе $T_{mn} = \frac{2\pi}{\omega_{mn}}$ изменение $V_{mn}$ мало по сравнению с самой величиной $V_{mn}(t')$ (по модулю).
+\end{defn}
+
+\begin{equation}
+\label{eq:13_3_2}
+\Delta V_{mn}  \simeq T_{mn} \left| \D{V_{mn}}{t'}\right| \ll |V_{mn}|
+\end{equation}
+
+См. рис. 13.1. Там указало $\tau$ - характерное время включения (выключения) возмущения.
+
+$$
+T_{mn} \frac{|V_{mn}|}{\tau} \sim \Delta V_{mn} \ll |V_{mn}| 
+$$
+
+или
+
+$$
+\boxed{\frac{T_{mn}}{\tau} \ll 1} - 
+$$
+
+условие адиабатичности изменения матричного элемента $V_{mn}$.
+
+\begin{gather*}
+\to \omega_{mn} \tau \gg 1 
+\end{gather*}
+
+$e^{i\omega_{mn} t} $ - быстро осциллирующая функция по сравнению с $\D{V_{mn}(t)}{t}$.
+
+$$
+P_m(T) = \left| \D{}{t} V_{mn}(t')\right|_{t = t^*}^2 \brc{\frac{2}{\hbar \omega_{mn}^2}}^2 \sin^2 \brc{\frac{\omega_{mn}T}{2}}
+$$
+
+$|V_{mn}| \ll \hbar \omega_{mn}$ - мало по сравнению с энергией перехода.
+
+Из \eqref{eq:13_3_2}:
+\begin{equation}
+\label{eq:13_3_3}
+\frac{1}{\omega_{mn}} \left| \D{V_{mn}}{t'}\right|_{t' = t^*} \ll \hbar \omega_{mn}
+\end{equation}
+
+Из \eqref{eq:13_3_3}:~~~$\boxed{P_{nm}(T) \ll 1}$.
+
+То есть при медленном (адиабатическом) включении и выключении возмущения, квантовая система, находившаяся первоначально в невырожденном состоянии с $E_n^\zr$, будет в первом приближении теории возмущений оставаться в нем же.
+
+\subsection{Внезапное включение возмущения}
+
+$$\tau \ll T_{mn} \sim 1/\omega_{mn} \to \omega_{mn} \tau \ll 1$$
+
+\begin{equation}
+\label{eq:13_3_4}
+\D{V_{mn}}{t} \sim \delta(t'):~~~\boxed{P_{mn} \simeq \frac{|V_{mn}|^2}{\hbar^2 \omega_{mn}^2}} - 
+\end{equation}
+
+здесь $|V_{mn}|$ - максимальное значение матричного элемента включенного возмущения.
+
+$$
+  \begin{CD}
+  \op{H}^\zr @>>> \op{H}~~~\text{за время } \tau \ll \frac{1}{\omega_{mn}}\\
+  @VVV                      @VVV\\
+  \psi_n^\zr   @.           \brcr{\ket{\psi_f}}
+  \end{CD}
+$$
+
+$$
+\ket{\psi_n^\zr} = \sum_f \underbrace{\ket{\psi_f} \bra{\psi_f}}_{\op{\mathbf{1}}}\ket{\psi_n^\zr}
+$$
+
+\begin{equation}
+\label{eq:13_3_5}
+\boxed{P_{nm} = |\bk{\psi_m}{\psi_n^\zr}|^2}
+\end{equation}
+
+$\eqref{eq:13_3_5} \to^{\op{V}} \eqref{eq:13_3_4}$ (\S 4, т. III Л.-Л.).
+
+\section{Переходы во времени под влиянием постоянного во времени возмущения. ''Золотое правило'' Ферми}
+
+[картинка!]
+
+Из \eqref{eq:13_1_5}
+
+\begin{gather*}
+P_{nm} = \left| \frac{1}{i \hbar} \int_0^T dt' \Vmn e^{i\ommn t'} \right|^2 = \left|\frac{1}{i\hbar} \Vmn \frac{e^{i \ommn T} - 1}{\ommn}\right|^2 = \abs{\Vmn}^2  \underbrace{\frac{2 (1 - \cos \ommn T)}{\hbar^2 \ommn^2}}_{f(\ommn, T)} \\
+f(\omega, T) = \frac{2}{\omega} (1 - \cos \omega T) - 
+\end{gather*}
+
+спектральная функция.
+
+[картинка!]
+
+$$
+\lim_{T \to \infty} \frac{f(\omega, T)}{T} = 2\pi \delta (\omega)
+$$
+
+Вероястность квантовых переходов в единицу времени:
+
+\begin{eqnarray}
+w_{mn} = \left . \frac{P_{nm}}{T}\right|_{T \to \infty} = \frac{\abs{\Vmn}^2}{\hbar^2} \lim_{T \to \infty} \frac{f(\ommn, T)}{T} = \nonumber \\
+\frac{\abs{\Vmn}^2}{\hbar^2} 2 \pi \delta \brc{\frac{E_m - E_n}{\hbar}} = \frac{\abs{\Vmn}^2}{\hbar} 2 \pi \delta (E_m - E_n)  = \nonumber \\
+\label{eq:13_4_1}
+= \boxed{\frac{2\pi}{\hbar} \abs{\Vmn}^2 \delta(E_m - E_n) = w_{mn}}
+\end{eqnarray}
+
+$$
+\delta E \sim \frac{2\pi}{T} \hbar 
+$$
+
+- точность сохранения энергии.
+
+\begin{equation}
+\label{eq:13_4_2}
+\boxed{\Delta E \Delta t \ge \frac{\hbar}{2}} 
+\end{equation}
+
+- соотношение неопределенностей ''энергия - время''.
+
+За время $\Delta t$ $E$ не может быть измерена точнее величины $\Delta E$, определяемой выражением \eqref{eq:13_4_2}.
+
+$$
+\Delta t \to \infty~~~~~\Delta E \to 0
+$$
+
+- стационарное состояние. (см. \S 44, гл. III Л.Л.).
+
+Выводы:
+
+1) Спектр либо конечных, либо начальных и конечных состояний - непрерывный (квазинепрерывный).
+
+2) Полная вероятность квантовых переходов в единицу времени из начального состояния `$n$` в континуальную группу состояний `$m$`, обладающих почти одинаковой энергией в окрестности $E_m$ и близкими значениями матричных элементов $\Vmn$.
+
+\begin{exmpl}
+Гл. 19 - теория рассеяния, борновское приближение. (см. зад. 7 второго задания)
+\end{exmpl}
+
+$$
+W_n = \sum_m w_{nm} \to \int w_{mn} d \nu_m,
+$$
+
+$d \nu_m$ - число квантовых состояний в интервале энергий $E_m \div E_m + dE_m$
+
+$\boxed{d \nu_m = \rho(E_m) dE_m}$, где $\rho(E_m) = \D{\nu_m}{E_m}$ - плотность энергетического спектра конечных состояний.
+
+Число конечных состояний на единичный интервал энергий вблизи $E_m$:
+\begin{eqnarray}
+W_n = \int w_{mn} \rho(E_m)dE_m = \left |_{\eqref{eq:13_4_1}} \dfrac{2\pi}{\hbar} \int \abs{\Vmn}^2 \delta(E_m - E_n) \rho(E_m)dE_m \right .= \nonumber \\
+\label{eq:13_4_3} = \boxed{ \left. \frac{2\pi}{\hbar} \abs{\Vmn}^2 \rho(E_m) \right|_{E_n = E_m} = W_n}
+\end{eqnarray}
+
+- `золотое правило` Ферми. Полная вероятность квантового перехода в единицу времени под действием возмущения не зависит от длительности возмущения.
+
+Выводы из \eqref{eq:13_4_3}:
+
+1) сохраняется энергия
+
+2) определяет полную верояность квантовых переходов в единицу времени из начального состояния `$n$` во все состояния `$m$` континуальной группы. 
+
+3) если спектр существенно дискретный, то $P_{nm} \not \leftrightarrow W_n$. \eqref{eq:13_4_3} применима, когда $\rho$ - плавная, $f$ - подобие $\delta$-функции.
+
+[картинка]
+
+\section{Переходы под действием периодического возмущения в дискретном и непрерывном спектрах}
+
+\begin{equation}
+\label{eq:13_5_1}
+\op{V}(t) = \op{V}e^{-i\omega t} + \op{V}^\dag e^{i\omega t} 
+\end{equation}
+
+- эрмитов оператор возмущения.
+
+Как и в \S 4 $\op{V}(t) \in [0, T]$.
+
+$\eqref{eq:13_5_1} \to \eqref{eq:13_1_5}$ для $c_{nm}^\one (t)$:
+
+\begin{gather*}
+c_{nm}^\one = \frac{1}{i \hbar} \int_0^T dt \brcr{\Vmn e^{i(\ommn - \omega)t} + \underbrace{\Vmn^\dag}_{V_{nm}^*} e^{i(\ommn + \omega)t}} = \\
+= \frac{\Vmn [e^{i(\ommn - \omega)T} - 1]}{i \hbar i (\ommn - \omega)} + \frac{\Vmn^\dag [e^{i(\ommn + \omega)T} - 1]}{i \hbar i (\ommn + \omega)}
+\end{gather*}
+
+$$
+\omega \to \pm \ommn = \pm (E_m - E_n) / \hbar 
+$$
+
+- резонансный случай
+
+\begin{equation}
+\label{eq:13_5_2}
+\boxed{w_{nm} =|_{\eqref{eq:13_4_1}} \frac{2\pi}{\hbar} \abs{\Vmn^\pm}^2 \delta(E_m - E_n \pm \hbar \omega)}, 
+\end{equation}
+
+где $E_m$ - конечная энергия, $E_n$ - начальная энергия, $\Vmn^- = \Vmn$.
+
+\begin{equation}
+\label{eq:13_5_3}
+\boxed{W_n = \left .\frac{2\pi}{\hbar} \brcr{\abs{\Vmn^\pm}^2 \rho(E_m)} \right |_{E_m = E_n \mp \hbar \omega}} - 
+\end{equation}
+
+аналог \eqref{eq:13_4_3}.
+
+\eqref{eq:13_4_2} - переходы в дискретном спектре.
+
+\eqref{eq:13_4_3} - переходы в непрерывном спектре + из дискретного $n$ в непрерывный спектр $m$.
+
+$$
+E_m = E_n \mp \hbar \omega
+$$
+
+1) $E_m - E_n = \mp \hbar \omega$ - правильность частот Бора.
+
+2) $\op{V} e^{-i \omega t}$ - переход из  $E_m \to E_n + \hbar \omega$ - увеличение энергии системы (поглощение энергии квантовой системой).
