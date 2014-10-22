@@ -138,7 +138,7 @@ $$
 
 Если взять промежуток $-\infty < t < \infty$, то 
 $$
-P_{nm} = \frac{1}{\hbar} \left | \int_{-\infty}^\infty dt' V_{mn}(t')e^{i \omega_{mn}t'} \right |^2 = \frac{(2\pi)^2}{\hbar^2} \left | V_{mn}(\omega_{mn})\right|^2 - 
+P_{nm} = \frac{1}{\hbar^2} \left | \int_{-\infty}^\infty dt' V_{mn}(t')e^{i \omega_{mn}t'} \right |^2 = \frac{(2\pi)^2}{\hbar^2} \left | V_{mn}(\omega_{mn})\right|^2 - 
 $$
 
 формула для вероятность перехода, где $V_{mn}(\omega_{mn}) = \frac{1}{2\pi} \int_{-\infty}^\infty dt' V_{mn}(t') e^{i\omega_{mn}t'}$ - компонента Фурье матричного элемента $V_{mn}(t)$ оператора возмущения.
@@ -192,7 +192,7 @@ $$
 P_m(T) = \left| \D{}{t} V_{mn}(t')\right|_{t = t^*}^2 \brc{\frac{2}{\hbar \omega_{mn}^2}}^2 \sin^2 \brc{\frac{\omega_{mn}T}{2}}
 $$
 
-$|V_{mn}| \ll \hbar \omega_{mn}$ - мало по сравнению с энергией перехода.
+$|\Delta V_{mn}| \ll \hbar \omega_{mn}$\footnote{Кажется, все должно быть именно так} - мало по сравнению с энергией перехода.
 
 Из \eqref{eq:13_3_2}:
 \begin{equation}
