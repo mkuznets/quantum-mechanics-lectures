@@ -6,7 +6,6 @@
 *.txt text eol=lf
 *.bib text eol=lf
 *.md text eol=lf
-*.md text eol=lf
 
 # Binary files: should not be modified
 *.png binary
@@ -14,3 +13,4 @@
 *.gif binary
 *.pdf binary
 *.eps binary
+
