@@ -29,7 +29,7 @@ $$\left.\pd{}{t}\Psi^*(\vr,t)\Psi(\vr,t)\right|_{\rho(\vr,t)=|\Psi(\vr,t)|^2} =\
 
 Правая часть \eqref{eq:5_1_1}: 
 
-$$\left. -\frac{\hbar^2}{2m}(\psi^*\Delta\psi-\psi\Delta\psi^*)\right|_{\Delta=\vec{\nabla}\cdot\vec{\nabla}} =-\frac{\hbar^2}{2m}\vec{\nabla}(\psi^*\vec{\nabla}\psi-\psi\vec{\nabla}\psi^*) = i\hbar\frac{\hbar}{2m}\vec{\nabla}(\psi^*\vec{\nabla}\psi-\psi\vec{\nabla}\psi^*)$$
+$$\left. -\frac{\hbar^2}{2m}(\psi^*\Delta\psi-\psi\Delta\psi^*)\right|_{\Delta=\vec{\nabla}\cdot\vec{\nabla}} =-\frac{\hbar^2}{2m}\vec{\nabla}(\psi^*\vec{\nabla}\psi-\psi\vec{\nabla}\psi^*) = -i\hbar \brc{-\frac{i\hbar}{2m}}\vec{\nabla}(\psi^*\vec{\nabla}\psi-\psi\vec{\nabla}\psi^*)$$
 
 Отсюда \eqref{eq:5_1_1} переходит в:
 
@@ -88,7 +88,7 @@ $$
 \left[
 \begin{gathered}
 \avg{F} = \sum_n F_n P_n ~\rightarrow~ \frac{d}{dt}\avg{F}=\sum_n \frac{dF_n}{dt}P_n \equiv \avgh{\frac{dF}{dt}}\\
-\avg{F} = \int F\,dP ~\rightarrow~ \frac{d}{dt}\avg{F}=\int \frac{dF_n}{dt}\,dP \equiv \avgh{\frac{dF}{dt}}\\
+\avg{F} = \int F\,dP ~\rightarrow~ \frac{d}{dt}\avg{F}=\int \frac{dF}{dt}\,dP \equiv \avgh{\frac{dF}{dt}}\\
 \end{gathered}
 \right.
 $$
@@ -141,7 +141,7 @@ $$
 Частица в потенциальном поле:
 \begin{equation}
 \label{eq:5_2_7}
-[\widehat{H}, \widehat{\vp}] = [\frac{\widehat{\vp}^2}{2m}, \widehat{\vp}] + [\vec{U}(r), \vp] = i \hbar \vec{\nabla} U(\vr) \ne 0
+[\widehat{H}, \widehat{\vp}] = [\frac{\widehat{\vp}^2}{2m}, \widehat{\vp}] + [U(\vr), \vp] = i \hbar \vec{\nabla} U(\vr) \ne 0
 \end{equation}
 то есть $\vp$ не сохраняется.
 
@@ -199,7 +199,7 @@ $$
 $$
 
 $$
-U(\op{\vr}) \equiv \sum_{n=0}^{\infty} \frac{U^{n}(0)}{n!}\op{\vr}^n ~~~ \to ~~~ U(\op{\vr}) = 0
+U(\op{\vr}) \equiv \sum_{n=0}^{\infty} \frac{U^{n}(0)}{n!}\op{\vr}^n ~~~ \to ~~~ \brs{U(\op{\vr}), \op{\vr}} = 0
 $$
 
 $$

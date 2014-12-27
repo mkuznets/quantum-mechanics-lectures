@@ -87,7 +87,7 @@ $\op{\alpha}_i = ?,~~\op{\beta} = ?$
 \begin{gather}
 \eqref{eq:14_1_3}^2:~E^2 \op{1} = (c^2 \vp^2 + m^2 c^4)\op{1} = \brcr{c \sum_{i=1}^3 \op{\alpha}_i p_i + \op{\beta} mc^2} \times \brcr{c \sum_{j=1}^3 \op{\alpha}_j p_j + \op{\beta} mc^2} = \nonumber \\
 \label{eq:14_1_4}
-= \underbrace{c^2 \sum_{i=1}^3 \sum_{j = 1}^3 (\op{\alpha}_i, p_i)(\op{\alpha}_j, p_j)}_{(I)} + mc^2 \sum_{i=1}^3 (\op{\alpha}_i \beta + \beta \op{\alpha}_i) p_i + \op{\beta}^2 m^2 c^4
+= \underbrace{c^2 \sum_{i=1}^3 \sum_{j = 1}^3 (\op{\alpha}_i, p_i)(\op{\alpha}_j, p_j)}_{(I)} + mc^2 \sum_{i=1}^3 (\op{\alpha}_i \op{\beta} + \op{\beta} \op{\alpha}_i) p_i + \op{\beta}^2 m^2 c^4
 \end{gather} 
 
 $$
@@ -185,7 +185,7 @@ $$
 \end{equation}
 
 \begin{excr}
-$[\op{H_D}, \vp] = 0$
+Показать, что $[\op{H_D}, \vp] = 0$
 \end{excr}
 
 Отсюда следует, что 
@@ -204,13 +204,13 @@ $[\op{H_D}, \vp] = 0$
 - уравнение плоской волны.
 
 $$
-\boxed{\Psis(\vr, t) = u(\vp, E) \exp^{\frac{i}{\hbar}(\vp \vr - Et)}}
+\boxed{\Psis(\vr, t) = u(\vp, E) e^{\frac{i}{\hbar}(\vp \vr - Et)}}
 $$
 
 Подставим \eqref{eq:14_2_4} в \eqref{eq:14_2_2}:
 
 $$
-\brcr{c(\aD, \vp) + \bD mc^2}u(\vp, E) \exp^{\frac{i\vp \vr}{\hbar}} = E \op{1} u(\vp, E) \exp^{\frac{i\vp \vr}{\hbar}}
+\brcr{c(\aD, \vp) + \bD mc^2}u(\vp, E) e^{\frac{i\vp \vr}{\hbar}} = E \op{1} u(\vp, E) e^{\frac{i\vp \vr}{\hbar}}
 $$
 
 Напомним вид матриц Дирака:
@@ -253,7 +253,7 @@ $$
 
 Надо определить $(\msigm, \vp)^2$. Для этого воспользуемся результатом упражнения 6 из предыдущего семестра:
 $$
-(\msigm, \vec{A})(\msigm, \vec{A}) = (\vec{A}, \vec{B}) \op{1} + i(\msigm, [\vec{A}, \vec{B}])
+(\msigm, \vec{A})(\msigm, \vec{B}) = (\vec{A}, \vec{B}) \op{1} + i(\msigm, [\vec{A}, \vec{B}])
 $$
 
 Положим $\vec{A} = \vec{B} = \vp \to (\msigm, \vp)^2 = p^2 \op{1}$.
@@ -322,7 +322,7 @@ $$
 
 \begin{equation}
 \label{eq:14_3_2}
-\Psis(\vr, t) = \exp^{-\frac{iEt}{\hbar}} \psi(\vr) \to \brs{E - c(\aD, \plong) - \bD mc^2 - e\Phi} \psi(\vr) = 0
+\Psis(\vr, t) = e^{-\frac{iEt}{\hbar}} \psi(\vr) \to \brs{E - c(\aD, \plong) - \bD mc^2 - e\Phi} \psi(\vr) = 0
 \end{equation}
 
  В \eqref{eq:14_3_2} $\psi(\vr) = \brc{\begin{matrix} \phi(\vr) \\ \chi(\vr) \end{matrix}}$.
