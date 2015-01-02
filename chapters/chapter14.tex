@@ -36,7 +36,7 @@ $$
 - здесь $s$ - дискретный индекс, $\bra{\vr, s}$ - точка спин-орбитального пространства.
 
 $$
-\ket{\Psi(t)} \rightarrow \mathcal{H} = \mathcal{H}^{\text{орб}} \oplus \mathcal{H}^{\text{спин}}
+\ket{\Psi(t)} \rightarrow \mathcal{H} = \mathcal{H}^{\text{орб}} \otimes \mathcal{H}^{\text{спин}}
 $$
 
  - прямое произведение.
@@ -384,7 +384,7 @@ $$
 
 \begin{equation}
 \label{eq:14_3_8}
-\boxed{\brs{\frac{1}{2m} (\vec{P} - \frac{e}{c} \vA)^2 - \frac{e\hbar}{2mc} (\msigm, \Hvec) + e\Phi}\phi(\vr) = \epsilon \phi(\vr)}
+\boxed{\brs{\frac{1}{2m} (\vec{p} - \frac{e}{c} \vA)^2 - \frac{e\hbar}{2mc} (\msigm, \Hvec) + e\Phi}\phi(\vr) = \epsilon \phi(\vr)}
 \end{equation}
 
 - уравнение Паули.
@@ -449,7 +449,7 @@ $\alpha$ - постоянная тонкой структуры.
 \end{equation}
 
 $$
-(2mc^2 + \epsilon - e\Phi)^{-1} = \brcr{2mc^2 \brc{1 + \underbrace{\brc{\frac{\epsilon - e\Phi}{2mc^2}}}_{\sim \frac{v^2}{c^2} \ll 1}}}^{-1} = \frac{1}{2mc^2} \brc{1 - \frac{\epsilon + e\Phi}{2mc^2}}
+(2mc^2 + \epsilon - e\Phi)^{-1} = \brcr{2mc^2 \brc{1 + \underbrace{\brc{\frac{\epsilon - e\Phi}{2mc^2}}}_{\sim \frac{v^2}{c^2} \ll 1}}}^{-1} = \frac{1}{2mc^2} \brc{1 - \frac{\epsilon - e\Phi}{2mc^2}}
 $$
 
 Из \eqref{eq:14_3_4}:
@@ -459,13 +459,13 @@ $$
 
 Как мы знаем, $(\msigm, \vp) = \op{\vp}^2$.
 
-Тогда (???)
+Тогда
 \begin{equation}
 \label{eq:14_4_2}
 \brs{\epsilon - U(r) - \frac{\op{\vp}^2}{2m}}\phi(\vr) = - \brs{(\msigm, \op{\vp})\brc{\frac{\epsilon - U(\vr)}{2m^2c^2}}} \phi(\vr)
 \end{equation}
 
-При этом $\bk{\phi}{\phi} \not = 1, ~~~\brc{\frac{v}{c}}^2 \ll 1$  (???).
+При этом $\bk{\phi}{\phi} \not = 1, ~~~\brc{\frac{v}{c}}^2 \ll 1$.
 
 Теперь $\Psis = \brc{\begin{matrix} \phi \\ \chi \end{matrix}}$.
 

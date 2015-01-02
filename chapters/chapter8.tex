@@ -81,10 +81,10 @@ $$
 \op{\vec{j}}^2 = \op{j_x}^2 + \op{j_y}^2 + \op{j_z}^2
 $$
 
-Совместная измеримость $\op{j}^2$ возможна только с одной компонентой:
+Совместная измеримость $\op{\vec{j}}^2$ возможна только с одной компонентой:
 \begin{equation}
 \label{eq:8_2_2}
-\brs{\op{j}^2, \op{j_i}} = 0
+\brs{\op{\vec{j}}^2, \op{j_i}} = 0
 \end{equation}
 
 \begin{excr}
@@ -97,14 +97,14 @@ $\ket{jm}$ - полная общая система собственных ве�
 \left\{
 \begin{aligned}
 \op{\vec{j}}^2 \ket{jm} = \lambda(j) \ket{jm} \\
-\op{\vec{j}}_z \ket{jm} = m \ket{jm}
+\op{j}_z \ket{jm} = m \ket{jm}
 \end{aligned}
 \right.
 \end{equation}
 
 Условие ортонормировки:
 $$
-\bk{jm}{j'm'} = \delta_{jj'} \delta{mm'}
+\bk{jm}{j'm'} = \delta_{jj'} \delta_{mm'}
 $$
 
 $$
@@ -231,7 +231,7 @@ $$
 
 С другой стороны:
 $$
-\op{j}_{+} \op{j}_{-} = \op{j}^2 - \op{j_z}^2 + \op{j_z}
+\op{j}_{+} \op{j}_{-} = \op{\vec{j}}^2 - \op{j_z}^2 + \op{j_z}
 $$
 
 \begin{excr}
@@ -239,7 +239,7 @@ $$
 \end{excr}
 
 $$
-\op{j}_{+} \op{j}_{-} \ket{jm} = \left. (\op{j}^2 - \op{j_z}^2 + \op{j_z}) \ket{jm} \right|_{\text{\eqref{eq:8_2_7}, \eqref{eq:8_2_3}}} = \brc{j(j+1) - m^2 + m} \ket{jm}
+\op{j}_{+} \op{j}_{-} \ket{jm} = \left. (\op{\vec{j}}^2 - \op{j_z}^2 + \op{j_z}) \ket{jm} \right|_{\text{\eqref{eq:8_2_7}, \eqref{eq:8_2_3}}} = \brc{j(j+1) - m^2 + m} \ket{jm}
 $$
 
 Фазу $\ket{jm}$ можно подобрать так, чтобы $\alpha_m = \beta_m  = \abs{\beta_m}$
@@ -277,7 +277,7 @@ $$
 \left\{
 \begin{array}{l}
 \op{\vec{s}}^2 \ket{s, m_s} = s(s+1) \ket{s, m_s}\\
-\op{\vec{s}}_z \ket{s, m_s} = m_s \ket{s, m_s}
+\op{s}_z \ket{s, m_s} = m_s \ket{s, m_s}
 \end{array}
 \right.
 \end{equation}
@@ -301,7 +301,7 @@ $\ket{\alpha}$ и $\ket{\beta}$ -- базисные векторы спинов�
 	\ket{\chi} = a_{+} \begin{pmatrix} 1 \\ 0 \end{pmatrix} + a_{-} \begin{pmatrix} 0 \\ 1 \end{pmatrix} = \begin{pmatrix} a_{+} \\ a_{-} \end{pmatrix}
 }
 \end{equation}
-где $a_{-}$ и $a_{+}$ -- вероятности обнаружить проекцию в $s_z = -1/2$ и $1/2$ соответственно.
+где $\abs{a_{-}}^2$ и $\abs{a_{+}}^2$ -- вероятности обнаружить проекцию в $s_z = -1/2$ и $1/2$ соответственно.
 
 $$
 \avg{\chi, \chi} = 1 ~~\rightarrow ~~ \abs{a_{+}}^2 + \abs{a_{-}}^2 = 1

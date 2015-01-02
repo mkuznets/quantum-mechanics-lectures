@@ -1,0 +1,135 @@
+\chapter{Сложение моментов}
+
+\section{Сложение моментов}
+
+Пусть есть два момента $j_1$ и $j_2$, а пространство представимо в виде: $\mathcal{H} = \mathcal{H}^{(1)} \otimes \mathcal{H}^{(2)}$.
+
+$[\op{j}_{1 \alpha}, \op{j}_{2 \beta}] = 0$ при $\alpha, \beta = x, y, z$, так как моменты действуют в разных подпространствах.
+
+Как мы уже знаем, 
+\begin{gather*}
+\op{\vec{j}}_1^2\ket{j_1 m_1} = j_1(j_1 + 1)\ket{j_1 m_1}  \\
+\op{j}_{1z} \ket{j_1 m_1} = m_1\ket{j_1 m_1}, 
+\end{gather*}
+где $m_1 = -j_1, -j_1 + 1, ... , j_1 - 1, j_1$.
+
+Аналогично
+\begin{gather*}
+\op{\vec{j}}_2^2\ket{j_2 m_2} = j_2(j_2 + 1)\ket{j_2 m_2}  \\
+\op{j}_{2z} \ket{j_2 m_2} = m_2\ket{j_2 m_2}, 
+\end{gather*}
+где $m_2 = -j_2, -j_2 + 1, ... , j_2 - 1, j_2$.
+
+Размерность пространства $\mathcal{H} = \mathcal{H}^{(1)} \otimes \mathcal{H}^{(2)}$ равна $(2j_1 + 1)(2j_2 + 1)$.
+
+Введем оператор полного углового момента для систем 1 и 2:
+$$
+\op{\vec{j}} = \op{\vec{j}}_1 + \op{\vec{j}}_2
+$$
+
+Перейдем от базиса $\ket{j_1 m_1 j_2 m_2}$ к базису $\ket{j m j_1 j_2}$. 
+
+\begin{excr}
+Доказать, что это можно сделать, т.е. что $\op{\vec{j}^2}$, $\op{j_z}$, $\op{\vec{j}}_1^2$, $\op{\vec{j}}_2^2$ взаимно коммутируют.
+\end{excr}
+
+Рассмотрим базис $\brcr{\ket{j m j_1 j_2}}$.
+\begin{gather*}
+\op{\vec{j}}_1^2\ket{j m j_1 j_2} = \lambda_1 \ket{j m j_1 j_2}  \\
+\op{\vec{j}}_2^2\ket{j m j_1 j_2} = \lambda_2 \ket{j m j_1 j_2}  \\
+\op{\vec{j}}^2\ket{j m j_1 j_2} = j(j+1) \ket{j m j_1 j_2}  \\
+\op{j}_{z} \ket{j m j_1 j_2} = m \ket{j m j_1 j_2}, 
+\end{gather*}
+
+где $\lambda_1, \lambda_2, j(j+1), m$ требуется найти.\\
+
+Дано: $j_1$, $j_2$, $\ket{j_1 m_1}$, $\ket{j_2 m_2}$. \\
+
+Найти: $j$, $\lambda_1$, $\lambda_2$, $\ket{j m}$ - собственные векторы. \\
+
+$j$ - целое или полуцелое число.
+
+$m = -j, -j + 1, ..., j - 1, j$.
+
+\begin{sloppypar}
+\section{Коэффициенты Клебша-Гордана. Полный угловой момент.}
+\end{sloppypar}
+
+\begin{equation}
+\label{eq:15_2_1}
+\boxed{\ket{j m j_1 j_2} = \sum_{m_1, m_2} C^{j m}_{j_1 m_1 j_2 m_2} \ket{j_1 m_1}\ket{j_2 m_2}}
+\end{equation}
+
+$C^{j m}_{j_1 m_1 j_2 m_2}$ - коэффициенты Клебша-Гордана.
+
+Из \eqref{eq:15_2_1}:
+\begin{gather*}
+\lambda_1 = j_1(j_1 + 1) \\
+\lambda_2 = j_2(j_2 + 1)
+\end{gather*}
+
+1) $\op{j}_z = \op{j}_{1z} + \op{j}_{2z}$.
+
+\begin{equation}
+\label{eq:15_2_2}
+m\ket{j m} = \sum_{m_1, m_2} C^{j m}_{j_1 m_1 j_2 m_2} (m_1 + m_2)\ket{j_1 m_1}\ket{j_2 m_2}
+\end{equation}
+
+Сравнивания \eqref{eq:15_2_1} и \eqref{eq:15_2_2}, получим, что $C^{j m}_{j_1 m_1 j_2 m_2} = 0, m \not = m_1 + m_2$.
+
+$$
+\boxed{C^{j m}_{j_1 m_1 j_2 m_2} \not = 0, \text{~если~} m = m_1 + m_2}
+$$
+
+\begin{equation}
+\label{eq:15_2_3}
+\ket{j m} = \sum_{m_1} C^{j m}_{j_1 m_1 j_2 m - m_1} \ket{j_1 m_1}\ket{j_2 m - m_1}
+\end{equation}
+
+2) $m_{max} = j_{max} = m_{1max}+m_{2max} = j_1 + j_2$.
+
+Тогда $j = j_{max}$, $m = m_{max} = j_{max}$, $m_1 = j_1$, $m_2 = j_2$.
+
+Из \eqref{eq:15_2_1}:
+\begin{gather*}
+\ket{j_{max}~j_{max}} = C^{j_1+j_2~j_1 + j_2}_{j_1~j_1~j_2~j_2} \ket{j_1~j_1}\ket{j_2~j_2} \\
+\bk{j_{max}~j_{max}}{j_{max}~j_{max}} = 1 \to C^{j_1+j_2~j_1 + j_2}_{j_1~j_1~j_2~j_2} = 1
+\end{gather*} 
+
+3) $j_{min}$ - ?
+
+Применим векторную модель сложения моментов (см. \S 31, т. III Л. Л.).
+
+$$
+\op{\vec{j}} = \op{\vec{j}}_1 + \op{\vec{j}}_2
+$$
+$$
+j_{min} = \abs{j_1 - j_2}
+$$
+
+Пусть $j_1 > j_2$. Тогда $j_{min} = j_1 - j_2$.
+
+$$
+\sum_{j = j_1 - j_2}^{j_1 + j_2} (2j + 1) = 2 \sum_{j = j_1 - j_2}^{j_1 + j_2} j + \sum_{j = j_1 - j_2}^{j_1 + j_2} 1 = (2j_1 + 1)(2j_2 + 1)
+$$
+ - размерность $\mathcal{H}$. 
+ 
+Таким образом, $\ket{j m j_1 j_2}$ - система собственных векторов операторов $\op{\vec{j}}^2$, $\op{j}_z$, $\op{\vec{j}}_1^2$, $\op{\vec{j}}_2^2$. 
+
+\begin{equation}
+\label{eq:15_2_4}
+\boxed{j = \abs{j_1 - j_2}, \abs{j_1 - j_2} + 1, ..., j_1 + j_2}
+\end{equation}
+
+- правило сложения моментов.
+
+$$
+m = -j, -j + 1, ..., j -1, j
+$$
+
+Остальные коэффициенты Клебша-Гордана можно получить, используя повышающий и понижающий операторы:
+\begin{gather*}
+\op{j}_- = \op{j}_x - i \op{j}_y = \op{j}_{1x} + \op{j}_{2x} - i \op{j}_{1y} -i\op{j}_{2y} = \op{j}_{1-} + \op{j}_{2-}
+\end{gather*}
+
+и учитывая, что $C^{j_1+j_2~j_1 + j_2}_{j_1~j_1~j_2~j_2} = 1$.
