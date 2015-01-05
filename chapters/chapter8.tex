@@ -276,8 +276,8 @@ $$
 \label{eq:8_3_1}
 \left\{
 \begin{array}{l}
-\op{\vec{s}}^2 \ket{s, m_s} = s(s+1) \ket{s, m_s}\\
-\op{s}_z \ket{s, m_s} = m_s \ket{s, m_s}
+\op{\vec{s}}^2 \ket{s m_s} = s(s+1) \ket{s m_s}\\
+\op{s}_z \ket{s m_s} = m_s \ket{s m_s}
 \end{array}
 \right.
 \end{equation}
@@ -287,9 +287,9 @@ $2s + 1 = 2$:~~ $m_s = \pm 1/2$
 \begin{equation}
 \label{eq:8_3_2}
   \begin{array}{l}
-  \chi_{\frac{1}{2}, m_s} \equiv \ket{\frac{1}{2}, m_s}\\
-  \chi_{\frac{1}{2}, \frac{1}{2}} \equiv \ket{\frac{1}{2}, \frac{1}{2}} \equiv \begin{pmatrix} 1 \\ 0 \end{pmatrix}    \equiv \ket{\alpha} \equiv \ket{+}\\
-  \chi_{\frac{1}{2}, -\frac{1}{2}} \equiv \ket{\frac{1}{2}, -\frac{1}{2}} \equiv \begin{pmatrix} 0 \\ 1 \end{pmatrix}   \equiv \ket{\beta} \equiv \ket{-}
+  \chi_{\frac{1}{2} m_s} \equiv \ket{\frac{1}{2} m_s}\\
+  \chi_{\frac{1}{2} \frac{1}{2}} \equiv \ket{\frac{1}{2} \frac{1}{2}} \equiv \begin{pmatrix} 1 \\ 0 \end{pmatrix}    \equiv \ket{\alpha} \equiv \ket{+}\\
+  \chi_{\frac{1}{2} -\frac{1}{2}} \equiv \ket{\frac{1}{2} -\frac{1}{2}} \equiv \begin{pmatrix} 0 \\ 1 \end{pmatrix}   \equiv \ket{\beta} \equiv \ket{-}
 \end{array}
 \end{equation}
 
@@ -305,6 +305,103 @@ $\ket{\alpha}$ и $\ket{\beta}$ -- базисные векторы спинов�
 
 $$
 \avg{\chi, \chi} = 1 ~~\rightarrow ~~ \abs{a_{+}}^2 + \abs{a_{-}}^2 = 1
+$$
+
+\begin{equation}
+\label{eq:8_3_4}
+\op{\vec{s}}^2 = 
+\begin{matrix}
+            & \ket{+} & \ket{-} \\
+\bra{+} &  1         & 0         \\
+\bra{-}  &  0         & 1         
+\end{matrix}
+~~~\op{s}_z = \frac{1}{2}
+\begin{matrix}
+            & \ket{+} & \ket{-} \\
+\bra{+} &  1         & 0         \\
+\bra{-}  &  0         & -1         
+\end{matrix}
+\end{equation}
+
+Операторы повышения и понижения:
+$$
+\op{s}_{\pm} = \op{s}_x \pm i\op{s}_y
+$$
+
+Из \eqref{eq:8_2_8}:
+$$
+\begin{matrix}
+\op{s}_{+}\ket{+} = 0 & \op{s}_{+}\ket{-} = \ket{+} \\
+\op{s}_{-}\ket{-} = 0 &  \op{s}_{-}\ket{+} = \ket{-}
+\end{matrix}
+$$
+
+Можно записать повышающий и понижающий операторы в виде матриц:
+\begin{equation}
+\label{eq:8_3_5}
+\op{s}_{+} = 
+\begin{matrix}
+            & \ket{+} & \ket{-} \\
+\bra{+} &  0         & 1         \\
+\bra{-}  &  0         & 0         
+\end{matrix}
+~~~\op{s}_{-} =
+\begin{matrix}
+            & \ket{+} & \ket{-} \\
+\bra{+} &  0         & 0         \\
+\bra{-}  &  1         & 0         
+\end{matrix}
+\end{equation}
+
+Из \eqref{eq:8_3_5}:
+\begin{equation}
+\label{eq:8_3_6}
+\op{s}_x = \frac{\op{s}_{+} + \op{s}_{-}}{2} = \frac{1}{2} \left (
+  \begin{matrix}
+  0 & 1 \\
+  1 & 0 
+  \end{matrix}
+\right )
+\end{equation}
+
+$$
+\op{s}_y = \frac{\op{s}_{+} - \op{s}_{-}}{2i} = \frac{1}{2} \left (
+  \begin{matrix}
+  0 & -i \\
+  i & 0 
+  \end{matrix}
+\right )
+$$
+
+Из \eqref{eq:8_3_4} и \eqref{eq:8_3_6} $\op{\vec{s}} = \brcr{\op{s}_x, \op{s}_y, \op{s}_z}$
+можно выразить через матрицы Паули:
+$$
+\op{\vec{\sigma}} = \brcr{\op{\sigma}_x, \op{\sigma}_y, \op{\sigma}_z}
+$$
+$$
+\op{\vec{s}}= \frac{1}{2}\msigm
+$$
+$$
+\op{\sigma}_x = \left (
+  \begin{matrix}
+  0 & 1 \\
+  1 & 0 
+  \end{matrix}
+\right )
+~~~
+\op{\sigma}_y = \left (
+  \begin{matrix}
+  0 & -i \\
+  i & 0 
+  \end{matrix}
+\right )
+~~~
+\op{\sigma}_z = \left (
+  \begin{matrix}
+  1 & 0 \\
+  0 & -1 
+  \end{matrix}
+\right )
 $$
 
 \section{Оператор орбитального момента частицы в координатном представлении (декартовы и сферические координаты).}
