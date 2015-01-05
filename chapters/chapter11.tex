@@ -190,7 +190,25 @@ $$
 \left. U(x) \right|_{\abs{x-x_0} \to 0} \simeq U(x_0) + U'(x_0)(x-x_0)+...
 $$
 
-[картинка]
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[domain=0:4]
+    \draw[->] (-0.1,0) -- (5,0) node[right] {$x$};
+    \draw[->] (0,-0.1) -- (0,3) node[above] {$U(x)$};
+	\draw [domain=0:4.8, samples=50] plot (\x, {1}) node[right] {$E$};
+	\draw [domain=0:2.7, samples=50] plot (\x, {0.2*exp(\x)});
+	\draw [domain=1:2.2, samples=50] plot (\x, {\x - 0.6});
+	\draw[dashed] (1.609,3) -- (1.609,0) node[below] {$x_0$};
+	\draw[dashed] (1.1,0.5) -- (1.1,0) ;
+	\draw[dashed] (2.1,1.5) -- (2.1,0) ;
+	\draw[very thick] (1.1, 0) -- (2.1, 0);
+	\draw[<-] (2,0.1) -- (2.5,0.5)  node [right] {обл. сшивки};
+	\draw (0.8,2.2) node[inner sep=1pt,above,draw,circle] {I};
+	\draw (3.5,2.2) node[inner sep=1pt,above,draw,circle] {II};
+\end{tikzpicture}
+\caption{Классически разрешённая (I) и запрещённая (II) области, $x_0$ - точка поворота.} \label{fig:1}
+\end{figure}
+
 
 $$
 p^2(x) = 2m(E-U(x)) \simeq 2m U'(x_0)(x_0 - x) \equiv \alpha \hbar^2 (x_0 - x)
