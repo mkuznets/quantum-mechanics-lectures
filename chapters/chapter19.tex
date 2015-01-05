@@ -1,0 +1,167 @@
+\chapter{Теория рассеяния}
+
+\section{Постановка задачи рассеяния. Упругое рассеяние}
+
+[картинка]
+
+$$
+U(\vr) \equiv 0, ~~~ r > a
+$$
+
+На детектор приходит рассеянная волна.
+
+\begin{equation}
+\label{eq:19_1_1}
+\op{H} \psi(\vr) = E \psi(\vr),
+\end{equation}
+
+где $\op{H} = \frac{\op{\vp}^2}{2m} + U(\vr)$.
+
+
+При $E < 0$ задача превращается в задачу на собственные значения, решение которой мы знаем.
+
+$$
+E = \frac{\hbar^2 k^2}{2m} > 0
+$$
+
+Запишем определение упругого рассеяния:
+\begin{gather*}
+\frac{\op{\vp}^2}{2m} = \frac{\op{\vsp}^2}{2m} \to \abs{\vp} = \abs{\vsp} \\
+\vp \not = \vsp
+\end{gather*}
+
+Рассмотрим асимптотику волновой функции вдали от рассеивающего центра:
+$$
+\psi(\vr) \left|_{r \to \infty} \approx e^{i \vec{k} \vr} + f(\theta, \phi) \frac{e^{ikr}}{r} \right . 
+$$
+
+Функция $f(\theta, \phi)$ - амплитуда рассеяния.
+
+\begin{sloppypar}
+Если рассеивающий потенциал сферически-симметричен, т.е. $U(\vr) = U(r)$, то $f(\theta, \phi) = f(\theta)$.
+\end{sloppypar}
+
+\begin{equation}
+\label{eq:19_1_2}
+\psi(\vr) \left|_{r \to \infty} \approx e^{i \vec{k} \vec{\vr}} + f(\theta) \frac{e^{ikr}}{r} \right .
+\end{equation}
+
+Волновая функция, удовлетворяющая \eqref{eq:19_1_2} называется функцией рассеяния.
+
+\section{Амплитуда и сечение рассеяния}
+
+Пусть $\D{N}{ft}$ - скорость счета детектора. В детектор попадают частицы из телесного угла $d\Omega$.
+
+\begin{defn}
+Плотность потока падающих частиц $\vec{j}_{\text{пад}}$ - число частиц, проходящих в единицу времени через единичную площадку, перпендикулярную пучку.
+\end{defn}
+
+\begin{defn}
+Эффективным сечением рассеяния (сечением рассеяния) называется отношение:
+\begin{equation}
+\label{eq:19_2_1}
+\frac{dN}{dt \abs{\vec{j}_{\text{пад}}}} = d \sigma
+\end{equation}
+\end{defn}
+
+Заметим, что размерность $d\sigma = [\text{см}^2]$.
+
+С другой стороны:
+$$
+\D{N}{t} = j_{\text{рас}}r^2 d\Omega
+$$
+
+Тогда 
+\begin{equation}
+\label{eq:19_2_2}
+d\sigma = \frac{j_{\text{рас}}}{j_{\text{пад}}}r^2 d\Omega
+\end{equation}
+
+Из \S 1 гл. 5:
+$$
+j_{\text{пад}} \sim J: ~~~\vec{J} = \frac{i\hbar}{2m}\brc{\psi^* \nabla \psi - \psi \nabla \psi^*}
+$$
+
+$$
+\rho_{\text{рас}} = \frac{\abs{f(\theta)}^2}{r^2}
+$$
+$$
+j_{\text{рас}} = \rho_{\text{рас}} v = v \frac{\abs{f(\theta)}^2}{r^2}
+$$
+
+Подставим это выражение в \eqref{eq:19_2_2}:
+\begin{equation}
+\label{eq:19_2_3}
+\D{\sigma}{\Omega} = \abs{f(\theta)}^2
+\end{equation}
+
+\section{Функция Грина задачи рассеяния. Интегральное уравнение задачи рассеяния}
+
+Запишем уравнение Шредингера для задачи рассеяния:
+\begin{gather*}
+\brc{-\frac{\hbar^2}{2m} \Delta + U(\vr)}\psi(\vr) = \frac{\hbar^2 k^2}{2m} \psi(\vr) ~~~| \cdot \frac{2m}{\hbar^2} \\
+(\Delta + k^2) \psi(\vr) = \frac{2m}{\hbar^2}U(\vr)\psi(\vr)
+\end{gather*}
+
+Решение этого неоднородного дифференциального уравнения можно представить, как сумму общего решения однородного ДУ и частного решения неоднородного ДУ:
+$$
+\left \{  
+\begin{matrix}
+(\Delta + k^2) \psi_0(\vr) = 0\\
+(\Delta + k^2) \psi_1(\vr) = \frac{2m}{\hbar^2}U(\vr)\psi(\vr),
+\end{matrix}
+\right .
+$$
+
+Вспомним определение функции Грина $G(\vr - \vsr)$:
+\begin{equation}
+\label{eq:19_3_1}
+(\Delta_{\vr} + k^2)G(\vr - \vsr) \equiv \delta(\vr - \vsr)
+\end{equation}
+
+Тогда с использованием функции Грина:
+$$
+\psi_1(\vr) = \int G(\vr - \vsr) \frac{2mU(\vsr)}{\hbar^2} \psi(\vsr) d\vsr
+$$
+
+$$
+G(\vr - \vsr) = - \frac{e^{ik\abs{\vr - \vsr}}}{4\pi\abs{\vr - \vsr}}
+$$
+
+Теперь можно выписать функцию рассеяния:
+$$
+\psi(\vr) = \psi_0(\vr) - \frac{1}{4 \pi}\frac{2m}{\hbar^2}\int \frac{e^{ik\abs{\vr - \vsr}}}{\abs{\vr - \vsr}} U(\vsr)\psi(\vsr)d\vsr
+$$
+
+Всегда можно считать, что $|\vsr| \ll a \ll r$, т.к. $r \to \infty$.
+
+Введем малый параметр:
+$$
+\frac{r'}{r} \ll 1
+$$
+
+Тогда:
+$$
+\frac{e^{ik\abs{\vr - \vsr}}}{\abs{\vr - \vsr}} \approx \frac{e^{ikr - ik\vsr \vec{n}}}{r},
+$$
+
+где $\vec{n} = \frac{\vr}{r}$.
+
+$$
+\psi(\vr) = \psi_0(\vr) - \frac{e^{ikr}}{r}\frac{m}{2\pi\hbar^2}\int e^{- ik\vsr \vec{n}} U(\vsr)\psi(\vsr)d\vsr
+$$
+
+С учетом $\psi_1(\vr) = e^{i\vec{k}\vr}$:
+
+$$
+f(\theta, \phi) =  - \frac{m}{2\pi\hbar^2}\int e^{- ik\vsr \vec{n}} U(\vsr)\psi(\vsr)d\vsr
+$$
+
+Окончально получим интегральное уравнение задачи рассеяния:
+
+\begin{equation}
+\label{eq:19_3_2}
+\boxed{\psi(\vr) = e^{i\vec{k}\vr} - \frac{m}{2\pi\hbar^2}\int \frac{e^{ik\abs{\vr - \vsr}}}{\abs{\vr - \vsr}} U(\vsr)\psi(\vsr)d\vsr}
+\end{equation}
+
+Окончание лекции см. на \href{http://mipt.ru/education/chair/theoretical_physics/upload/1e2/Born_4-arpg3lk8s2a.pdf}{тут}. Текст ссылки: $mipt.ru/education/chair/theoretical_physics/upload/1e2/Born_4-arpg3lk8s2a.pdf$
