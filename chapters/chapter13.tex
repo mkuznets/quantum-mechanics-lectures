@@ -145,7 +145,25 @@ $$
 
 \section{Адиабатические и внезапные возмущения}
 
-[картинка]
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[domain=-1:5]
+    \draw[->] (-1,0) -- (5,0) node[right] {$t$};
+    \draw[->] (0,-0.1) -- (0,3) node[above] {$V(t)$};
+	\draw [domain=0:0.2, samples=50] plot (\x, 25 * \x^2);
+	\draw [domain=0.2:0.4, samples=50] plot (\x, -25 * \x^2 + 20 *\x - 2);
+	\draw [domain=2.6:2.8, samples=50] plot (\x, -25 * \x^2 + 130 *\x - 167);
+	\draw [domain=2.8:3, samples=50] plot (\x,  25 *\x^2- 150 * \x + 225);
+	\draw [domain=0.4:2.6, samples=50] plot (\x, 2);
+	\draw[thick] (-1,0) -- (0,0);
+	\draw[thick] (3,0) -- (3.7,0);
+	\draw[dashed] (0.2,1) -- (0.2,0) node [below] {$t^*$} ;
+	\draw[dashed] (0.4,2) -- (0.4,0) node [above] {$\tau$} ;
+	\draw[dashed] (2.6,2) -- (2.6,0) node [below] {$T - \tau$} ;
+\end{tikzpicture}
+\caption{Изменения возмущения во времени. $T$ - длительность возмущения, $\tau$ - время включения, $t^*$ - точка перегиба.} \label{fig:13_1}
+\end{figure}
+
 
 \subsection{Адиабатическое изменение возмущения}
 
@@ -236,7 +254,19 @@ $\eqref{eq:13_3_5} \to^{\op{V}} \eqref{eq:13_3_4}$ (\S 4, т. III Л.-Л.).
 
 \section{Переходы во времени под влиянием постоянного во времени возмущения. <<Золотое правило>> Ферми}
 
-[картинка!]
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[domain=-1:5]
+    \draw[->] (-1,0) -- (5,0) node[right] {$t$};
+    \draw[->] (0,-0.1) -- (0,3) node[above] {$V(t)$};
+	\draw[thick] (0,0) -- (0,2);
+	\draw[thick] (0,2) -- (3,2);
+	\draw[thick] (3,2) -- (3,0) node[below] {$T$};
+	\draw[thick] (-1,0) -- (0,0) node [below] {0};
+	\draw[thick] (3,0) -- (3.7,0);
+\end{tikzpicture}
+\caption{Постоянное во времени возмущение} \label{fig:13_2}
+\end{figure}
 
 Из \eqref{eq:13_1_5}
 
@@ -250,9 +280,24 @@ P_{nm} = \left| \frac{1}{i \hbar} \int_0^T dt' \Vmn e^{i\ommn t'} \right|^2
 f(\omega, T) = \frac{2(1 - \cos \omega T)}{\omega^2}
 \end{equation*}
 
-График спектральной функции: \\
+График спектральной функции: 
 
-[картинка!]
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[domain=-3:3]
+    \draw[->] (-3,0) -- (3,0) node[right] {$\omega$};
+    \draw[->] (0,-0.1) -- (0,4) node[above] {$f(\omega, T)$};
+    \draw [domain=-3:3, samples=100] plot (\x, {0.2 * (1 - cos((6 * \x) r)) / (\x * \x)});
+    \draw[-] (1.047,-0.1) -- (1.047,0.1) node [below]{$\frac{2 \pi}{T}$};
+    \draw[-] (-1.047,-0.1) -- (-1.047,0.1) node [below]{$-\frac{2 \pi}{T}$};
+    \draw[-] (2.094,-0.1) -- (2.094,0.1) node [below]{$\frac{4 \pi}{T}$};
+    \draw[-] (-2.094,-0.1) -- (-2.094,0.1) node [below]{$-\frac{4 \pi}{T}$};
+    \draw[-] (-0.05,3.6) -- (0.05,3.6) node [right]{$1$};
+    \draw[<-] (0.524,1.458) -- (1,1.458) node [right]{$\frac{2 \pi}{T}$};
+    \draw[->] (-1,1.458) -- (-0.524,1.458);
+\end{tikzpicture}
+\caption{График спектральной функции.} \label{fig:13_3}
+\end{figure}
 
 Вероятность квантовых переходов в единицу времени:
 
