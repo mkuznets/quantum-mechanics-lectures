@@ -280,7 +280,7 @@ P_{nm} = \left| \frac{1}{i \hbar} \int_0^T dt' \Vmn e^{i\ommn t'} \right|^2
 f(\omega, T) = \frac{2(1 - \cos \omega T)}{\omega^2}
 \end{equation*}
 
-График спектральной функции: 
+График спектральной функции представлен на рис. \eqref{fig:13_3}. \newpage
 
 \begin{figure}[h!]
 \centering
@@ -362,7 +362,21 @@ W_n = \int w_{mn} \rho(E_m)dE_m = \left |_{\eqref{eq:13_4_1}} \dfrac{2\pi}{\hbar
 
 3) если спектр существенно дискретный, то $P_{nm} \not \leftrightarrow W_n$. \eqref{eq:13_4_3} применима, когда $\rho$ - плавная, $f$ - подобие $\delta$-функции.
 
-[картинка]
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[domain=-3:3]
+    \draw[->] (-3,0) -- (3,0) node[right] {$E_m$};
+    \draw[->] (0,-0.1) -- (0,4) node[above] {$f(E_m)$};
+    \draw [domain=-3:3, samples=100] plot (\x, {0.2 * (1 - cos((6 * \x) r)) / (\x * \x)});
+    \draw[-] (1.047,-0.1) -- (1.047,0.1) ;
+    \draw[-] (-1.047,-0.1) -- (-1.047,0.1) ;
+    \draw[-] (2.094,-0.1) -- (2.094,0.1) ;
+    \draw[-] (-2.094,-0.1) -- (-2.094,0.1) ;
+    \draw[-] (-0.05,3.6) -- (0.05,3.6) ;
+    \draw [domain=-3:3, samples=50] plot (\x, {2 * cos((\x / 3) r)}) node [right] {$\rho(E_m)$};
+\end{tikzpicture}
+\caption{К применимости \eqref{eq:13_4_3}.} \label{fig:13_4}
+\end{figure}
 
 \section{Переходы под действием периодического возмущения в дискретном и непрерывном спектрах}
 
