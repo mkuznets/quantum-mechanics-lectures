@@ -92,7 +92,7 @@ $$
 
 Из \eqref{eq:13_1_4}:
 $$
-i \hbar \pd{}{t} \brcr{\cancel{c_{nm}^\zr} + c_{nm}^\one (t) + ...} = \sum_k V_{mk} e^{i \omega_{mk} t} \sim \brcr{\underbrace{c_{nk}^\zr}_{=\delta_{nk}} + \underbrace{\cancel{c_{nk}^\one}}_{\text{ дает второе приближение}} + ...}
+i \hbar \pd{}{t} \brcr{\cancel{c_{nm}^\zr} + c_{nm}^\one (t) + ...} = \sum_k V_{mk} e^{i \omega_{mk} t} \cdot \brcr{\underbrace{c_{nk}^\zr}_{=\delta_{nk}} + \underbrace{\cancel{c_{nk}^\one}}_{\text{ дает второе приближение}} + ...}
 $$
 
 $s=1$ - первое приближение НТВ.
@@ -105,7 +105,7 @@ $s=1$ - первое приближение НТВ.
 или
 
 \begin{equation*}
-\boxed{c_{mn}^\one = \frac{1}{i\hbar} \int_0^t dt' V_{mn}(t') e^{i \omega_{mn} t'}} -
+\boxed{c_{nm}^\one = \frac{1}{i\hbar} \int_0^t dt' V_{mn}(t') e^{i \omega_{mn} t'}} -
 \end{equation*}
 
 Найдена поправочная функция в первом приближении.
@@ -118,7 +118,7 @@ $0 < t < T$, где $T$ - длительность возмущения.
 
 Если вернуться к общему решению возмущенной задачи, то 
 $$
-\ket{\psi(t)} = \sum_m c_{nm}(t) e^{-i \omega_m t} \ket{\psi_m^\zr}
+\ket{\psi_n(t)} = \sum_m c_{nm}(t) e^{-i \omega_m t} \ket{\psi_m^\zr}
 $$
 
 а) при $t \le 0: ~~~c_{nm} = c_{nm}^\zr = \delta_{nm}$ с $E=E_n^\zr$.
@@ -126,14 +126,14 @@ $$
 б) при $t > 0: ~~~c_{nm}(t)$ при $m \not = n:~~~c_{nm}^\one(t) \not = 0$.
 
 $$
-\boxed{|c_{nm}^\one (t)|^2 = P_m(t)} -
+\boxed{|c_{nm}^\one (t)|^2 = P_{nm}(t)} -
 $$
 вероятность того, что в результате действия возмущения произошел квантовый переход из начального состояния $n$ в состояние $m$ за время $t$.
 
 Дискретный переход между уровнями энергии:
 
 $$
-P_{nm}(t) =\left |_{\eqref{eq:13_1_5}} \right. \frac{1}{\hbar^2} \left | \int_0^t dt' V_{mn}(t') e^{i \omega_m t'} \right |^2, 0 < t < T
+P_{nm}(t) =\left |_{\eqref{eq:13_1_5}} \right. \frac{1}{\hbar^2} \left | \int_0^t dt' V_{mn}(t') e^{i \omega_{mn} t'} \right |^2, 0 < t < T
 $$
 
 Если взять промежуток $-\infty < t < \infty$, то 
@@ -344,9 +344,8 @@ $$
 
 $d \nu_m$ - число квантовых состояний в интервале энергий $E_m \div E_m + dE_m$
 
-$\boxed{d \nu_m = \rho(E_m) dE_m}$, где $\rho(E_m) = \D{\nu_m}{E_m}$ - плотность энергетического спектра конечных состояний.
+$\boxed{d \nu_m = \rho(E_m) dE_m}$, где $\rho(E_m) = \D{\nu_m}{E_m}$ - плотность энергетического спектра конечных состояний - число конечных состояний на единичный интервал энергий вблизи $E_m$.
 
-Число конечных состояний на единичный интервал энергий вблизи $E_m$:
 \begin{eqnarray}
 W_n = \int w_{mn} \rho(E_m)dE_m = \left |_{\eqref{eq:13_4_1}} \dfrac{2\pi}{\hbar} \int \abs{\Vmn}^2 \delta(E_m - E_n) \rho(E_m)dE_m \right .= \nonumber \\
 \label{eq:13_4_3} = \boxed{ \left. \frac{2\pi}{\hbar} \abs{\Vmn}^2 \rho(E_m) \right|_{E_n = E_m} = W_n}
@@ -385,7 +384,7 @@ W_n = \int w_{mn} \rho(E_m)dE_m = \left |_{\eqref{eq:13_4_1}} \dfrac{2\pi}{\hbar
 \op{V}(t) = \op{V}e^{-i\omega t} + \op{V}^\dag e^{i\omega t} 
 \end{equation}
 
-- эрмитов оператор возмущения.
+- эрмитов оператор возмущения. Для удобства введем обозначение $\op{V}^- \equiv \op{V}$.
 
 Как и в \S 4 $\op{V}(t) \in [0, T]$.
 
@@ -424,6 +423,6 @@ $$
 E_m = E_n \mp \hbar \omega
 $$
 
-1) $E_m - E_n = \mp \hbar \omega$ - правильность частот Бора.
+1) $E_m - E_n = \mp \hbar \omega$ - эти частоты соответствуют частотам Бора - использование частот Бора получило обоснование.
 
-2) $\op{V} e^{-i \omega t}$ - переход из  $E_m \to E_n + \hbar \omega$ - увеличение энергии системы (поглощение энергии квантовой системой).
+2) $\op{V} e^{-i \omega t}$ - переход из  $E_n \to E_m = E_n + \hbar \omega$ - увеличение энергии системы (поглощение энергии квантовой системой).
