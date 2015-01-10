@@ -2,7 +2,29 @@
 
 \section{Постановка задачи рассеяния. Упругое рассеяние}
 
-[картинка]
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[domain=-5:5]
+  \draw[->] (-5, 0) -- (5, 0) node[above] {$z$};
+  \draw[thick, ->] (-5, 0) -- (-4, 0) node[above] {$\vp$};
+  \draw[->] (0, 0) -- (3,3);
+  \draw[thick, ->] (2.3, 2.3) -- (3,3) node [below] {$\vsp$};
+  \draw[very thick, -] (2.8, 3.3) -- (3.6,3.3) ;
+  \draw[very thick, -] (3.6, 3.3) -- (3.3,3) ;
+  \draw[-] (0, 0) -- (2.8,2.4);
+  \draw[-] (0, 0) -- (2.4,2.8);
+  \node [right] at (1.7, 2.9) {$d\Omega$} ;
+  \node at (-3, 2) {$U(\vr) \neq 0,$} ;
+  \node at (-3, 1.5) {$ \text{при } r<a$};
+  \draw [rotate = -45] (0, 3.75) ellipse (3mm and 2 mm) ;
+  \draw [dashed] (0, 0) circle (1cm);
+  \draw [->] (0, 0) -- (-0.7, 0.7) node [left] {$a$}; 
+  \draw [dashed] (0.7, 0) arc (0:45:7mm) ;
+  \node [right] at (0.6, 0.3) {$\theta$};
+  \draw [blue, dashed] (-3, 0) .. controls (0, 0) .. (3, 3);
+\end{tikzpicture}
+\caption{Постановка задачи рассеяния.} \label{fig:19_1}
+\end{figure}
 
 $$
 U(\vr) \equiv 0, ~~~ r > a
@@ -95,7 +117,9 @@ $$
 \D{\sigma}{\Omega} = \abs{f(\theta)}^2
 \end{equation}
 
+\begin{sloppypar}
 - выражение для дифференциального сечения рассеяния в сферически-симметричном рассеивающем потенциале.
+\end{sloppypar}
 
 \section{Функция Грина задачи рассеяния. Интегральное уравнение задачи рассеяния}
 
