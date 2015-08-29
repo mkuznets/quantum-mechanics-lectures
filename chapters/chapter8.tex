@@ -461,12 +461,23 @@ $$
 Это аналог \eqref{eq:8_2_2} в теории углового момента.
 
 \begin{figure}[h]
-  \centering
-  \includegraphics[scale=0.6]{figs/8_2}
-  \caption{Сферическая система координат}
-  \label{fig:8_2}
-\end{figure}
+\centering
+\begin{tikzpicture}[domain=0:5]
+  \draw[->] (-0.1,0) -- (4,0) node[right] {$y$};
+  \draw[->] (0,-0.1) -- (0,3) node[above] {$z$};
+  \draw[->] (0.1,0.1) -- (-2,-2) node[right] {$x$};
+  \draw[->] (0, 0) -- (1,-1);
+	\draw[->] (0, 0) -- (1,2.5) node[above] {r};
+	\draw[dashed] (0, 2.5) -- (1, 2.5);
+  \draw[dashed] (1, 2.5) -- (1, -1);
+  \draw[-] (-0.4, -0.4) arc (-135:-45:0.57cm);
+  \node[above] at (0, -1.1) {$\psi$};
+  \draw[-] (0, 0.7) arc (90:65:0.7cm);
+  \node[left] at (0.4, 1) {$\theta$};
 
+\end{tikzpicture}
+\caption{Сферическая система координат} \label{fig:8_2}
+\end{figure}
 
 $$
 x = r \sin \theta \cos \phi

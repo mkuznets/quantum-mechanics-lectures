@@ -19,10 +19,29 @@ $$
 $c_1, c_2$ - произвольные (с точностью до условия нормировки) комплексные числа.
 \end{stmt}
 
-\begin{figure}[here]
-  \centering
-  \includegraphics[scale=0.4]{figs/3_1}
-  \label{fig:3_1}
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[domain=-2:5]
+  \draw[-] (-2,0) -- (5,0);
+  \draw[very thick] (0, 1) -- (0, 2);
+  \draw[very thick] (0, -1) -- (0, -2);
+  \draw[very thick] (0, 0.8) -- (0, -0.8);
+  \draw[-] (0.1, 0.9) -- (-0.4, 0.9);  
+  \draw[-] (0.1, -0.9) -- (-0.4, -0.9);
+  \draw[<->] (-0.3, 0.9) -- (-0.3, -0.9);
+  \node [left] at (-0.2, 0.2) {$d$};
+  \draw [-] (4,2.5) -- (4, -2.5);
+  \draw [->] (0, 0.9) -- (3.9, 1.45);
+  \node [left] at (3, 1.5) {$\vr_1$};
+  \draw [->] (0, -0.9) -- (3.9, 1.35);
+  \node [left] at (3, 0.3) {$\vr_2$};
+  \draw (-1.8, 0) circle (0.1cm);
+  \node[above] at (-2, 0) {S}; 
+  \begin{scope}[rotate=-90]
+    \draw[domain=-2.1:2.1, samples=200] plot(\x, {(cos(5 * \x r)^2+4}) node [below] {$I$};
+  \end{scope}
+\end{tikzpicture}
+\caption{К вопросу о суперпозиции состояний.} \label{fig:3_1}
 \end{figure}
 
 $$

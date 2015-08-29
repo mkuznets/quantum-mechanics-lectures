@@ -391,9 +391,22 @@ $$
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=1]{figs/11_4}
-\caption{К выводу условий квантования Бора-Зоммерфельда}
-\label{fig:11_4}
+\begin{tikzpicture}[domain=0:5]
+    \draw[->] (-0.1,0) -- (5,0) node[right] {$x$};
+    \draw[->] (0,-0.1) -- (0,3) node[above] {$U(x)$};
+	\draw [domain=0:4.8, samples=50] plot (\x, {2}) node[right] {$E$};
+	\draw [domain=0.5:3.5, samples=100] plot (\x, {(\x-1)*(\x-3)+2});
+  \draw [domain=1.0:3.0, samples=100] plot (\x, {0.4*sin(540*\x+270)+2});
+	\draw [domain=0.1:1.0, samples=100] plot (\x, {0.4*exp(2*\x-2)+2});
+	\draw [domain=3.0:4.5, samples=100] plot (\x, {0.4*exp(-2*\x+6)+2});
+  \draw[dashed] (1,3) -- (1,0) node[below] {$a$};
+  \draw[dashed] (3,3) -- (3,0) node[below] {$b$};
+	\draw (2,2.5) node[above] {$\psi(x)$};
+	\draw (0.5,0) node[above] {I};
+	\draw (2,0) node[above] {II};
+  \draw (4.0,0) node[above] {III};
+\end{tikzpicture}
+\caption{К выводу условий квантования Бора-Зоммерфельда} \label{fig:11_4}
 \end{figure}
 
 Применим правило соответствия I:

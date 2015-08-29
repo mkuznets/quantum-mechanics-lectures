@@ -170,11 +170,22 @@ $$
 т.е. такой спектр является эквидистантным
 
 \begin{figure}[h]
-  \centering
-  \includegraphics[scale=0.6]{figs/7_1}
-  \caption{Спектр гармонического осциллятора}
-  \label{fig:7_1}
+\centering
+\begin{tikzpicture}[domain=-3.5:3.5]
+   \draw[->] (-2.5,0) -- (2.5,0) node[right] {$x$};
+  \draw[->] (0,-0.1) -- (0,4) node[above] {$U(x)$};
+	\draw [domain=-2.0:2.0, samples=100] plot (\x, {\x*\x});
+	\draw[dashed] (0.71,0.5) -- (0.71,0) node[below] {$a_0$};
+	\draw[-] (-0.71,0.5) -- (0.71,0.5) node[right] {$n=0$};
+	\draw[-] (-1.22,1.5) -- (1.22,1.5) node[right] {$n=1$};
+	\draw[-] (-1.58,2.5) -- (1.58,2.5) node[right] {$n=2$};
+	\draw[-] (-1.87,3.5) -- (1.87,3.5) node[right] {$n=3$};
+  \draw[dashed] (-2, 0.5) -- (-0.71, 0.5);
+  \draw[<->] (-1.9, 0) -- (-1.9, 0.5) node[left] {$\frac{\hbar \omega}{2}$};
+  \end{tikzpicture}
+\caption{Спектр гармонического осциллятора.} \label{fig:7_1}
 \end{figure}
+
 
 При $n = 0$:
 $$
