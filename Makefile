@@ -2,7 +2,7 @@
 MAINSRC = main.tex
 
 book: $(MAINSRC)
-	pdflatex $(MAINSRC)
+	latexmk -pdf -pdflatex="pdflatex -halt-on-error" $(MAINSRC)
 
 chapter: check-env
 	pdflatex "\newcommand{\n}{$(CH)}\input{chapter}"
