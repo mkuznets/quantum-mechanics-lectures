@@ -151,3 +151,12 @@ height.1pt depth.1pt\hss}\box0}}%
 
 % Крупная хи
 \newcommand{\bigchi}{\text{\scalebox{1.5}{$\chi$}}}
+
+
+% Римские цифры
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+% Ссылка на книги Ландау и Лифшица.
+\newcommand{\llref}[3][]{\text{\S{\kern 0.25em}#2 т.~\rom{#3}~Л.Л.#1}}
