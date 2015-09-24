@@ -1,5 +1,7 @@
 \documentclass[12pt,a4paper]{book}
 
+\usepackage{emptypage}
+
 \usepackage{cmap}
 \usepackage{type1ec}
 \usepackage[T2A]{fontenc}
@@ -55,16 +57,9 @@
 \pdfobjcompresslevel=9
 
 \usepackage{wrapfig} % Вставка рисунков с обтеканием текста
+
 \graphicspath{{./figs//}}
-% Порядок просмотра рисунков по расширениям.
-\ifpdf
-    % Если используется pdflatex, то лучше включать pdf-версию. Иначе тормоза
-    % при печати. В случа xetex'a, наоборот, лучше PNG-версию. Иначе опять же
-    % долго выводиться на печать. Для htlatex также используется PNG-версия.
-    \DeclareGraphicsExtensions{.pdf,.png,.jpg} 
-\else
-    \DeclareGraphicsExtensions{.png,.jpg,.pdf}
-\fi
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -129,10 +124,5 @@
 \input{include/macros} % Макросы для формул
 
 \pagestyle{plain}
-
-\title{Лекции по квантовой механике}
-\author{Суханов Л.П.}
-\date{Сборка от \todayiso}
-
 
 \begin{document}

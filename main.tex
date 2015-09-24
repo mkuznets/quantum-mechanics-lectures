@@ -1,8 +1,12 @@
 \input{include/header}
+\input{include/titlepage}
 
 \frontmatter
-\maketitle % Заголовок
-\tableofcontents % Оглавление
+\tableofcontents
+
+% TODO: раскомментировать после написания предисловия и введения
+%\input{preface}
+%\input{introduction}
 \mainmatter
 
 \pagestyle{fancy}
@@ -10,6 +14,5 @@
 \foreach \n in {1,...,19}{\setcounter{chapter}{\n-1}\include{chapters/chapter\n}}
 
 %\input{appendixes/runge}
-
 
 \input{include/footer}
