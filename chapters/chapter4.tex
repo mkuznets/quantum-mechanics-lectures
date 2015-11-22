@@ -2,152 +2,205 @@
 
 \section{Условия одновременной измеримости физических величин. Коммутаторы.}
 
-Пусть $\widehat{F}, \widehat{G}$ -- наблюдаемые и имеют дискретные спектры.
+До сих пор изучалось вероятностное распределение результатов измерения одной наблюдаемой $\op{F}$. Пусть теперь мы имеет пару наблюдаемых $\op{F}$ и $\op{G}$ с дискретными спектрами:
+
 $$
 \begin{array}{lcl}
-\widehat{F}, \widehat{G}:  & F \rightarrow \widehat{F} \rightarrow \{f_n\}, \; n=0,1,2,\dots\\
-                           & G \rightarrow \widehat{G} \rightarrow \{g_m\}, \; m=0,1,2,\dots
+\op{F}, \op{G}:  & F \rightarrow \op{F} \rightarrow \{f_n\}, \; n=0,1,2,\dots\\
+                 & G \rightarrow \op{G} \rightarrow \{g_m\}, \; m=0,1,2,\dots
 \end{array}
-$$
-
-$\ket{\phi}$ --- общий собственный вектор операторов $\widehat{F}$ и $\widehat{G}$.
+$$%
+%
+Для простоты будем рассматривать только дискретные спектры. Пусть имеется состояние $\ket{\phi}$ со свойствами:
 
 \begin{equation}
 \label{eq:4_1_1}
-\begin{cases}
-\widehat{F} |\phi \rangle = f_n |\phi \rangle\\
-\widehat{G} |\phi \rangle = g_m |\phi \rangle
-\end{cases} 
-\end{equation}
+  \begin{cases}
+    \op{F} |\phi \rangle = f_n |\phi \rangle\\
+    \op{G} |\phi \rangle = g_m |\phi \rangle
+  \end{cases} 
+\end{equation}%
+%
+т.е. $\ket{\phi}$ -- {\em общий собственный вектор} наблюдаемых $\op{F}$ и $\op{G}$. Тогда, согласно общим положениям, в состоянии $\ket{\phi}$ достоверно известно, что $F = f_n$ и $G=g_m$, значит, можно упростить обозначения: $\ket{\phi} \equiv \ket{f_n g_m} \equiv \ket{nm}$
 
-Обозначим $F = f_n$, $G=g_m$, тогда
-
-$$\ket{\phi} \equiv \ket{f_n g_m} \equiv \ket{nm}$$
-
-$\{\ket{nm}\}$ --- полная система собственных векторов.
-
-Тогда:
+Предположим, что у системы уравнение имеется такое множество решений, что система векторов $\brcr{\ket{nm}}$ полна, и по ней можно разложить любой вектор состояния:
 
 \begin{equation}
-\label{eq:4_1_2}
-\forall \ket{\psi} \in \mathcal{H} ~\rightarrow ~ \ket{\psi} = \underbrace{\sum_{n,m}\ket{nm}\bra{nm}}_{=\mathds{1}} \psi \rangle 
-\end{equation}
-
-$$P_{\ket{\psi}}(F = f_n, G = g_m) = \abs{\bk{nm}{\psi}}^2$$
+  \label{eq:4_1_2}
+  \forall \ket{\psi} \in \mathcal{H} ~\rightarrow ~ \ket{\psi} =
+      \underbrace{\sum_{n,m}\ket{nm}\bra{nm}}_{=\mathds{1}} \psi \rangle 
+\end{equation}%
+%
+При этом коэффициенты разложения трактуются как амплитуды совместных вероятностей
+$$
+  P_{\ket{\psi}}(F = f_n, G = g_m) = \abs{\bk{nm}{\psi}}^2
+$$%
+%
+Физически предположение о полноте означает, что у экспериментатора имеется универсальная возможность одновременное (совместно) измерить физические величины $F$ и $G$, т.е. можно создать универсальный прибор для измерения пары наблюдаемых. При этом измерения одной из величин никак не скажется на измерении другой.
 
 \begin{defn}
-Физические величины $F$ и $G$ одновременно (совместно) измеримы, если их операторы $\widehat{F}$ и $\widehat{G}$ обладают общей полной системой собственных векторов (собственных функций).
+Физические величины $F$ и $G$ одновременно (совместно) измеримы, если их операторы $\op{F}$ и $\op{G}$ обладают общей полной системой собственных векторов (собственных функций).
 \end{defn}
 
+Одновременная измеримость двух физических величин налагает весьма жёсткие условия на их операторы.
+
 \begin{thm}\label{theorema_iv_chapter}
-Для того, чтобы физические велчины $F$ и $G$ были совместно измеримы необходимо и достаточно, чтобы операторы $\widehat{F}$ и $\widehat{G}$ коммутировали, то есть: 
-$$[\widehat{F}, \widehat{G}] \equiv \widehat{F}\widehat{G} - \widehat{G}\widehat{F} = 0$$
+Для того, чтобы физические велчины $F$ и $G$ были совместно измеримы, необходимо и достаточно, чтобы операторы $\op{F}$ и $\op{G}$ коммутировали, то есть: 
+$$[\op{F}, \op{G}] \equiv \op{F}\op{G} - \op{G}\op{F} = 0$$
 \end{thm}
 
 \begin{proof}
-1) Необходимость. Пусть $F$ и $G$ совместно измеримы, тогда:
 
-$$ \{\ket{nm}\} \in \mathcal{H},~~ \forall \ket{\psi} \in \mathcal{H} ~\rightarrow ~$$
-$$(\widehat{F}\widehat{G} - \widehat{G}\widehat{F}) \ket{\psi} = \sum_{n,m} (\widehat{F}\widehat{G} - \widehat{G}\widehat{F}) \ket{nm}\bk{nm}{\psi} = \sum_{n,m} (f_n g_m - g_m f_n) \ket{nm}\bk{nm}{\psi} = 0$$
-Что и требовалось доказать
+{\bf Необходимость.} Пусть $F$ и $G$ совместно измеримы. Тогда, по определению для их операторов существует полная общая система собственных векторов $\brcr{\ket{nm}} \in \mathcal{H}$ и выполняется следующее:
 
-2) Достаточность. 
+$$
+\begin{gathered}
+\forall \ket{\psi} \in \mathcal{H} ~\rightarrow ~
+  (\op{F}\op{G} - \op{G}\op{F}) \ket{\psi} =
+    \sum_{n,m} (\op{F}\op{G} - \op{G}\op{F}) \ket{nm}\bk{nm}{\psi} = \\ =
+    \sum_{n,m} (f_n g_m - g_m f_n) \ket{nm}\bk{nm}{\psi} = 0
+\end{gathered}
+$$%
+%
+Что и требовалось доказать. Доказано утверждение, что если у $\op{F}$ и $\op{G}$ есть общая полная система собственных векторов, то результат действия коммутатора $[\op{F}, \op{G}]$ на $\forall \ket{\psi} \in \mathcal{H}$ равен нулю, т.е. $[\op{F}, \op{G}] = 0$
 
-а) Пусть $[\widehat{F}, \widehat{G}] = 0$ и $\widehat{F}$ имеет невырожденный спектр.
+{\bf Достаточность.} Если операторы коммутируют, то при определённых оговорках на их область определения у них есть общая полная система собственных векторов.
+
+\begin{enumerate}
+\renewcommand\labelenumi{(\alph{enumi})}
+
+\item Предположим, что $[\op{F}, \op{G}] = 0$, и, коме того, что спектр оператора $\op{F}$ -- невырожденный, т.е. каждому собственному значению $f_n$ отвечает только один собственный вектор $\ket{n}$:
 
 \begin{equation}
-\label{eq:4_1_3}
-f_n \rightarrow \ket{n}:~~ \widehat{F} \ket{n} = f_n \ket{n}
-\end{equation}
+  \label{eq:4_1_3}
+  \op{F} \ket{n} = f_n \ket{n}
+\end{equation}%
+%
+Поэтому
+$$
+  \op{G}(\op{F} \ket{n}) =
+    \left. \op{F}(\op{G}\ket{n}) \right|_{(4.1.3)} =
+    f_n (\op{G}\ket{n})
+$$%
+%
+Таким образом, вектор $\op{G} \ket{n}$ является собственным для оператора $\op{F}$ и отвечает тому же собственному значению $f_n$. Поскольку спектр оператора $\op{F}$ предполагается невырожденным, то векторы $\ket{n}$ и $\op{G} \ket{n}$ должны быть коллинеарны, т.е. могут отличаться лишь числовым множителем, отличным от нуля:
+$$
+\op{G} \ket{n} = g_m \ket{n}
+$$%
+%
+Следовательно, состояния $\ket{n}$ оказываются собственными и для оператора $\op{G}$. В этих состояниях наблюдаемая $\op{G}$ принимает определённые значения $g_m$, т.е. система собственных векторов $\ket{n} = \ket{f_n g_m} \equiv \ket{nm}$, полная по предположению, является общей для операторов $\op{F}$ и $\op{G}$.
 
-$$\widehat{G}(\widehat{F} \ket{n}) = \left. \widehat{F}(\widehat{G}\ket{n}) \right|_{(4.1.3)} = f_n (\widehat{G}\ket{n})$$
-
-$\widehat{G} \ket{n}$ --- собственный вектор оператора $\widehat{F}$ с собственным значением $f_n$
-
-Собственные векторы $\widehat{G} \ket{n}$ и $\ket{n}$ соответствуют одному собственному значению, а значит коллинеарны: $\widehat{G} \ket{n} = g_m \ket{n}$
-
-$$\ket{n} \equiv \ket{f_n g_m} \equiv \ket{nm}$$ (полная система)
-
-б) Случай вырожденного спектра $\widehat{F}$ доказан в гл.6
-
-Таким образом, если $[\widehat{F},\widehat{G}]\ne0$, то $\widehat{F}$ и $\widehat{G}$ могут иметь общий собственный вектор. Но из теоремы следует, что из малого числа собственных векторов нельзя построить полную систему.
+\item Случай вырожденного спектра оператора $\op{F}$ будет доказан в \sref{2}{6}.
+\end{enumerate}
 \end{proof}
 
-\begin{defn}
-Число $f$, входящее в собственные значения оператора физической величины $\widehat{F}$, называют квантовым числом, характеризующим состояние системы $\ket{\psi_f}\equiv\ket{f}$.
-\end{defn}
+Условия теоремы не запрещают двух некоммутирующим наблюдаемым ($[\op{F},\op{G}] \ne 0$) иметь общий собственный вектор. Но даже если таких векторов несколько, но {\em мало}, то из них нельзя построить универсальный прибор, чтобы измерить совместно физические величины $F$ и $G$. Можно построить лишь специальный прибор\footnote{Что бы это ни значило}.
 
-Набор взаимно коммутирующих операторов $(\widehat{G}_1, \widehat{G}_2...)$ коммутирующих с $\widehat{F}$ даёт полный набор квантовых чисел в случае вырожденного спектра.\footnote{Хм...}
-
-$\psi_{f g_1 g_2 ...}(\vec{q})$ или собственные векторы $\ket{f g_1 g_2 ...}$ дают полное описание квантового состояния системы.
+В заключение ещё раз обсудим содержание доказанной теоремы. Пусть спектр оператора $\op{F}$ вырожден, т.е. одному собственному значению отвечает сразу несколько собственных функций (собственных векторов.)
 
 \begin{defn}
-Набор взаимно коммутирующих операторов, собственные значения (квантовые числа) которых однозначно определяют квантовое состояние системы, называют \underline{полным набором совместных наблюдаемых}.
+Число $f$, входящее в собственные значения оператора физической величины $\op{F}$, называют \underline{квантовым числом}, характеризующим состояние системы $\ket{\psi_f} \equiv \ket{f}$.
+\end{defn}%
+%
+Иными словами, в случае вырожденного спектра квантовое число $f$ не определяет однозначно квантовое состояние системы. В этом случае всегда существуют взаимно коммутирующие операторы $\op{G}_1, \op{G}_2...$ (в частном случае, один оператор $\op{G}$), коммутирующие с $\op{F}$. Любая собственная функция $\psi_{f g_1 g_2 ...}(\vec{q})$ этих операторов или собственный вектор $\ket{f g_1 g_2 ...}$ характеризуется определённым набором квантовых чисел $f, g_1, g_2, ...$, которые однозначно фиксируют квантовое состояния.
+
+\begin{defn}
+Набор взаимно коммутирующих операторов, собственные значения которых однозначно определяют квантовое состояние системы, называют \underline{полным набором совместных наблюдаемых}.
 \end{defn}
 
 \section{Соотношение неопределённостей}
 
-Пусть $\widehat{F}$ и $\widehat{G}$ --- операторы физических величин $F$ и $G$, то есть $\widehat{F}^+=\widehat{F}$, $\widehat{G}^+=\widehat{G}$ и $[\widehat{F},\widehat{G}]=i\widehat{K}$.
+Пусть $\op{F}$ и $\op{G}$ -- операторы физических величин $F$ и $G$, т.е. $\op{F}^\dag=\op{F}$ и $\op{G}^\dag=\op{G}$, и их коммутатор имеет вид $[\op{F},\op{G}]=i\op{K}$.
 
 \begin{thm}
 В произвольном квантовом состоянии выполняется соотношение неопределённостей:
-$$\boxed{\avgh{\brc{\widehat{F}-\avg{\widehat{F}}}^2} \avgh{\brc{\widehat{G}-\avg{\widehat{G}}}^2} \geqslant \frac{\avg{\widehat{K}}^2}{4}}$$
+$$
+  \boxed{
+    \avgh{\brc{\op{F}-\avg{\op{F}}}^2} \avgh{\brc{\op{G}-\avg{\op{G}}}^2} \geqslant
+      \frac{\avg{\op{K}}^2}{4}}
+$$
 \end{thm}
 
 \begin{proof}
-1) Если $[\widehat{F},\widehat{G}]=i\widehat{K}$, то $\widehat{K}^+=\widehat{K}$, т.к.
+\begin{enumerate}
+\item Покажем что если коммутатор представим в виде $[\op{F},\op{G}]=i\op{K}$, то оператор $\op{K}$ -- эрмитов ($\op{K}^\dag=\op{K}$). Действительно,
 \begin{equation}
-\label{eq:4_2_1}
-[\widehat{F},\widehat{G}]^+=-i\widehat{K}^+
-\end{equation}
-
+  \label{eq:4_2_1}
+  [\op{F},\op{G}]^\dag=-i\op{K}^\dag
+\end{equation}%
+%
 С другой стороны:
+
 \begin{equation}
-\label{eq:4_2_2}
-[\widehat{F},\widehat{G}]^+=
-(\widehat{F}\widehat{G}-\widehat{G}\widehat{F})^+=\widehat{G}^+\widehat{F}^+-\widehat{F}^+\widehat{G}^+=
--[\widehat{F}^+,\widehat{G}^+]=
--[\widehat{F},\widehat{G}]=
--i\widehat{K}
-\end{equation}
+  \label{eq:4_2_2}
+  [\op{F},\op{G}]^\dag= (\op{F}\op{G} - \op{G}\op{F})^\dag =
+    \op{G}^\dag \op{F}^\dag - \op{F}^\dag \op{G}^\dag =
+    -[\op{F}^\dag,\op{G}^\dag]= -[\op{F},\op{G}]= -i\op{K}
+\end{equation}%
+%
+Из сравнения правых частей \eqref{eq:4_2_1} и \eqref{eq:4_2_2} следует что $\op{K}^\dag=\op{K}$
 
-Сравнивая правые части \eqref{eq:4_2_1} и \eqref{eq:4_2_2}, получаем $\widehat{K}^+=\widehat{K}$
+\item Введём в состоянии $\ket{\psi}$ оператор отклонения от среднего $\avg{F}=\bfk{\psi}{\op{F}}{\psi}$, т.е.
+%
+$$
+  \Delta\op{F}=\op{F}-\avg{\op{F}}\cdot\mathds{1}
+$$%
+%
+Аналогично $\Delta\op{G} = \op{G} - \avg{\op{G}} \cdot \mathds{1}$. Очевидно, что $[\Delta\op{F}, \Delta\op{G}] = i\op{K}$.
 
-2) В состоянии $\ket{\psi}$:~ $\avg{F}=\bfk{\psi}{\widehat{F}}{\psi}$, то есть:
-$$\left.
+\item Введём в рассмотрение вектор состояния
+$$
+  \ket{\phi}=(\Delta\op{F}-i\gamma\Delta\op{G})\ket{\psi}
+$$%
+%
+где $\gamma$ -- вещественный параметр. Сопрягаем:
+$$
+  \bra{\phi} = \bra{\psi} (\Delta\op{F} - i\gamma\Delta\op{G})^\dag =
+    \bra{\psi} (\Delta\op{F} + i\gamma\Delta\op{G})
+$$%
+%
+При этом мы учли, что $\op{F}^\dag = \op{F}$, $\op{G}^\dag = \op{G}$, а также вещественность средних значений эрмитовых операторов: $\avg{\op{F}}^* = \avg{\op{F}}$, $\avg{\op{G}}^* = \avg{\op{G}}$.
+
+\item Рассмотрим
+$$
 \begin{gathered}
-\Delta\widehat{F}=\widehat{F}-\avg{\widehat{F}}\cdot\mathds{1}\\
-\Delta\widehat{G}=\widehat{G}-\avg{\widehat{G}}\cdot\mathds{1}
+  \bk{\phi}{\phi} = \norm{\ket{\phi}} =
+    \bra{\psi}(\Delta\op{F} + i\gamma\Delta\op{G})
+        (\Delta\op{F} - i\gamma\Delta\op{G})\ket{\psi} = \\ =
+    \bfk{\psi}{\Delta\op{F}^2}{\psi} + \gamma^2\bfk{\psi}{\Delta\op{G}^2}{\psi} +
+      \gamma\bfk{\psi}{\op{K}}{\psi} \geqslant 0
 \end{gathered}
-\right\}~\text{операторы отклоления от среднего}
+$$%
+%
+Неравенство выполняется т.к. норма любого вектора состояний положительно определена. Мы получим неотрицательный квадратный трёхчлен по $\gamma$. Для выполнения последнего неравенства необходимо, чтобы дискриминант квадратного трёхчлена был отрицательным или равным нулю, т.е.
+$$
+  \avg{\op{K}}^2 - 4 \avg{\Delta\op{F}^2} \avg{\Delta\op{G}^2} \leqslant 0
+$$%
+%
+Отсюда следует общее соотношение неопределённостей для дисперсий двух неизмеримых совместно величин:
+$$
+  \boxed{
+    \avg{\Delta\op{F}^2} \avg{\Delta\op{G}^2} \geqslant \frac{\avg{\op{K}}^2}{4}
+  }
 $$
 
-$$[\Delta\widehat{F},\Delta\widehat{G}]=i\widehat{K}$$
-
-3) $\ket{\phi}=(\Delta\widehat{F}-i\gamma\Delta\widehat{G})\ket{\psi}$, где $\gamma$ --- вещественный параметр.
-
-Проведём сопряжение:
-$$\bra{\phi}=\bra{\psi}(\Delta\widehat{F}-i\gamma\Delta\widehat{G})^+=\bra{\psi}(\Delta\widehat{F}+i\gamma\Delta\widehat{G})$$
-
-4) $\bk{\phi}{\phi}=\norm{\ket{\phi}}=\bra{\psi}(\Delta\widehat{F}+i\gamma\Delta\widehat{G})(\Delta\widehat{F}-i\gamma\Delta\widehat{G})\ket{\psi}=\bfk{\psi}{\Delta\widehat{F}^2}{\psi}+\gamma^2\bfk{\psi}{\Delta\widehat{G}^2}{\psi}+\gamma\bfk{\psi}{\widehat{K}}{\psi} \geqslant 0$
-
-Значит, у этого уравнения относительно $\gamma$ не более одного корня, т.е. можно записать условие на его дискриминант: 
-
-$$\avg{\widehat{K}}^2-4\avg{\Delta\widehat{F}^2}\avg{\Delta\widehat{G}^2} \leqslant 0$$
-
-Общее соотношение неопределённостей:
-$$\boxed{\avg{\Delta\widehat{F}^2}\avg{\Delta\widehat{G}^2}\geqslant\frac{\avg{\widehat{K}}^2}{4}}$$
-
-Дисперсия: $$\avgh{\Delta\widehat{F}^2}=\avgh{(\widehat{F}-\avg{\widehat{F}})^2}=\avgh{\widehat{F}^2}-\avgh{\widehat{F}}^2$$ 
+Напомним, что дисперсия характеризует меры отклонения результатов измерения от среднего значения (или неопределённость в измерении величин):
+$$
+  \avgh{\Delta\op{F}^2} = \avgh{(\op{F}-\avg{\op{F}})^2} =
+    \avgh{\op{F}^2}-\avgh{\op{F}}^2
+$$
+\end{enumerate}
 \end{proof}
 
-\begin{exmpl} Выведем соотношение неопределённостей для координаты и импульса:
-
-$$\widehat{F}=\widehat{x}=x$$
-$$\widehat{G}=\widehat{p}_x=-i\hbar\frac{\partial}{\partial{x}}$$
-
-$$[\widehat{x},\widehat{p}_x]\psi(x)=x(-i\hbar\frac{\partial}{\partial{x}})\psi(x)-(-i\hbar\frac{\partial}{\partial{x}})x\psi(x)=i\hbar\psi(x)~\to~\widehat{K}=\hbar$$
-
-
-$$\boxed{\avgh{(\Delta\widehat{x})^2}\avgh{(\Delta\widehat{p}_x)^2} \geqslant \frac{\hbar^2}{4}}$$
-\end{exmpl}
+\begin{exmpl*} Пусть $\op{F}=\op{x}=x$, а $\op{G}=\op{p}_x=-i\hbar\pd{}{x}$. Вычислим коммутатор:
+$$
+  [\op{x}, \op{p}_x] \psi(x) =
+    x (-i\hbar\pd{}{x})\psi(x) - (-i\hbar\pd{}{x}) x \psi(x) =
+    i\hbar\psi(x)
+$$%
+%
+Значит $\op{K}=\hbar$, и соотношение неопределённостей для координаты и импульса имеет вид:
+$$
+  \boxed{\avgh{(\Delta\op{x})^2}\avgh{(\Delta\op{p}_x)^2} \geqslant \frac{\hbar^2}{4}}
+$$
+\end{exmpl*}
