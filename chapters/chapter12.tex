@@ -39,23 +39,23 @@ $$
 Требуется по этим решения $\ket{\psi^{(0)}_m}$ и $E^{(0)}_m$ построить приближенные решения $\psi_n$ и $E_n$ уравнения \eqref{eq:12_0_2}. Допустим, что СВ и СЗ (собственные значения) уравнения \eqref{eq:12_0_2} можно представить в виде разложения в ряд по степеням малого параметра $\lambda$ (ряды ТВ).
 \begin{equation}
 \label{eq:12_1_2}
-\ket{\psi_n} = \sum_{p=0}^\infty \lambda^p \ket{\phi_n^{(p)}} = \ket{\phi_n^{(0)}} + \lambda \ket{\phi_n^{(1)}} + \lambda^2 \ket{\phi_n^{(2)}} + ... = 
+\ket{\psi_n} = \sum_{p=0}^\infty \lambda^p \ket{\phi_n^{(p)}} = \ket{\phi_n^{(0)}} + \lambda \ket{\phi_n^{(1)}} + \lambda^2 \ket{\phi_n^{(2)}} + \dots = 
 \end{equation}
 
 \begin{equation}
 \label{eq:12_1_2_add}
-= \ket{\psi_n^{(0)}} + \ket{\psi_n^{(1)}} + \ket{\psi_n^{(2)}} + ...
+= \ket{\psi_n^{(0)}} + \ket{\psi_n^{(1)}} + \ket{\psi_n^{(2)}} + \dots
 \tag{\ref{eq:12_1_2}$'$}
 \end{equation}
 
 \begin{equation}
 \label{eq:12_1_3}
-E_n = \sum_{p=0}^{\infty} \lambda^p \epsilon_n^{(p)} = \epsilon_n^{(0)} + \lambda \epsilon_n^{(1)} + \lambda^2 \epsilon_n^{(2)} + ... = 
+E_n = \sum_{p=0}^{\infty} \lambda^p \epsilon_n^{(p)} = \epsilon_n^{(0)} + \lambda \epsilon_n^{(1)} + \lambda^2 \epsilon_n^{(2)} + \dots = 
 \end{equation}
 
 \begin{equation}
 \label{eq:12_1_3_add}
-= E_n^{(0)} + E_n^{(1)} + E_n^{(2)} + ...
+= E_n^{(0)} + E_n^{(1)} + E_n^{(2)} + \dots
 \tag{\ref{eq:12_1_3}$'$}
 \end{equation}
 
@@ -65,7 +65,7 @@ E_n = \sum_{p=0}^{\infty} \lambda^p \epsilon_n^{(p)} = \epsilon_n^{(0)} + \lambd
 
 Подставляя \eqref{eq:12_1_2_add} и \eqref{eq:12_1_3_add} в уравнение Шрёдингера \eqref{eq:12_0_2}:
 $$
-\brc{\op{H}^{(0)} + \op{V}} \brc{\ket{\psi_n^{(0)}} + \ket{\psi_n^{(1)}} + ...} = \brc{E_n^{(0)} + E_n^{(1)} + ...} \cdot \brc{\ket{\psi_n^{(0)}} + \ket{\psi_n^{(1)}} + ...}
+\brc{\op{H}^{(0)} + \op{V}} \brc{\ket{\psi_n^{(0)}} + \ket{\psi_n^{(1)}} + \dots} = \brc{E_n^{(0)} + E_n^{(1)} + \dots} \cdot \brc{\ket{\psi_n^{(0)}} + \ket{\psi_n^{(1)}} + \dots}
 $$
 
 получаем:
@@ -76,9 +76,9 @@ $$
 \label{eq:12_1_4} 0 &~~~~~~~~~~~& \brc{\op{H}^{(0)} - E_n^{(0)}} \ket{\psi_n^{(0)}} = 0\\
 \label{eq:12_1_5} 1 &~~~~~~~~~~~& \brc{\op{H}^{(0)} - E_n^{(0)}} \ket{\psi_n^{(1)}} = \brc{E_n^{(1)} - \op{V}} \ket{\psi_n^{(0)}} 
 \end{eqnarray}
-~~~~~~~~~~~~~~~~~~~~~~~~~~~...~~~~~~~~~~~~~~~~~~~~...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~\dots~~~~~~~~~~~~~~~~~~~~\dots
 \begin{eqnarray}
- \label{eq:12_1_6} s & \brc{\op{H}^{(0)} - E_n^{(0)}} \ket{\psi_n^{(s)}} = \brc{E_n^{(1)} - \op{V}} \ket{\psi_n^{(s-1)}}  + E_n^{(2)}\ket{\psi_n^{(s-2)}}+...+ E_n^{(s)}\ket{\psi_n^{(0)}}
+ \label{eq:12_1_6} s & \brc{\op{H}^{(0)} - E_n^{(0)}} \ket{\psi_n^{(s)}} = \brc{E_n^{(1)} - \op{V}} \ket{\psi_n^{(s-1)}}  + E_n^{(2)}\ket{\psi_n^{(s-2)}}+\dots+ E_n^{(s)}\ket{\psi_n^{(0)}}
 \end{eqnarray}
 
 Предположим, что спектр невозмущенной задачи \eqref{eq:12_1_1} - \underline{дискретный} и \underline{невырожденный}, т.е. $E_n^{(0)} \to \ket{\psi_n^{(0)}}$. Кроме того, считаем, что набор $\brcr{\ket{\psi_n^{(0)}}}$ образует полную ортонормированную систему векторов, т.е. $\bk{\psi_m^{(0)}}{\psi_n^{(0)}} = \delta_{mn}$. Таким образом, переходим к представлению, где $\op{H}^{(0)}$ имеет диагональный вид. Базисом в таком представлении являются СВ невозмущенного гамильтониана $\op{H}^{(0)}$. При этом искомый вектор состояния $\ket{\psi_n}$ можно разложить по полной системе ортонормированных $\brcr{\ket{\psi_m^{(0)}}}$
@@ -86,7 +86,7 @@ $$
 \ket{\psi_n}= \sum_m c_{nm} \ket{\psi_m^{(0)}}, 
 $$
 
-причем $c_{nm} = c_{nm}^{(0)} + c_{nm}^{(1)} + ...$, где $c_{nm}^{(1)}$ - того же порядка малости, что и возмущение $\op{V}_{nm}$.
+причем $c_{nm} = c_{nm}^{(0)} + c_{nm}^{(1)} + \dots$, где $c_{nm}^{(1)}$ - того же порядка малости, что и возмущение $\op{V}_{nm}$.
 
 \subsection{Первое приближение теории стационарных возмущений}
 
@@ -150,7 +150,7 @@ c_{nk}^{(1)} = \frac{V_{kn}}{E_n^{(0)} - E_k^{(0)}}
 
 Умножим \eqref{eq:12_1_6} на $\bra{\psi_n^{(0)}}$:
 \begin{gather*}
-\underbrace{\bfk{\psi_n^{(0)}}{\op{H}^{(0)} - E_n^{(0)}} {\psi_n^{(s)}}}_{\bfk{\psi_n^{(0)}}{E_n^{(0)} - E_n^{(0)}}{\psi_n^{(s)}}} = E_n^{(1)} \bk{\psi_n^{(0)}}{\psi_n^{(s-1)}} - \bfk{\psi_n^{(0)}}{\op{V}}{\psi_n^{(s-1)}} + E_n^{(2)}\bk{\psi_n^{(0)}}{\psi_n^{(s-2)}}+...+E_n^{(s)}\\
+\underbrace{\bfk{\psi_n^{(0)}}{\op{H}^{(0)} - E_n^{(0)}} {\psi_n^{(s)}}}_{\bfk{\psi_n^{(0)}}{E_n^{(0)} - E_n^{(0)}}{\psi_n^{(s)}}} = E_n^{(1)} \bk{\psi_n^{(0)}}{\psi_n^{(s-1)}} - \bfk{\psi_n^{(0)}}{\op{V}}{\psi_n^{(s-1)}} + E_n^{(2)}\bk{\psi_n^{(0)}}{\psi_n^{(s-2)}}+\dots+E_n^{(s)}\\
 \bfk{\psi_n^{(0)}}{E_n^{(0)} - E_n^{(0)}}{\psi_n^{(s)}} = 0
 \end{gather*}
 
@@ -200,7 +200,7 @@ E_n^{(2)} = \sum_{k \neq n} \frac{V_{kn}}{E_n^{(0)} - E_k^{(0)}} \underbrace{\bf
 
 \subsection{Критерий применимости стационарной ТВ}
  
-Очевидно, что в формуле $\ket{\psi_n} = \sum_k c_{nk} \ket{\psi_k^{(0)}}$, где $c_{nk} = c_{nk}^{(0)} + c_{nk}^{(1)} + ...$, должно быть $\abs{c_{nk}^{(1)}} \ll \abs{c_{nk}^{(0)}} = 1$ или (см. \eqref{eq:12_1_9})
+Очевидно, что в формуле $\ket{\psi_n} = \sum_k c_{nk} \ket{\psi_k^{(0)}}$, где $c_{nk} = c_{nk}^{(0)} + c_{nk}^{(1)} + \dots$, должно быть $\abs{c_{nk}^{(1)}} \ll \abs{c_{nk}^{(0)}} = 1$ или (см. \eqref{eq:12_1_9})
 
 \begin{equation}
 \label{eq:12_1_13}
