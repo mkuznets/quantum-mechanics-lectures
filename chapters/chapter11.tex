@@ -1,6 +1,6 @@
 \chapter{Квазиклассическое приближение}
 
-Точное решение уравнение Шрёдингера (УШ) в квантовой механике возможно лишь для ограниченного числа задач, в то время как подавляющее большинство задач решается \underline{приближенными методами}. В качестве примера таких методов выступает \underline{квазиклассическое приближение}.
+Точное решение уравнение Шрёдингера (УШ) в квантовой механике возможно лишь для ограниченного числа задач, в то время как подавляющее большинство задач решается \underline{приближенными методами}. В качестве примера таких методов выступает квазиклассическое приближение.
 
 Это приближение позволяет сформулировать метод приближенного решения УШ, основанный на использовании малости постоянной Планка $\hbar$.
  
@@ -219,12 +219,21 @@ $$
     \draw[->] (0,-0.1) -- (0,3) node[above] {$U(x)$};
 	\draw [domain=0:4.8, samples=50] plot (\x, {1}) node[right] {$E$};
 	\draw [domain=0:2.7, samples=50] plot (\x, {0.2*exp(\x)});
-	\draw [domain=1:2.2, samples=50] plot (\x, {\x - 0.6});
+	\draw [domain=0.7:2.6, samples=50] plot (\x, {\x - 0.6});
 	\draw[dashed] (1.609,3) -- (1.609,0) node[below] {$x_0$};
 	\draw[dashed] (1.1,0.5) -- (1.1,0) ;
 	\draw[dashed] (2.1,1.5) -- (2.1,0) ;
-	\draw[very thick] (1.1, 0) -- (2.1, 0);
-	\draw[<-] (2,0.1) -- (2.5,0.5)  node [right] {обл. сшивки};
+	\draw[dashed] (2.5,2) -- (2.5,0) ;
+	\draw[dashed] (0.7,0.2) -- (0.7,0) ;
+	\draw[very thick] (0.7, 0) -- (1.1, 0);
+    \draw[very thick] (2.1, 0) -- (2.5, 0);
+    \draw[-] (2.5, 0) -- (2.5, -0.6) node[right] {Эйри};
+    \draw[-] (0.7, 0) -- (0.7, -0.6);
+    \draw[<->] (0.7, -0.5) -- (2.5, -0.5);
+	\draw[<-] (0.9,-0.1) -- (1.6,-1)  node [below] {Область <<сшивания>>};
+	\draw[<-] (2.3,-0.1) -- (1.7,-1);
+	\draw[<-] (1.2,0.2) -- (0.5,0.2);
+	\draw[<-] (2,0.2) -- (3,0.2)  node [above] {ВКБ};
 	\draw (0.8,2.2) node[inner sep=1pt,above,draw,circle] {I};
 	\draw (3.5,2.2) node[inner sep=1pt,above,draw,circle] {II};
 \end{tikzpicture}
@@ -282,7 +291,7 @@ $$
 
 В классически разрешенной области \rom{1} обе функции осциллируют, убывая по амплитуде со сдвигом по фазе на $\pi / 2$.
 
-Перейдем в асимптотическую область, т.е. туда, где действуют ВКБ- и Эйри-приближения, удаленную от точки поворота, но с медленным изменением потенциала.
+Перейдем в асимптотическую область, т.е. туда, где действуют приближения ВКБ и Эйри, удаленную от точки поворота, но с медленным изменением потенциала.
 \begin{stmt}
 Такая область существует.
 \end{stmt}
@@ -354,10 +363,10 @@ $$
 \end{aligned}
 $$
 
-$$
-\left. \psi_{II}(x) \right|_{x>x_0} \xrightarrow{\text{ВКБ}} \left. \frac{1}{\sqrt{p}} \brcr{A e^{-\abs{z}} + B e^{\abs{z}}} \right|_{(x \to x_0 + 0)} =
-\frac{1}{\alpha^{\frac{1}{6}} \hbar^{\frac{1}{2}} \xi^{\frac{1}{4}}} \brcr{A \exp\brc{-\frac{2}{3}\xi^{\frac{3}{2}}} + B \exp\brc{\frac{2}{3}\xi^{\frac{3}{2}}}}
-$$
+\begin{gather*}
+\left. \psi_{II}(x) \right|_{x>x_0} \xrightarrow{\text{ВКБ}} \left. \frac{1}{\sqrt{p}} \brcr{A e^{-\abs{z}} + B e^{\abs{z}}} \right|_{(x \to x_0 + 0)} = \\
+= \frac{1}{\alpha^{\frac{1}{6}} \hbar^{\frac{1}{2}} \xi^{\frac{1}{4}}} \brcr{A \exp\brc{-\frac{2}{3}\xi^{\frac{3}{2}}} + B \exp\brc{\frac{2}{3}\xi^{\frac{3}{2}}}}
+\end{gather*}
 
 ВКБ-решения асимптотически согласуются с функциями Эйри, если 
 $$
@@ -380,12 +389,15 @@ $$
 \textbf{Правило I:} 
 
 Пусть известна волновая функция в области \rom{2}. Рассмотрим физически интересный случай экспоненциально убывающего в области \rom{2} решения. поэтому полагаем в $\left. \Psi_{II}(x)\right|_{\text{ВКБ}}$ $B = b = 0$. Далее переходим в асимптотическую область ВКБ-решения, <<сшиваем>> его с асимптотической функцией Эйри $\left. \Ai(\abs{\xi})\right|_{\abs{\xi} \to \infty}$, которую в пределе $\abs{x-x_0} \to 0$ переходом через $0$ переводим в согласованное ВКБ-решение:
-$$
+\begin{gather*}
+\resizebox{\textwidth}{!}
+{
 \boxed{
 	\Psi_{(x \gg x_0)}(x) = \frac{a}{2 \sqrt{\abs{p}}} \exp\brc{-\frac{1}{\hbar} \int_{x_0}^{x} \abs{p(x')}dx'} ~~\rightarrow~~
 	\Psi_{(x \ll x_0)}(x) = \frac{a}{\sqrt{p}} \sin\brc{\frac{1}{\hbar} \int_{x}^{x_0} p(x')dx' + \frac{\pi}{4}}
 }
-$$
+}
+\end{gather*}
 
 Оно непрерывно переходит через функцию Эйри из области \rom{2} в область \rom{1}.
 
@@ -403,12 +415,15 @@ $$
 \end{aligned}
 $$
 где $c\sin{\phi}=b$, $c\cos{\phi}=a$. При этом в области \rom{2} должно остаться только экспоненциально растущее решение:
-$$
+\begin{gather*}
+\resizebox{\textwidth}{!} 
+{
 \boxed{
-	\Psi(x)_{(x \ll x_0)} = \frac{c}{\sqrt{p}} \sin\brc{\frac{1}{\hbar} \int_{x}^{x_0} p(x')dx' + \frac{\pi}{4} + \phi} ~~\rightarrow~~
-	\Psi(x)_{(x \gg x_0)} = \frac{c \sin{\phi}}{\sqrt{\abs{p}}} \exp\brc{\frac{1}{\hbar} \int_{x_0}^{x} \abs{p(x')}dx'}
+	\Psi_{(x \ll x_0)}(x) = \frac{c}{\sqrt{p}} \sin\brc{\frac{1}{\hbar} \int_{x}^{x_0} p(x')dx' + \frac{\pi}{4} + \phi} \rightarrow
+	\Psi_{(x \gg x_0)}(x) = \frac{c \sin{\phi}}{\sqrt{\abs{p}}} \exp\brc{\frac{1}{\hbar} \int_{x_0}^{x} \abs{p(x')}dx'}
+  }
 }
-$$
+\end{gather*}
 
 Условием данного перехода будет $\psi$ не близко к $\pi n$. Кроме того, переход в обратную сторону также неверен, т.к. если в области \rom{2} есть экспоненциально убывающий (отброшенный) член, то он может неопределенным образом ($b / a = \tg \psi$) изменить фазу синуса а области \rom{1}, которая уже не совпадет с заданной фазой $\psi$ при прямом переходе.
 
@@ -538,9 +553,23 @@ $$
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=1]{figs/11_5}
-\caption{Проникновение частицы через барьер}
-\label{fig:11_5}
+\begin{tikzpicture}[domain=-1:5]
+    \draw[->] (-0.1,0) -- (5,0) node[right] {$x$};
+    \draw[->] (0,-0.1) -- (0,3) node[above] {$U(x)$};
+	\draw [domain=0:4.8, samples=50] plot (\x, {2}) node[right] {$E$};
+	\draw [domain=0.5:3.5, samples=100] plot (\x, {-(\x-2)*(\x-2)+3});
+    \draw [domain=0:0.5, samples=100] plot (\x, {\x*\x*3});
+    \draw [domain=3.5:3.9, samples=100] plot (\x, {(-\x+4)*(-\x+4)*3});
+    \draw[dashed] (1,3) -- (1,0) node[below] {$a$};
+    \draw[dashed] (3,3) -- (3,0) node[below] {$b$};
+	\draw[->] (3.2, 2.2) -- (3.7, 2.2); 
+	\draw[->] (0.2, 2.2) -- (0.7, 2.2); 
+	\draw[<-] (0.2, 2.1) -- (0.7, 2.1);
+	\draw (0.6,0) node[above] {I};
+	\draw (2,0) node[above] {II};
+  \draw (4.2,0) node[above] {III};
+\end{tikzpicture}
+\caption{Проникновение частицы через барьер} \label{fig:11_5}
 \end{figure}
 
 \begin{enumerate}
@@ -551,12 +580,12 @@ $$
 
 Убедимся в том, то это действительно так. В соответствии с \S 1 главы \rom{5} плотность потока вероятности прошедшей волны
 $$
-\begin{aligned}
-j_{x}^{\text{прош}} = \frac{i\hbar}{2m}(\psi\nabla\psi^* - \psi^*\nabla\psi) = \brc{\text{т.к. слагаемые}~ \sim \nabla \frac{1}{\sqrt{p(x)}} ~\text{взаимно компенсируются}} =\\
-= \frac{i\hbar}{2m} \brcr{\frac{A}{\sqrt{p(x)}} e^{i\brs{z(x)+\frac{\pi}{4}}} \frac{A^*}{\sqrt{p(x)}} e^{-i\brs{z(x)+\frac{\pi}{4}}} \brc{-i\frac{dz}{dx}} - \brc{\text{комплексно-сопряженное}} } = \\
-= \frac{i\hbar}{2m} \brcr{\frac{-i\abs{A}^2 2}{\hbar}} = \frac{\abs{A}^2}{m} = j_x^{\text{прош}} > 0
-\end{aligned}
+j_{x}^{\text{прош}} = \frac{i\hbar}{2m}(\psi\nabla\psi^* - \psi^*\nabla\psi) = \frac{i\hbar}{2m} \left\{\frac{A}{\sqrt{p(x)}} e^{i\brs{z(x)+\frac{\pi}{4}}} \frac{A^*}{\sqrt{p(x)}} e^{-i\brs{z(x)+\frac{\pi}{4}}} \brc{-i\frac{dz}{dx}} - \right.
 $$
+$$
+\left. - \brc{\text{комплексно-сопряженное}} \right\} = \frac{i\hbar}{2m} \brcr{\frac{-i\abs{A}^2 2}{\hbar}} = \frac{\abs{A}^2}{m} = j_x^{\text{прош}} > 0
+$$
+т.к. слагаемые $\sim \nabla \dfrac{1}{\sqrt{p(x)}}$ взаимно компенсируются.
 
 \item В области \rom{2} по правилу соответствия (\rom{3}):
 $$
@@ -574,10 +603,10 @@ $$
 = \frac{2A e^{\gamma}}{\sqrt{p}} \left\{ \underbrace{\exp \brc{\frac{i}{\hbar} \int_{x}^{a} p(x')dx' + \frac{i\pi}{4}}}_{\text{отраженная волна}} - \underbrace{\exp \brc{-\frac{i}{\hbar} \int_{x}^{a} p(x')dx' - \frac{i\pi}{4}}}_{\text{падающая волна}}\right \} 
 $$
 $$
-j_x^{\text{пад}} = \frac{i \hbar}{2m} \brcr{\Psi \nabla \Psi^* - \Psi^* \nabla \Psi} = \frac{i \hbar}{2m} \brcr{\frac{A e^{\gamma}}{i \sqrt{p}} e^{-i(z(x) + \frac{\pi}{4})} \frac{A^* e^{\gamma}}{(-i) \sqrt{p}} e^{i(z(x) + \frac{\pi}{4})} \brc{i \frac{dz}{dx}} - \text{К.С.} } =
+j_x^{\text{пад}} = \frac{i \hbar}{2m} \brcr{\Psi \nabla \Psi^* - \Psi^* \nabla \Psi} = \frac{i \hbar}{2m} \left\{ \frac{A e^{\gamma}}{i \sqrt{p}} e^{-i(z(x) + \frac{\pi}{4})} \frac{A^* e^{\gamma}}{(-i) \sqrt{p}} e^{i(z(x) + \frac{\pi}{4})} \brc{i \frac{dz}{dx}} - \right.
 $$
 $$
-= \frac{i \hbar}{2m} \brcr{\frac{-2i \abs{A}^2 e^{2\gamma}}{\hbar}} = \frac{\abs{A}^2 e^{2\gamma}}{m}
+\left. - \text{К.С.} \right\}  = \frac{i \hbar}{2m} \brcr{\frac{-2i \abs{A}^2 e^{2\gamma}}{\hbar}} = \frac{\abs{A}^2 e^{2\gamma}}{m}
 $$
 
 \item По определению коэффициент проницаемости барьеры (или вероятность проникновения частицы через барьер):

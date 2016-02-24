@@ -270,12 +270,12 @@ $$
     \draw[-] (0,\x) -- (0.5,\x) ;
   \foreach \x in {-1.1, -1.2, -1.3,-1.4, -1.5, -1.6, -1.7, -1.8, -1.9}
     \draw[-] (0,\x) -- (0.5,\x) ;
-  \draw[-] (0,1) -- (0.5,1) node[right] {$mc^2$};
+  \draw[-] (0,1) -- (0.5,1) node[right] {$+mc^2$};
   \draw[-] (0,-1) -- (0.5,-1) node[right] {$-mc^2$};
   \draw[dashed] (0,0) -- (0.5,0) node[right] {$E = 0$};
   \draw[-] (0.1,0) -- (0.1, 0) node[left] {$0$};
-  \draw[->] (1.4, 1.5) -- (1.4,2) node[right] {$E > 0~(\xi = +1)$};
-  \draw[->] (1.4, -1.5) -- (1.4,-2) node[right] {$E < 0~(\xi = -1)$};
+  \draw[->] (1.4, 1.5) -- (1.4,2) node[right] {$E > 0~(\xi = +1)$ \text{свободно}};
+  \draw[->] (1.4, -1.5) -- (1.4,-2) node[right] {$E < 0~(\xi = -1)$ \text{занято}};
 \end{tikzpicture}
 \caption{Состояния с положительными и отрицательными энергиями.} \label{fig:14_1}
 \end{figure}
@@ -292,14 +292,14 @@ $$
     \draw[-] (0,\x) -- (0.5,\x) ;
   \foreach \x in {-1.1, -1.2, -1.3,-1.4, -1.5, -1.6, -1.7, -1.8, -1.9}
     \draw[-] (0,\x) -- (0.5,\x) ;
-  \draw[-] (0,1) -- (0.5,1) node[right] {$mc^2$};
+  \draw[-] (0,1) -- (0.5,1) node[right] {$+mc^2$};
   \draw[-] (0,-1) -- (0.5,-1) node[right] {$-mc^2$};
-  \draw[<-] (0.2,1) -- (0.2,0) node[right] {$\Delta E = 2mc^2$};
-  \draw[<-] (0.2,-1) -- (0.2,0);
   \draw[-] (0.1,0) -- (0.1, 0) node[left] {$0$};
-  \draw[domain=-1.2:-0.4, samples=100, ->] plot(\x, {0.05 * sin(30 * \x r) }) node [below] {$\gamma$};
-  \draw [->] (0, -1) arc (-90:-270:1cm) node[left] {$e^-$};
+  \draw[domain= 0.25:1.4, samples=100, <-, thick] plot(\x, {0.05 * sin(20 * \x r) }) node [below] {$\gamma$};
+  \draw[thick, ->] (0.2,-1.3) -- (0.2, 1.4);
+  \draw (0.2, -1.2) circle (1mm); 
   \node [left] at (0, -1) {$e^+$};
+  \node [left] at (0, 1.5) {$e^-$};
 \end{tikzpicture}
 \caption{Образование электрон-позитронной пары по действием $\gamma$-кванта. } \label{fig:14_2}
 \end{figure}
@@ -567,11 +567,12 @@ $$
 \begin{figure}[h!]
 \centering
 \begin{tikzpicture}[domain=-2:2]
-  \draw[->] (0, 0) -- (1, 1) node[above] {$\vec{v}$};
-  \draw[->] (0, 0) -- (0,1) node[left] {$\bm{\mu}$};
-  \draw[<-] (0, 0) -- (0.4,-1) node[right] {$-Ze$};
+  \draw[->, thick] (0, 0) -- (1, 1) node[above] {$\vec{v}$};
+  \draw[->, thick] (0, -0.5) -- (0,1) node[left] {$\bm{\mu}$};
+  \draw[<-, thick, shorten >= 3] (0, 0) -- (1.5,-1) node[right] {$-Ze$};
+  \node at (1.3, -0.4) {$\vr$};
   \draw[domain=-0.7:1, samples=50] plot(\x,{-0.75 * \x * \x + 1.25 * \x});
-  \draw (0.4, -1) circle (1mm); 
+  \draw (1.5, -1) circle (1mm); 
 \end{tikzpicture}
 \caption{К вопросу о спин-орбитальном взаимодействии.} \label{fig:14_3}
 \end{figure}

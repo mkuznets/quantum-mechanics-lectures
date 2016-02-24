@@ -224,7 +224,20 @@ $$
 f(\theta, \phi) \approx  -\frac{m}{2\pi \hbar^2} \int e^{-i(\vec{k}'-\vec{k})\vsr} U(\vsr) d\vsr
 $$
 
-[картинка]
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[domain=-5:5]
+  \draw[->, thick] (0, 0) -- (3, 0);
+  \draw[->, thick] (0, 0) -- (2, 2);
+  \draw[->, thick] (3, 0) -- (2, 2);  
+  \node[below] at (1.5, 0) {$\vec k$};
+  \node[above] at (0.7, 0) {$\theta$};
+  \node[left] at (1.1, 1.3) {$\vec{k}'$};
+  \node[below] at (3, 1.5) {$\vec q$};
+  \draw[-] (0.5, 0) arc (0:45:5mm);  
+\end{tikzpicture}
+\caption{} \label{fig:19_2}
+\end{figure}
 
 Здесь $\vec{k}' = k \vec{n}$ --- волновой вектор рассеянной частицы. Вводя вектор $\vec{q} = \vec{k}'- \vec{k}$ (см. \autoref{fig:19_2}) --- вектор переданного частице рассеивающим центром импульса (в единицах $\hbar$), запишем последнее равенство в виде:
 \begin{equation}
