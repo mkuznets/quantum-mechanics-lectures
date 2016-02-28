@@ -9,7 +9,7 @@ chapter: check-env
 
 softclean:
 	rm -rf figures/luatex*
-	find -iregex '.*\.\(bbl\|bcf\|blg\|aux\|log\|lof\|loc\|lot\|loa\|out\|toc\|dvi\|fdb_latexmk\|run\.xml\|fls\)$$' -type f -delete
+	find -iregex '.*\.\(bbl\|bcf\|blg\|aux\|log\|lof\|loc\|lot\|loa\|out\|toc\|dvi\|fdb_latexmk\|run\.xml\|htm\|fls\)$$' -type f -delete
 
 clean: softclean
 	find -iregex '.*\.\(synctex\|idx\|ilg\|ind\)$$' -type f -delete
