@@ -7,14 +7,19 @@ book: $(MAINSRC)
 chapter: check-env
 	pdflatex "\newcommand{\n}{$(CH)}\input{chapter}"
 
-clean:
-	@rm -f */*.aux */*.bbl */*.blg */*.log */*.dvi \
-	*/*.idx */*.ilg */*.ind */*.toc */*.lot */*.lof */*.out
-	@rm -f *.aux *.bbl *.blg *.synctex *.log *.dvi \
-	*.idx *.ilg *.ind *.toc *.lot *.lof *.out
+softclean:
+	rm -rf figures/luatex*
+	find -iregex '.*\.\(bbl\|bcf\|blg\|aux\|log\|lof\|loc\|lot\|loa\|out\|toc\|dvi\|fdb_latexmk\|run\.xml\|fls\)$$' -type f -delete
+
+clean: softclean
+	find -iregex '.*\.\(synctex\|idx\|ilg\|ind\)$$' -type f -delete
 	
 distclean: clean
-	@rm -f *.pdf
+	find . -name "*.pdf" -type f -delete
+
+readme:
+	pandoc --email-obfuscation=none --normalize -s -S \
+		--from markdown_github --to html README.md > README.htm
 
 check-env:
 ifndef CH

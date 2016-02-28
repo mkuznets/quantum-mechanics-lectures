@@ -12,4 +12,6 @@
 *.lof
 *.out
 *.pdf
-
+*.htm
+*.fdb_latexmk
+*.fls
