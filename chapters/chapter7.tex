@@ -179,9 +179,12 @@ $$
 	\draw[-] (-0.71,0.5) -- (0.71,0.5) node[right] {$n=0$};
 	\draw[-] (-1.22,1.5) -- (1.22,1.5) node[right] {$n=1$};
 	\draw[-] (-1.58,2.5) -- (1.58,2.5) node[right] {$n=2$};
+	\draw[<->, thick] (0,2.5) -- (0,3.5);
+	\node[right] at (0, 3) {$\hbar \omega$};
 	\draw[-] (-1.87,3.5) -- (1.87,3.5) node[right] {$n=3$};
   \draw[dashed] (-2, 0.5) -- (-0.71, 0.5);
-  \draw[<->] (-1.9, 0) -- (-1.9, 0.5) node[left] {$\frac{\hbar \omega}{2}$};
+  \node[below] at (0, 0) {$0$};  
+  \draw[<->] (-1.9, 0) -- (-1.9, 0.5) node[left] {$\dfrac{\hbar \omega}{2}$};
   \end{tikzpicture}
 \caption{Спектр гармонического осциллятора.} \label{fig:7_1}
 \end{figure}
