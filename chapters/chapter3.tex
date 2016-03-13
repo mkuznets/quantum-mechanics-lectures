@@ -211,12 +211,14 @@ $$%
 
   \item Коммутативность операции сложения:
   $$
+  \begin{gathered}
   (\op{F} + \op{G})\ket{\psi} \equiv
     \underbrace{
       \op{F}\ket{\psi} + \op{G}\ket{\psi}  = \op{G}\ket{\psi} + \op{F}\ket{\psi}
     }_{\text{из аксиомы коммутативности}}
-    = (\op{G} + \op{F})\ket{\psi} \Rightarrow~ \op{F} + \op{G} =
-    \op{G} + \op{F}
+    = (\op{G} + \op{F})\ket{\psi}\\ 
+    \Rightarrow~~ \op{F} + \op{G} = \op{G} + \op{F}
+  \end{gathered}
   $$
 
   \item Произведение операторов:
@@ -438,13 +440,15 @@ $$
 \avg{(\Delta F)^2} = \bfk{\psi}{(\op{F} - \avg{F})^2}{\psi}
 \end{equation}%
 %
-Т.к. оператор $\op{F}$ -- эрмитов, а $\avg{F}$ -- действительное число, то оператор $\op{F} - \avg{F}$ -- также эрмитов поэтому
+Т.к. оператор $\op{F}$ -- эрмитов, а $\avg{F}$ -- действительное число, то оператор $\op{F} - \avg{F}$ -- также эрмитов, поэтому
 
 \begin{equation}
 \label{eq:3_2_12}
+\begin{gathered}
 \left. \avg{(\Delta F)^2} \right|_{\text{\eqref{eq:3_2_7_add}}} =
-  \bk{(F - \avg{F})\psi}{(F - \avg{F})\psi} =
+  \bk{(F - \avg{F})\psi}{(F - \avg{F})\psi} = \\ =
   \int \abs{\brc{F - \avg{F}}\psi}^2 d\vec{q} \geqslant 0
+\end{gathered}
 \end{equation}
 
 Следовательно, чтобы величина $F$ не имела разброса в состоянии $\ket{\psi}$, т.е. чтобы $\avg{(\Delta F)^2} = 0$, необходимо выполнение условия
@@ -689,8 +693,8 @@ $$
 \begin{equation}
 \label{eq:3_3_14}
 	\begin{gathered}
-		\avg{F} = \bfk{\psi}{\op{F}}{\psi} = \sum_m \sum_n c_m^* c_n \underbrace{ \bfk{\psi_m}{F}{\psi_n} }_{\bfk{\psi_m}{f_n}{\psi_n}~\text{из \eqref{eq:3_3_1}}} =
-		\sum_m \sum_n c_m^* c_n f_n \underbrace{\bk{\psi_m}{\psi_n}}_{\delta{mn}} = \\ = \boxed{\sum_n f_n \abs{c_n}^2 = \avg{F}}
+		\avg{F} = \bfk{\psi}{\op{F}}{\psi} = \sum_m \sum_n c_m^* c_n \underbrace{ \bfk{\psi_m}{F}{\psi_n} }_{\bfk{\psi_m}{f_n}{\psi_n}~\text{из \eqref{eq:3_3_1}}} = \\ = 
+		\sum_m \sum_n c_m^* c_n f_n \underbrace{\bk{\psi_m}{\psi_n}}_{\delta{mn}} = \boxed{\sum_n f_n \abs{c_n}^2 = \avg{F}}
 	\end{gathered}
 \end{equation}%
 %

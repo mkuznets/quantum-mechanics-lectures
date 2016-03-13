@@ -41,11 +41,13 @@ $$%
 где $\rho(\vr,t)$ -- плотность вероятности обнаружить частицу в момент времени $t$ в точке $\vr$ (см. соотношения \eqref{eq:1_4_1} и \eqref{eq:1_4_2}). Правая часть преобразуется к виду
 
 $$
+\begin{gathered}
   \left.
     -\frac{\hbar^2}{2m}(\Psi^*\Delta\Psi-\Psi\Delta\Psi^*)
   \right|_{\Delta = \vec{\nabla}\cdot\vec{\nabla}} =
-  -\frac{\hbar^2}{2m} \vec{\nabla}(\Psi^*\vec{\nabla}\Psi-\Psi\vec{\nabla}\Psi^*) =
+  -\frac{\hbar^2}{2m} \vec{\nabla}(\Psi^*\vec{\nabla}\Psi-\Psi\vec{\nabla}\Psi^*) = \\ =
   -i\hbar \brc{-\frac{i\hbar}{2m}}\vec{\nabla}(\Psi^*\vec{\nabla}\Psi-\Psi\vec{\nabla}\Psi^*)
+\end{gathered}
 $$%
 %
 Поэтому из \eqref{eq:5_1_1} следует:
@@ -140,14 +142,14 @@ $$%
 Пользуясь формулой \eqref{eq:5_2_1}, а также тем, что $\op{H}^+=\op{H}$, найдём производную среднего значения $\avg{F}$ по времени:
 
 \begin{equation}
-  \begin{gathered}
+  \begin{split}
     \label{eq:5_2_2}
     \frac{d}{dt} \avg{F} = \bfkh{\pd{\psi}{t}}{\op{F}}{\psi} 
         + \bfkh{\psi}{\pd{\op{F}}{t}}{\psi} + \bfkh{\psi}{\op{F}}{\pd{\psi}{t}} = \\ =
     \frac{i}{\hbar}\bfkh{\psi}{\op{H}\op{F}}{\psi} + \bfkh{\psi}{\pd{\op{F}}{t}}{\psi} -
-        \frac{i}{\hbar}\bfkh{\psi}{\op{F}\op{H}}{\psi} =
+        \frac{i}{\hbar}\bfkh{\psi}{\op{F}\op{H}}{\psi} = \\ =
     \bfkh{\psi}{\pd{\op{F}}{t}+\frac{i}{\hbar}[\op{H},\op{F}]}{\psi}
-  \end{gathered}
+  \end{split}
 \end{equation}
 
 В выражении $\frac{d}{dt} \avg{F}$ усреднение и оператор дифференцирования относятся к разным переменным, так что их можно переставить:
@@ -220,7 +222,7 @@ $$%
   [\op{H}, \op{\vp}] =
   \left.
     \brs{\frac{\op{\vp}^2}{2m}, \op{\vp}} + \brs{U(\vr), \vp}
-  \right|_{\text{упр. из 1-го задания}} =
+  \right|_{\text{упр. из 1-го зад.}} =
   i \hbar \vec{\nabla} U(\vr) \ne 0
 \end{equation}%
 %
@@ -232,7 +234,7 @@ $$
 \D{F}{t} = \pd{F}{t} + \sum_{i=1}^{s}\brc{\pd{F}{q_i} \dot{q_i} + \pd{F}{p_i} \dot{p_i} }
 $$%
 %
-Подставляя, согласно уравнениям Гамильтона (см.~\llref[: уравнения Гамильтона]{40}{1})
+Подставляя, согласно уравнениям Гамильтона (см.~\llref{40}{1}, уравнения Гамильтона)
 
 $$
 \dot{q_i} = \pd{H}{p_i} ~~~ \dot{p_i} = -\pd{H}{q_i}
@@ -252,11 +254,11 @@ $$%
 Если неопределённость $\Delta F$ физической величины $F$ мала по сравнению с $\avg{F}$, то среднее значение $\avg{F}$ должно меняться по тому же закону, что и классическое значение $F$ ({\em принцип соответствия} классических уравнений движения и усреднённых квантово-механических уравнений, т.е. уравнения для описания эволюции во времени квантово-механических средних или наблюдаемых на опыте величин). Сравнивая \eqref{eq:5_2_8} с \eqref{eq:5_2_5} и \eqref{eq:5_2_6}, получаем следующие соответствия:
 
 $$
-\begin{gathered}
-F ~~\leftrightarrow~~ \avg{F} \\
-\pd{F}{t} ~~\leftrightarrow~~ \bfkh{\psi}{\pd{\op{F}}{t}}{\psi} \\
-\brcr{H, F} ~~\leftrightarrow~~ \frac{i}{\hbar} \bfk{\psi}{ [\op{H}, \op{F}] }{\psi}
-\end{gathered}
+\begin{aligned}
+F ~~&\leftrightarrow~~ \avg{F} \\
+\pd{F}{t} ~~&\leftrightarrow~~ \bfkh{\psi}{\pd{\op{F}}{t}}{\psi} \\
+\brcr{H, F} ~~&\leftrightarrow~~ \frac{i}{\hbar} \bfk{\psi}{ [\op{H}, \op{F}] }{\psi}
+\end{aligned}
 $$%
 %
 По этой причине коммутатор $[\op{H}, \op{F}]$ иногда называют {\em квантовой скобкой Пуассона}. При переходе к классическому пределу ($\hbar \to 0$) оператор $i[\op{H}, \op{F}]$ стремится к $\hbar \brcr{H, F}$. Для эрмитовости квантовой скобки Пуассона при ней вводится $i$. Указанное соответствие между коммутатором и скобкой Пуассона может быть использовано для определения явного вида операторов физических величин $F$.
@@ -335,10 +337,12 @@ m \D{^2}{t^2} \avg{\op{\vr}} = \avg{\op{\vec{F}}}
 Для левой и правой частей \eqref{eq:5_3_6} имеем:
 
 \begin{equation}
+\begin{aligned}
 \label{eq:5_3_7}
-\avg{\op{\vec{F}}(\vr)} = 
-	\avgh{ \op{F}(\avg{\vr}) + \brc{\op{\vr} - \avg{\op{\vr}}} \nabla \vec{F}(\avg{\op{\vr}}) + 
-	\frac{1}{2} (\op{r}_\alpha - \avg{\op{r}_\alpha})(\op{r}_\beta - \avg{\op{r}_\beta}) \cdot \pd{^2 \vec{F}(\avg{\op{\vr}})}{r_\alpha \partial r_\beta} + ... }
+\avg{\op{\vec{F}}(\vr)} = &
+	\left\langle \op{F}(\avg{\vr}) + \brc{\op{\vr} - \avg{\op{\vr}}} \nabla \vec{F}(\avg{\op{\vr}})~+ \right. \\ & \left.+~
+	\frac{1}{2} (\op{r}_\alpha - \avg{\op{r}_\alpha})(\op{r}_\beta - \avg{\op{r}_\beta}) \cdot \pd{^2 \vec{F}(\avg{\op{\vr}})}{r_\alpha \partial r_\beta} + ... \right\rangle
+\end{aligned}  
 \end{equation}%
 %
 При усреднении член с $\nabla \vec{F}$ в \eqref{eq:5_3_7} исчезает, так что
@@ -357,7 +361,7 @@ m \D{^2}{t^2} \avg{\op{\vr}} = \avg{\op{\vec{F}}}
   } = m \D{^2}{t^2} \avg{\op{\vr}} = \vec{F}(\avg{\op{\vr}})
 \end{equation}%
 %
-В остальных случаях равенство \eqref{eq:5_3_9} выполняется приближённо только если волновая функция частицы кализована в достаточно малой области пространства $\Delta r$ (размер области, где плотность вероятности $\abs{\Psi}^2$ существенно отлична от нуля) по сравнению с размером $L$области существенного изменения силы.
+В остальных случаях равенство \eqref{eq:5_3_9} выполняется приближённо только если волновая функция частицы кализована в достаточно малой области пространства $\Delta r$ (размер области, где плотность вероятности $\abs{\Psi}^2$ существенно отлична от нуля) по сравнению с размером $L$ области существенного изменения силы.
 
 \begin{equation}
 \label{eq:5_3_10}

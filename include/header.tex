@@ -1,4 +1,5 @@
-\documentclass[12pt,a4paper]{book}
+\documentclass[a5paper,oneside,10pt]{extbook}
+\usepackage[left=1.3cm,right=1.3cm,top=1cm,bottom=1.5cm]{geometry}
 
 \usepackage{emptypage}
 
@@ -30,8 +31,6 @@
 
 \usepackage[normalem]{ulem}
 \renewcommand\underline{\bgroup\markoverwith{{\rule[-0.3ex]{2pt}{0.4pt}}}\ULon}
-
-\usepackage[margin=2.3cm]{geometry}
 
 %\usepackage[pdftex]{graphicx}
 \usepackage[pdftex,hyperindex,unicode]{hyperref}
@@ -71,9 +70,12 @@
 %% book document class
 \fancyhf{}
 \fancyfoot[C]{\thepage}
-\fancyfoot[LE,RO]{\input{version}}
-\fancyfoot[RE,LO]{\url{http://j.mp/quantum_mechanics}}
+% \fancyfoot[LE,RO]{\input{version}}
+% \fancyfoot[RE,LO]{\url{http://j.mp/quantum_mechanics}}
 
+% Пока мы пишем названия глав и номера страниц сверху, горизонтальная
+% черта не нужна
+\renewcommand{\headrulewidth}{0pt}
 
 % Названия глав и подглав вверху страниц. Можно будет применить, если получится
 % адекватно сократить названия подглав.
