@@ -1,7 +1,7 @@
 .PHONY: book chapter clean distclean check-env
 MAINSRC = main.tex
 
-define delete =
+define delete
 	find . -depth -path "./.git/*" -prune -o -iregex $1 -type f -delete
 endef
 
