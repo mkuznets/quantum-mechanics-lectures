@@ -35,6 +35,21 @@
 %\usepackage[pdftex]{graphicx}
 \usepackage[pdftex,hyperindex,unicode]{hyperref}
 
+%% Окружения списков задачи и упражнений из заданий
+
+\usepackage{enumitem}
+\newlist{exercise}{enumerate}{1}
+\setlist[exercise,1]{label=У\arabic{chapter}.\arabic{section}.\arabic*}
+
+\newlist{problem}{enumerate}{1}
+\setlist[problem,1]{label=З\arabic{chapter}.\arabic{section}.\arabic*}
+
+\usepackage[nameinlink]{cleveref}
+\crefname{exercisei}{}{exercises}
+\crefname{problemi}{}{problems}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage[nodayofweek]{datetime}
 \newcommand{\todayiso}{\twodigit\day.\twodigit\month.\the\year}
 
