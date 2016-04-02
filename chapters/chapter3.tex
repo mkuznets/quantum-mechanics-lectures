@@ -38,7 +38,7 @@ $$%
   \draw (-1.8, 0) circle (0.1cm);
   \node[above] at (-2, 0) {S}; 
   \begin{scope}[rotate=-90]
-    \draw[domain=-2.1:2.1, samples=200] plot(\x, {(cos(5 * \x r)^2+4}) node [below] {$I$};
+    \draw[domain=-2.1:2.1, samples=200] plot(\x, {cos(0.6*\x r)*cos(5*\x r)^2+4}) node [below] {$I$};
   \end{scope}
 \end{tikzpicture}
 \caption{К вопросу о суперпозиции состояний.} \label{fig:3_1}
