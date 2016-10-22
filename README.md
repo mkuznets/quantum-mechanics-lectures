@@ -1,8 +1,9 @@
 # Конспект лекций по квантовой механике
+[![Build Status](https://travis-ci.org/mkuznets/quantum-mechanics-lectures.svg?branch=master)](https://travis-ci.org/mkuznets/quantum-mechanics-lectures)
 
 Оформленный в LaTeX конспект годового курса лекций по квантовой механике, прочитанного [Леонидом Павловичем Сухановым](http://wikimipt.org/wiki/%D0%A1%D1%83%D1%85%D0%B0%D0%BD%D0%BE%D0%B2_%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4_%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B8%D1%87) на Факультете радиотехники и кибернетики МФТИ в 2012–13 годах.
 
-Загрузить последнюю редакцию конспекта: [![PDF Status](https://www.sharelatex.com/github/repos/mkuznets/quantum-mechanics-lectures/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/mkuznets/quantum-mechanics-lectures/builds/latest/output.pdf)
+:book: [Последняя редакция конспекта](https://github.com/mkuznets/quantum-mechanics-lectures/releases/latest) (PDF)
 
 ## Статус
 
