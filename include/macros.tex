@@ -120,6 +120,9 @@
 \renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\phi}{\varphi}
 
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
 % Жирная (векторная) "хи"
 % жирность через bm - грязный хак (mathbf не применяется к греческим, а bm делает латинские буквы курсивными)
 \DeclareRobustCommand{\rchi}{{\bm{\mathpalette\irchi\relax}}}
@@ -175,6 +178,7 @@ height.1pt depth.1pt\hss}\box0}}%
 % \sref{параграф}{глава}
 \newcommand{\sref}[2]{\text{\S{\kern 0.25em}#1 гл.~#2}}
 \newcommand{\srefs}[2]{\text{\S}\sref{#1}{#2}}
+\newcommand{\srefthis}[1]{\text{\S{\kern 0.25em}#1 этой главы}}
 
 
 % Вектор-столбец (с меньшим расстоянием от скобок, чем если рисовать руками)
