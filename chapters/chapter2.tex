@@ -15,8 +15,8 @@
 Проблему расходимости нормировочного интеграла можно решить следующим образом. Рассмотрим интеграл по бесконечному объему от двух волн де Бройля с импульсами $\vsp$ и $\vp$:
 
 $$
-\int \Psi^*_{\vsp}(\vr,t) \Psi_{\vp}(\vr,t) \, dv = 
-  \abs{A}^2 e^{\frac{i}{\hbar}(E' - E)t} \int e^{\frac{i}{\hbar}(\vp - \vsp)\vr} \, dv
+\int \Psi^*_{\vsp}(\vr,t) \Psi_{\vp}(\vr,t)\diff v = 
+  \abs{A}^2 e^{\frac{i}{\hbar}(E' - E)t} \int e^{\frac{i}{\hbar}(\vp - \vsp)\vr}\diff v
 $$%
 %
 Интеграл в правой части этого равенства определён в классе обобщённых функций через трёхмерную $\delta$-функцию Дирака. Основные свойства $\delta$-функции:
@@ -28,14 +28,14 @@ $$%
 %
 Применяя первые два свойства, получим:
 $$
-\int e^{\frac{i}{\hbar}(\vp - \vsp)\vr} \, dv \equiv
+\int e^{\frac{i}{\hbar}(\vp - \vsp)\vr}\diff v \equiv
   (2 \pi )^3 \delta \brc{\frac{\vp - \vsp}{\hbar}} =
   (2 \pi \hbar)^3 \delta (\vp - \vsp)
 $$%
 %
 Откуда, с помощью третьего свойства, следует
 $$
-\int \Psi^*_{\vsp}(\vr,t) \Psi_{\vp}(\vr,t) \, dv = 
+\int \Psi^*_{\vsp}(\vr,t) \Psi_{\vp}(\vr,t)\diff v = 
   \abs{A}^2 e^{\frac{i}{\hbar}(E' - E)t} (2 \pi \hbar)^3 \delta (\vp - \vsp) =
   \abs{A}^2 (2 \pi \hbar)^3 \delta (\vp - \vsp)
 $$%
@@ -50,7 +50,7 @@ $$%
 а для нормировочного соотношения
 \begin{equation}
 \label{eq:2_1_3}
-\boxed{\int\Psi^*_{\vsp}(\vr,t) \, \Psi_{\vp}(\vr,t) \, dv = \delta (\vp - \vsp)}
+\boxed{\int\Psi^*_{\vsp}(\vr,t) \, \Psi_{\vp}(\vr,t)\diff v = \delta (\vp - \vsp)}
 \end{equation}%
 %
 Соотношение \eqref{eq:2_1_3} называется условием нормировки волн де Бройля на $\delta$-функцию.
@@ -61,7 +61,7 @@ $$%
 
 \begin{equation}
 \label{eq:2_1_4}
-\Psi(\vr,t) = \int d^3p \; C(\vp) \, \Psi_{\vp}(\vr,t)
+\Psi(\vr,t) = \int \diff^3 p \; C(\vp) \, \Psi_{\vp}(\vr,t)
 \end{equation}%
 %
 с весовой функцией $C(\vp)$. Зная $\Psi(\vr,t)$, можно найти соответствующую ей функцию $C(\vp)$, т.к. $C(\vp)$ -- это, по существу, Фурье-образ волновой функции $\Psi(\vr,t)$. Действительно:
@@ -69,22 +69,22 @@ $$%
 
 $$
 \begin{gathered}
-\left. \int \Psi^*_{\vsp}(\vr,t) \, \Psi(\vr,t) \, dv \right|_{\text{\eqref{eq:2_1_4}}} =
-  \left. \int d^3p \, C(p) \int \Psi^*_{\vsp}(\vr,t) \, \Psi_{\vp}(\vr,t) \, dv \right|_{\text{\eqref{eq:2_1_3}}} =\\
-  = \int d^3p \, C(\vp) \cdot \delta (\vp - \vsp) = C(\vsp)
+\left. \int \Psi^*_{\vsp}(\vr,t) \, \Psi(\vr,t)\diff v \right|_{\text{\eqref{eq:2_1_4}}} =
+  \left. \int \diff ^3p \, C(p) \int \Psi^*_{\vsp}(\vr,t) \, \Psi_{\vp}(\vr,t)\diff v \right|_{\text{\eqref{eq:2_1_3}}} =\\
+  = \int \diff^3p \, C(\vp) \cdot \delta (\vp - \vsp) = C(\vsp)
 \end{gathered}
 $$%
 %
 Таким образом,
 \begin{equation}
 \label{eq:2_1_5}
-C(\vp) = \int\Psi^*_{\vp}(\vr,t) \, \Psi(\vr,t) \, dv
+C(\vp) = \int\Psi^*_{\vp}(\vr,t) \, \Psi(\vr,t)\diff v
 \end{equation}%
 %
 Для преобразования Фурье справедливо равенство
 \begin{equation}
 \label{eq:2_1_6}
-\int \abs{ \Psi(\vr,t) }^2 \, dv = \int \abs{c(\vp)}^2 \, d^3 p
+\int \abs{ \Psi(\vr,t) }^2\diff v = \int \abs{c(\vp)}^2 \diff ^3 p
 \end{equation}
 
 \begin{excr}
@@ -96,10 +96,10 @@ C(\vp) = \int\Psi^*_{\vp}(\vr,t) \, \Psi(\vr,t) \, dv
 
 \begin{equation}
 \label{eq:2_1_7}
-\int \abs{C(\vp)}^2 \, d^3 p = 1
+\int \abs{C(\vp)}^2\diff^3 p = 1
 \end{equation}%
 %
-в импульсном пространстве. При нормировке \eqref{eq:2_1_7} подынтегральное выражение можно интерпретировать как вероятность найти импульс частицы в интервале $(\vp,\vp+d\vp)$. Тогда $C(\vp)$ -- это {ВФ в импульсном пространстве}, т.е. амплитуда вероятности того, что частица, волновая функция которой задана волновым пакетом, обладает импульсом $\vp$.
+в импульсном пространстве. При нормировке \eqref{eq:2_1_7} подынтегральное выражение можно интерпретировать как вероятность найти импульс частицы в интервале $(\vp,\vp+\diff\vp)$. Тогда $C(\vp)$ -- это {ВФ в импульсном пространстве}, т.е. амплитуда вероятности того, что частица, волновая функция которой задана волновым пакетом, обладает импульсом $\vp$.
 
 \section{Среднее значение координаты и импульса. Операторы координаты и импульса.}
 
@@ -107,21 +107,21 @@ C(\vp) = \int\Psi^*_{\vp}(\vr,t) \, \Psi(\vr,t) \, dv
 %
 \begin{equation}
 \label{eq:2_2_1}
-\op{F} = \avg{\op{F}}_\Psi \equiv \int \Psi^*(\vr,t) \, \op{F} \, \Psi(\vr,t) \, dv ~\text{\footnotemark}
+\op{F} = \avg{\op{F}}_\Psi \equiv \int \Psi^*(\vr,t) \, \op{F} \, \Psi(\vr,t)\diff v ~\text{\footnotemark}
 \end{equation}%
 %
 \footnotetext{Здесь, согласно общему правилу, оператор действует на функцию, стоящую справа от него.}%
 %
-где $\avg{\op{F}}_\Psi$ понимается в смысле квантово-механического среднего, при условии, что $\int \Psi^*(\vr,t) \, \Psi(\vr,t) \, dv = 1$. При таком определении оператора его квантовое среднее значение совпадает с наблюдаемым значением $\avg{F}$ физической величины $F$ в состоянии $\Psi(\vr,t)$.
+где $\avg{\op{F}}_\Psi$ понимается в смысле квантово-механического среднего, при условии, что $\int \Psi^*(\vr,t) \, \Psi(\vr,t)\diff v = 1$. При таком определении оператора его квантовое среднее значение совпадает с наблюдаемым значением $\avg{F}$ физической величины $F$ в состоянии $\Psi(\vr,t)$.
 
 С точки зрения теории вероятности, среднее значения для некоторой функции $F(\vr)$ координаты частицы есть её математическое ожидание
 
 \begin{equation}
 \label{eq:2_2_2}
 \begin{gathered}
-\avg{F(\vr)} = \int F(\vr) \, dp = 
-\left. \int F(\vr) \underbrace{\rho(\vr,t) \, dv}_{dP}  \right|_{\text{\eqref{eq:1_4_1} и \eqref{eq:1_4_2}}} = \\
-= \int F(\vr) \abs{\Psi(\vr,t)}^2 \, dv = \int \Psi^*(\vr,t) \, F(\vr) \, \Psi(\vr,t) \, dv
+\avg{F(\vr)} = \int F(\vr)\diff p = 
+\left. \int F(\vr) \underbrace{\rho(\vr,t)\diff v}_{\diff P}  \right|_{\text{\eqref{eq:1_4_1} и \eqref{eq:1_4_2}}} = \\
+= \int F(\vr) \abs{\Psi(\vr,t)}^2\diff v = \int \Psi^*(\vr,t) \, F(\vr) \, \Psi(\vr,t)\diff v
 \end{gathered}
 \end{equation}%
 %
@@ -129,14 +129,14 @@ C(\vp) = \int\Psi^*_{\vp}(\vr,t) \, \Psi(\vr,t) \, dv
 
 \begin{equation}
 \label{eq:2_2_3}
-\avg{F(\vp)} = \int F(\vp) \abs{c(\vp)}^2 \, d^3 p = \int c^*(\vp) \, F(\vp) \, c(\vp) d^3 p 
+\avg{F(\vp)} = \int F(\vp) \abs{c(\vp)}^2 \, \diff^3 p = \int c^*(\vp) \, F(\vp) \, c(\vp) \diff^3 p 
 \end{equation}
 
 Примем $F(\vr) = \vr$ -- координатный радиус-вектор. Тогда среднее значение координаты частицы есть
 $$
 \left. \avg{\vr} \right|_{\text{\eqref{eq:2_2_2}}} = 
-  \left. \int \Psi^*(\vr, t) \, \vr \, \Psi(\vr,t) \, dv \right|_{\text{\eqref{eq:2_2_1}}} =
-  \avgh{\op{\vr}}_\Psi \equiv \int \Psi^*(\vr,t) \, \op{\vr} \, \Psi(\vr,t) \, dv
+  \left. \int \Psi^*(\vr, t) \, \vr \, \Psi(\vr,t)\diff v \right|_{\text{\eqref{eq:2_2_1}}} =
+  \avgh{\op{\vr}}_\Psi \equiv \int \Psi^*(\vr,t) \, \op{\vr} \, \Psi(\vr,t)\diff v
 $$%
 %
 Следовательно:
@@ -157,15 +157,15 @@ $$%
 \begin{equation}
 \label{eq:2_2_6}
 \left. \avg{\vp} \right|_{\text{\eqref{eq:2_2_3}}} = 
-  \left. \int d^3 p \, \abs{C(\vp)}^2 \vp \right|_{\text{\eqref{eq:2_2_1}}} = 
-  \int dv \, \Psi^*(\vr,t) \op{\vp} \Psi(\vr,t)
+  \left. \int \diff^3 p \, \abs{C(\vp)}^2 \vp \right|_{\text{\eqref{eq:2_2_1}}} = 
+  \int\diff v \, \Psi^*(\vr,t) \op{\vp} \Psi(\vr,t)
 \end{equation}%
 %
 Преобразуем левую часть \eqref{eq:2_2_6}:
 
 $$
-\avg{\vp} = \left. \int d^3 p \, C^*(\vp) \, \vp \, C(\vp) \right|_{\text{\eqref{eq:2_1_5}}} =
-  \int d^3 p \, C^*(\vp) \brc{ \int dv \, \vp \Psi_{\vp}^*(\vr,t) \, \Psi(\vr,t) }
+\avg{\vp} = \left. \int \diff^3 p \, C^*(\vp) \, \vp \, C(\vp) \right|_{\text{\eqref{eq:2_1_5}}} =
+  \int \diff^3 p \, C^*(\vp) \brc{ \int \diff v \, \vp \Psi_{\vp}^*(\vr,t) \, \Psi(\vr,t) }
 $$%
 %
 Для волны де Бройля \eqref{eq:2_1_2} справедливо соотношение
@@ -176,23 +176,23 @@ $$%
 %
 с учётом которого
 $$
-\avg{\vp} = \int d^3 p \, C^*(\vp) \brc{i\hbar \int dv \, \Psi(\vr,t) \nabla \Psi_{\vp}^*(\vr,t)}
+\avg{\vp} = \int \diff^3 p \, C^*(\vp) \brc{i\hbar \int \diff v \, \Psi(\vr,t) \nabla \Psi_{\vp}^*(\vr,t)}
 $$%
 %
 Возьмём интеграл в круглых скобках по частям:
 $$
-\int dv \, \Psi(\vr,t) \nabla \Psi_{\vp}^*(\vr,t) = 
-\int dv \, \nabla \brc{\Psi(\vr,t) \Psi_{\vp}^*(\vr,t)} - \int dv \, \Psi_{\vp}^*(\vr,t) \nabla \Psi(\vr,t)
+\int \diff v \, \Psi(\vr,t) \nabla \Psi_{\vp}^*(\vr,t) = 
+\int \diff v \, \nabla \brc{\Psi(\vr,t) \Psi_{\vp}^*(\vr,t)} - \int \diff v \, \Psi_{\vp}^*(\vr,t) \nabla \Psi(\vr,t)
 $$%
 %
 Используем $\left. \Psi(\vr,t) \right|_{r\to\infty}\to0$ в силу квадратичной интегрируемости $\Psi(\vr,t)$ (см.~\eqref{eq:1_4_3})
 $$
 \begin{gathered}
-\avg{\vp} = \int d^3 p \, C^*(\vp) \brc{\int dv \, \Psi_{\vp}^*(\vr,t) (-i\hbar\nabla) \Psi(\vr,t)} = \\
-  =\int dv \underbrace{
-      \int d^3 p  \, C^*(\vp) \Psi_{\vp}^*(\vr,t)
+\avg{\vp} = \int \diff^3 p \, C^*(\vp) \brc{\int \diff v \, \Psi_{\vp}^*(\vr,t) (-i\hbar\nabla) \Psi(\vr,t)} = \\
+  =\int \diff v \underbrace{
+      \int \diff^3 p  \, C^*(\vp) \Psi_{\vp}^*(\vr,t)
     }_{\Psi^*(\vr,t) \text{ из \eqref{eq:2_1_4}}} (-i\hbar\nabla) \Psi(\vr,t) =
-  \int dv \, \Psi^*(\vr,t) (-i\hbar\nabla) \Psi(\vr,t)
+  \int \diff v \, \Psi^*(\vr,t) (-i\hbar\nabla) \Psi(\vr,t)
 \end{gathered}
 $$%
 %

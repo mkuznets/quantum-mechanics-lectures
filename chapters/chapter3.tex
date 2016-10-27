@@ -365,8 +365,8 @@ $$
 \end{equation}
 что эквивалентно:
 $$
-\int \psi^*(\vec{q}) \op{F}^\dag \phi(\vec{q})\, d\vec{q}
-  = \int \brc{\op{F} \psi(\vec{q})}^* \phi(\vec{q})\, d\vec{q}
+\int \psi^*(\vec{q}) \op{F}^\dag \phi(\vec{q})\diff\vec{q}
+  = \int \brc{\op{F} \psi(\vec{q})}^* \phi(\vec{q})\diff\vec{q}
 $$
 
 \begin{defn}
@@ -378,8 +378,8 @@ $\op{F}$ называется \underline{эрмитовым} (самосопря
 \end{equation}
 или
 $$
-\int \psi^*(\vec{q}) \op{F} \phi(\vec{q})\, d\vec{q}
-  = \int \brc{\op{F} \psi(\vec{q})}^* \phi(\vec{q})\, d\vec{q}
+\int \psi^*(\vec{q}) \op{F} \phi(\vec{q})\diff\vec{q}
+  = \int \brc{\op{F} \psi(\vec{q})}^* \phi(\vec{q})\diff\vec{q}
 $$
 \end{defn}
 
@@ -395,7 +395,7 @@ $$
 $$
 \bk{\phi}{\op{F}\psi} \equiv
   \bfk{\phi}{\op{F}}{\psi} =
-  \int \phi^*(\vec{q})\op{F}\psi(\vec{q})\, d\vec{q}
+  \int \phi^*(\vec{q})\op{F}\psi(\vec{q})\diff\vec{q}
 $$
 называется \underline{матричным элементом} оператора $\op{F}$ на функциях $\phi$ и $\psi$, или матричным элементом $\op{F}$ <<в обкладках>> векторов $\bra{\phi}$ и $\ket{\psi}$.
 
@@ -447,7 +447,7 @@ $$
 \begin{gathered}
 \left. \avg{(\Delta F)^2} \right|_{\text{\eqref{eq:3_2_7_add}}} =
   \bk{(F - \avg{F})\psi}{(F - \avg{F})\psi} = \\ =
-  \int \abs{\brc{F - \avg{F}}\psi}^2\, d\vec{q} \geqslant 0
+  \int \abs{\brc{F - \avg{F}}\psi}^2\diff\vec{q} \geqslant 0
 \end{gathered}
 \end{equation}
 
@@ -739,7 +739,7 @@ $$%
 
 \begin{equation}
 \label{eq:3_4_2}
-\int \Psi_{\vp'}(\vr, t) \Psi_{\vp}(\vr, t) dv \equiv \bk{\vp'}{\vp} = \delta(\vp - \vp')
+\int \Psi_{\vp'}(\vr, t) \Psi_{\vp}(\vr, t)\diff v \equiv \bk{\vp'}{\vp} = \delta(\vp - \vp')
 \end{equation}%
 %
 Эти функции не принадлежат к классу квадратично интегрируемых функций, т.е., вообще говоря, получается базис состояний, не принадлежащий исходному гильбертовому пространству состояний $\mathbb{H}$.
@@ -771,7 +771,7 @@ $$%
 
 \begin{equation}
 \label{eq:3_4_5}
-\ket{\psi} = \int c(f) \ket{f} df
+\ket{\psi} = \int c(f) \ket{f} \diff f
 \end{equation}%
 %
 если спектр оператора $\op{F}$ непрерывен. Причём, как показано выше, $c_n =\bk{\psi_n}{\psi} \equiv \bk{n}{\psi}$, и выполняется
@@ -782,7 +782,7 @@ $$
     \bk{f'}{f}
   }_{
     \mathclap{\delta(f-f')~\text{из \eqref{eq:3_4_3}}}
-  } df = c(f')
+  } \diff f = c(f')
 $$%
 %
 или
@@ -797,7 +797,7 @@ $$%
 \begin{equation}
 \label{eq:3_4_6}
 \boxed {
-	\ket{\psi} = \sum_n \ket{n}\bk{n}{\psi} + \int df \ket{f} \bk{f}{\psi}
+	\ket{\psi} = \sum_n \ket{n}\bk{n}{\psi} + \int \diff f \ket{f} \bk{f}{\psi}
 }
 \end{equation}%
 %
@@ -806,14 +806,14 @@ $$%
 В случае непрерывного спектра \eqref{eq:3_4_5}
 
 $$
-\ket{\psi} = \int \bk{f}{\psi} \cdot \ket{f} df = \int df \cdot \ket{f} \bk{f}{\psi}
+\ket{\psi} = \int \bk{f}{\psi} \cdot \ket{f} \diff f = \int \diff f \cdot \ket{f} \bk{f}{\psi}
 $$%
 %
 т.е. условие полноты принимает вид
 
 $$
 \boxed {
-	\int df \proj{f}{f} = \mathds{1}
+	\int \diff f \proj{f}{f} = \mathds{1}
 }
 $$%
 %
@@ -822,7 +822,7 @@ $$%
 \begin{equation}
 \label{eq:3_4_7}
 \boxed {
-	\sum_n \proj{n}{n} + \int df \proj{f}{f} = \mathds{1}
+	\sum_n \proj{n}{n} + \int \diff f \proj{f}{f} = \mathds{1}
 }
 \end{equation}
 
@@ -843,7 +843,7 @@ $$%
 \begin{equation}
 \label{eq:3_4_8}
 \boxed {
-	\bk{\psi}{\psi} = \sum_n \abs{c_n}^2 + \int \abs{c(f)}^2 df = 1
+	\bk{\psi}{\psi} = \sum_n \abs{c_n}^2 + \int \abs{c(f)}^2 \diff f = 1
 }
 \end{equation}
 
@@ -861,7 +861,7 @@ $$%
 \begin{equation}
 \label{eq:3_4_9}
 \boxed {
-	\avg{F} = \bfk{\psi}{\op{F}}{\psi} = \sum_n f_n \abs{c_n}^2 + \int f \underbrace{\abs{c(f)}^2 df}_{dp}
+	\avg{F} = \bfk{\psi}{\op{F}}{\psi} = \sum_n f_n \abs{c_n}^2 + \int f \underbrace{\abs{c(f)}^2 \diff f}_{dp}
 }
 \end{equation}
 
@@ -880,7 +880,7 @@ P_{\ket{\psi}} \brs{F = f_n} =
   \sum_{i=1}^{g} \abs{ \bk{n^{(i)}}{\psi} }^2
 \end{equation}%
 %
-где суммирование производится по всем тем значениям $i$, для которых $f_n$ одинаково. Из \eqref{eq:3_4_8} и \eqref{eq:3_4_9} также следует, что плотность вероятности получить в результате измерения значение, лежащее в окрестности $(f, f + df)$ точке непрерывного спектра $f$ равна
+где суммирование производится по всем тем значениям $i$, для которых $f_n$ одинаково. Из \eqref{eq:3_4_8} и \eqref{eq:3_4_9} также следует, что плотность вероятности получить в результате измерения значение, лежащее в окрестности $(f, f + \diff f)$ точке непрерывного спектра $f$ равна
 
 \begin{equation}
 \label{eq:3_4_11}

@@ -54,7 +54,7 @@ E = \hbar \omega \\
 
 \begin{equation}
 \label{eq:1_2_2}
-v_{\text{ф}} = \frac{dx}{dt} = \frac{w}{k} = \frac{E}{p}
+v_{\text{ф}} = \frac{\diff x}{\diff t} = \frac{w}{k} = \frac{E}{p}
 \end{equation}%
 %
 В нерелятивистском случае $E = p^2/{2m}$, следовательно
@@ -75,7 +75,7 @@ $$
 
 \begin{equation}
 \label{eq:1_2_3}
-\Psi(x,t) = \int^{k_0 + \Delta k}_{k_0 - \Delta k} A(k)e^{i(\vec{k}\vr - \omega (k) t)} dk, \; \Delta k\ll k_0
+\Psi(x,t) = \int^{k_0 + \Delta k}_{k_0 - \Delta k} A(k)e^{i(\vec{k}\vr - \omega (k) t)} \diff k, \; \Delta k\ll k_0
 \end{equation}
 
 Здесь $k_0$ -- волновое число центра пакета, около которого сосредоточены волновые числа волн, образующих волновой пакет. Считаем, что $\Delta k \ll k_0$.
@@ -84,28 +84,28 @@ $$
 
 \begin{equation}
 \label{eq:1_2_4}
-\omega (k) = \omega (k_0) + \left. \left ( \frac{d \omega}{dk} \right ) \right |_{k_0} (k-k_0) + \ldots \approx \omega_o +  \left. \left ( \frac{d \omega}{dk} \right ) \right |_{k_0} (k-k_0)
+\omega (k) = \omega (k_0) + \left. \left ( \frac{\diff\omega}{\diff k} \right ) \right |_{k_0} (k-k_0) + \ldots \approx \omega_o +  \left. \left ( \frac{\diff\omega}{\diff k} \right ) \right |_{k_0} (k-k_0)
 \end{equation}%
 %
 С помощью \eqref{eq:1_2_4} и \eqref{eq:1_2_3} найдём
 \begin{equation}
 \label{eq:1_2_5}
-\psi(x,t) \approx e^{i(k_0 x - \omega_0 t) }\int^{k_0 + \Delta k}_{k_0 - \Delta k} dk A(k)e^{i(k - k_0) \left [ x - \left . \left ( \frac{d\omega}{dk} \right ) \right |_{k_0} t \right ]}
+\psi(x,t) \approx e^{i(k_0 x - \omega_0 t) }\int^{k_0 + \Delta k}_{k_0 - \Delta k} \diff k A(k)e^{i(k - k_0) \left [ x - \left . \left ( \frac{\diff\omega}{\diff k} \right ) \right |_{k_0} t \right ]}
 \end{equation}%
 %
 Т.е. волновая функция пакета есть плоская волна, отвечающая центру пакета $(k_0, \omega_0)$, амплитуда которой зависит от координаты и времени лишь через комбинацию
 $$
-x - \left . \left ( \frac{d\omega}{dk} \right ) \right |_{k_0} t
+x - \left . \left ( \frac{\diff\omega}{\diff k} \right ) \right |_{k_0} t
 $$
 Поэтому для всех точек $x$ и моментов времени $t$, связанных условием
 \begin{equation}
 \label{eq:1_2_6}
-x - \left . \left ( \frac{d\omega}{dk} \right ) \right |_{k_0} t = \const
+x - \left . \left ( \frac{\diff\omega}{\diff k} \right ) \right |_{k_0} t = \const
 \end{equation}
 амплитуда имеет одинаковое значение: волновой пакет движется как одно целое с групповой скоростью
 \begin{equation}
 \label{eq:1_2_7}
-v_{\text{гр}} = \frac{dx}{dt} = \left . \left ( \frac{d\omega}{dk} \right ) \right |_{k_0} = \left . \left ( \frac{dE}{dp} \right ) \right |_{p_0}
+v_{\text{гр}} = \frac{\diff x}{\diff t} = \left . \left ( \frac{\diff\omega}{\diff k} \right ) \right |_{k_0} = \left . \left ( \frac{\diff E}{\diff p} \right ) \right |_{p_0}
 \end{equation}%
 %
 как в нерелятивистском случае, когда $E = p^2/{2m}$
@@ -122,7 +122,7 @@ $$
 Взяв $k - k_0 = \xi$ в качестве новой переменной интегрирования и считая $A(k)$ слабо меняющейся на ширине пакета функцией $k$, найдём, что $\Psi(x,t)$ может юыть представлена с учётом \eqref{eq:1_2_5} и \eqref{eq:1_2_7} в виде%
 %
 $$
-\Psi(x,t) \approx A(k_0) e^{i(k_0 x - \omega_0 t) }\int^{+ \Delta k}_{ - \Delta k} e^{i(x - v_{\text{гр}}t)\xi} d\xi
+\Psi(x,t) \approx A(k_0) e^{i(k_0 x - \omega_0 t) }\int^{+ \Delta k}_{ - \Delta k} e^{i(x - v_{\text{гр}}t)\xi} \diff\xi
 $$%
 %
 Выполняя интегрирование по $\xi$, найдём
@@ -258,29 +258,29 @@ $$
 Величина
 \begin{equation}
 \label{eq:1_4_1}
-dP = \Psi^*(\vr,t) \Psi(\vr,t) dv \equiv \abs{\Psi(\vr,t)}^2dv
+\diff P = \Psi^*(\vr,t) \Psi(\vr,t) \diff v \equiv \abs{\Psi(\vr,t)}^2\diff v
 \end{equation}%
 %
-представляет вероятность нахождения частицы в момент времени $t$ в элементе объёма $dv$ в окрестности точки $\vr$. Интенсивность волны
+представляет вероятность нахождения частицы в момент времени $t$ в элементе объёма $\diff v$ в окрестности точки $\vr$. Интенсивность волны
 \begin{equation}
 \label{eq:1_4_2}
-\abs{\Psi(\vr,t)}^2 = \frac{dP}{dv} = \rho(\vr,t)
+\abs{\Psi(\vr,t)}^2 = \frac{\diff P}{\diff v} = \rho(\vr,t)
 \end{equation}%
 %
 интерпретируется как плотность вероятности нахождения частицы в точке $\vr$ в момент времени $t$. Тогда ВФ $\Psi(\vr, t)$ -- амплитуда плотности вероятности, или просто {\em амплитуда вероятности}. Если произвести интегрирование \eqref{eq:1_4_1} по всему бесконечному объёму, то мы получим вероятность достоверного события обнаружить частицы где-либо в пространстве, равную, очевидно, единице:
 \begin{equation}
 \label{eq:1_4_3}
-\int \abs{\Psi(\vr,t)}^2 dv = 1
+\int \abs{\Psi(\vr,t)}^2 \diff v = 1
 \end{equation}
 Это условие называется {\em условием нормировки}, а функция $\Psi$, удовлетворяющая этому условию, называется {\em нормированной} ВФ. Для выполнимости такой нормировки, интеграл от $\abs{\Psi(\vr,t)}^2$ должен существовать (говорят, что функция $\Psi$ должна быть квадратично интегрируема). Соотношение \eqref{eq:1_4_3} выполняется для волнового пакета \eqref{eq:1_2_3}, но не выполняется для волны де Бройля \eqref{eq:1_1_4}: интеграл
 $$
-\int \abs{\Psi_{\vp}(\vr,t)}^2 dv = \abs{A}^2 \int dv
+\int \abs{\Psi_{\vp}(\vr,t)}^2 \diff v = \abs{A}^2 \int \diff v
 $$
 не сходится. В дальнейшем мы дадим рациональную нормировку и для этого случая.
 
 Нормировка имеет смысл лишь постольку, поскольку она сохраняется во времени, т.е. равенство \eqref{eq:1_4_3} должно иметь силу для всех моментов времени, т.е. вероятность найти частицу где-либо в пространстве не должна зависеть от времени, т.е.
 $$
-\pd{}{t} \int \rho(\vr,t) dv = 0
+\pd{}{t} \int \rho(\vr,t) \diff v = 0
 $$
 \begin{excr}
 Строго доказать, что $\Psi(\vr,t)$ удовлетворяет волновому уравнению \eqref{eq:1_3_1}
@@ -293,7 +293,7 @@ $$
 Если вернуться к анализу стационарного УШ \eqref{eq:1_3_6}, то на ВФ $\psi{\vr}$, как на решение задачи Штурма-Лиувилля, должны быть наложены условия i-iii с учётом её нормировки
 \begin{equation}
 \label{eq:1_4_4}
-\norm{\psi} \equiv \int \abs{\psi(\vr)}^2 dv = 1
+\norm{\psi} \equiv \int \abs{\psi(\vr)}^2 \diff v = 1
 \end{equation}%
 %
 % TODO: в рукописи нет этого: Граничные условия: $\psi(\vr)|_{r \to \infty} = 0$
