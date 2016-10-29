@@ -55,11 +55,11 @@ $$%
 
 $$
 \begin{gathered}
-\int \abs{\psi_{nlm}(\vr)}^2 d\vr
+\int \abs{\psi_{nlm}(\vr)}^2 \diff\vr
   = \iiint \abs{R_{nl}(r)}^2 \cdot \abs{Y_{lm}(\theta, \phi)}^2
-      r^2 dr \underbrace{d\Omega}_{\mathclap{\sin\theta d\theta d\phi}} = \\
+      r^2 \diff r \underbrace{\diff\Omega}_{\mathclap{\sin\theta \diff\theta \diff\phi}} = \\
   = \int_{0}^{\infty} \abs{R_{nl}(r)}^2
-      r^2 dr \underbrace{\oint \abs{Y_{lm}(\theta, \phi)}^2 d\Omega}_{
+      r^2 \diff r \underbrace{\oint \abs{Y_{lm}(\theta, \phi)}^2 \diff\Omega}_{
         =1 \text{ из \eqref{eq:8_5_4}}
       } = 1
 \end{gathered}
@@ -70,6 +70,6 @@ $$
 \begin{equation}
 \label{eq:9_2_2}
 \boxed {
-	\int_{0}^{\infty} \abs{R_{nl}(r)}^2 r^2 dr = 1
+	\int_{0}^{\infty} \abs{R_{nl}(r)}^2 r^2 \diff r = 1
 }
 \end{equation}

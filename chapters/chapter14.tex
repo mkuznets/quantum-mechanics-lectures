@@ -454,7 +454,7 @@ $$
 
 Левая часть уравнения \eqref{eq:14_4_2} напоминает нерелятивистское уравнение Шрёдингера. Однако для того, чтобы перейти от \eqref{eq:14_4_2} к уравнению Шрёдингера, необходимо учесть, что с точностью до членов порядка $\brc{v/c}^2$ спинор $\phi(\vr)$ уже не может служить нерелятивистской волновой функцией, т.~к. он неправильно нормирован. Действительно, если биспинор $\Psis = \brc{\begin{matrix} \phi \\ \chi \end{matrix}}$ уже был нормирован на единицу, то
 $$
-1 = \int d \vr \Psis^\dag \Psis = \int d\vr (\phi^\dag \phi + \chi^\dag \chi),
+1 = \int \diff\vr \Psis^\dag \Psis = \int \diff\vr (\phi^\dag \phi + \chi^\dag \chi),
 $$
 где $\phi^\dag = (\phi_1^*,~~~\phi_2^*)$.
 
@@ -465,11 +465,11 @@ $$
 
 Условие нормировки принимает вид
 \begin{gather*}
-\int d\vr \brc{\phi^\dag \phi + \phi^\dag \frac{(\msigm \op{\vp})^\dag}{2mc} \frac{(\msigm \op{\vp})}{2mc} \phi} = 1
+\int \diff\vr \brc{\phi^\dag \phi + \phi^\dag \frac{(\msigm \op{\vp})^\dag}{2mc} \frac{(\msigm \op{\vp})}{2mc} \phi} = 1
 \end{gather*}
 или с учетом эрмитовости оператора $\msigm \op{\vp}$ и $(\msigm \op{\vp})^2 = \op{\vp}^2$
 $$
-\int d\vr \phi^\dag \left(\op{1} + \frac{\op{\vp}^2}{4m^2c^2}\right) \phi = 1  
+\int \diff\vr \phi^\dag \left(\op{1} + \frac{\op{\vp}^2}{4m^2c^2}\right) \phi = 1  
 $$
 
 Как видим, в рассматриваемом приближении

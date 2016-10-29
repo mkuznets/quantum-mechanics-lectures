@@ -327,7 +327,7 @@ $$%
 Разложим $\forall \ket{\psi} \in \mathcal{H}$ по базису $\brcr{\ket{\vr}}$ с учётом условия полноты для векторов состояний непрерывного спектра (\sref{4}{3}):
 \begin{equation}
 \label{eq:6_3_8}
-\ket{\psi}=\int \ket{\vr}\bkh{\vr}{\psi} \, d\vr
+\ket{\psi}=\int \ket{\vr}\bkh{\vr}{\psi} \, \diff\vr
 \end{equation}%
 %
 Анализируя соотношения \eqref{eq:6_3_7} и \eqref{eq:6_3_8}, можно заключить, что континуум компонент вектора $\ket{\psi}$ в базисе $\brcr{\ket{\vr}}$ есть комплекснозначная функция вещественного аргумента $\vr$ или волновая функция в координатном ($\vr$-) представлении.
@@ -335,7 +335,7 @@ $$%
 Аналогично можно построить волновую функцию в импульсном ($\vp$-) представлении
 \begin{equation}
 \label{eq:6_3_8_add}
-\ket{\Phi}=\int \ket{\vp}\bkh{\vp}{\Phi} \, d\vp
+\ket{\Phi}=\int \ket{\vp}\bkh{\vp}{\Phi} \, \diff\vp
 \tag{\ref{eq:6_3_8}$'$}
 \end{equation}%
 где%
@@ -345,7 +345,7 @@ $$%
 \tag{\ref{eq:6_3_7}$'$}
 \end{equation}%
 %
-следует рассматривать как комплекснозначную функцию вещественной переменной $\vp$. Её физический смысл $\abs{\Phi\brc{\vp}}^2 d\vp$ -- вероятность обнаружить значения импульса частицы в интервале $(\vp, \vp+d\vp)$ был выявлен ранее в \sref{1}{2}, где $C(\vp) \equiv \Phi(\vp)$.
+следует рассматривать как комплекснозначную функцию вещественной переменной $\vp$. Её физический смысл $\abs{\Phi\brc{\vp}}^2 \diff\vp$ -- вероятность обнаружить значения импульса частицы в интервале $(\vp, \vp+\diff\vp)$ был выявлен ранее в \sref{1}{2}, где $C(\vp) \equiv \Phi(\vp)$.
 
 Пусть $\ket{\psi}\equiv\ket{\vp}$, тогда \eqref{eq:6_3_6} имеем:
 \begin{equation}
@@ -370,16 +370,16 @@ $$%
 \begin{equation}
 \label{eq:6_3_10}
 \psi(\vr) \equiv \bk{\vr}{\psi} = 
-\int \underbrace{  \bk{\vr}{\vp}  }_ {\psi_{\vp}(\vr)}  \underbrace{ \bk{\vp}{\psi} }_{\psi(\vp)} \, d\vp =
-\int \psi_{\vp}(\vr) \psi(\vp) \, d\vp
+\int \underbrace{  \bk{\vr}{\vp}  }_ {\psi_{\vp}(\vr)}  \underbrace{ \bk{\vp}{\psi} }_{\psi(\vp)} \, \diff\vp =
+\int \psi_{\vp}(\vr) \psi(\vp) \, \diff\vp
 \end{equation}%
 -- аналог построения волнового пакета из волн де Бройля (см.~\eqref{eq:2_1_4}). Также можно записать:%
 %
 \begin{equation}
 \label{eq:6_3_11}
 \psi(\vp) \equiv \bk{\vp}{\psi} = 
-\int \underbrace{  \bk{\vp}{\vr}  }_ {\bk{\vr}{\vp}^*} \bk{\vr}{\psi} \, d\vr =
-\int \psi^*_{\vp}(\vr) \psi(\vr) \, d\vr
+\int \underbrace{  \bk{\vp}{\vr}  }_ {\bk{\vr}{\vp}^*} \bk{\vr}{\psi} \, \diff\vr =
+\int \psi^*_{\vp}(\vr) \psi(\vr) \, \diff\vr
 \end{equation}%
 -- Фурье-образ волновой функции $\psi{\vr}$ (см.~\eqref{eq:2_1_5}). 
 
@@ -398,9 +398,9 @@ $$%
 	\left.\bk{\vr}{\phi} \equiv \phi(\vr)\right|_{\text{\eqref{eq:6_3_12}}} =
 	\bfkh{\vr}{\op{\vr}}{\psi} = 
 	\bfkh{\vr}{\op{\vr} \cdot \mathds{1}_{\vsr}}{\psi} = \\ =
-	\bfkh{\vr}{\op{\vr}\int d\vsr}{\vr'} \bk{\vsr}{\psi} =
-	\left.\int d\vsr \bfkh{\vr}{\op{\vr}}{\vsr} \psi(\vsr) \right|_{\text{\eqref{eq:6_3_4}}} = \\ =
- 	\int d\vsr \, \vsr \delta(\vr - \vsr) \psi(\vsr) = \vr \psi(\vr) = \phi(\vr)
+	\bfkh{\vr}{\op{\vr}\int \diff\vsr}{\vr'} \bk{\vsr}{\psi} =
+	\left.\int \diff\vsr \bfkh{\vr}{\op{\vr}}{\vsr} \psi(\vsr) \right|_{\text{\eqref{eq:6_3_4}}} = \\ =
+ 	\int \diff\vsr \, \vsr \delta(\vr - \vsr) \psi(\vsr) = \vr \psi(\vr) = \phi(\vr)
 \end{gathered}
 \end{equation}%
 %
@@ -426,9 +426,9 @@ $$%
 	\left.\bk{\vp}{\chi} \equiv \chi(\vp)\right|_{\text{\eqref{eq:6_3_14}}} =
 	\bfkh{\vp}{\op{\vp}}{\psi} = 
 	\bfkh{\vp}{\op{\vp} \cdot \mathds{1}_{\vsp}}{\psi} = \\ =
-	\bfkh{\vp}{\op{\vp}\int d\vsp}{\vp'} \bk{\vsp}{\psi} = 
-	\left.\int d\vsp \bfkh{\vp}{\op{\vp}}{\vsp} \psi(\vsr) \right|_{\text{\eqref{eq:6_3_3}}} = \\ =
-	\int d\vsp \, \vsp \delta(\vp - \vsp) \psi(\vsp) = \vp \psi(\vp) = \chi(\vp)
+	\bfkh{\vp}{\op{\vp}\int \diff\vsp}{\vp'} \bk{\vsp}{\psi} = 
+	\left.\int \diff\vsp \bfkh{\vp}{\op{\vp}}{\vsp} \psi(\vsr) \right|_{\text{\eqref{eq:6_3_3}}} = \\ =
+	\int \diff\vsp \, \vsp \delta(\vp - \vsp) \psi(\vsp) = \vp \psi(\vp) = \chi(\vp)
 \end{gathered}
 \end{equation}%
 %
@@ -449,8 +449,8 @@ $$%
 $$
 \begin{gathered}
 \bfk{\vp}{\op{H}}{\psi} = \bfk{\vp}{\op{H} \cdot \mathds{1}_{\vsp}}{\psi} =
-\int d\vsp \, \bfk{\vp}{\op{H}}{\vsp} \bk{\vsp}{\psi} = \\ =
-\int d\vsp \, \left[ \bfkh{\vp}{\op{T}}{\vsp} + \bfkh{\vp}{\op{U}(\vr)}{\vsp} \right] \psi(\vsp)
+\int \diff\vsp \, \bfk{\vp}{\op{H}}{\vsp} \bk{\vsp}{\psi} = \\ =
+\int \diff\vsp \, \left[ \bfkh{\vp}{\op{T}}{\vsp} + \bfkh{\vp}{\op{U}(\vr)}{\vsp} \right] \psi(\vsp)
 \end{gathered}
 $$%
 %
@@ -459,9 +459,9 @@ $$%
 \begin{equation}
 \begin{split}
 \label{eq:6_3_17}
-	\left. \int d\vsp \, \bfkh{\vp}{\op{T}}{\vsp} \psi(\vsp) \right|_{\text{упр.~\ref{excr2}}} =
-	\int d\vsp \, \bfkh{\vp}{ \frac{\vsp^2}{2m} }{\vsp} \psi(\vsp) = \\ =
-	\int d\vsp \, \frac{\vsp^2}{2m} \underbrace{ \bkh{\vp}{\vsp} }_{\delta(\vp - \vsp)} \psi(\vsp) = \frac{\vp^2}{2m} \psi(\vp)
+	\left. \int \diff\vsp \, \bfkh{\vp}{\op{T}}{\vsp} \psi(\vsp) \right|_{\text{упр.~\ref{excr2}}} =
+	\int \diff\vsp \, \bfkh{\vp}{ \frac{\vsp^2}{2m} }{\vsp} \psi(\vsp) = \\ =
+	\int \diff\vsp \, \frac{\vsp^2}{2m} \underbrace{ \bkh{\vp}{\vsp} }_{\delta(\vp - \vsp)} \psi(\vsp) = \frac{\vp^2}{2m} \psi(\vp)
 \end{split}
 \end{equation}%
 %
@@ -470,7 +470,7 @@ $$%
 $$
 \begin{gathered}
 	\bfkh{\vp}{\op{U}(\vr)}{\vsp} = \bfkh{\vp}{ \mathds{1}_\vr \cdot \op{U(\vr)} \cdot \mathds{1}_\vsr}{\vsp} =
-	\iint d\vr d\vsr \, \underbrace{ \bk{\vp}{\vr} }_{\bk{\vr}{\vp}^*} \underbrace{ \bfkh{\vr}{\op{U}(\vr)}{\vsr} }_{U(\vsr)\delta(\vr - \vsr)} \bkh{\vsr}{\vsp}
+	\iint \diff\vr \diff\vsr \, \underbrace{ \bk{\vp}{\vr} }_{\bk{\vr}{\vp}^*} \underbrace{ \bfkh{\vr}{\op{U}(\vr)}{\vsr} }_{U(\vsr)\delta(\vr - \vsr)} \bkh{\vsr}{\vsp}
 \end{gathered}
 $$
 %
@@ -480,9 +480,9 @@ $$
 \begin{gathered}
 \label{eq:6_3_18}
 \bfkh{\vp}{\op{U}(\vr)}{\vsp} =
-	\left. \int d\vr \, \psi^*_{\vp}(\vr) U(\vr) \psi_{\vsp}(\vr) \right|_{\text{\eqref{eq:6_3_9}}} = \\ =
+	\left. \int \diff\vr \, \psi^*_{\vp}(\vr) U(\vr) \psi_{\vsp}(\vr) \right|_{\text{\eqref{eq:6_3_9}}} = \\ =
 	\boxed{
-		\frac{1}{(2\pi\hbar)^3} \int d\vr e^{-\frac{i}{\hbar} \brc{\vp - \vsp} \vr } U(\vr) = W(\vp - \vsp)
+		\frac{1}{(2\pi\hbar)^3} \int \diff\vr e^{-\frac{i}{\hbar} \brc{\vp - \vsp} \vr } U(\vr) = W(\vp - \vsp)
 	}
 \end{gathered}
 \end{equation}%
@@ -492,7 +492,7 @@ $$
 С учётом преобразований \eqref{eq:6_3_17} и \eqref{eq:6_3_18}, стационарное уравнение Шрёдингера в импульсном представлении принимает вид:
 \begin{equation}
 \label{eq:6_3_19}
-	\boxed{\frac{p^2}{2m} \psi(\vp) + \int W(\vp - \vsp) \psi(\vsp) \, d\vp  = E\psi(\vp)}
+	\boxed{\frac{p^2}{2m} \psi(\vp) + \int W(\vp - \vsp) \psi(\vsp) \, \diff\vp  = E\psi(\vp)}
 \end{equation}%
 %
 Следовательно, в $\vp$-представлении уравнение Шрёдингера в общем случае становится интегральным. Разумеется, интегральное уравнение \eqref{eq:6_3_19} получается только при условии, что Фурье-образ потенциала \eqref{eq:6_3_18} существует.

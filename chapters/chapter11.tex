@@ -55,29 +55,29 @@ $$
 
 Заметим, что $\nabla S =\vp$ (в нулевом приближении по $\hbar$), значит, ${\dfrac{\hbar}{p^2}\abs{\Div \vp} \ll 1}$, и тогда в одномерном случае:
 $$
-\boxed{\frac{\hbar}{p^2}\abs{\frac{dp}{dx}} \ll 1}
+\boxed{\frac{\hbar}{p^2}\abs{\D{p}{x}} \ll 1}
 $$
 
 Перепишем это условие в другой форме:
 $$
-\frac{\hbar}{p^2} \abs{\frac{dp}{dx}} = 
-\abs{\frac{d}{dx}\brc{\frac{\hbar}{p}}} = \abs{\frac{d\lambdabar}{dx}} \ll 1
+\frac{\hbar}{p^2} \abs{\D{p}{x}} = 
+\abs{\D{}{x}\brc{\frac{\hbar}{p}}} = \abs{\D{\lambdabar}{x}} \ll 1
 $$
 --- здесь $\lambdabar = \dfrac{\lambda}{2\pi} = \dfrac{1}{k} = \dfrac{\hbar}{p}$ (см. \eqref{eq:1_1_2}) --- де-бройлевская длина волны частицы.
 
 Тогда условие применимости квазиклассического приближения запишется в виде:
 $$
-\boxed{\Delta \lambdabar \approx \lambdabar \abs{\frac{d\lambdabar}{dx}} \ll \lambdabar}
+\boxed{\Delta \lambdabar \approx \lambdabar \abs{\D{\lambdabar}{x}} \ll \lambdabar}
 $$
 --- т.е. де-бройлевская длина волны частицы мало изменяется на протяжении расстояний порядка ее самой. Отметим, что $\boxed{\lambdabar/L \ll 1}$ ($L$ --- характерный размер квантовой системы) --- лишь формальный признак того, что когда свойства системы близки  классическим, построенный на аналогии с переходом от волновой оптики к геометрической при $\lambdabar \to 0$ (см.~\llref{46}{3}).
 
 Если учесть, что $\dfrac{p^2(x)}{2m} + U(x) = E$ или $p(x)=\sqrt{2m(E-U(x))}$, то 
 $$
-\frac{dp}{dx}=\frac{\cancel 2m}{\cancel 2 p}\brc{-\frac{dU}{dx}} = \frac{m}{p}F,
+\D{p}{x}=\frac{\cancel 2m}{\cancel 2 p}\brc{-\D{U}{x}} = \frac{m}{p}F,
 $$
 где $F$ --- классическая сила, действующая на частицу во внешнем поле. Таким образом, критерий применимости квазиклассического приближения выглядит так:
 $$
-\boxed{\Delta \lambdabar \ll \lambdabar;~~~\abs{\frac{d\lambdabar}{dx}} \ll 1;~~~\frac{\hbar}{p^2} \abs{\frac{dp}{dx}} \ll 1; ~~~\abs{\frac{\hbar m}{p^3} \frac{dU}{dx}} \ll 1 }
+\boxed{\Delta \lambdabar \ll \lambdabar;~~~\abs{\D{\lambdabar}{x}} \ll 1;~~~\frac{\hbar}{p^2} \abs{\D{p}{x}} \ll 1; ~~~\abs{\frac{\hbar m}{p^3} \D{U}{x}} \ll 1 }
 $$
 
 Основные выводы:
@@ -148,7 +148,7 @@ $$
 $$
 \begin{gathered}
 (S'_0)^2 = p^2(x) ~~ \rightarrow~~ S'_0 = \mp p(x)\\
-\boxed{S_0(x) = \pm \int_x^{x_0} p(x')dx',~ x<x_0}
+\boxed{S_0(x) = \pm \int_x^{x_0} p(x')\diff x',~ x<x_0}
 \end{gathered}
 $$
 
@@ -161,7 +161,7 @@ $$
 
 Отсюда
 $$
-S'_1 = \frac{i\hbar}{2} \frac{S''_0}{S'_0} = \frac{i\hbar}{2} \brc{\frac{\mp p'(x)}{\mp p(x)}} = \frac{i\hbar}{2} \frac{d}{dx}\brs{\ln p(x)}
+S'_1 = \frac{i\hbar}{2} \frac{S''_0}{S'_0} = \frac{i\hbar}{2} \brc{\frac{\mp p'(x)}{\mp p(x)}} = \frac{i\hbar}{2} \D{}{x}\brs{\ln p(x)}
 $$
 и
 $$
@@ -170,7 +170,7 @@ $$
 
 Стационарное решение в классически разрешённой области с точностью до $\hbar$:
 $$
-\boxed{\left. \Psi(x) \right|_{x<x_0} = \mathcal{A} e^{\frac{i}{h} S(x)} \approx \frac{\mathcal{A}}{\sqrt{p(x)}} \exp \brc{\pm\frac{i}{\hbar}\int_x^{x_0} p(x')dx'} }
+\boxed{\left. \Psi(x) \right|_{x<x_0} = \mathcal{A} e^{\frac{i}{h} S(x)} \approx \frac{\mathcal{A}}{\sqrt{p(x)}} \exp \brc{\pm\frac{i}{\hbar}\int_x^{x_0} p(x') \diff x'} }
 $$
 
 \item Область \rom{2} ({\em классически запрещенная}: $E<U(x)$ или $p^2(x)<0$).
@@ -184,7 +184,7 @@ $$
 
 В классически запрещенной области, считая импульс чисто мнимым, имеем следующее решение:
 $$
-\boxed{\left. \Psi(x) \right|_{x>x_0} = \mathcal{A} e^{\frac{i}{\hbar} S(x)} \approx \frac{\mathcal{A}}{\sqrt{\abs{p(x)}}} \exp \brc{\pm\frac{1}{\hbar}\int_{x_0}^{x} \abs{p(x')}dx'} }
+\boxed{\left. \Psi(x) \right|_{x>x_0} = \mathcal{A} e^{\frac{i}{\hbar} S(x)} \approx \frac{\mathcal{A}}{\sqrt{\abs{p(x)}}} \exp \brc{\pm\frac{1}{\hbar}\int_{x_0}^{x} \abs{p(x')} \diff x'} }
 $$
 \end{enumerate}
 
@@ -202,8 +202,8 @@ $${W(x_0) \sim \dfrac{1}{p(x_0)} \to \infty}$$
 Показать, что общее решение можно записать в виде:
 $$
 \begin{gathered}
-\Psi_I(x) \simeq \frac{1}{\sqrt{p(x)}} \brcr{a \sin(z+\gamma_1) + b \cos(z+\gamma_2)},~~ z = \frac{1}{\hbar}\int_x^{x_0} p(x')dx'\\
-\Psi_{II}(x) \simeq \frac{1}{\sqrt{\abs{p(x)}}} \brcr{A e^{-\abs{z}} + B e^{\abs{z}}},~~ \abs{z} = \frac{1}{\hbar}\int_{x_0}^{x} \abs{p(x')}dx'
+\Psi_I(x) \simeq \frac{1}{\sqrt{p(x)}} \brcr{a \sin(z+\gamma_1) + b \cos(z+\gamma_2)},~~ z = \frac{1}{\hbar}\int_x^{x_0} p(x') \diff x'\\
+\Psi_{II}(x) \simeq \frac{1}{\sqrt{\abs{p(x)}}} \brcr{A e^{-\abs{z}} + B e^{\abs{z}}},~~ \abs{z} = \frac{1}{\hbar}\int_{x_0}^{x} \abs{p(x')} \diff x'
 \end{gathered}
 $$
 \end{excr}
@@ -274,7 +274,7 @@ $$
 
 $$
 \boxed{
-	\frac{d^2}{d\xi^2}\Psi(\xi) - \xi\Psi(\xi) = 0
+	\D{^2}{\xi^2}\Psi(\xi) - \xi\Psi(\xi) = 0
 }
 $$
 
@@ -282,8 +282,8 @@ $$
 $$
 \left\{
 \begin{aligned}
-\Ai(\xi) &= \frac{1}{\pi} \int_0^\infty \cos\brs{\xi t + \frac{t^3}{3}}dt & \text{\em{функция Эйри}}\\
-\Bi(\xi) &= \frac{1}{\pi} \int_0^\infty \brs{ \sin\brc{\xi t + \frac{t^3}{3}} + \exp\brc{\xi t - \frac{t^3}{3}} }dt & \text{\em{функция Эйри II рода}}
+\Ai(\xi) &= \frac{1}{\pi} \int_0^\infty \cos\brs{\xi t + \frac{t^3}{3}} \diff t & \text{\em{функция Эйри}}\\
+\Bi(\xi) &= \frac{1}{\pi} \int_0^\infty \brs{ \sin\brc{\xi t + \frac{t^3}{3}} + \exp\brc{\xi t - \frac{t^3}{3}} } \diff t & \text{\em{функция Эйри II рода}}
 \end{aligned}
 \right.
 $$
@@ -308,9 +308,9 @@ $$
 \end{stmt}
 
 Действительно, уравнение Эйри справедливо при $\abs{x-x_0} < L$, где $L$ --- характерное расстояние существенного изменения потенциала $U(x)$. Приближение ВКБ (условие квазиклассичности) требует
-$
-{\abs{\dfrac{\hbar m}{p^3} \dfrac{dU}{dx}} \ll 1 \text{~~(см.~\srefthis{1})}}
-$
+$$
+{\abs{\frac{\hbar m}{p^3} \D{U}{x}} \ll 1 \text{~~(см.~\srefthis{1})}}
+$$
 
 Так как $\abs{p^3(x)} \simeq \Bigl( 2m \abs{U'(x_0)} \cdot \abs{x-x_0} \Bigr)^{\frac{3}{2}}$, то
 $$
@@ -363,9 +363,9 @@ $$
 Перейдем в асимптотическую область в решениях ВКБ. Что будет с $z$ и $\abs{z}$ при аппроксимации потенциала \autoref{fig:11_1} прямой?
 $$
 \begin{aligned}
-\left. z\right|_{(x \to x_0 - 0)} &\to \frac{1}{\hbar} \int_{x}^{x_0} \alpha^{\frac{1}{2}}\hbar(x_0-x')^{\frac{1}{2}} dx' = \frac{2}{3}\alpha^{\frac{1}{2}} (x_0-x')^{\frac{3}{2}} \equiv \\
+\left. z\right|_{(x \to x_0 - 0)} &\to \frac{1}{\hbar} \int_{x}^{x_0} \alpha^{\frac{1}{2}}\hbar(x_0-x')^{\frac{1}{2}} \diff x' = \frac{2}{3}\alpha^{\frac{1}{2}} (x_0-x')^{\frac{3}{2}} \equiv \\
 \equiv & \frac{2}{3}\alpha^{\frac{1}{2}} \abs{x-x_0}^{\frac{3}{2}} \equiv \frac{2}{3} \abs{\xi}^{\frac{3}{2}} \\
-\left. \abs{z}\right|_{(x \to x_0 + 0)} &\to \frac{1}{\hbar} \int_{x_0}^{x} \alpha^{\frac{1}{2}}\hbar(x'-x_0)^{\frac{1}{2}} dx' = \dots = \frac{2}{3} \xi^{\frac{3}{2}}
+\left. \abs{z}\right|_{(x \to x_0 + 0)} &\to \frac{1}{\hbar} \int_{x_0}^{x} \alpha^{\frac{1}{2}}\hbar(x'-x_0)^{\frac{1}{2}} \diff x' = \dots = \frac{2}{3} \xi^{\frac{3}{2}}
 \end{aligned}
 $$
 
@@ -394,8 +394,8 @@ $$
 Таким образом, общее решение примет вид:
 $$
 \begin{aligned}
-\psi_{I}(x) &\simeq \frac{1}{\sqrt{p(x)}} \brcr{ a \sin\brs{\frac{1}{\hbar} \int_x^{x_0} p(x')dx'+\frac{\pi}{4}} + b \cos\brs{\frac{1}{\hbar} \int_x^{x_0} p(x')dx'+\frac{\pi}{4}} } \\
-\psi_{II}(x) &\simeq \frac{1}{\sqrt{\abs{p(x)}}} \brcr{ \frac{a}{2} \exp\brc{-\frac{1}{\hbar} \int^x_{x_0} \abs{p(x')}dx'} + b \exp\brc{\frac{1}{\hbar} \int^x_{x_0} \abs{p(x')}dx'} }
+\psi_{I}(x) &\simeq \frac{1}{\sqrt{p(x)}} \brcr{ a \sin\brs{\frac{1}{\hbar} \int_x^{x_0} p(x') \diff x'+\frac{\pi}{4}} + b \cos\brs{\frac{1}{\hbar} \int_x^{x_0} p(x') \diff x'+\frac{\pi}{4}} } \\
+\psi_{II}(x) &\simeq \frac{1}{\sqrt{\abs{p(x)}}} \brcr{ \frac{a}{2} \exp\brc{-\frac{1}{\hbar} \int^x_{x_0} \abs{p(x')} \diff x'} + b \exp\brc{\frac{1}{\hbar} \int^x_{x_0} \abs{p(x')} \diff x'} }
 \end{aligned}
 $$
 
@@ -408,8 +408,8 @@ $$
 $$
 \boxed{
 	\begin{gathered}
-		\Psi_{(x \gg x_0)}(x) = \frac{a}{2 \sqrt{\abs{p}}} \exp\brc{-\frac{1}{\hbar} \int_{x_0}^{x} \abs{p(x')}dx'} ~~\rightarrow~~\\
-		~~\rightarrow~~ \Psi_{(x \ll x_0)}(x) = \frac{a}{\sqrt{p}} \sin\brc{\frac{1}{\hbar} \int_{x}^{x_0} p(x')dx' + \frac{\pi}{4}}
+		\Psi_{(x \gg x_0)}(x) = \frac{a}{2 \sqrt{\abs{p}}} \exp\brc{-\frac{1}{\hbar} \int_{x_0}^{x} \abs{p(x')} \diff x'} ~~\rightarrow~~\\
+		~~\rightarrow~~ \Psi_{(x \ll x_0)}(x) = \frac{a}{\sqrt{p}} \sin\brc{\frac{1}{\hbar} \int_{x}^{x_0} p(x') \diff x' + \frac{\pi}{4}}
 	\end{gathered}
 }
 $$
@@ -433,8 +433,8 @@ $$
 \resizebox{\textwidth}{!} 
 {
 \boxed{
-	\Psi_{(x \ll x_0)}(x) = \frac{c}{\sqrt{p}} \sin\brc{\frac{1}{\hbar} \int_{x}^{x_0} p(x')dx' + \frac{\pi}{4} + \phi} \rightarrow
-	\Psi_{(x \gg x_0)}(x) = \frac{c \sin{\phi}}{\sqrt{\abs{p}}} \exp\brc{\frac{1}{\hbar} \int_{x_0}^{x} \abs{p(x')}dx'}
+	\Psi_{(x \ll x_0)}(x) = \frac{c}{\sqrt{p}} \sin\brc{\frac{1}{\hbar} \int_{x}^{x_0} p(x') \diff x' + \frac{\pi}{4} + \phi} \rightarrow
+	\Psi_{(x \gg x_0)}(x) = \frac{c \sin{\phi}}{\sqrt{\abs{p}}} \exp\brc{\frac{1}{\hbar} \int_{x_0}^{x} \abs{p(x')} \diff x'}
   }
 }
 \end{gather*}
@@ -456,10 +456,10 @@ $$
 $$
 \boxed{
 \begin{aligned}
-	\Psi_{(x \ll x_0)}(x) &= \frac{C}{\sqrt{p}} \exp\brc{\frac{i}{\hbar} \int_{x}^{x_0} p(x')dx' + \frac{i\pi}{4}} 
+	\Psi_{(x \ll x_0)}(x) &= \frac{C}{\sqrt{p}} \exp\brc{\frac{i}{\hbar} \int_{x}^{x_0} p(x') \diff x' + \frac{i\pi}{4}} 
 	+ \\
-	+ \frac{D}{\sqrt{p}} &\exp\brc{-\frac{i}{\hbar} \int_{x}^{x_0} p(x')dx' - \frac{i\pi}{4}} ~~\rightarrow~~ \\
-	~~\rightarrow~~ &\Psi(x)_{(x \gg x_0)} = \frac{C+D}{\sqrt{\abs{p}}} \exp\brc{\frac{1}{\hbar} \int_{x_0}^{x} \abs{p(x')}dx'}
+	+ \frac{D}{\sqrt{p}} &\exp\brc{-\frac{i}{\hbar} \int_{x}^{x_0} p(x') \diff x' - \frac{i\pi}{4}} ~~\rightarrow~~ \\
+	~~\rightarrow~~ &\Psi(x)_{(x \gg x_0)} = \frac{C+D}{\sqrt{\abs{p}}} \exp\brc{\frac{1}{\hbar} \int_{x_0}^{x} \abs{p(x')} \diff x'}
 \end{aligned}
 }
 $$
@@ -498,38 +498,38 @@ $$
 
 $$
 \begin{gathered}
-\Psi_{x<b}(x) = \frac{a_1}{\sqrt{p}} \sin\brs{\frac{1}{\hbar} \int_{x}^{b} p(x')dx' + \frac{\pi}{4} } \equiv \frac{a_1}{\sqrt{p}} \sin({z_1 + \frac{\pi}{4}}) \\
-\Psi_{x>a}(x) = \frac{a_2}{\sqrt{p}} \sin\brs{\frac{1}{\hbar} \int_{a}^{x} p(x')dx' + \frac{\pi}{4} } \equiv \frac{a_2}{\sqrt{p}} \sin({z_2 + \frac{\pi}{4}})
+\Psi_{x<b}(x) = \frac{a_1}{\sqrt{p}} \sin\brs{\frac{1}{\hbar} \int_{x}^{b} p(x') \diff x' + \frac{\pi}{4} } \equiv \frac{a_1}{\sqrt{p}} \sin({z_1 + \frac{\pi}{4}}) \\
+\Psi_{x>a}(x) = \frac{a_2}{\sqrt{p}} \sin\brs{\frac{1}{\hbar} \int_{a}^{x} p(x') \diff x' + \frac{\pi}{4} } \equiv \frac{a_2}{\sqrt{p}} \sin({z_2 + \frac{\pi}{4}})
 \end{gathered}
 $$
 
-где $z_1+z_2 = \dfrac{1}{\hbar} \int \limits_{a}^{b} p(x')dx' \equiv \dfrac{1}{\hbar} \int \limits_{a}^{b} p(x)dx$.
+где $z_1+z_2 = \dfrac{1}{\hbar} \int \limits_{a}^{b} p(x') \diff x' \equiv \dfrac{1}{\hbar} \int \limits_{a}^{b} p(x) \diff x$.
 
 Этим решения должны совпадать во всей области $a < x < b$.
 $$
 \begin{aligned}
-\frac{a_1}{\sqrt{p}} \sin({z_1+\frac{\pi}{4}}) &= \frac{a_2}{\sqrt{p}} \sin({z_2+\frac{\pi}{4}}) = \frac{a_2}{\sqrt{p}} \sin\brs{\frac{1}{\hbar} \int_{a}^{b} p(x)dx - z_1 + \frac{\pi}{4}} = \\
-=& -\frac{a_2}{\sqrt{p}} \sin\brs{z_1 - \frac{1}{\hbar} \int_{a}^{b} p(x)dx - \frac{\pi}{4} }
+\frac{a_1}{\sqrt{p}} \sin({z_1+\frac{\pi}{4}}) &= \frac{a_2}{\sqrt{p}} \sin({z_2+\frac{\pi}{4}}) = \frac{a_2}{\sqrt{p}} \sin\brs{\frac{1}{\hbar} \int_{a}^{b} p(x) \diff x - z_1 + \frac{\pi}{4}} = \\
+=& -\frac{a_2}{\sqrt{p}} \sin\brs{z_1 - \frac{1}{\hbar} \int_{a}^{b} p(x) \diff x - \frac{\pi}{4} }
 \end{aligned}
 $$
 
 \begin{equation}
 \label{eq:11_3_1}
-z_1 + \frac{\pi}{4} = z_1 - \frac{1}{\hbar} \int_{a}^{b} p(x)dx - \frac{\pi}{4} + \pi(n+1),~~~n = 0, 1, 2, \dots \\
+z_1 + \frac{\pi}{4} = z_1 - \frac{1}{\hbar} \int_{a}^{b} p(x) \diff x - \frac{\pi}{4} + \pi(n+1),~~~n = 0, 1, 2, \dots \\
 \end{equation}
 \begin{equation}
 \label{eq:11_3_2}
 a_1 = (-1)(-1)^{n+1}a_2  ~~\rightarrow~~ a_2 = a_1 (-1)^n
 \end{equation}
 
-В условии \eqref{eq:11_3_1} пишем $\pi (n+1)$, а не $\pi n$, так как при $n=0$ было бы $\dfrac{1}{\hbar}\int \limits_{a}^{b} p(x) dx = -\dfrac{\pi}{2}$, что не допустимо, так как левая часть этого равенства --- заведомо положительная величина.
+В условии \eqref{eq:11_3_1} пишем $\pi (n+1)$, а не $\pi n$, так как при $n=0$ было бы $\dfrac{1}{\hbar}\int \limits_{a}^{b} p(x) \diff x = -\dfrac{\pi}{2}$, что не допустимо, так как левая часть этого равенства --- заведомо положительная величина.
 
 Таким образом, 
 \begin{equation}
 \label{eq:11_3_3}
-\boxed{\int_{a}^{b} p(x)dx = \pi\hbar\brc{n+\frac{1}{2}}}
+\boxed{\int_{a}^{b} p(x) \diff x = \pi\hbar\brc{n+\frac{1}{2}}}
 \end{equation}
-или взятый по полному периоду классического движения частицы между точками $x=a$ и $x=b$ интеграл $\oint p(x)dx \equiv 2 \int \limits_{a}^{b} p(x)dx$ равен
+или взятый по полному периоду классического движения частицы между точками $x=a$ и $x=b$ интеграл $\oint p(x)dx \equiv 2 \int \limits_{a}^{b} p(x) \diff x$ равен
 \begin{equation}
 \label{eq:11_3_4}
 \boxed{\oint p(x)dx = 2\pi\hbar\brc{n+\frac{1}{2}}}
@@ -544,7 +544,7 @@ a_1 = (-1)(-1)^{n+1}a_2  ~~\rightarrow~~ a_2 = a_1 (-1)^n
 
 \item Номер состояния $n$: $n \to E_n$. Но это целое число не только порядковый номер стационарного состояния, но и число нулей (узлов) волновой функции. Действительно, при продвижении по $x$ от $a$ к $b$ фаза волновой функции растет от $\dfrac{\pi}{4}$ до
 $$
-\frac{1}{\hbar} \left. \int \limits_{a}^{b} p(x)dx + \frac{\pi}{4} \right|_{\text{\eqref{eq:11_3_3}}} =\pi n + \frac{3}{4}\pi
+\frac{1}{\hbar} \left. \int \limits_{a}^{b} p(x) \diff x + \frac{\pi}{4} \right|_{\text{\eqref{eq:11_3_3}}} =\pi n + \frac{3}{4}\pi
 $$%
 %
 так что синус обращается на этом интервале в нуль $n$ раз (вне интервала $a < x < b$ волновая функция монотонно затухает (см. \autoref{fig:11_4}), не имея нулей). Это есть частный случай осцилляционной теоремы квантовой механики (см.~\sref{3}{7}).
@@ -596,14 +596,14 @@ $$
 \begin{enumerate}
 \item В области \rom{3} есть квазиклассическая волна, бегущая слева направо:
 $$
-\Psi_{x>b}(x) \simeq \frac{A}{\sqrt{p(x)}} \exp\brc{\frac{i}{\hbar} \int_{b}^{x} p(x')dx' + i\frac{\pi}{4}}
+\Psi_{x>b}(x) \simeq \frac{A}{\sqrt{p(x)}} \exp\brc{\frac{i}{\hbar} \int_{b}^{x} p(x')\diff x' + i\frac{\pi}{4}}
 $$
 Убедимся в том, то это действительно так. В соответствии с \S 1 главы \rom{5} плотность потока вероятности прошедшей волны
 
 $$
 \begin{gathered}
 j_{x}^{\text{прош}} = \frac{i\hbar}{2m}(\psi\nabla\psi^* - \psi^*\nabla\psi) = \frac{i\hbar}{2m} \left\{\frac{A}{\sqrt{p(x)}} e^{i\brs{z(x)+\frac{\pi}{4}}} \right. \times\\
-\times \frac{A^*}{\sqrt{p(x)}} e^{-i\brs{z(x)+\frac{\pi}{4}}} \brc{-i\frac{dz}{dx}} \left. - \brc{\text{комплексно-сопряженное}} \right\} =\\
+\times \frac{A^*}{\sqrt{p(x)}} e^{-i\brs{z(x)+\frac{\pi}{4}}} \brc{-i\D{z}{x}} \left. - \brc{\text{комплексно-сопряженное}} \right\} =\\
 = \frac{i\hbar}{2m} \brcr{\frac{-i\abs{A}^2 2}{\hbar}} = \frac{\abs{A}^2}{m} = j_x^{\text{прош}} > 0
 \end{gathered}
 $$
@@ -612,25 +612,25 @@ $$
 
 \item В области \rom{2} по правилу соответствия (\rom{3}):
 $$
-\Psi_{a<x<b}(x) \simeq \frac{A}{\sqrt{\abs{p}}} \exp\brc{\frac{1}{\hbar} \int_x^{b} \abs{p(x')}dx'} \equiv 
+\Psi_{a<x<b}(x) \simeq \frac{A}{\sqrt{\abs{p}}} \exp\brc{\frac{1}{\hbar} \int_x^{b} \abs{p(x')} \diff x'} \equiv 
 $$
 $$
-\equiv \frac{A}{\sqrt{\abs{p}} 2i} \underbrace{ \exp\brc{\frac{1}{\hbar} \int_{a}^{b} \abs{p(x')}dx'} }_{e^{\gamma}} \exp\brc{- \frac{1}{\hbar} \int_{a}^{x} \abs{p(x')}dx'}
+\equiv \frac{A}{\sqrt{\abs{p}} 2i} \underbrace{ \exp\brc{\frac{1}{\hbar} \int_{a}^{b} \abs{p(x')} \diff x'} }_{e^{\gamma}} \exp\brc{- \frac{1}{\hbar} \int_{a}^{x} \abs{p(x')}\diff x'}
 $$
 
 \item В области \rom{1} по правилу соответствия (\rom{1}):
 $$
-\Psi_{x<a}(x) \simeq \frac{2A}{\sqrt{p}} \sin\brs{\frac{1}{\hbar} \int_{x}^{a} p(x')dx' + \frac{\pi}{4}} e^{\gamma} =
+\Psi_{x<a}(x) \simeq \frac{2A}{\sqrt{p}} \sin\brs{\frac{1}{\hbar} \int_{x}^{a} p(x') \diff x' + \frac{\pi}{4}} e^{\gamma} =
 $$
 $$
-= \frac{2A e^{\gamma}}{\sqrt{p}} \left\{ \underbrace{\exp \brc{\frac{i}{\hbar} \int_{x}^{a} p(x')dx' + \frac{i\pi}{4}}}_{\text{отраженная волна}} - \underbrace{\exp \brc{-\frac{i}{\hbar} \int_{x}^{a} p(x')dx' - \frac{i\pi}{4}}}_{\text{падающая волна}}\right \} 
+= \frac{2A e^{\gamma}}{\sqrt{p}} \left\{ \underbrace{\exp \brc{\frac{i}{\hbar} \int_{x}^{a} p(x') \diff x' + \frac{i\pi}{4}}}_{\text{отраженная волна}} - \underbrace{\exp \brc{-\frac{i}{\hbar} \int_{x}^{a} p(x') \diff x' - \frac{i\pi}{4}}}_{\text{падающая волна}}\right \} 
 $$
 $$
 j_x^{\text{пад}} = \frac{i \hbar}{2m} \brcr{\Psi \nabla \Psi^* - \Psi^* \nabla \Psi} =
 $$
 
 $$
-= \frac{i \hbar}{2m} \left\{ \frac{A e^{\gamma}}{i \sqrt{p}} e^{-i(z(x) + \frac{\pi}{4})} \frac{A^* e^{\gamma}}{(-i) \sqrt{p}} e^{i(z(x) + \frac{\pi}{4})} \brc{i \frac{dz}{dx}} - \text{К.С.} \right\}  = 
+= \frac{i \hbar}{2m} \left\{ \frac{A e^{\gamma}}{i \sqrt{p}} e^{-i(z(x) + \frac{\pi}{4})} \frac{A^* e^{\gamma}}{(-i) \sqrt{p}} e^{i(z(x) + \frac{\pi}{4})} \brc{i \D{z}{x}} - \text{К.С.} \right\}  = 
 $$
 $$
 =\frac{i \hbar}{2m} \brcr{\frac{-2i \abs{A}^2 e^{2\gamma}}{\hbar}} = \frac{\abs{A}^2 e^{2\gamma}}{m}
@@ -638,9 +638,9 @@ $$
 
 \item По определению коэффициент проницаемости барьеры (или вероятность проникновения частицы через барьер):
 $$
-\boxed{D \equiv \frac{\abs{j_x^{\text{прош}}}} {\abs{j_x^{\text{пад}}}} = e^{-2\gamma} = e^{-\frac{2}{\hbar} \int_a^b \abs{p(x)} dx}} 
+\boxed{D \equiv \frac{\abs{j_x^{\text{прош}}}} {\abs{j_x^{\text{пад}}}} = e^{-2\gamma} = e^{-\frac{2}{\hbar} \int_a^b \abs{p(x)} \diff x}} 
 $$
---- формула впервые в 1928 году была получена Георгием Гамовым\footnotemark в связи с теорией радиоактивного $\alpha$-распада ядер.
+--- формула впервые в 1928 году была получена Гамовым\footnotemark в связи с теорией радиоактивного $\alpha$-распада ядер.
 %people
 \footnotetext{Георгий Антонович Гамов (George Gamow, 1904-1968)}
 

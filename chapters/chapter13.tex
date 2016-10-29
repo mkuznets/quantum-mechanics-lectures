@@ -89,7 +89,7 @@ $$
 \end{equation} 
 или, что то же самое,
 \begin{equation*}
-\boxed{c_{nm}^\one = \frac{1}{i\hbar} \int_0^t dt' V_{mn}(t') e^{i \omega_{mn} t'}}, ~~~(0 < t < T)
+\boxed{c_{nm}^\one = \frac{1}{i\hbar} \int_0^t \diff t' V_{mn}(t') e^{i \omega_{mn} t'}}, ~~~(0 < t < T)
 \end{equation*}
 
 Найденная нами $c_{nm}^\one$ есть поправка 1-го порядка к $n$-ому стационарному состоянию (в нем система находилась до включения возмущения). Дальнейшие вычисления приведут к поправкам высших порядков ТВ. Мы ограничимся первым порядком.
@@ -110,14 +110,14 @@ $$
 
 Ранее предполагалось, что возмущение действовало в течение некоторого конечного промежутка времени $T$ (от $t = 0$ до $t = T$ (или $t$)). Строго говоря, все это время система была нестационарной. Только после снятия возмущения система перейдет с той или иной вероятностью к одному из стационарных состояний. При условии малости $\op{V}$ и $T$ говорят о дискретных переходах между стационарными состояниями. Следовательно,  
 $$
-P_{nm}(t) =\frac{1}{\hbar^2} \left | \int_0^t dt' V_{mn}(t') e^{i \omega_{mn} t'} \right |^2, ~~~0 < t < T
+P_{nm}(t) =\frac{1}{\hbar^2} \left | \int_0^t \diff t' V_{mn}(t') e^{i \omega_{mn} t'} \right |^2, ~~~0 < t < T
 $$
 
 При $-\infty < t < \infty$
 $$
-P_{nm} = \frac{1}{\hbar^2} \left | \int_{-\infty}^\infty dt' V_{mn}(t')e^{i \omega_{mn}t'} \right |^2 = \boxed{\frac{(2\pi)^2}{\hbar^2} \left | V_{mn}(\omega_{mn})\right|^2} = P_{nm},
+P_{nm} = \frac{1}{\hbar^2} \left | \int_{-\infty}^\infty \diff t' V_{mn}(t')e^{i \omega_{mn}t'} \right |^2 = \boxed{\frac{(2\pi)^2}{\hbar^2} \left | V_{mn}(\omega_{mn})\right|^2} = P_{nm},
 $$
-где $V_{mn}(\omega_{mn}) = \dfrac{1}{2\pi} \int \limits_{-\infty}^\infty dt' V_{mn}(t') e^{i\omega_{mn}t'}$ --- компонента Фурье матричного элемента $V_{mn}(t)$ оператора возмущения $\op{V}(t)$, действующего в течение конечного промежутка времени.
+где $V_{mn}(\omega_{mn}) = \dfrac{1}{2\pi} \int \limits_{-\infty}^\infty \diff t' V_{mn}(t') e^{i\omega_{mn}t'}$ --- компонента Фурье матричного элемента $V_{mn}(t)$ оператора возмущения $\op{V}(t)$, действующего в течение конечного промежутка времени.
 
 \section{Адиабатические и внезапные возмущения}
 
@@ -149,13 +149,13 @@ $$
 
 Преобразуем интеграл:
 \begin{eqnarray*}
-\frac{1}{i\hbar} \int_0^T dt' V_{mn}(t')e^{i\omega_{mn}t'} = -\left. \frac{V_{mn}(t')e^{i \omega_{mn}t'}}{\hbar \omega_{mn}}\right|_0^T + \int_0^T dt' \D{V_{mn}(t')}{t'} \frac{e^{i\omega_{mn}t'}}{\hbar \omega_{mn}}
+\frac{1}{i\hbar} \int_0^T \diff t' V_{mn}(t')e^{i\omega_{mn}t'} = -\left. \frac{V_{mn}(t')e^{i \omega_{mn}t'}}{\hbar \omega_{mn}}\right|_0^T + \int_0^T \diff t' \D{V_{mn}(t')}{t'} \frac{e^{i\omega_{mn}t'}}{\hbar \omega_{mn}}
 \end{eqnarray*}
 
 Учитывая, что $V_{mn}(0) = V_{mn}(T) = 0$, получим:
 \begin{equation}
 \label{eq:13_3_1}
-P_{nm}(T) = \frac{1}{(\hbar \omega_{mn})^2} \left| \int_0^T dt' \D{V_{mn}(t')}{t'} e^{i\omega_{mn}t'}\right|^2
+P_{nm}(T) = \frac{1}{(\hbar \omega_{mn})^2} \left| \int_0^T \diff t' \D{V_{mn}(t')}{t'} e^{i\omega_{mn}t'}\right|^2
 \end{equation}
 
 \begin{defn}
@@ -237,7 +237,7 @@ $$
 
 Если возмущение постоянно во времени на промежутке от 0 до $T$ ($V = \const$, см. \autoref{fig:13_2}), то из \eqref{eq:13_1_5} следует:
 \begin{align*}
-P_{nm} = \left| \frac{1}{i \hbar} \int_0^T dt' \Vmn e^{i\ommn t'} \right|^2 
+P_{nm} = \left| \frac{1}{i \hbar} \int_0^T \diff t' \Vmn e^{i\ommn t'} \right|^2 
   & = \left|\frac{1}{i\hbar} \Vmn \frac{e^{i \ommn T} - 1}{i\ommn}\right|^2
   = \\ & = \frac{\abs{\Vmn}^2}{\hbar^2} \frac{2 (1 - \cos \ommn T)}{\ommn^2} = \frac{\abs{\Vmn}^2}{\hbar^2} f(\ommn, T)
 \end{align*}
@@ -298,11 +298,11 @@ w_{nm} = \left . \frac{P_{nm}}{T}\right|_{T \to \infty}
 
 При такой постановке задачи требуется просуммировать вероятности переходов в единицу времени по квантовым числам <<m>> конечных состояний и учесть непрерывный характер спектра конечных состояний. Последнее означает переход от суммирования к интегрированию в выражении для полной вероятности:
 $$
-W_n = \sum_m w_{nm} \to \int w_{mn} d \nu_m,
+W_n = \sum_m w_{nm} \to \int w_{mn} \diff\nu_m,
 $$
 где $d \nu_m$ - число квантовых состояний в интервале энергий $E_m \div E_m + dE_m$: \newline $\boxed{d \nu_m = \rho(E_m) dE_m}$. Множитель $\rho(E_m) = \D{\nu_m}{E_m}$ --- плотность конечных состояний, т.~е. число конечных состояний, приходящихся на единичный интервал энергий вблизи $E_m$. Тогда полная вероятность переходов из начального состояния <<n>> в континуальную группу состояний, близких <<m>> есть 
 $$
-W_n = \int w_{mn} \rho(E_m)dE_m = \left |_{\eqref{eq:13_4_1}} \dfrac{2\pi}{\hbar} \int \abs{\Vmn}^2 \delta(E_m - E_n) \rho(E_m)dE_m \right .=
+W_n = \int w_{mn} \rho(E_m)\diff E_m = \left |_{\eqref{eq:13_4_1}} \dfrac{2\pi}{\hbar} \int \abs{\Vmn}^2 \delta(E_m - E_n) \rho(E_m)\diff E_m \right .=
 $$
 \begin{equation}
 \label{eq:13_4_3}
@@ -348,7 +348,7 @@ $$
 \end{equation}
 где $\op{V}$ не зависит от времени, а $\op{V}(t)$, как и в \S 4, действует на промежутке $[0, T]$. Тогда подставляя \eqref{eq:13_5_1} в выражение \eqref{eq:13_1_5} для коэффициентов $c_{nm}^\one (t)$ общей теории, будем иметь:
 \begin{gather*}
-c_{nm}^\one = \frac{1}{i \hbar} \int_0^T dt \brcr{\Vmn e^{i(\ommn - \omega)t} + \underbrace{\Vmn^\dag}_{V_{nm}^*} e^{i(\ommn + \omega)t}} = \\
+c_{nm}^\one = \frac{1}{i \hbar} \int_0^T \diff t \brcr{\Vmn e^{i(\ommn - \omega)t} + \underbrace{\Vmn^\dag}_{V_{nm}^*} e^{i(\ommn + \omega)t}} = \\
 = \frac{\Vmn [e^{i(\ommn - \omega)T} - 1]}{i \hbar i (\ommn - \omega)} + \frac{\Vmn^\dag [e^{i(\ommn + \omega)T} - 1]}{i \hbar i (\ommn + \omega)}
 \end{gather*}
 

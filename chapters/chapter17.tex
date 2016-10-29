@@ -123,13 +123,13 @@ $$
 где значению $s = 0$ отвечает знак <<+>> , а значению $s = 1$ --- знак <<->>.
 \begin{eqnarray}
 \label{eq:17_2_4}
-J_{\nu_1 \nu_2} = \int \int d\vr_1 d\vr_2 \abs{\phi_{\nu_1}(\vr_1)}^2 \abs{\frac{e^2}{\vr_1 - \vr_2}} \abs{\phi_{\nu_2}(\vr_2)}^2 = \nonumber \\ = \int \int d\vr_1 d\vr_2 \abs{\phi_{\nu_2}(\vr_1)}^2 \frac{e^2}{\abs{\vr_1 - \vr_2}} \cdot \abs{\phi_{\nu_1}(\vr_2)}^2
+J_{\nu_1 \nu_2} = \int \int \diff\vr_1 \diff\vr_2 \abs{\phi_{\nu_1}(\vr_1)}^2 \abs{\frac{e^2}{\vr_1 - \vr_2}} \abs{\phi_{\nu_2}(\vr_2)}^2 = \nonumber \\ = \int \int \diff\vr_1 \diff\vr_2 \abs{\phi_{\nu_2}(\vr_1)}^2 \frac{e^2}{\abs{\vr_1 - \vr_2}} \cdot \abs{\phi_{\nu_1}(\vr_2)}^2
 \end{eqnarray}
 
 \begin{eqnarray}
 \label{eq:17_2_5}
-K_{\nu_1 \nu_2} = \int \int d\vr_1 d\vr_2 \phi^*_{\nu_1}(\vr_1) \phi_{\nu_2}(\vr_1)\frac{e^2}{\abs{\vr_1 - \vr_2}}  \phi^*_{\nu_2}(\vr_2) \phi_{\nu_1}(\vr_2) = \nonumber \\
-= \int \int d\vr_1 d\vr_2 \phi^*_{\nu_2}(\vr_1) \phi_{\nu_1}(\vr_1)\frac{e^2}{\abs{\vr_1 - \vr_2}}  \phi^*_{\nu_1}(\vr_2) \phi_{\nu_2}(\vr_2)
+K_{\nu_1 \nu_2} = \int \int \diff\vr_1 \diff\vr_2 \phi^*_{\nu_1}(\vr_1) \phi_{\nu_2}(\vr_1)\frac{e^2}{\abs{\vr_1 - \vr_2}}  \phi^*_{\nu_2}(\vr_2) \phi_{\nu_1}(\vr_2) = \nonumber \\
+= \int \int \diff\vr_1 \diff\vr_2 \phi^*_{\nu_2}(\vr_1) \phi_{\nu_1}(\vr_1)\frac{e^2}{\abs{\vr_1 - \vr_2}}  \phi^*_{\nu_1}(\vr_2) \phi_{\nu_2}(\vr_2)
 \end{eqnarray}
 
 Равенства в \eqref{eq:17_2_4} и \eqref{eq:17_2_5} объясняются тем, что от переобозначения переменных интегрирования $\vr_1 \leftrightarrow \vr_2$ двойной интеграл не меняется. Интеграл \eqref{eq:17_2_4} называют {\em кулоновским интегралом}, т.~к. его величина равна энергии классического электростатического взаимодействия зарядов с плотностью распределения $e\rho_{\nu_1}(\vr_1)$ и $e\rho_{\nu_2}(\vr_2)$ ($e < 0$). Здесь $\rho_{\nu_1}(\vr_1) = \abs{\phi_{\nu_1}(\vr_1)}^2$ и $\rho_{\nu_2}(\vr_2) = \abs{\phi_{\nu_2}(\vr_2)}^2$ --- плотности вероятности обнаружить электрон в состояниях $\phi_{\nu_1}$ и $\phi_{\nu_2}$ соответственно. Так как подынтегральное выражение \eqref{eq:17_2_4} положительно, то $J_{\nu_1 \nu_2} > 0$, облака зарядов отталкиваются, что приводит к увеличению энергии многоэлектронной системы.

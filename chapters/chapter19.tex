@@ -93,7 +93,7 @@ $$
 Отношение скорости счета детектора к плотности потока падающих частиц называется \underline{эффективным сечением (или просто сечением) рассеяния}:
 \begin{equation}
 \label{eq:19_2_1}
-d \sigma = \frac{1}{j_{\text{пад}}}\frac{dN}{dt},
+\diff\sigma = \frac{1}{j_{\text{пад}}}\D{N}{t},
 \end{equation}
 где $\brs{d\sigma} =\brs{\dfrac{1}{\text{сек}}:\dfrac{1}{\text{сек} \cdot \text{см}^2}} =[\text{см}^2]$.
 \end{defn}
@@ -105,7 +105,7 @@ $$
 где $j_{\text{рас}}$ --- плотность потока рассеянных частиц. Тогда сечение рассеяния \eqref{eq:19_2_1} можно записать в виде:
 \begin{equation}
 \label{eq:19_2_2}
-d\sigma = \frac{j_{\text{рас}}}{j_{\text{пад}}}r^2 d\Omega
+\diff\sigma = \frac{j_{\text{рас}}}{j_{\text{пад}}}r^2 d\Omega
 \end{equation}
 
 Определение \eqref{eq:19_2_2} применимо не только в классической, но и в квантовой механике. Действительно, классическая плотность потока частиц в пучке пропорциональна плотности потока вероятности одной частицы в квантовой механике:
@@ -150,12 +150,12 @@ $$
 \end{equation}
 где $\vsr$ характеризует точку источника, а $\vr$ --- точку наблюдения. Легко видеть, что
 $$
-\psi_1(\vr) = \int G(\vr - \vsr) \frac{2m U(\vsr)}{\hbar^2} \psi(\vsr) d\vsr
+\psi_1(\vr) = \int G(\vr - \vsr) \frac{2m U(\vsr)}{\hbar^2} \psi(\vsr) \diff\vsr
 $$
 
 В самом деле, действуя оператором $(\Delta + k^2)$ на обе части последнего соотношения, получаем:
 $$
-(\Delta + k^2) \psi_1(\vr) = \int \delta(\vr - \vsr) \frac{2m U(\vsr)}{\hbar^2} \psi(\vsr) d\vsr = \frac{2m U(\vr)}{\hbar^2} \psi(\vr)
+(\Delta + k^2) \psi_1(\vr) = \int \delta(\vr - \vsr) \frac{2m U(\vsr)}{\hbar^2} \psi(\vsr) \diff\vsr = \frac{2m U(\vr)}{\hbar^2} \psi(\vr)
 $$
 
 Найдем явное выражение для функции Грина. В теории поля уже находили функцию Грина волнового уравнения \eqref{eq:19_3_1} с правой частью $-4\pi \delta(\vr - \vsr)$. Поэтому функцией Грина, удовлетворяющей асимптотике \eqref{eq:19_1_2}, будет
@@ -165,7 +165,7 @@ $$
 
 Общее решение уравнение Шрёдингера принимает вид
 $$
-\psi(\vr) = \psi_0(\vr) - \frac{1}{4 \pi}\frac{2m}{\hbar^2}\int \frac{e^{ik\abs{\vr - \vsr}}}{\abs{\vr - \vsr}} U(\vsr)\psi(\vsr)d\vsr
+\psi(\vr) = \psi_0(\vr) - \frac{1}{4 \pi}\frac{2m}{\hbar^2}\int \frac{e^{ik\abs{\vr - \vsr}}}{\abs{\vr - \vsr}} U(\vsr)\psi(\vsr)\diff\vsr
 $$
 
 Это решение является формальным. В самом деле, под знаком интеграла в правой части стоит та же неизвестная функция $\psi(\vr)$, что и в левой части. Поэтому правильнее было бы сказать, что мы выполнили переход от дифференциального уравнения Шрёдингера к эквивалентному интегральному уравнению.
@@ -183,7 +183,7 @@ $$
 
 Итак, волновая функция $\psi(\vr)$ в асимптотике принимает вид
 $$
-\left. \psi(\vr) \right|_{r \to \infty} \approx \psi_0(\vr) - \frac{e^{ikr}}{r}\frac{m}{2\pi\hbar^2}\int e^{- ik\vec{n}\vsr} U(\vsr)\psi(\vsr)d\vsr
+\left. \psi(\vr) \right|_{r \to \infty} \approx \psi_0(\vr) - \frac{e^{ikr}}{r}\frac{m}{2\pi\hbar^2}\int e^{- ik\vec{n}\vsr} U(\vsr)\psi(\vsr)\diff\vsr
 $$
 
 Ранее мы предположили, что волновая функция должна иметь следующую асимптотику:
@@ -195,13 +195,13 @@ $$
 $$\psi_0(\vr) = e^{i\vec{k}\vr},$$
 мы получаем точно то, что и ожидали. При этом амплитуда рассеяния определяется следующей формулой:
 $$
-f(\theta, \phi) =  - \frac{m}{2\pi\hbar^2}\int e^{- ik\vec{n}\vsr} U(\vsr)\psi(\vsr)d\vsr
+f(\theta, \phi) =  - \frac{m}{2\pi\hbar^2}\int e^{- ik\vec{n}\vsr} U(\vsr)\psi(\vsr)\diff\vsr
 $$
 
 Таким образом, мы осуществили переход от исходного дифференциального уравнение Шрёдингера к интегральному уравнению
 \begin{equation}
 \label{eq:19_3_2}
-\boxed{\psi(\vr) = e^{i\vec{k}\vr} - \frac{m}{2\pi\hbar^2}\int \frac{e^{ik\abs{\vr - \vsr}}}{\abs{\vr - \vsr}} U(\vsr)\psi(\vsr)d\vsr}
+\boxed{\psi(\vr) = e^{i\vec{k}\vr} - \frac{m}{2\pi\hbar^2}\int \frac{e^{ik\abs{\vr - \vsr}}}{\abs{\vr - \vsr}} U(\vsr)\psi(\vsr)\diff\vsr}
 \end{equation}
 
 В асимптотике $r \to \infty$ решение этого уравнения имеет требуемый вид. Уравнение \eqref{eq:19_3_2} называют интегральным уравнением задачи рассеяния.
@@ -217,12 +217,12 @@ $$
 При использовании $n$ членов разложения помимо $\psi^\zr$ говорят об $n$-ом борновском приближении, а при $n = 1$ говорят о первом борновском приближении (или просто борновском приближении). Из \eqref{eq:19_3_2} следует, что $\psi^\zr = e^{i \vec{k} \vr}$ и
 \begin{equation}
 \label{eq:19_4_2}
-\psi^\one(\vr) = -\frac{m}{2\pi \hbar^2} \int \frac{e^{ik \abs{\vr - \vsr}}}{\abs{\vr - \vsr}} U(\vsr) e^{i \vec{k} \vsr} d\vsr
+\psi^\one(\vr) = -\frac{m}{2\pi \hbar^2} \int \frac{e^{ik \abs{\vr - \vsr}}}{\abs{\vr - \vsr}} U(\vsr) e^{i \vec{k} \vsr} \diff\vsr
 \end{equation}
 
 Тогда для амплитуды рассеяния в борновском приближении получаем
 $$
-f(\theta, \phi) \approx  -\frac{m}{2\pi \hbar^2} \int e^{-i(\vec{k}'-\vec{k})\vsr} U(\vsr) d\vsr
+f(\theta, \phi) \approx  -\frac{m}{2\pi \hbar^2} \int e^{-i(\vec{k}'-\vec{k})\vsr} U(\vsr) \diff\vsr
 $$
 
 \begin{figure}[h!]
@@ -243,12 +243,12 @@ $$
 Здесь $\vec{k}' = k \vec{n}$ --- волновой вектор рассеянной частицы. Вводя вектор $\vec{q} = \vec{k}'- \vec{k}$ (см. \autoref{fig:19_2}) --- вектор переданного частице рассеивающим центром импульса (в единицах $\hbar$), запишем последнее равенство в виде:
 \begin{equation}
 \label{eq:19_4_3}
-f(\theta, \phi) \approx  -\frac{m}{2\pi \hbar^2} \int e^{-i \vec{q}\vsr} U(\vsr) d\vsr,
+f(\theta, \phi) \approx  -\frac{m}{2\pi \hbar^2} \int e^{-i \vec{q}\vsr} U(\vsr) \diff\vsr,
 \end{equation}
 где $q = 2k \sin \dfrac{\theta}{2}$. Если $U$ --- сферически симметричная функция, ${U(\vsr) = U(r')}$, то из \eqref{eq:19_4_3}, проводя интегрирование по углам, окончательно получим:
 \begin{equation}
 \label{eq:19_4_4}
-\boxed{f(\theta) \approx -\frac{2m}{\hbar^2} \int_0^\infty \frac{\sin qr}{qr}U(r)r^2 dr}
+\boxed{f(\theta) \approx -\frac{2m}{\hbar^2} \int_0^\infty \frac{\sin qr}{qr}U(r)r^2 \diff r}
 \end{equation}
 
 Выясним теперь условия, при которых формула \eqref{eq:19_4_4} применима. Критерий применимости борновского приближения выглядит как
@@ -259,12 +259,12 @@ f(\theta, \phi) \approx  -\frac{m}{2\pi \hbar^2} \int e^{-i \vec{q}\vsr} U(\vsr)
 
 Вычисляя в \eqref{eq:19_4_2} функцию $\psi^\one(\vr)$ в наиболее <<опасной>> точке $r = 0$ в смысле нарушения неравенства \eqref{eq:19_4_5}, получаем:
 $$
-\frac{m}{2 \pi \hbar^2} \left| \int \frac{e^{ikr'}}{r'} U(\vsr) e^{i\vec{k} \vsr}d\vsr\right | \ll 1
+\frac{m}{2 \pi \hbar^2} \left| \int \frac{e^{ikr'}}{r'} U(\vsr) e^{i\vec{k} \vsr}\diff\vsr\right | \ll 1
 $$
 или для сферически симметричного потенциала $U(r')$
 \begin{equation}
 \label{eq:19_4_6}
-\boxed{\frac{m}{\hbar^2 k} \left| \int_0^a (1 - e^{2ikr'}) U(r') dr'\right | \ll 1}
+\boxed{\frac{m}{\hbar^2 k} \left| \int_0^a (1 - e^{2ikr'}) U(r') \diff r'\right | \ll 1}
 \end{equation}
 
 Далее возможны два случая.
@@ -272,13 +272,13 @@ $$
 \begin{enumerate}
 \item {\em Медленные частицы}, для которых $ka \ll 1$. В \eqref{eq:19_4_6} $1-e^{2ik r'} \approx -2ikr'$ и критерий применимости имеет вид:
 $$
-\frac{m}{\hbar^2} \underbrace{\left| \int_0^a r' U(r') dr' \right|}_{\sim a^2 U_0} \sim \frac{m U_0 a^2}{\hbar^2} \ll 1 \text{ или } \boxed{U_0 \ll \frac{\hbar^2}{ma^2}},
+\frac{m}{\hbar^2} \underbrace{\left| \int_0^a r' U(r') \diff r' \right|}_{\sim a^2 U_0} \sim \frac{m U_0 a^2}{\hbar^2} \ll 1 \text{ или } \boxed{U_0 \ll \frac{\hbar^2}{ma^2}},
 $$
 где $U_0$ --- характерный масштаб потенциальной энергии.
 
 \item {\em Быстрые частицы}, для которых $ka \gg 1$. В этом случае под знаком интеграла \eqref{eq:19_4_6} присутствует быстро осциллирующая экспонента, которая зануляет часть интеграла, и критерий применимости обретает форму записи:
 $$
-\frac{m}{\hbar^2 k} \underbrace{\left| \int_0^a U(r') dr'\right |}_{\sim a U_0} \sim \frac{m U_0 a}{\hbar^2 k} = \frac{m U_0 a^2}{\hbar^2 (ka)} \ll 1 \text{ или } \boxed{U_0 \ll \frac{\hbar^2}{ma^2} ka}
+\frac{m}{\hbar^2 k} \underbrace{\left| \int_0^a U(r') \diff r'\right |}_{\sim a U_0} \sim \frac{m U_0 a}{\hbar^2 k} = \frac{m U_0 a^2}{\hbar^2 (ka)} \ll 1 \text{ или } \boxed{U_0 \ll \frac{\hbar^2}{ma^2} ka}
 $$
 \end{enumerate}
 

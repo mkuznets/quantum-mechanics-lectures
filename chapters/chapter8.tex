@@ -586,7 +586,7 @@ $$%
 %
 В результате реализуется целочисленный вариант квантования проекции орбитального момента: $m=0, \pm 1, \pm 2, ...$. При $C = 1/\sqrt{2\pi}$ собственные функции нормированы условием
 $$
-\int_0^{2\pi} d\phi \Phi^*_m(\phi) \Phi_{m'}(\phi) = \delta_{mm'} 
+\int_0^{2\pi} \diff\phi \Phi^*_m(\phi) \Phi_{m'}(\phi) = \delta_{mm'} 
 $$
 
 Общие собственные векторы операторов $\opv{l}^2$ и $\op{l}_z$, согласно теории углового момента, удовлетворяют системе уравнений
@@ -638,5 +638,5 @@ $$%
 Сферические гармоники образуют полный ортонормированный базис на сфере единичного радиуса $(r = 1,~0 \leqslant \theta \leqslant \pi,~0 \leqslant \phi \leqslant 2\pi)$
 \begin{equation}
 \label{eq:8_5_4}
-\boxed{\bk{Y_{lm}}{Y_{l'm'}} = \int_0^{2\pi} d\phi \int_0^\pi \sin \theta d \theta Y^*_{lm}(\theta, \phi) Y_{l'm'}(\theta, \phi) = \delta_{ll'} \delta_{mm'}}
+\boxed{\bk{Y_{lm}}{Y_{l'm'}} = \int_0^{2\pi} \diff\phi \int_0^\pi \sin \theta \diff\theta Y^*_{lm}(\theta, \phi) Y_{l'm'}(\theta, \phi) = \delta_{ll'} \delta_{mm'}}
 \end{equation}
