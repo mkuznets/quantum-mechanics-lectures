@@ -63,11 +63,11 @@ $$%
 Это соотношение называется {\em уравнением непрерывности} для плотности вероятности. В интегральной форме оно принимает вид:
 $$
   \left.
-    -\pd{}{t} \int_v \rho(\vr,t)\,dv = \int_v\Div\vec{j}\,dv
-  \right|_{\text{т. Остр.-Гаусса}} = \oint_S \vec{j}\,d\vec{S}
+    -\pd{}{t} \int_v \rho(\vr,t)\diff v = \int_v\Div\vec{j}\diff v
+  \right|_{\text{т. Остр.-Гаусса}} = \oint_S \vec{j}\diff\vec{S}
 $$%
 %
-$S$ -- поверхность, ограничивающая объём $v$. Интегральное уравнение показывает, что убыль вероятности $P =\int_v \rho(\vr,t)\,dv$ нахождения частицы в объёме $v$ равна потоку вероятности через границу объёма. Поэтому естественно истолковать вектор $\vec{j}(\vr,t)$ как {\em плотность потока (тока) вероятности}.
+$S$ -- поверхность, ограничивающая объём $v$. Интегральное уравнение показывает, что убыль вероятности $P =\int_v \rho(\vr,t)\diff v$ нахождения частицы в объёме $v$ равна потоку вероятности через границу объёма. Поэтому естественно истолковать вектор $\vec{j}(\vr,t)$ как {\em плотность потока (тока) вероятности}.
 
 Плотность потока вероятности, вычисленная для волны де Бройля с единичной амплитудой
 $$
@@ -144,7 +144,7 @@ $$%
 \begin{equation}
   \begin{split}
     \label{eq:5_2_2}
-    \frac{d}{dt} \avg{F} = \bfkh{\pd{\psi}{t}}{\op{F}}{\psi} 
+    \D{}{t} \avg{F} = \bfkh{\pd{\psi}{t}}{\op{F}}{\psi} 
         + \bfkh{\psi}{\pd{\op{F}}{t}}{\psi} + \bfkh{\psi}{\op{F}}{\pd{\psi}{t}} = \\ =
     \frac{i}{\hbar}\bfkh{\psi}{\op{H}\op{F}}{\psi} + \bfkh{\psi}{\pd{\op{F}}{t}}{\psi} -
         \frac{i}{\hbar}\bfkh{\psi}{\op{F}\op{H}}{\psi} = \\ =
@@ -152,10 +152,10 @@ $$%
   \end{split}
 \end{equation}
 
-В выражении $\frac{d}{dt} \avg{F}$ усреднение и оператор дифференцирования относятся к разным переменным, так что их можно переставить:
+В выражении $\D{}{t} \avg{F}$ усреднение и оператор дифференцирования относятся к разным переменным, так что их можно переставить:
 \begin{equation}
   \label{eq:5_2_3}
-  \frac{d}{dt} \avg{F} \equiv \avgh{\frac{dF}{dt}}
+  \D{}{t} \avg{F} \equiv \avgh{\D{F}{t}}
 \end{equation}%
 %
 Действительно:
@@ -163,19 +163,19 @@ $$%
 $$
 \left[
 \begin{gathered}
-  \avg{F} = \sum_n F_n P_n ~\rightarrow~ \frac{d}{dt}\avg{F} =
-    \sum_n \frac{dF_n}{dt}P_n \equiv \avgh{\frac{dF}{dt}}\\
-  \avg{F} = \int F\,dP ~\rightarrow~ \frac{d}{dt}\avg{F} =
-    \int \frac{dF}{dt}\,dP \equiv \avgh{\frac{dF}{dt}}\\
+  \avg{F} = \sum_n F_n P_n ~\rightarrow~ \D{}{t}\avg{F} =
+    \sum_n \D{F_n}{t} P_n \equiv \avgh{\D{F}{t}}\\
+  \avg{F} = \int F\diff P ~\rightarrow~ \D{}{t}\avg{F} =
+    \int \D{F}{t}\diff P \equiv \avgh{\D{F}{t}}\\
 \end{gathered}
 \right.
 $$%
 %
-Таким образом, производная $\frac{dF}{dt}$ определена так, что её среднее значение равно производной по времени от среднего значения $\avg{F}$. Согласно общему определению \eqref{eq:2_2_1} оператора физической величины
+Таким образом, производная $\D{F}{t}$ определена так, что её среднее значение равно производной по времени от среднего значения $\avg{F}$. Согласно общему определению \eqref{eq:2_2_1} оператора физической величины
 \begin{equation}
   \label{eq:5_2_4}
-  \avgh{\frac{dF}{dt}} = \avgh{\frac{d \op{F}}{dt}}_{\psi} =
-    \bfkh{\psi}{\frac{d \op{F}}{dt}}{\psi}
+  \avgh{\D{F}{t}} = \avgh{\D{\op{F}}{t}}_{\psi} =
+    \bfkh{\psi}{\D{\op{F}}{t}}{\psi}
 \end{equation}%
 %
 Сравнивая \eqref{eq:5_2_3} и \eqref{eq:5_2_4} с \eqref{eq:5_2_2}, получим зависимость среднего значения физической величины от времени:
@@ -183,14 +183,14 @@ $$%
 \begin{equation}
 \label{eq:5_2_5}
   \boxed{
-    \frac{d}{dt} \avg{F} = \bfkh{\psi}{\frac{d \op{F}}{dt}}{\psi}
+    \D{}{t} \avg{F} = \bfkh{\psi}{\D{\op{F}}{t}}{\psi}
   }
 \end{equation}%
 %
 где
 \begin{equation}
 \label{eq:5_2_6}
-\boxed{\frac{d\op{F}}{dt} = \pd{\op{F}}{t} + \frac{i}{\hbar} [\op{H}, \op{F}]}
+\boxed{\D{\op{F}}{t} = \pd{\op{F}}{t} + \frac{i}{\hbar} [\op{H}, \op{F}]}
 \end{equation}
 -- оператор изменения физической величины во времени, или уравнение движения оператора $\op{F}$.
 
