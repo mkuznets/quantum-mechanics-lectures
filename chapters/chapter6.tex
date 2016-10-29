@@ -283,12 +283,12 @@ $$%
 
 Домножая соотношение \eqref{eq:6_3_2} слева на $\bra{\vec{p''}}$, получим
 $$
-\bfkh{\vec{p''}}{\op{\vp}}{\vsp}=\vsp\bkh{\vec{p''}}{\vsp}
+\bfkh{\vec{p''}}{\op{\vp}}{\vsp}=\vsp\bk{\vec{p''}}{\vsp}
 $$%
 %
 и учитывая, что собственные векторы состояний непрерывного спектра нормированы на $\delta$-функцию (см.~\eqref{eq:3_4_3}):%
 $$
-\bkh{\vec{p''}}{\vsp} = \delta(\vec{p''}-\vsp)
+\bk{\vec{p''}}{\vsp} = \delta(\vec{p''}-\vsp)
 $$%
 %
 находим, что в $\vp$-представлении <<матрица>> оператора импульса имеет вид:%
@@ -313,21 +313,21 @@ $$%
 проектирует любой вектор $\ket{\psi}$ на базисный вектор состояний с координатой $\vr$
 \begin{equation}
 \label{eq:6_3_6}
-\op{P}_{\vr} \ket{\psi} = \ket{\vr}\bkh{\vr}{\psi} = \bkh{\vr}{\psi} \ket{\vr}
+\op{P}_{\vr} \ket{\psi} = \ket{\vr}\bk{\vr}{\psi} = \bk{\vr}{\psi} \ket{\vr}
 \end{equation}%
 %
-Здесь проекция $\bkh{\vr}{\psi}$ показывает, как выглядит состояние $\ket{\psi}$ в точке $\vr$. Но это не что иное как, по определению, волновая функция:
+Здесь проекция $\bk{\vr}{\psi}$ показывает, как выглядит состояние $\ket{\psi}$ в точке $\vr$. Но это не что иное как, по определению, волновая функция:
 \begin{equation}
 \label{eq:6_3_7}
 \boxed{
-	\bkh{\vr}{\psi} \equiv \psi(\vr)
+	\bk{\vr}{\psi} \equiv \psi(\vr)
 }
 \end{equation}%
 %
 Разложим $\forall \ket{\psi} \in \mathcal{H}$ по базису $\brcr{\ket{\vr}}$ с учётом условия полноты для векторов состояний непрерывного спектра (\sref{4}{3}):
 \begin{equation}
 \label{eq:6_3_8}
-\ket{\psi}=\int \ket{\vr}\bkh{\vr}{\psi} \, \diff\vr
+\ket{\psi}=\int \ket{\vr}\bk{\vr}{\psi} \, \diff\vr
 \end{equation}%
 %
 Анализируя соотношения \eqref{eq:6_3_7} и \eqref{eq:6_3_8}, можно заключить, что континуум компонент вектора $\ket{\psi}$ в базисе $\brcr{\ket{\vr}}$ есть комплекснозначная функция вещественного аргумента $\vr$ или волновая функция в координатном ($\vr$-) представлении.
@@ -335,13 +335,13 @@ $$%
 Аналогично можно построить волновую функцию в импульсном ($\vp$-) представлении
 \begin{equation}
 \label{eq:6_3_8_add}
-\ket{\Phi}=\int \ket{\vp}\bkh{\vp}{\Phi} \, \diff\vp
+\ket{\Phi}=\int \ket{\vp}\bk{\vp}{\Phi} \, \diff\vp
 \tag{\ref{eq:6_3_8}$'$}
 \end{equation}%
 где%
 \begin{equation}
 \label{eq:6_3_7_add}
-\boxed{\bkh{\vp}{\Phi} \equiv \Phi\brc{\vp}}
+\boxed{\bk{\vp}{\Phi} \equiv \Phi\brc{\vp}}
 \tag{\ref{eq:6_3_7}$'$}
 \end{equation}%
 %
@@ -396,8 +396,8 @@ $$%
 \label{eq:6_3_13}
 \begin{gathered}
 	\left.\bk{\vr}{\phi} \equiv \phi(\vr)\right|_{\text{\eqref{eq:6_3_12}}} =
-	\bfkh{\vr}{\op{\vr}}{\psi} = 
-	\bfkh{\vr}{\op{\vr} \cdot \mathds{1}_{\vsr}}{\psi} = \\ =
+	\bfk{\vr}{\op{\vr}}{\psi} = 
+	\bfk{\vr}{\op{\vr} \cdot \mathds{1}_{\vsr}}{\psi} = \\ =
 	\bfkh{\vr}{\op{\vr}\int \diff\vsr}{\vr'} \bk{\vsr}{\psi} =
 	\left.\int \diff\vsr \bfkh{\vr}{\op{\vr}}{\vsr} \psi(\vsr) \right|_{\text{\eqref{eq:6_3_4}}} = \\ =
  	\int \diff\vsr \, \vsr \delta(\vr - \vsr) \psi(\vsr) = \vr \psi(\vr) = \phi(\vr)
@@ -450,7 +450,7 @@ $$
 \begin{gathered}
 \bfk{\vp}{\op{H}}{\psi} = \bfk{\vp}{\op{H} \cdot \mathds{1}_{\vsp}}{\psi} =
 \int \diff\vsp \, \bfk{\vp}{\op{H}}{\vsp} \bk{\vsp}{\psi} = \\ =
-\int \diff\vsp \, \left[ \bfkh{\vp}{\op{T}}{\vsp} + \bfkh{\vp}{\op{U}(\vr)}{\vsp} \right] \psi(\vsp)
+\int \diff\vsp \, \left[ \bfk{\vp}{\op{T}}{\vsp} + \bfk{\vp}{\op{U}(\vr)}{\vsp} \right] \psi(\vsp)
 \end{gathered}
 $$%
 %
@@ -459,9 +459,9 @@ $$%
 \begin{equation}
 \begin{split}
 \label{eq:6_3_17}
-	\left. \int \diff\vsp \, \bfkh{\vp}{\op{T}}{\vsp} \psi(\vsp) \right|_{\text{упр.~\ref{excr2}}} =
+	\left. \int \diff\vsp \, \bfk{\vp}{\op{T}}{\vsp} \psi(\vsp) \right|_{\text{упр.~\ref{excr2}}} =
 	\int \diff\vsp \, \bfkh{\vp}{ \frac{\vsp^2}{2m} }{\vsp} \psi(\vsp) = \\ =
-	\int \diff\vsp \, \frac{\vsp^2}{2m} \underbrace{ \bkh{\vp}{\vsp} }_{\delta(\vp - \vsp)} \psi(\vsp) = \frac{\vp^2}{2m} \psi(\vp)
+	\int \diff\vsp \, \frac{\vsp^2}{2m} \underbrace{ \bk{\vp}{\vsp} }_{\delta(\vp - \vsp)} \psi(\vsp) = \frac{\vp^2}{2m} \psi(\vp)
 \end{split}
 \end{equation}%
 %
@@ -470,7 +470,7 @@ $$%
 $$
 \begin{gathered}
 	\bfkh{\vp}{\op{U}(\vr)}{\vsp} = \bfkh{\vp}{ \mathds{1}_\vr \cdot \op{U(\vr)} \cdot \mathds{1}_\vsr}{\vsp} =
-	\iint \diff\vr \diff\vsr \, \underbrace{ \bk{\vp}{\vr} }_{\bk{\vr}{\vp}^*} \underbrace{ \bfkh{\vr}{\op{U}(\vr)}{\vsr} }_{U(\vsr)\delta(\vr - \vsr)} \bkh{\vsr}{\vsp}
+	\iint \diff\vr \diff\vsr \, \underbrace{ \bk{\vp}{\vr} }_{\bk{\vr}{\vp}^*} \underbrace{ \bfkh{\vr}{\op{U}(\vr)}{\vsr} }_{U(\vsr)\delta(\vr - \vsr)} \bk{\vsr}{\vsp}
 \end{gathered}
 $$
 %
