@@ -58,7 +58,7 @@ $$
   }
 $$%
 %
-где $\boxed{\vec{j}=-\frac{i\hbar}{2m}(\psi^*\vec{\nabla}\psi-\psi\vec{\nabla}\psi^*)}$.
+где $\boxed{\vec{j}=-\frac{i\hbar}{2m}(\Psi^*\vec{\nabla}\Psi-\Psi\vec{\nabla}\Psi^*)}$.
 
 Это соотношение называется {\em уравнением непрерывности} для плотности вероятности. В интегральной форме оно принимает вид:
 $$
@@ -74,7 +74,7 @@ $$
 \Psi_{\vp}(\vr, t) = e^{i(\vp\vr - Et)/\hbar}
 $$%
 %
-определяется формулой $\vec{j}=\vec{p}/m = \vec{v}$, т.е. совпадает с вектором классической скорости частицы.
+определяется формулой $\vec{j}=p/m = \vec{v}$, т.е. совпадает с вектором классической скорости частицы.
 \begin{excr}
 Доказать вышеупомянутый факт.
 \end{excr}%
@@ -115,8 +115,8 @@ $$%
 \begin{equation}
 \label{eq:5_1_4}
 \boxed{
-    j_x = -\frac{i\hbar}{2m} \brc{\psi^*\vec{\nabla}\psi - \psi\vec{\nabla}\psi^*} = 
-    \frac{1}{m}\Re\left[\psi^*(\op{p}_x\psi)\right]
+    j_x = -\frac{i\hbar}{2m} \brc{\Psi^*\pd{\Psi}{x} - \Psi\pd{\Psi^*}{x}}
+    \frac{1}{m}\Re\left[\Psi^*(\op{p}_x\Psi)\right]
 }
 \end{equation}
 
@@ -125,17 +125,17 @@ $$%
 В общем случае оператор физической величины может явно зависеть от времени: $\op{F}=\op{F}(t)$. Пусть $\pd{\op{F}(t)}{t}$ -- производная по явной зависимости оператора от $t$. Среднее значение $F$ в общем случае также зависит от времени:
 
 $$
-  \avg{F} \equiv \bfkh{\psi(t)}{\op{F}(t)}{\psi(t)}
+  \avg{F} \equiv \bfkh{\Psi(t)}{\op{F}(t)}{\Psi(t)}
 $$%
 %
-Пусть изменение во времени вектора состояния $\ket{\psi(t)}$ описывается временным уравнением Шрёдингера\footnotemark:
+Пусть изменение во времени вектора состояния $\ket{\Psi(t)}$ описывается временным уравнением Шрёдингера\footnotemark:
 
 \footnotetext{В соответствии с четвёртым постулатом квантовой механики в общем случае динамика квантовой системы, т.е. зависимость её волновой функции от времени, полностью определяется уравнением Шрёдингера}
 
 \begin{equation}
   \label{eq:5_2_1}
   \boxed{
-    i\hbar\pd{}{t}\ket{\psi(t)} = \op{H}\ket{\psi(t)}
+    i\hbar\pd{}{t}\ket{\Psi(t)} = \op{H}\ket{\Psi(t)}
   }
 \end{equation}%
 %
@@ -144,11 +144,11 @@ $$%
 \begin{equation}
   \begin{split}
     \label{eq:5_2_2}
-    \D{}{t} \avg{F} = \bfkh{\pd{\psi}{t}}{\op{F}}{\psi} 
-        + \bfkh{\psi}{\pd{\op{F}}{t}}{\psi} + \bfkh{\psi}{\op{F}}{\pd{\psi}{t}} = \\ =
-    \frac{i}{\hbar}\bfkh{\psi}{\op{H}\op{F}}{\psi} + \bfkh{\psi}{\pd{\op{F}}{t}}{\psi} -
-        \frac{i}{\hbar}\bfkh{\psi}{\op{F}\op{H}}{\psi} = \\ =
-    \bfkh{\psi}{\pd{\op{F}}{t}+\frac{i}{\hbar}[\op{H},\op{F}]}{\psi}
+    \D{}{t} \avg{F} = \bfkh{\pd{\Psi}{t}}{\op{F}}{\Psi} 
+        + \bfkh{\Psi}{\pd{\op{F}}{t}}{\Psi} + \bfkh{\Psi}{\op{F}}{\pd{\Psi}{t}} = \\ =
+    \frac{i}{\hbar}\bfkh{\Psi}{\op{H}\op{F}}{\Psi} + \bfkh{\Psi}{\pd{\op{F}}{t}}{\Psi} -
+        \frac{i}{\hbar}\bfkh{\Psi}{\op{F}\op{H}}{\Psi} = \\ =
+    \bfkh{\Psi}{\pd{\op{F}}{t}+\frac{i}{\hbar}[\op{H},\op{F}]}{\Psi}
   \end{split}
 \end{equation}
 
@@ -171,11 +171,11 @@ $$
 \right.
 $$%
 %
-Таким образом, производная $\D{F}{t}$ определена так, что её среднее значение равно производной по времени от среднего значения $\avg{F}$. Согласно общему определению \eqref{eq:2_2_1} оператора физической величины,
+Таким образом, производная $\D{F}{t}$ определена так, что её среднее значение равно производной по времени от среднего значения $\avg{F}$. Согласно общему определению \eqref{eq:2_2_1} оператора физической величины
 \begin{equation}
   \label{eq:5_2_4}
-  \avgh{\D{F}{t}} = \avgh{\D{\op{F}}{t}}_{\psi} =
-    \bfkh{\psi}{\D{\op{F}}{t}}{\psi}
+  \avgh{\D{F}{t}} = \avgh{\D{\op{F}}{t}}_{\Psi} =
+    \bfkh{\Psi}{\D{\op{F}}{t}}{\Psi}
 \end{equation}%
 %
 Сравнивая \eqref{eq:5_2_3} и \eqref{eq:5_2_4} с \eqref{eq:5_2_2}, получим зависимость среднего значения физической величины от времени:
@@ -183,7 +183,7 @@ $$%
 \begin{equation}
 \label{eq:5_2_5}
   \boxed{
-    \D{}{t} \avg{F} = \bfkh{\psi}{\D{\op{F}}{t}}{\psi}
+    \D{}{t} \avg{F} = \bfkh{\Psi}{\D{\op{F}}{t}}{\Psi}
   }
 \end{equation}%
 %
@@ -197,7 +197,7 @@ $$%
 Из соотношений \eqref{eq:5_2_5} и \eqref{eq:5_2_6} следует, что если
 \begin{itemize}
 \item $\op{F}$ не зависит явно от времени $t$, т.е. $\partial\op{F}/\partial{t} = 0$;
-\item $\op{F}$ коммутирует с гамильтонианом системы $\op{H}$, т.е. $[\op{H}, \op{F}]=0$,
+\item $\op{F}$ коммутирует с гамильтонианом системы $\op{H}$, т.е. $[\op{H}, \op{F}]=0$.
 \end{itemize}%
 %
 то среднее значение величины $F$ сохраняется во времени в произвольном состоянии $\ket{\psi}$, т.е. $\avg{F} = \const$. В таком случае говорят, что $F$ -- сохраняющаяся величина или {\em интеграл движения} для данной системы.
@@ -215,7 +215,7 @@ $$%
 \item $\op{\vp} = - i \hbar \vec{\nabla}$.  Если $\displaystyle\op{H} = \frac{\op{\vp}^2}{2m}$ (свободное движение частицы массы $m$), то её импульс $\vp$ сохраняется.
 \end{itemize}%
 %
-Подчеркнём, что одни и так же физическая величина $F$ в одних условиях может быть интегралом движения, а в других -- нет. Например, если частица с импульсом $\vp$ движется не свободно, а в потенциальном поле $U(\vr)$, то
+Подчеркнём, что одна и та же физическая величина $F$ в одних условиях может быть интегралом движения, а в других -- нет. Например, если частица с импульсом $\vp$ движется не свободно, а в потенциальном поле $U(\vr)$, то
 
 \begin{equation}
 \label{eq:5_2_7}
@@ -258,8 +258,8 @@ $$%
 $$
 \begin{aligned}
 F ~~&\leftrightarrow~~ \avg{F} \\
-\pd{F}{t} ~~&\leftrightarrow~~ \bfkh{\psi}{\pd{\op{F}}{t}}{\psi} \\
-\brcr{H, F} ~~&\leftrightarrow~~ \frac{i}{\hbar} \bfk{\psi}{ [\op{H}, \op{F}] }{\psi}
+\pd{F}{t} ~~&\leftrightarrow~~ \bfkh{\Psi}{\pd{\op{F}}{t}}{\Psi} \\
+\brcr{H, F} ~~&\leftrightarrow~~ \frac{i}{\hbar} \bfk{\Psi}{ [\op{H}, \op{F}] }{\Psi}
 \end{aligned}
 $$%
 %
@@ -344,7 +344,7 @@ m \D{^2}{t^2} \avg{\op{\vr}} = \avg{\op{\vec{F}}}
 \begin{aligned}
 \label{eq:5_3_7}
 \avg{\op{\vec{F}}(\vr)} = &
-	\left\langle \op{\vec{F}}(\avg{\vr}) + \brc{\op{\vr} - \avg{\op{\vr}}} \nabla \vec{F}(\avg{\op{\vr}})~+ \right. \\ & \left.+~
+	\left\langle \op{F}(\avg{\vr}) + \brc{\op{\vr} - \avg{\op{\vr}}} \nabla \vec{F}(\avg{\op{\vr}})~+ \right. \\ & \left.+~
 	\frac{1}{2} (\op{r}_\alpha - \avg{\op{r}_\alpha})(\op{r}_\beta - \avg{\op{r}_\beta}) \cdot \pd{^2 \vec{F}(\avg{\op{\vr}})}{r_\alpha \partial r_\beta} + ... \right\rangle
 \end{aligned}  
 \end{equation}%
@@ -365,7 +365,7 @@ m \D{^2}{t^2} \avg{\op{\vr}} = \avg{\op{\vec{F}}}
   } = m \D{^2}{t^2} \avg{\op{\vr}} = \vec{F}(\avg{\op{\vr}})
 \end{equation}%
 %
-В остальных случаях равенство \eqref{eq:5_3_9} выполняется приближённо, только если волновая функция частицы локализована в достаточно малой области пространства $\Delta r$ (размер области, где плотность вероятности $\abs{\Psi}^2$ существенно отлична от нуля) по сравнению с размером $L$ области существенного изменения силы.
+В остальных случаях равенство \eqref{eq:5_3_9} выполняется приближённо только если волновая функция частицы кализована в достаточно малой области пространства $\Delta r$ (размер области, где плотность вероятности $\abs{\Psi}^2$ существенно отлична от нуля) по сравнению с размером $L$ области существенного изменения силы.
 
 \begin{equation}
 \label{eq:5_3_10}
