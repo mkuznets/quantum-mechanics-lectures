@@ -346,7 +346,7 @@ $$
 \begin{equation}
 \label{eq:3_2_7}
 \forall \ket{\psi},\ket{\phi} \in D_{\op{F}} ~~\to~~
-  \bk{\psi}{\op{F}\phi} = \bfk{\phi}{\op{F}}{\psi}^*
+	\bfk{\psi}{\op{F}}{\phi} = \bfk{\phi}{\op{F}}{\psi}^*
 \end{equation}
 то оператор $\op{F}$ называется \underline{эрмитовым} или сопряжённым самому себе (\underline{самосопряжённым}).
 \end{defn}
@@ -418,7 +418,7 @@ $$
 \begin{equation}
 \label{eq:3_2_9}
 \bfk{\psi}{\op{F}}{\psi}
-  = \left .\bfk{\psi}{\op{F}}{\psi}^* \right|_{\text{\eqref{eq:3_2_6}, \eqref{eq:3_2_9}}}
+  = \left .\bfk{\psi}{\op{F}}{\psi}^* \right|_{\text{\eqref{eq:3_2_6}, \eqref{eq:3_2_7}}}
   = \bfk{\psi}{\op{F}^\dag}{\psi}
 \end{equation}%
 %
@@ -450,8 +450,8 @@ $$
 \label{eq:3_2_12}
 \begin{gathered}
 \left. \avg{(\Delta F)^2} \right|_{\text{\eqref{eq:3_2_7_add}}} =
-  \bk{(F - \avg{F})\psi}{(F - \avg{F})\psi} = \\ =
-  \int \abs{\brc{F - \avg{F}}\psi}^2\diff\vec{q} \geqslant 0
+  \bk{(\op{F} - \avg{F})\psi}{(\op{F} - \avg{F})\psi} = \\ =
+  \int \abs{\brc{\op{F} - \avg{F}}\psi}^2\diff\vec{q} \geqslant 0
 \end{gathered}
 \end{equation}
 
