@@ -3,4 +3,6 @@ description: "Build the entire book in a minimal docker image"
 runs:
   using: "docker"
   image: "docker://ghcr.io/mkuznets/qmech:2021-01-19"
-  args: [ "bash", "-c", "latexmk -C && make" ]
+  env:
+    TZ: Europe/Moscow
+  args: [ "bash", "-c", "make distclean book" ]
