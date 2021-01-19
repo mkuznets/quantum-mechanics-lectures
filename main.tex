@@ -1,22 +1,10 @@
-\input{include/header}
+\input{preamble}
 
-\frontmatter
-\input{include/titlepage}
-\tableofcontents
-
-% TODO: раскомментировать после написания предисловия и введения
-%\input{preface}
-%\input{introduction}
-\mainmatter
-
-\pagestyle{fancy}
-
-\foreach \n in {1,...,19}{\setcounter{chapter}{\n-1}\include{chapters/chapter\n}}
-
-\appendix
-\input{appendixes/problems}
-\input{appendixes/runge}
-
-\input{include/bibliography}
-
-\input{include/footer}
+\begin{document}
+    \include{frontmatter}
+    \mainmatter
+        \pagestyle{fancy}
+        \foreach \n in {1,...,19}{\setcounter{chapter}{\n-1}\include{chapters/chapter\n}}
+        \include{appendix}
+        \include{bibliography}
+\end{document}
