@@ -27,6 +27,6 @@ distclean:
 	latexmk -C $(MAINSRC)
 	latexmk -jobname=chapter -C $(MAINSRC)
 
-readme:
-	pandoc --email-obfuscation=none --normalize -s -S \
-		--from markdown_github --to html README.md > README.htm
+.PHONY: readme
+readme:  # Preview Markdown files with live-reload, see https://github.com/joeyespo/grip
+	grip -b
