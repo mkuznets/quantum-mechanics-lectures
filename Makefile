@@ -1,9 +1,5 @@
-.PHONY: book chapter clean distclean check-env
+.PHONY: book chapter check-env
 MAINSRC = main.tex
-
-define delete
-	find . -depth -path "./.git/*" -prune -o -iregex $1 -type f -delete
-endef
 
 book: $(MAINSRC)
 	latexmk -pdf -pdflatex="pdflatex -halt-on-error" $(MAINSRC)
@@ -11,14 +7,16 @@ book: $(MAINSRC)
 chapter: check-env
 	pdflatex "\newcommand{\n}{$(CH)}\input{chapter}"
 
-softclean:
-	$(call delete, '.*\.\(bbl\|bcf\|blg\|aux\|log\|lof\|loc\|lot\|loa\|out\|toc\|dvi\|fdb_latexmk\|run\.xml\|htm\|fls\)$$')
+.PHONY: softclean
+softclean: clean
 
+.PHONY: clean
 clean: softclean
-	$(call delete, '.*\.\(synctex\|idx\|ilg\|ind\)$$')
-	
-distclean: clean
-	$(call delete, '.*\.\(pdf\)$$')
+	latexmk -c
+
+.PHONY: distclean
+distclean:
+	latexmk -C
 
 readme:
 	pandoc --email-obfuscation=none --normalize -s -S \
